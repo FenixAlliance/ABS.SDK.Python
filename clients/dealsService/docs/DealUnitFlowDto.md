@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **parent_business_process_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**tenant_enrolment_id** | **str** |  | [optional] 
+**tenant_enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

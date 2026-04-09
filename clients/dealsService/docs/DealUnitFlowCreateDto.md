@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **parent_business_process_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**tenant_enrolment_id** | **str** |  | [optional] 
+**tenant_enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

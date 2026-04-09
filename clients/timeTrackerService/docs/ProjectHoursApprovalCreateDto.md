@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **requester_contact_id** | **str** |  | [optional] 
 **approver_contact_id** | **str** |  | [optional] 
 **project_period_id** | **str** |  | [optional] 

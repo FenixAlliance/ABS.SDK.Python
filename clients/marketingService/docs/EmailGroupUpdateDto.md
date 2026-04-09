@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

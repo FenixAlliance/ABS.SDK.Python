@@ -4,22 +4,24 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_globe_service_languages_get**](LanguagesApi.md#api_v2_globe_service_languages_get) | **GET** /api/v2/GlobeService/Languages | 
-[**api_v2_globe_service_languages_language_id_get**](LanguagesApi.md#api_v2_globe_service_languages_language_id_get) | **GET** /api/v2/GlobeService/Languages/{languageId} | 
+[**count_languages_async**](LanguagesApi.md#count_languages_async) | **GET** /api/v2/GlobeService/Languages/Count | Count languages
+[**get_language_by_id_async**](LanguagesApi.md#get_language_by_id_async) | **GET** /api/v2/GlobeService/Languages/{languageId} | Get language by ID
+[**get_languages_async**](LanguagesApi.md#get_languages_async) | **GET** /api/v2/GlobeService/Languages | Get all languages
 
 
-# **api_v2_globe_service_languages_get**
-> CountryLanguageDtoListEnvelope api_v2_globe_service_languages_get(api_version=api_version, x_api_version=x_api_version)
+# **count_languages_async**
+> Int32Envelope count_languages_async(api_version=api_version, x_api_version=x_api_version)
 
+Count languages
 
+Returns the total number of supported languages, with optional OData filtering.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
-from openapi_client.models.country_language_dto_list_envelope import CountryLanguageDtoListEnvelope
+from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -29,16 +31,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -48,11 +40,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_globe_service_languages_get(api_version=api_version, x_api_version=x_api_version)
-        print("The response of LanguagesApi->api_v2_globe_service_languages_get:\n")
+        # Count languages
+        api_response = api_instance.count_languages_async(api_version=api_version, x_api_version=x_api_version)
+        print("The response of LanguagesApi->count_languages_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LanguagesApi->api_v2_globe_service_languages_get: %s\n" % e)
+        print("Exception when calling LanguagesApi->count_languages_async: %s\n" % e)
 ```
 
 
@@ -67,11 +60,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CountryLanguageDtoListEnvelope**](CountryLanguageDtoListEnvelope.md)
+[**Int32Envelope**](Int32Envelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -88,14 +81,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_globe_service_languages_language_id_get**
-> CountryLanguageDtoEnvelope api_v2_globe_service_languages_language_id_get(language_id, api_version=api_version, x_api_version=x_api_version)
+# **get_language_by_id_async**
+> CountryLanguageDtoEnvelope get_language_by_id_async(language_id, api_version=api_version, x_api_version=x_api_version)
 
+Get language by ID
 
+Retrieves a single language by its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -109,16 +103,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -129,11 +113,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_globe_service_languages_language_id_get(language_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of LanguagesApi->api_v2_globe_service_languages_language_id_get:\n")
+        # Get language by ID
+        api_response = api_instance.get_language_by_id_async(language_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of LanguagesApi->get_language_by_id_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LanguagesApi->api_v2_globe_service_languages_language_id_get: %s\n" % e)
+        print("Exception when calling LanguagesApi->get_language_by_id_async: %s\n" % e)
 ```
 
 
@@ -153,7 +138,79 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_languages_async**
+> CountryLanguageDtoListEnvelope get_languages_async(api_version=api_version, x_api_version=x_api_version)
+
+Get all languages
+
+Retrieves the list of all supported languages with optional OData pagination and filtering.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.country_language_dto_list_envelope import CountryLanguageDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LanguagesApi(api_client)
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get all languages
+        api_response = api_instance.get_languages_async(api_version=api_version, x_api_version=x_api_version)
+        print("The response of LanguagesApi->get_languages_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LanguagesApi->get_languages_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**CountryLanguageDtoListEnvelope**](CountryLanguageDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **period_start_date** | **datetime** |  | [optional] 
 **period_end_date** | **datetime** |  | [optional] 
 **project_id** | **str** |  | [optional] 

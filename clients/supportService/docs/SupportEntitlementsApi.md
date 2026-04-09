@@ -4,186 +4,23 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_support_service_support_entitlements_count_get**](SupportEntitlementsApi.md#api_v2_support_service_support_entitlements_count_get) | **GET** /api/v2/SupportService/SupportEntitlements/Count | 
-[**api_v2_support_service_support_entitlements_get**](SupportEntitlementsApi.md#api_v2_support_service_support_entitlements_get) | **GET** /api/v2/SupportService/SupportEntitlements | 
-[**api_v2_support_service_support_entitlements_post**](SupportEntitlementsApi.md#api_v2_support_service_support_entitlements_post) | **POST** /api/v2/SupportService/SupportEntitlements | 
-[**api_v2_support_service_support_entitlements_support_entitlement_id_delete**](SupportEntitlementsApi.md#api_v2_support_service_support_entitlements_support_entitlement_id_delete) | **DELETE** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | 
-[**api_v2_support_service_support_entitlements_support_entitlement_id_get**](SupportEntitlementsApi.md#api_v2_support_service_support_entitlements_support_entitlement_id_get) | **GET** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | 
-[**api_v2_support_service_support_entitlements_support_entitlement_id_put**](SupportEntitlementsApi.md#api_v2_support_service_support_entitlements_support_entitlement_id_put) | **PUT** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | 
+[**create_support_entitlement_async**](SupportEntitlementsApi.md#create_support_entitlement_async) | **POST** /api/v2/SupportService/SupportEntitlements | Create a new support entitlement
+[**delete_support_entitlement_async**](SupportEntitlementsApi.md#delete_support_entitlement_async) | **DELETE** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | Delete a support entitlement
+[**get_support_entitlement_async**](SupportEntitlementsApi.md#get_support_entitlement_async) | **GET** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | Retrieve a support entitlement by ID
+[**get_support_entitlements_async**](SupportEntitlementsApi.md#get_support_entitlements_async) | **GET** /api/v2/SupportService/SupportEntitlements | Retrieve a list of support entitlements
+[**get_support_entitlements_count_async**](SupportEntitlementsApi.md#get_support_entitlements_count_async) | **GET** /api/v2/SupportService/SupportEntitlements/Count | Get the count of support entitlements
+[**update_support_entitlement_async**](SupportEntitlementsApi.md#update_support_entitlement_async) | **PUT** /api/v2/SupportService/SupportEntitlements/{supportEntitlementId} | Update a support entitlement
 
 
-# **api_v2_support_service_support_entitlements_count_get**
-> Int32Envelope api_v2_support_service_support_entitlements_count_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **create_support_entitlement_async**
+> EmptyEnvelope create_support_entitlement_async(tenant_id, api_version=api_version, x_api_version=x_api_version, support_entitlement_create_dto=support_entitlement_create_dto)
 
+Create a new support entitlement
 
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.int32_envelope import Int32Envelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportEntitlementsApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_entitlements_count_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportEntitlementsApi->api_v2_support_service_support_entitlements_count_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportEntitlementsApi->api_v2_support_service_support_entitlements_count_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**Int32Envelope**](Int32Envelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_entitlements_get**
-> SupportEntitlementDtoListEnvelope api_v2_support_service_support_entitlements_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
+Creates a new support entitlement for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.support_entitlement_dto_list_envelope import SupportEntitlementDtoListEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportEntitlementsApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_entitlements_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportEntitlementsApi->api_v2_support_service_support_entitlements_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportEntitlementsApi->api_v2_support_service_support_entitlements_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**SupportEntitlementDtoListEnvelope**](SupportEntitlementDtoListEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_entitlements_post**
-> EmptyEnvelope api_v2_support_service_support_entitlements_post(support_entitlement_create_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -198,32 +35,23 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportEntitlementsApi(api_client)
-    support_entitlement_create_dto = openapi_client.SupportEntitlementCreateDto() # SupportEntitlementCreateDto | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
+    tenant_id = 'tenant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
+    support_entitlement_create_dto = openapi_client.SupportEntitlementCreateDto() # SupportEntitlementCreateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_entitlements_post(support_entitlement_create_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportEntitlementsApi->api_v2_support_service_support_entitlements_post:\n")
+        # Create a new support entitlement
+        api_response = api_instance.create_support_entitlement_async(tenant_id, api_version=api_version, x_api_version=x_api_version, support_entitlement_create_dto=support_entitlement_create_dto)
+        print("The response of SupportEntitlementsApi->create_support_entitlement_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportEntitlementsApi->api_v2_support_service_support_entitlements_post: %s\n" % e)
+        print("Exception when calling SupportEntitlementsApi->create_support_entitlement_async: %s\n" % e)
 ```
 
 
@@ -233,10 +61,10 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **support_entitlement_create_dto** | [**SupportEntitlementCreateDto**](SupportEntitlementCreateDto.md)|  | 
- **tenant_id** | **str**|  | [optional] 
+ **tenant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
+ **support_entitlement_create_dto** | [**SupportEntitlementCreateDto**](SupportEntitlementCreateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -244,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -257,18 +85,19 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
-**201** | Created |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_support_service_support_entitlements_support_entitlement_id_delete**
-> EmptyEnvelope api_v2_support_service_support_entitlements_support_entitlement_id_delete(support_entitlement_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **delete_support_entitlement_async**
+> EmptyEnvelope delete_support_entitlement_async(tenant_id, support_entitlement_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete a support entitlement
 
+Deletes a support entitlement by its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -282,32 +111,23 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportEntitlementsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     support_entitlement_id = 'support_entitlement_id_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_entitlements_support_entitlement_id_delete(support_entitlement_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportEntitlementsApi->api_v2_support_service_support_entitlements_support_entitlement_id_delete:\n")
+        # Delete a support entitlement
+        api_response = api_instance.delete_support_entitlement_async(tenant_id, support_entitlement_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportEntitlementsApi->delete_support_entitlement_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportEntitlementsApi->api_v2_support_service_support_entitlements_support_entitlement_id_delete: %s\n" % e)
+        print("Exception when calling SupportEntitlementsApi->delete_support_entitlement_async: %s\n" % e)
 ```
 
 
@@ -317,8 +137,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **support_entitlement_id** | **str**|  | 
- **tenant_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -328,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -345,14 +165,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_support_service_support_entitlements_support_entitlement_id_get**
-> SupportEntitlementDtoEnvelope api_v2_support_service_support_entitlements_support_entitlement_id_get(support_entitlement_id, api_version=api_version, x_api_version=x_api_version)
+# **get_support_entitlement_async**
+> SupportEntitlementDtoEnvelope get_support_entitlement_async(tenant_id, support_entitlement_id, api_version=api_version, x_api_version=x_api_version)
 
+Retrieve a support entitlement by ID
 
+Retrieves a single support entitlement by its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -366,31 +187,23 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportEntitlementsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     support_entitlement_id = 'support_entitlement_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_entitlements_support_entitlement_id_get(support_entitlement_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportEntitlementsApi->api_v2_support_service_support_entitlements_support_entitlement_id_get:\n")
+        # Retrieve a support entitlement by ID
+        api_response = api_instance.get_support_entitlement_async(tenant_id, support_entitlement_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportEntitlementsApi->get_support_entitlement_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportEntitlementsApi->api_v2_support_service_support_entitlements_support_entitlement_id_get: %s\n" % e)
+        print("Exception when calling SupportEntitlementsApi->get_support_entitlement_async: %s\n" % e)
 ```
 
 
@@ -400,6 +213,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **support_entitlement_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -410,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -427,14 +241,163 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_support_service_support_entitlements_support_entitlement_id_put**
-> EmptyEnvelope api_v2_support_service_support_entitlements_support_entitlement_id_put(support_entitlement_id, support_entitlement_update_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **get_support_entitlements_async**
+> SupportEntitlementDtoListEnvelope get_support_entitlements_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Retrieve a list of support entitlements
 
+Retrieves a list of support entitlements for the specified tenant with OData query support.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+
+```python
+import openapi_client
+from openapi_client.models.support_entitlement_dto_list_envelope import SupportEntitlementDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportEntitlementsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Retrieve a list of support entitlements
+        api_response = api_instance.get_support_entitlements_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportEntitlementsApi->get_support_entitlements_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportEntitlementsApi->get_support_entitlements_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**SupportEntitlementDtoListEnvelope**](SupportEntitlementDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_entitlements_count_async**
+> Int32Envelope get_support_entitlements_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+
+Get the count of support entitlements
+
+Returns the total count of support entitlements for the specified tenant with OData query support.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.int32_envelope import Int32Envelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportEntitlementsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get the count of support entitlements
+        api_response = api_instance.get_support_entitlements_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportEntitlementsApi->get_support_entitlements_count_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportEntitlementsApi->get_support_entitlements_count_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_support_entitlement_async**
+> EmptyEnvelope update_support_entitlement_async(tenant_id, support_entitlement_id, api_version=api_version, x_api_version=x_api_version, support_entitlement_update_dto=support_entitlement_update_dto)
+
+Update a support entitlement
+
+Updates an existing support entitlement by its unique identifier.
+
+### Example
+
 
 ```python
 import openapi_client
@@ -449,33 +412,24 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportEntitlementsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     support_entitlement_id = 'support_entitlement_id_example' # str | 
-    support_entitlement_update_dto = openapi_client.SupportEntitlementUpdateDto() # SupportEntitlementUpdateDto | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
+    support_entitlement_update_dto = openapi_client.SupportEntitlementUpdateDto() # SupportEntitlementUpdateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_entitlements_support_entitlement_id_put(support_entitlement_id, support_entitlement_update_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportEntitlementsApi->api_v2_support_service_support_entitlements_support_entitlement_id_put:\n")
+        # Update a support entitlement
+        api_response = api_instance.update_support_entitlement_async(tenant_id, support_entitlement_id, api_version=api_version, x_api_version=x_api_version, support_entitlement_update_dto=support_entitlement_update_dto)
+        print("The response of SupportEntitlementsApi->update_support_entitlement_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportEntitlementsApi->api_v2_support_service_support_entitlements_support_entitlement_id_put: %s\n" % e)
+        print("Exception when calling SupportEntitlementsApi->update_support_entitlement_async: %s\n" % e)
 ```
 
 
@@ -485,11 +439,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **support_entitlement_id** | **str**|  | 
- **support_entitlement_update_dto** | [**SupportEntitlementUpdateDto**](SupportEntitlementUpdateDto.md)|  | 
- **tenant_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
+ **support_entitlement_update_dto** | [**SupportEntitlementUpdateDto**](SupportEntitlementUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -497,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

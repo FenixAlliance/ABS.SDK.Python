@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **discount_amount** | **float** |  | [optional] 
 **total_surcharge** | **float** |  | [optional] 
 **total_discount** | **float** |  | [optional] 
-**type** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

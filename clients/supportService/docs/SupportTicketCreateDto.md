@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **description** | **str** |  | [optional] 
 **account_holder_id** | **str** |  | [optional] 
 **contact_id** | **str** |  | [optional] 

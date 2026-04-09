@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **deal_unit_flow_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **parent_business_process_stage_id** | **str** |  | [optional] 
 
 ## Example

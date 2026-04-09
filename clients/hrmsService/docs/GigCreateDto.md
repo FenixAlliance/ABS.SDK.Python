@@ -5,8 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
+**title** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**start_date** | **datetime** |  | [optional] 
+**end_date** | **datetime** |  | [optional] 
+**budget** | **float** |  | [optional] 
+**location** | **str** |  | [optional] 
+**skills_required** | **str** |  | [optional] 
 
 ## Example
 

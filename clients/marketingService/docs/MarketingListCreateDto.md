@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **locked** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **purpose** | **str** |  | [optional] 
@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **last_used_on** | **datetime** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
-**marketing_list_type** | **int** |  | [optional] 
-**marketing_list_target** | **int** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
+**marketing_list_type** | **str** |  | [optional] 
+**marketing_list_target** | **str** |  | [optional] 
 
 ## Example
 

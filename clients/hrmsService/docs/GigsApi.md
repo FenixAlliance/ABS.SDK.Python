@@ -4,25 +4,27 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_gig_async**](GigsApi.md#create_gig_async) | **POST** /api/v2/HrmsService/Gigs | 
-[**delete_gig_async**](GigsApi.md#delete_gig_async) | **DELETE** /api/v2/HrmsService/Gigs/{gigId} | 
-[**get_gig_by_id_async**](GigsApi.md#get_gig_by_id_async) | **GET** /api/v2/HrmsService/Gigs/{gigId} | 
-[**get_gigs_async**](GigsApi.md#get_gigs_async) | **GET** /api/v2/HrmsService/Gigs | 
-[**get_gigs_count_async**](GigsApi.md#get_gigs_count_async) | **GET** /api/v2/HrmsService/Gigs/Count | 
-[**update_gig_async**](GigsApi.md#update_gig_async) | **PUT** /api/v2/HrmsService/Gigs/{gigId} | 
+[**create_gig_async**](GigsApi.md#create_gig_async) | **POST** /api/v2/HrmsService/Gigs | Create a gig
+[**delete_gig_async**](GigsApi.md#delete_gig_async) | **DELETE** /api/v2/HrmsService/Gigs/{gigId} | Delete a gig
+[**get_gig_by_id_async**](GigsApi.md#get_gig_by_id_async) | **GET** /api/v2/HrmsService/Gigs/{gigId} | Get gig by ID
+[**get_gigs_async**](GigsApi.md#get_gigs_async) | **GET** /api/v2/HrmsService/Gigs | Get gigs
+[**get_gigs_count_async**](GigsApi.md#get_gigs_count_async) | **GET** /api/v2/HrmsService/Gigs/Count | Count gigs
+[**update_gig_async**](GigsApi.md#update_gig_async) | **PUT** /api/v2/HrmsService/Gigs/{gigId} | Update a gig
 
 
 # **create_gig_async**
-> create_gig_async(tenant_id, api_version=api_version, x_api_version=x_api_version, gig_create_dto=gig_create_dto)
+> EmptyEnvelope create_gig_async(tenant_id, api_version=api_version, x_api_version=x_api_version, gig_create_dto=gig_create_dto)
 
+Create a gig
 
+Creates a new gig for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.gig_create_dto import GigCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -33,16 +35,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -54,7 +46,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     gig_create_dto = openapi_client.GigCreateDto() # GigCreateDto |  (optional)
 
     try:
-        api_instance.create_gig_async(tenant_id, api_version=api_version, x_api_version=x_api_version, gig_create_dto=gig_create_dto)
+        # Create a gig
+        api_response = api_instance.create_gig_async(tenant_id, api_version=api_version, x_api_version=x_api_version, gig_create_dto=gig_create_dto)
+        print("The response of GigsApi->create_gig_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling GigsApi->create_gig_async: %s\n" % e)
 ```
@@ -73,11 +68,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -90,21 +85,24 @@ void (empty response body)
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
-**201** | Created |  -  |
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_gig_async**
-> delete_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version)
+> EmptyEnvelope delete_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete a gig
 
+Deletes a gig for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -114,16 +112,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -135,7 +123,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_instance.delete_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version)
+        # Delete a gig
+        api_response = api_instance.delete_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of GigsApi->delete_gig_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling GigsApi->delete_gig_async: %s\n" % e)
 ```
@@ -154,11 +145,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -171,18 +162,20 @@ void (empty response body)
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
-**204** | No Content |  -  |
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_gig_by_id_async**
 > GigDtoEnvelope get_gig_by_id_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version)
 
+Get gig by ID
 
+Retrieves a specific gig by its identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -196,16 +189,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -217,6 +200,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Get gig by ID
         api_response = api_instance.get_gig_by_id_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of GigsApi->get_gig_by_id_async:\n")
         pprint(api_response)
@@ -242,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -262,11 +246,12 @@ Name | Type | Description  | Notes
 # **get_gigs_async**
 > GigDtoListEnvelope get_gigs_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Get gigs
 
+Retrieves gigs for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -280,16 +265,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -300,6 +275,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Get gigs
         api_response = api_instance.get_gigs_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of GigsApi->get_gigs_async:\n")
         pprint(api_response)
@@ -324,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -344,11 +320,12 @@ Name | Type | Description  | Notes
 # **get_gigs_count_async**
 > Int32Envelope get_gigs_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Count gigs
 
+Counts gigs for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -362,16 +339,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -382,6 +349,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Count gigs
         api_response = api_instance.get_gigs_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of GigsApi->get_gigs_count_async:\n")
         pprint(api_response)
@@ -406,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -424,16 +392,19 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_gig_async**
-> update_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version, body=body)
+> EmptyEnvelope update_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version, gig_update_dto=gig_update_dto)
 
+Update a gig
 
+Updates an existing gig for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.gig_update_dto import GigUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -443,16 +414,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -462,10 +423,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     gig_id = 'gig_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
-    body = None # object |  (optional)
+    gig_update_dto = openapi_client.GigUpdateDto() # GigUpdateDto |  (optional)
 
     try:
-        api_instance.update_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        # Update a gig
+        api_response = api_instance.update_gig_async(tenant_id, gig_id, api_version=api_version, x_api_version=x_api_version, gig_update_dto=gig_update_dto)
+        print("The response of GigsApi->update_gig_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling GigsApi->update_gig_async: %s\n" % e)
 ```
@@ -481,15 +445,15 @@ Name | Type | Description  | Notes
  **gig_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
- **body** | **object**|  | [optional] 
+ **gig_update_dto** | [**GigUpdateDto**](GigUpdateDto.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -502,7 +466,8 @@ void (empty response body)
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
-**204** | No Content |  -  |
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **comments** | **str** |  | [optional] 
 **project_task_id** | **str** |  | [optional] 
 **project_period_id** | **str** |  | [optional] 
-**project_time_log_record_type** | **int** |  | [optional] 
+**project_time_log_record_type** | **str** |  | [optional] 
 
 ## Example
 

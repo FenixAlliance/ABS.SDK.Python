@@ -5,15 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**author_id** | **str** |  | [optional] 
+**code** | **str** |  | [optional] 
+**published** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
 **html_content** | **str** |  | [optional] 
 **featured_image_url** | **str** |  | [optional] 
+**code_type** | **str** |  | [optional] 
 
 ## Example
 

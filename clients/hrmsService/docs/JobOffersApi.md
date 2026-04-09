@@ -4,25 +4,27 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_job_offer_async**](JobOffersApi.md#create_job_offer_async) | **POST** /api/v2/HrmsService/JobOffers | 
-[**delete_job_offer_async**](JobOffersApi.md#delete_job_offer_async) | **DELETE** /api/v2/HrmsService/JobOffers/{jobOfferId} | 
-[**get_job_offer_by_id_async**](JobOffersApi.md#get_job_offer_by_id_async) | **GET** /api/v2/HrmsService/JobOffers/{jobOfferId} | 
-[**get_job_offers_async**](JobOffersApi.md#get_job_offers_async) | **GET** /api/v2/HrmsService/JobOffers | 
-[**get_job_offers_count_async**](JobOffersApi.md#get_job_offers_count_async) | **GET** /api/v2/HrmsService/JobOffers/Count | 
-[**update_job_offer_async**](JobOffersApi.md#update_job_offer_async) | **PUT** /api/v2/HrmsService/JobOffers/{jobOfferId} | 
+[**create_job_offer_async**](JobOffersApi.md#create_job_offer_async) | **POST** /api/v2/HrmsService/JobOffers | Create a job offer
+[**delete_job_offer_async**](JobOffersApi.md#delete_job_offer_async) | **DELETE** /api/v2/HrmsService/JobOffers/{jobOfferId} | Delete a job offer
+[**get_job_offer_by_id_async**](JobOffersApi.md#get_job_offer_by_id_async) | **GET** /api/v2/HrmsService/JobOffers/{jobOfferId} | Get job offer by ID
+[**get_job_offers_async**](JobOffersApi.md#get_job_offers_async) | **GET** /api/v2/HrmsService/JobOffers | Get job offers
+[**get_job_offers_count_async**](JobOffersApi.md#get_job_offers_count_async) | **GET** /api/v2/HrmsService/JobOffers/Count | Count job offers
+[**update_job_offer_async**](JobOffersApi.md#update_job_offer_async) | **PUT** /api/v2/HrmsService/JobOffers/{jobOfferId} | Update a job offer
 
 
 # **create_job_offer_async**
-> create_job_offer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, job_offer_create_dto=job_offer_create_dto)
+> EmptyEnvelope create_job_offer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, job_offer_create_dto=job_offer_create_dto)
 
+Create a job offer
 
+Creates a new job offer for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.job_offer_create_dto import JobOfferCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -33,16 +35,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -54,7 +46,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     job_offer_create_dto = openapi_client.JobOfferCreateDto() # JobOfferCreateDto |  (optional)
 
     try:
-        api_instance.create_job_offer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, job_offer_create_dto=job_offer_create_dto)
+        # Create a job offer
+        api_response = api_instance.create_job_offer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, job_offer_create_dto=job_offer_create_dto)
+        print("The response of JobOffersApi->create_job_offer_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling JobOffersApi->create_job_offer_async: %s\n" % e)
 ```
@@ -73,11 +68,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -91,20 +86,23 @@ void (empty response body)
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_job_offer_async**
-> delete_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version)
+> EmptyEnvelope delete_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete a job offer
 
+Deletes a job offer for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -114,16 +112,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -135,7 +123,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_instance.delete_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version)
+        # Delete a job offer
+        api_response = api_instance.delete_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of JobOffersApi->delete_job_offer_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling JobOffersApi->delete_job_offer_async: %s\n" % e)
 ```
@@ -154,11 +145,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -171,17 +162,20 @@ void (empty response body)
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_job_offer_by_id_async**
 > JobOfferDtoEnvelope get_job_offer_by_id_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version)
 
+Get job offer by ID
 
+Retrieves a specific job offer by its identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -195,16 +189,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -216,6 +200,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Get job offer by ID
         api_response = api_instance.get_job_offer_by_id_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of JobOffersApi->get_job_offer_by_id_async:\n")
         pprint(api_response)
@@ -241,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -261,11 +246,12 @@ Name | Type | Description  | Notes
 # **get_job_offers_async**
 > JobOfferDtoListEnvelope get_job_offers_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Get job offers
 
+Retrieves job offers for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -279,16 +265,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -299,6 +275,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Get job offers
         api_response = api_instance.get_job_offers_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of JobOffersApi->get_job_offers_async:\n")
         pprint(api_response)
@@ -323,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -343,11 +320,12 @@ Name | Type | Description  | Notes
 # **get_job_offers_count_async**
 > Int32Envelope get_job_offers_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Count job offers
 
+Counts job offers for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -361,16 +339,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -381,6 +349,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Count job offers
         api_response = api_instance.get_job_offers_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of JobOffersApi->get_job_offers_count_async:\n")
         pprint(api_response)
@@ -405,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -423,16 +392,18 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_job_offer_async**
-> update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+> EmptyEnvelope update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, body=body)
 
+Update a job offer
 
+Updates an existing job offer for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -442,16 +413,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -464,7 +425,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     body = None # object |  (optional)
 
     try:
-        api_instance.update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        # Update a job offer
+        api_response = api_instance.update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        print("The response of JobOffersApi->update_job_offer_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling JobOffersApi->update_job_offer_async: %s\n" % e)
 ```
@@ -484,11 +448,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -502,6 +466,7 @@ void (empty response body)
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

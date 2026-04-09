@@ -2,5 +2,7 @@
 
 # import apis into api package
 from openapi_client.api.contacts_api import ContactsApi
+from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.options_api import OptionsApi
 from openapi_client.api.sync_api import SyncApi
 

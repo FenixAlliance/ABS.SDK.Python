@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **unit_group_id** | **str** |  | [optional] 
 **partner_visible** | **bool** |  | [optional] 
 **unit_of_measure_dependant** | **bool** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

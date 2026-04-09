@@ -4,17 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_sales_service_margins_margin_id_details_get**](MarginsApi.md#api_v2_sales_service_margins_margin_id_details_get) | **GET** /api/v2/SalesService/Margins/{marginId}/Details | 
+[**get_quote_async**](MarginsApi.md#get_quote_async) | **GET** /api/v2/SalesService/Margins/{marginId}/Details | Get margin details by ID
 
 
-# **api_v2_sales_service_margins_margin_id_details_get**
-> api_v2_sales_service_margins_margin_id_details_get(margin_id, api_version=api_version, x_api_version=x_api_version)
+# **get_quote_async**
+> get_quote_async(margin_id, api_version=api_version, x_api_version=x_api_version)
 
+Get margin details by ID
 
+Retrieves the details of a specific sales margin by its ID.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -27,16 +28,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -47,9 +38,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_instance.api_v2_sales_service_margins_margin_id_details_get(margin_id, api_version=api_version, x_api_version=x_api_version)
+        # Get margin details by ID
+        api_instance.get_quote_async(margin_id, api_version=api_version, x_api_version=x_api_version)
     except Exception as e:
-        print("Exception when calling MarginsApi->api_v2_sales_service_margins_margin_id_details_get: %s\n" % e)
+        print("Exception when calling MarginsApi->get_quote_async: %s\n" % e)
 ```
 
 
@@ -69,7 +61,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

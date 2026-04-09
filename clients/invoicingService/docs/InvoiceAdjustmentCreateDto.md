@@ -5,12 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
-**tenant_id** | **str** |  | [optional] 
-**invoice_id** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **surcharge_percent** | **float** |  | [optional] 
 **surcharge_amount** | **float** |  | [optional] 
@@ -18,7 +15,7 @@ Name | Type | Description | Notes
 **discount_amount** | **float** |  | [optional] 
 **total_surcharge** | **float** |  | [optional] 
 **total_discount** | **float** |  | [optional] 
-**type** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

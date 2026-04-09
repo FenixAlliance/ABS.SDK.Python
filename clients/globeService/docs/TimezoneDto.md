@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**timestamp** | **datetime** |  | [optional] 
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
-**display_name** | **str** |  | [optional] [readonly] 
 **utc_offset** | **str** |  | [optional] 
+**display_name** | **str** |  | [optional] [readonly] 
 
 ## Example
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **percent** | **float** |  | [optional] 
 **item_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **discount_list_id** | **str** |  | [optional] 
 **end_quantity** | **float** |  | [optional] 
 **begin_quantity** | **float** |  | [optional] 

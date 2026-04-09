@@ -4,26 +4,28 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_marketing_service_marketing_campaigns_count_get**](MarketingCampaignsApi.md#api_v2_marketing_service_marketing_campaigns_count_get) | **GET** /api/v2/MarketingService/MarketingCampaigns/Count | 
-[**api_v2_marketing_service_marketing_campaigns_get**](MarketingCampaignsApi.md#api_v2_marketing_service_marketing_campaigns_get) | **GET** /api/v2/MarketingService/MarketingCampaigns | 
-[**api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete**](MarketingCampaignsApi.md#api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete) | **DELETE** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | 
-[**api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get**](MarketingCampaignsApi.md#api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get) | **GET** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | 
-[**api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put**](MarketingCampaignsApi.md#api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put) | **PUT** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | 
-[**api_v2_marketing_service_marketing_campaigns_post**](MarketingCampaignsApi.md#api_v2_marketing_service_marketing_campaigns_post) | **POST** /api/v2/MarketingService/MarketingCampaigns | 
+[**create_marketing_campaign_async**](MarketingCampaignsApi.md#create_marketing_campaign_async) | **POST** /api/v2/MarketingService/MarketingCampaigns | Create a marketing campaign
+[**delete_marketing_campaign_async**](MarketingCampaignsApi.md#delete_marketing_campaign_async) | **DELETE** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | Delete a marketing campaign
+[**get_marketing_campaign_details_async**](MarketingCampaignsApi.md#get_marketing_campaign_details_async) | **GET** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | Get marketing campaign by ID
+[**get_marketing_campaign_o_data_async**](MarketingCampaignsApi.md#get_marketing_campaign_o_data_async) | **GET** /api/v2/MarketingService/MarketingCampaigns | Get marketing campaigns
+[**get_marketing_campaigns_count_async**](MarketingCampaignsApi.md#get_marketing_campaigns_count_async) | **GET** /api/v2/MarketingService/MarketingCampaigns/Count | Get marketing campaigns count
+[**update_marketing_campaign_async**](MarketingCampaignsApi.md#update_marketing_campaign_async) | **PUT** /api/v2/MarketingService/MarketingCampaigns/{marketingcampaignId} | Update a marketing campaign
 
 
-# **api_v2_marketing_service_marketing_campaigns_count_get**
-> Int32Envelope api_v2_marketing_service_marketing_campaigns_count_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **create_marketing_campaign_async**
+> EmptyEnvelope create_marketing_campaign_async(tenant_id, marketing_campaign_create_dto, api_version=api_version, x_api_version=x_api_version)
 
+Create a marketing campaign
 
+Creates a new marketing campaign for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
-from openapi_client.models.int32_envelope import Int32Envelope
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.marketing_campaign_create_dto import MarketingCampaignCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -33,31 +35,23 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.MarketingCampaignsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
+    marketing_campaign_create_dto = openapi_client.MarketingCampaignCreateDto() # MarketingCampaignCreateDto | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_marketing_service_marketing_campaigns_count_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_count_get:\n")
+        # Create a marketing campaign
+        api_response = api_instance.create_marketing_campaign_async(tenant_id, marketing_campaign_create_dto, api_version=api_version, x_api_version=x_api_version)
+        print("The response of MarketingCampaignsApi->create_marketing_campaign_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_count_get: %s\n" % e)
+        print("Exception when calling MarketingCampaignsApi->create_marketing_campaign_async: %s\n" % e)
 ```
 
 
@@ -68,20 +62,21 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
+ **marketing_campaign_create_dto** | [**MarketingCampaignCreateDto**](MarketingCampaignCreateDto.md)|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
-[**Int32Envelope**](Int32Envelope.md)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details
@@ -91,97 +86,19 @@ Name | Type | Description  | Notes
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
-**200** | OK |  -  |
+**201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_marketing_service_marketing_campaigns_get**
-> api_v2_marketing_service_marketing_campaigns_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **delete_marketing_campaign_async**
+> EmptyEnvelope delete_marketing_campaign_async(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete a marketing campaign
 
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.MarketingCampaignsApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_instance.api_v2_marketing_service_marketing_campaigns_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
-    except Exception as e:
-        print("Exception when calling MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**400** | Bad Request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete**
-> EmptyEnvelope api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
-
-
+Deletes a marketing campaign by its ID.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -195,16 +112,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -216,11 +123,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete:\n")
+        # Delete a marketing campaign
+        api_response = api_instance.delete_marketing_campaign_async(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of MarketingCampaignsApi->delete_marketing_campaign_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_delete: %s\n" % e)
+        print("Exception when calling MarketingCampaignsApi->delete_marketing_campaign_async: %s\n" % e)
 ```
 
 
@@ -241,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -259,14 +167,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get**
-> MarketingCampaignDtoEnvelope api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
+# **get_marketing_campaign_details_async**
+> MarketingCampaignDtoEnvelope get_marketing_campaign_details_async(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
 
+Get marketing campaign by ID
 
+Retrieves the details of a specific marketing campaign by its ID.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -280,16 +189,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -301,11 +200,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get:\n")
+        # Get marketing campaign by ID
+        api_response = api_instance.get_marketing_campaign_details_async(tenant_id, marketingcampaign_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of MarketingCampaignsApi->get_marketing_campaign_details_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_get: %s\n" % e)
+        print("Exception when calling MarketingCampaignsApi->get_marketing_campaign_details_async: %s\n" % e)
 ```
 
 
@@ -326,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -344,14 +244,161 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put**
-> EmptyEnvelope api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put(tenant_id, marketingcampaign_id, marketing_campaign_update_dto, api_version=api_version, x_api_version=x_api_version)
+# **get_marketing_campaign_o_data_async**
+> get_marketing_campaign_o_data_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Get marketing campaigns
 
+Retrieves a collection of marketing campaigns for the specified tenant using OData query options.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+
+```python
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.MarketingCampaignsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get marketing campaigns
+        api_instance.get_marketing_campaign_o_data_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+    except Exception as e:
+        print("Exception when calling MarketingCampaignsApi->get_marketing_campaign_o_data_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_marketing_campaigns_count_async**
+> Int32Envelope get_marketing_campaigns_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+
+Get marketing campaigns count
+
+Returns the count of marketing campaigns for the specified tenant using OData query options.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.int32_envelope import Int32Envelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.MarketingCampaignsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get marketing campaigns count
+        api_response = api_instance.get_marketing_campaigns_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of MarketingCampaignsApi->get_marketing_campaigns_count_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MarketingCampaignsApi->get_marketing_campaigns_count_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_marketing_campaign_async**
+> EmptyEnvelope update_marketing_campaign_async(tenant_id, marketingcampaign_id, marketing_campaign_update_dto, api_version=api_version, x_api_version=x_api_version)
+
+Update a marketing campaign
+
+Updates an existing marketing campaign by its ID.
+
+### Example
+
 
 ```python
 import openapi_client
@@ -366,16 +413,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -388,11 +425,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put(tenant_id, marketingcampaign_id, marketing_campaign_update_dto, api_version=api_version, x_api_version=x_api_version)
-        print("The response of MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put:\n")
+        # Update a marketing campaign
+        api_response = api_instance.update_marketing_campaign_async(tenant_id, marketingcampaign_id, marketing_campaign_update_dto, api_version=api_version, x_api_version=x_api_version)
+        print("The response of MarketingCampaignsApi->update_marketing_campaign_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_marketingcampaign_id_put: %s\n" % e)
+        print("Exception when calling MarketingCampaignsApi->update_marketing_campaign_async: %s\n" % e)
 ```
 
 
@@ -414,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -429,92 +467,6 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
 **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_marketing_service_marketing_campaigns_post**
-> EmptyEnvelope api_v2_marketing_service_marketing_campaigns_post(tenant_id, marketing_campaign_create_dto, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.empty_envelope import EmptyEnvelope
-from openapi_client.models.marketing_campaign_create_dto import MarketingCampaignCreateDto
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.MarketingCampaignsApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    marketing_campaign_create_dto = openapi_client.MarketingCampaignCreateDto() # MarketingCampaignCreateDto | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_marketing_service_marketing_campaigns_post(tenant_id, marketing_campaign_create_dto, api_version=api_version, x_api_version=x_api_version)
-        print("The response of MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling MarketingCampaignsApi->api_v2_marketing_service_marketing_campaigns_post: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | 
- **marketing_campaign_create_dto** | [**MarketingCampaignCreateDto**](MarketingCampaignCreateDto.md)|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**EmptyEnvelope**](EmptyEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**400** | Bad Request |  -  |
-**201** | Created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **generated_code** | **str** |  | [optional] 
 **compilation_path** | **str** |  | [optional] 
 **html_content** | **str** |  | [optional] 
+**code_type** | **str** |  | [optional] 
 **c_sharp_content** | **str** |  | [optional] 
 **razor_content** | **str** |  | [optional] 
 **css_content** | **str** |  | [optional] 

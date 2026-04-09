@@ -4,26 +4,28 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_deals_service_sales_literatures_extended_get**](SalesLiteraturesApi.md#api_v2_deals_service_sales_literatures_extended_get) | **GET** /api/v2/DealsService/SalesLiteratures/Extended | 
-[**api_v2_deals_service_sales_literatures_get**](SalesLiteraturesApi.md#api_v2_deals_service_sales_literatures_get) | **GET** /api/v2/DealsService/SalesLiteratures | 
-[**api_v2_deals_service_sales_literatures_post**](SalesLiteraturesApi.md#api_v2_deals_service_sales_literatures_post) | **POST** /api/v2/DealsService/SalesLiteratures | 
-[**api_v2_deals_service_sales_literatures_sales_literature_id_delete**](SalesLiteraturesApi.md#api_v2_deals_service_sales_literatures_sales_literature_id_delete) | **DELETE** /api/v2/DealsService/SalesLiteratures/{salesLiteratureId} | 
-[**api_v2_deals_service_sales_literatures_sales_literature_id_get**](SalesLiteraturesApi.md#api_v2_deals_service_sales_literatures_sales_literature_id_get) | **GET** /api/v2/DealsService/SalesLiteratures/{salesLiteratureId} | 
-[**api_v2_deals_service_sales_literatures_sales_literature_id_put**](SalesLiteraturesApi.md#api_v2_deals_service_sales_literatures_sales_literature_id_put) | **PUT** /api/v2/DealsService/SalesLiteratures/{salesLiteratureId} | 
+[**count_sales_literatures_async**](SalesLiteraturesApi.md#count_sales_literatures_async) | **GET** /api/v2/DealsService/SalesLiteratures/Count | Get sales literatures count
+[**create_sales_literature_async**](SalesLiteraturesApi.md#create_sales_literature_async) | **POST** /api/v2/DealsService/SalesLiteratures | Create a sales literature
+[**delete_sales_literature_async**](SalesLiteraturesApi.md#delete_sales_literature_async) | **DELETE** /api/v2/DealsService/SalesLiteratures/{salesLiteratureId} | Delete a sales literature
+[**get_extended_sales_literatures_async**](SalesLiteraturesApi.md#get_extended_sales_literatures_async) | **GET** /api/v2/DealsService/SalesLiteratures/Extended | Get extended sales literatures
+[**get_sales_literature_async**](SalesLiteraturesApi.md#get_sales_literature_async) | **GET** /api/v2/DealsService/SalesLiteratures/{salesLiteratureId} | Get sales literature by ID
+[**get_sales_literatures_async**](SalesLiteraturesApi.md#get_sales_literatures_async) | **GET** /api/v2/DealsService/SalesLiteratures | Get sales literatures
+[**update_sales_literature_async**](SalesLiteraturesApi.md#update_sales_literature_async) | **PUT** /api/v2/DealsService/SalesLiteratures/{salesLiteratureId} | Update a sales literature
 
 
-# **api_v2_deals_service_sales_literatures_extended_get**
-> ExtendedSalesLiteratureDtoListEnvelope api_v2_deals_service_sales_literatures_extended_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **count_sales_literatures_async**
+> Int32Envelope count_sales_literatures_async(tenant_id)
 
+Get sales literatures count
 
+Returns the total count of sales literatures for the specified tenant with OData filter support.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
-from openapi_client.models.extended_sales_literature_dto_list_envelope import ExtendedSalesLiteratureDtoListEnvelope
+from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -33,31 +35,20 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SalesLiteraturesApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_deals_service_sales_literatures_extended_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SalesLiteraturesApi->api_v2_deals_service_sales_literatures_extended_get:\n")
+        # Get sales literatures count
+        api_response = api_instance.count_sales_literatures_async(tenant_id)
+        print("The response of SalesLiteraturesApi->count_sales_literatures_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SalesLiteraturesApi->api_v2_deals_service_sales_literatures_extended_get: %s\n" % e)
+        print("Exception when calling SalesLiteraturesApi->count_sales_literatures_async: %s\n" % e)
 ```
 
 
@@ -68,16 +59,14 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
-[**ExtendedSalesLiteratureDtoListEnvelope**](ExtendedSalesLiteratureDtoListEnvelope.md)
+[**Int32Envelope**](Int32Envelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -93,95 +82,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_deals_service_sales_literatures_get**
-> SalesLiteratureDtoListEnvelope api_v2_deals_service_sales_literatures_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **create_sales_literature_async**
+> EmptyEnvelope create_sales_literature_async(tenant_id, sales_literature_create_dto=sales_literature_create_dto)
 
+Create a sales literature
 
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.sales_literature_dto_list_envelope import SalesLiteratureDtoListEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SalesLiteraturesApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_deals_service_sales_literatures_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SalesLiteraturesApi->api_v2_deals_service_sales_literatures_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SalesLiteraturesApi->api_v2_deals_service_sales_literatures_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**SalesLiteratureDtoListEnvelope**](SalesLiteratureDtoListEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**404** | Not Found |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_deals_service_sales_literatures_post**
-> EmptyEnvelope api_v2_deals_service_sales_literatures_post(tenant_id, api_version=api_version, x_api_version=x_api_version, sales_literature_create_dto=sales_literature_create_dto)
-
-
+Creates a new sales literature for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -196,32 +105,21 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SalesLiteraturesApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
     sales_literature_create_dto = openapi_client.SalesLiteratureCreateDto() # SalesLiteratureCreateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_deals_service_sales_literatures_post(tenant_id, api_version=api_version, x_api_version=x_api_version, sales_literature_create_dto=sales_literature_create_dto)
-        print("The response of SalesLiteraturesApi->api_v2_deals_service_sales_literatures_post:\n")
+        # Create a sales literature
+        api_response = api_instance.create_sales_literature_async(tenant_id, sales_literature_create_dto=sales_literature_create_dto)
+        print("The response of SalesLiteraturesApi->create_sales_literature_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SalesLiteraturesApi->api_v2_deals_service_sales_literatures_post: %s\n" % e)
+        print("Exception when calling SalesLiteraturesApi->create_sales_literature_async: %s\n" % e)
 ```
 
 
@@ -232,8 +130,6 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
  **sales_literature_create_dto** | [**SalesLiteratureCreateDto**](SalesLiteratureCreateDto.md)|  | [optional] 
 
 ### Return type
@@ -242,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -258,14 +154,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_deals_service_sales_literatures_sales_literature_id_delete**
-> EmptyEnvelope api_v2_deals_service_sales_literatures_sales_literature_id_delete(tenant_id, sales_literature_id, api_version=api_version, x_api_version=x_api_version)
+# **delete_sales_literature_async**
+> EmptyEnvelope delete_sales_literature_async(tenant_id, sales_literature_id)
 
+Delete a sales literature
 
+Deletes an existing sales literature by its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -279,16 +176,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -296,15 +183,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.SalesLiteraturesApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     sales_literature_id = 'sales_literature_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_deals_service_sales_literatures_sales_literature_id_delete(tenant_id, sales_literature_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SalesLiteraturesApi->api_v2_deals_service_sales_literatures_sales_literature_id_delete:\n")
+        # Delete a sales literature
+        api_response = api_instance.delete_sales_literature_async(tenant_id, sales_literature_id)
+        print("The response of SalesLiteraturesApi->delete_sales_literature_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SalesLiteraturesApi->api_v2_deals_service_sales_literatures_sales_literature_id_delete: %s\n" % e)
+        print("Exception when calling SalesLiteraturesApi->delete_sales_literature_async: %s\n" % e)
 ```
 
 
@@ -316,8 +202,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
  **sales_literature_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
@@ -325,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -341,14 +225,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_deals_service_sales_literatures_sales_literature_id_get**
-> SalesLiteratureDtoEnvelope api_v2_deals_service_sales_literatures_sales_literature_id_get(sales_literature_id, api_version=api_version, x_api_version=x_api_version)
+# **get_extended_sales_literatures_async**
+> ExtendedSalesLiteratureDtoListEnvelope get_extended_sales_literatures_async(tenant_id)
 
+Get extended sales literatures
 
+Retrieves a list of sales literatures with extended details for the specified tenant with OData query support.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+
+```python
+import openapi_client
+from openapi_client.models.extended_sales_literature_dto_list_envelope import ExtendedSalesLiteratureDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SalesLiteraturesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+
+    try:
+        # Get extended sales literatures
+        api_response = api_instance.get_extended_sales_literatures_async(tenant_id)
+        print("The response of SalesLiteraturesApi->get_extended_sales_literatures_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SalesLiteraturesApi->get_extended_sales_literatures_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+
+### Return type
+
+[**ExtendedSalesLiteratureDtoListEnvelope**](ExtendedSalesLiteratureDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_sales_literature_async**
+> SalesLiteratureDtoEnvelope get_sales_literature_async(tenant_id, sales_literature_id)
+
+Get sales literature by ID
+
+Retrieves a single sales literature by its unique identifier.
+
+### Example
+
 
 ```python
 import openapi_client
@@ -362,31 +316,21 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SalesLiteraturesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     sales_literature_id = 'sales_literature_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_deals_service_sales_literatures_sales_literature_id_get(sales_literature_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SalesLiteraturesApi->api_v2_deals_service_sales_literatures_sales_literature_id_get:\n")
+        # Get sales literature by ID
+        api_response = api_instance.get_sales_literature_async(tenant_id, sales_literature_id)
+        print("The response of SalesLiteraturesApi->get_sales_literature_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SalesLiteraturesApi->api_v2_deals_service_sales_literatures_sales_literature_id_get: %s\n" % e)
+        print("Exception when calling SalesLiteraturesApi->get_sales_literature_async: %s\n" % e)
 ```
 
 
@@ -396,9 +340,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **sales_literature_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
@@ -406,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -422,14 +365,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_deals_service_sales_literatures_sales_literature_id_put**
-> EmptyEnvelope api_v2_deals_service_sales_literatures_sales_literature_id_put(tenant_id, sales_literature_id, api_version=api_version, x_api_version=x_api_version, sales_literature_update_dto=sales_literature_update_dto)
+# **get_sales_literatures_async**
+> SalesLiteratureDtoListEnvelope get_sales_literatures_async(tenant_id)
 
+Get sales literatures
 
+Retrieves a list of sales literatures for the specified tenant with OData query support.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+
+```python
+import openapi_client
+from openapi_client.models.sales_literature_dto_list_envelope import SalesLiteratureDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SalesLiteraturesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+
+    try:
+        # Get sales literatures
+        api_response = api_instance.get_sales_literatures_async(tenant_id)
+        print("The response of SalesLiteraturesApi->get_sales_literatures_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SalesLiteraturesApi->get_sales_literatures_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+
+### Return type
+
+[**SalesLiteratureDtoListEnvelope**](SalesLiteratureDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_sales_literature_async**
+> EmptyEnvelope update_sales_literature_async(tenant_id, sales_literature_id, sales_literature_update_dto=sales_literature_update_dto)
+
+Update a sales literature
+
+Updates an existing sales literature by its unique identifier.
+
+### Example
+
 
 ```python
 import openapi_client
@@ -444,16 +457,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -461,16 +464,15 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.SalesLiteraturesApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     sales_literature_id = 'sales_literature_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
     sales_literature_update_dto = openapi_client.SalesLiteratureUpdateDto() # SalesLiteratureUpdateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_deals_service_sales_literatures_sales_literature_id_put(tenant_id, sales_literature_id, api_version=api_version, x_api_version=x_api_version, sales_literature_update_dto=sales_literature_update_dto)
-        print("The response of SalesLiteraturesApi->api_v2_deals_service_sales_literatures_sales_literature_id_put:\n")
+        # Update a sales literature
+        api_response = api_instance.update_sales_literature_async(tenant_id, sales_literature_id, sales_literature_update_dto=sales_literature_update_dto)
+        print("The response of SalesLiteraturesApi->update_sales_literature_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SalesLiteraturesApi->api_v2_deals_service_sales_literatures_sales_literature_id_put: %s\n" % e)
+        print("Exception when calling SalesLiteraturesApi->update_sales_literature_async: %s\n" % e)
 ```
 
 
@@ -482,8 +484,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
  **sales_literature_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
  **sales_literature_update_dto** | [**SalesLiteratureUpdateDto**](SalesLiteratureUpdateDto.md)|  | [optional] 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

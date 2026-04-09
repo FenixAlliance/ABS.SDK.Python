@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | 
-**type** | **int** |  | 
+**type** | **str** |  | 
 **first_name** | **str** |  | 
 **last_name** | **str** |  | [optional] 
 **email** | **str** |  | 
@@ -42,11 +42,12 @@ Name | Type | Description | Notes
 **linked_in_url** | **str** |  | [optional] 
 **instagram_url** | **str** |  | [optional] 
 **github_username** | **str** |  | [optional] 
-**instagram_username** | **object** |  | [optional] 
-**tik_tok_username** | **object** |  | [optional] 
-**stack_exchange_url** | **object** |  | [optional] 
-**stack_overflow_url** | **object** |  | [optional] 
-**parent_contact_id** | **object** |  | [optional] 
+**instagram_username** | **str** |  | [optional] 
+**tik_tok_username** | **str** |  | [optional] 
+**stack_exchange_url** | **str** |  | [optional] 
+**stack_overflow_url** | **str** |  | [optional] 
+**parent_contact_id** | **str** |  | [optional] 
+**fax_number** | **str** |  | [optional] 
 
 ## Example
 

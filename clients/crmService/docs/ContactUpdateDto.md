@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **int** |  | 
+**type** | **str** |  | 
 **birthday** | **datetime** |  | [optional] 
 **duns** | **str** |  | [optional] 
 **tax_id** | **str** |  | [optional] 
@@ -20,9 +20,11 @@ Name | Type | Description | Notes
 **job_title** | **str** |  | [optional] 
 **country_id** | **str** |  | [optional] 
 **parent_contact_id** | **str** |  | [optional] 
+**address_line1** | **str** |  | [optional] 
+**address_line2** | **str** |  | [optional] 
+**postal_code** | **str** |  | [optional] 
 **state_id** | **str** |  | [optional] 
 **city_id** | **str** |  | [optional] 
-**postal_code** | **str** |  | [optional] 
 **street_line1** | **str** |  | [optional] 
 **street_line2** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
@@ -31,20 +33,20 @@ Name | Type | Description | Notes
 **cover_url** | **str** |  | [optional] 
 **github_username** | **str** |  | [optional] 
 **instagram_username** | **str** |  | [optional] 
+**web_url** | **str** |  | [optional] 
 **twitch_url** | **str** |  | [optional] 
 **reddit_url** | **str** |  | [optional] 
 **git_hub_url** | **str** |  | [optional] 
-**github_url** | **str** |  | [optional] 
 **tik_tok_url** | **str** |  | [optional] 
 **twitter_url** | **str** |  | [optional] 
 **you_tube_url** | **str** |  | [optional] 
-**website_url** | **str** |  | [optional] 
 **facebook_url** | **str** |  | [optional] 
 **linked_in_url** | **str** |  | [optional] 
 **instagram_url** | **str** |  | [optional] 
 **tik_tok_username** | **str** |  | [optional] 
 **stack_exchange_url** | **str** |  | [optional] 
 **stack_overflow_url** | **str** |  | [optional] 
+**fax_number** | **str** |  | [optional] 
 
 ## Example
 

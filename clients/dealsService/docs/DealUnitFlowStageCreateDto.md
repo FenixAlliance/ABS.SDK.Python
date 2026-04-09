@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **order** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **deal_unit_flow_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **parent_business_process_stage_id** | **str** |  | [optional] 
 
 ## Example

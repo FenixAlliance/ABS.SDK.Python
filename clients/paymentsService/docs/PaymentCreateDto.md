@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **invoice_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **emisor_wallet_id** | **str** |  | [optional] 
@@ -25,9 +25,9 @@ Name | Type | Description | Notes
 **reference_code** | **str** |  | [optional] 
 **correlation_code** | **str** |  | [optional] 
 **last_updated** | **datetime** |  | [optional] 
-**on_behalf_of** | **int** |  | [optional] 
-**payment_type** | **int** |  | [optional] 
-**payment_status** | **int** |  | [optional] 
+**on_behalf_of** | **str** |  | [optional] 
+**payment_type** | **str** |  | [optional] 
+**payment_status** | **str** |  | [optional] 
 **base_cost** | **float** |  | [optional] 
 **signature** | **str** |  | [optional] 
 **signature_mismatch** | **bool** |  | [optional] 
@@ -60,7 +60,7 @@ Name | Type | Description | Notes
 **accounting_entry_id** | **str** |  | [optional] 
 **payment_gateway_id** | **str** |  | [optional] 
 **bank_account_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **bank_id** | **str** |  | [optional] 
 **payment_token_id** | **str** |  | [optional] 
 **emisor_wallet_account_id** | **str** |  | [optional] 

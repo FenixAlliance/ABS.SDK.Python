@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**approval_status** | **int** |  | [optional] 
+**approval_status** | **str** |  | [optional] 
 **comments** | **str** |  | [optional] 
 
 ## Example

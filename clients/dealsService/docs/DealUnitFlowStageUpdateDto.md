@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **order** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **deal_unit_flow_id** | **str** |  | [optional] 
 **parent_business_process_stage_id** | **str** |  | [optional] 
 

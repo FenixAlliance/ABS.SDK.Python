@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **title** | **str** |  | [optional] 
 **content** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **modified_date** | **datetime** |  | [optional] 
 **expiration_date** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **sales_literature_type_id** | **str** |  | [optional] 
 
 ## Example

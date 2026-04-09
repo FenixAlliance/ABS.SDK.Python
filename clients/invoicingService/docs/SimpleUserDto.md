@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **full_name** | **str** |  | [optional] [readonly] 
 **qualified_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
+**handler** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **cover_url** | **str** |  | [optional] 

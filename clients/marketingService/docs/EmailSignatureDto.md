@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
+**code_type** | **str** |  | [optional] 
 **order** | **int** |  | [optional] 
 **slug** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **highlight_image** | **str** |  | [optional] 
 **canonical_url** | **str** |  | [optional] 
+**emit_result** | **object** |  | [optional] 
 **seo_title** | **str** |  | [optional] 
 **seo_key_words** | **str** |  | [optional] 
 **seo_key_phrases** | **str** |  | [optional] 

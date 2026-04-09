@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**timestamp** | **datetime** |  | [optional] 
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
 **code** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

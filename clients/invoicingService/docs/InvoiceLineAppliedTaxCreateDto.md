@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **invoice_id** | **str** |  | [optional] 
 **tax_policy_id** | **str** |  | [optional] 

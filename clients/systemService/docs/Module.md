@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **full_name** | **str** |  | [optional] [readonly] 
 **description** | **str** |  | [optional] 
-**type** | **int** |  | [optional] 
+**type** | **str** |  | [optional] 
 **configuration** | **str** |  | [optional] 
 **author** | **str** |  | [optional] 
 **author_url** | **str** |  | [optional] 

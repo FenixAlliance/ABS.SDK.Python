@@ -4,17 +4,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_shipments_service_shipments_get**](ShipmentsApi.md#api_v2_shipments_service_shipments_get) | **GET** /api/v2/ShipmentsService/Shipments | 
+[**get_shipments_async**](ShipmentsApi.md#get_shipments_async) | **GET** /api/v2/ShipmentsService/Shipments | Retrieve a list of shipments
 
 
-# **api_v2_shipments_service_shipments_get**
-> ShipmentDtoListEnvelope api_v2_shipments_service_shipments_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **get_shipments_async**
+> ShipmentDtoListEnvelope get_shipments_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Retrieve a list of shipments
 
+Retrieves a list of shipments for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -28,16 +29,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -48,11 +39,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_shipments_service_shipments_get(tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of ShipmentsApi->api_v2_shipments_service_shipments_get:\n")
+        # Retrieve a list of shipments
+        api_response = api_instance.get_shipments_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of ShipmentsApi->get_shipments_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ShipmentsApi->api_v2_shipments_service_shipments_get: %s\n" % e)
+        print("Exception when calling ShipmentsApi->get_shipments_async: %s\n" % e)
 ```
 
 
@@ -72,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

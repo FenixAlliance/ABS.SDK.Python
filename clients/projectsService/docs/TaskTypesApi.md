@@ -4,20 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_projects_service_task_types_post**](TaskTypesApi.md#api_v2_projects_service_task_types_post) | **POST** /api/v2/ProjectsService/TaskTypes | 
-[**api_v2_projects_service_task_types_task_type_id_delete**](TaskTypesApi.md#api_v2_projects_service_task_types_task_type_id_delete) | **DELETE** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | 
-[**api_v2_projects_service_task_types_task_type_id_get**](TaskTypesApi.md#api_v2_projects_service_task_types_task_type_id_get) | **GET** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | 
-[**api_v2_projects_service_task_types_task_type_id_put**](TaskTypesApi.md#api_v2_projects_service_task_types_task_type_id_put) | **PUT** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | 
+[**create_task_type_async**](TaskTypesApi.md#create_task_type_async) | **POST** /api/v2/ProjectsService/TaskTypes | Creates a new task type
+[**delete_task_type_async**](TaskTypesApi.md#delete_task_type_async) | **DELETE** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Deletes a task type
+[**get_task_type_by_id_async**](TaskTypesApi.md#get_task_type_by_id_async) | **GET** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Gets a task type by ID
+[**update_task_type_async**](TaskTypesApi.md#update_task_type_async) | **PUT** /api/v2/ProjectsService/TaskTypes/{taskTypeId} | Updates a task type
 
 
-# **api_v2_projects_service_task_types_post**
-> TaskTypeDto api_v2_projects_service_task_types_post(tenant_id, api_version=api_version, x_api_version=x_api_version, task_type_create_dto=task_type_create_dto)
+# **create_task_type_async**
+> TaskTypeDto create_task_type_async(tenant_id, task_type_create_dto=task_type_create_dto)
 
+Creates a new task type
 
+Creates a new task type for the current tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -32,32 +33,21 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.TaskTypesApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
     task_type_create_dto = openapi_client.TaskTypeCreateDto() # TaskTypeCreateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_projects_service_task_types_post(tenant_id, api_version=api_version, x_api_version=x_api_version, task_type_create_dto=task_type_create_dto)
-        print("The response of TaskTypesApi->api_v2_projects_service_task_types_post:\n")
+        # Creates a new task type
+        api_response = api_instance.create_task_type_async(tenant_id, task_type_create_dto=task_type_create_dto)
+        print("The response of TaskTypesApi->create_task_type_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaskTypesApi->api_v2_projects_service_task_types_post: %s\n" % e)
+        print("Exception when calling TaskTypesApi->create_task_type_async: %s\n" % e)
 ```
 
 
@@ -68,8 +58,6 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
  **task_type_create_dto** | [**TaskTypeCreateDto**](TaskTypeCreateDto.md)|  | [optional] 
 
 ### Return type
@@ -78,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -95,14 +83,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_projects_service_task_types_task_type_id_delete**
-> TaskTypeDto api_v2_projects_service_task_types_task_type_id_delete(task_type_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **delete_task_type_async**
+> TaskTypeDto delete_task_type_async(task_type_id, tenant_id)
 
+Deletes a task type
 
+Deletes the specified task type.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -116,16 +105,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -133,15 +112,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.TaskTypesApi(api_client)
     task_type_id = 'task_type_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_projects_service_task_types_task_type_id_delete(task_type_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of TaskTypesApi->api_v2_projects_service_task_types_task_type_id_delete:\n")
+        # Deletes a task type
+        api_response = api_instance.delete_task_type_async(task_type_id, tenant_id)
+        print("The response of TaskTypesApi->delete_task_type_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaskTypesApi->api_v2_projects_service_task_types_task_type_id_delete: %s\n" % e)
+        print("Exception when calling TaskTypesApi->delete_task_type_async: %s\n" % e)
 ```
 
 
@@ -153,8 +131,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **task_type_id** | **str**|  | 
  **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
@@ -162,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -179,14 +155,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_projects_service_task_types_task_type_id_get**
-> TaskTypeDto api_v2_projects_service_task_types_task_type_id_get(task_type_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **get_task_type_by_id_async**
+> TaskTypeDto get_task_type_by_id_async(task_type_id, tenant_id)
 
+Gets a task type by ID
 
+Retrieves the details of a task type using its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -200,16 +177,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -217,15 +184,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.TaskTypesApi(api_client)
     task_type_id = 'task_type_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_projects_service_task_types_task_type_id_get(task_type_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of TaskTypesApi->api_v2_projects_service_task_types_task_type_id_get:\n")
+        # Gets a task type by ID
+        api_response = api_instance.get_task_type_by_id_async(task_type_id, tenant_id)
+        print("The response of TaskTypesApi->get_task_type_by_id_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaskTypesApi->api_v2_projects_service_task_types_task_type_id_get: %s\n" % e)
+        print("Exception when calling TaskTypesApi->get_task_type_by_id_async: %s\n" % e)
 ```
 
 
@@ -237,8 +203,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **task_type_id** | **str**|  | 
  **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
@@ -246,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -263,14 +227,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_projects_service_task_types_task_type_id_put**
-> TaskTypeDto api_v2_projects_service_task_types_task_type_id_put(task_type_id, tenant_id, api_version=api_version, x_api_version=x_api_version, task_type_update_dto=task_type_update_dto)
+# **update_task_type_async**
+> TaskTypeDto update_task_type_async(task_type_id, tenant_id, task_type_update_dto=task_type_update_dto)
 
+Updates a task type
 
+Updates the specified task type.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -285,16 +250,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -302,16 +257,15 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.TaskTypesApi(api_client)
     task_type_id = 'task_type_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
     task_type_update_dto = openapi_client.TaskTypeUpdateDto() # TaskTypeUpdateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_projects_service_task_types_task_type_id_put(task_type_id, tenant_id, api_version=api_version, x_api_version=x_api_version, task_type_update_dto=task_type_update_dto)
-        print("The response of TaskTypesApi->api_v2_projects_service_task_types_task_type_id_put:\n")
+        # Updates a task type
+        api_response = api_instance.update_task_type_async(task_type_id, tenant_id, task_type_update_dto=task_type_update_dto)
+        print("The response of TaskTypesApi->update_task_type_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TaskTypesApi->api_v2_projects_service_task_types_task_type_id_put: %s\n" % e)
+        print("Exception when calling TaskTypesApi->update_task_type_async: %s\n" % e)
 ```
 
 
@@ -323,8 +277,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **task_type_id** | **str**|  | 
  **tenant_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
  **task_type_update_dto** | [**TaskTypeUpdateDto**](TaskTypeUpdateDto.md)|  | [optional] 
 
 ### Return type
@@ -333,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

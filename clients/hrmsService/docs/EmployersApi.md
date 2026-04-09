@@ -4,26 +4,28 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_employer_async**](EmployersApi.md#create_employer_async) | **POST** /api/v2/HrmsService/Employers | 
-[**delete_employer_async**](EmployersApi.md#delete_employer_async) | **DELETE** /api/v2/HrmsService/Employers/{employerId} | 
-[**get_employer_by_id_async**](EmployersApi.md#get_employer_by_id_async) | **GET** /api/v2/HrmsService/Employers/{employerId} | 
-[**get_employers_async**](EmployersApi.md#get_employers_async) | **GET** /api/v2/HrmsService/Employers | 
-[**get_employers_count_async**](EmployersApi.md#get_employers_count_async) | **GET** /api/v2/HrmsService/Employers/Count | 
-[**update_employer_async**](EmployersApi.md#update_employer_async) | **PUT** /api/v2/HrmsService/Employers/{employerId} | 
+[**create_employer_async**](EmployersApi.md#create_employer_async) | **POST** /api/v2/HrmsService/Employers | Create an employer
+[**delete_employer_async**](EmployersApi.md#delete_employer_async) | **DELETE** /api/v2/HrmsService/Employers/{employerId} | Delete an employer
+[**get_employer_by_id_async**](EmployersApi.md#get_employer_by_id_async) | **GET** /api/v2/HrmsService/Employers/{employerId} | Get employer by ID
+[**get_employers_async**](EmployersApi.md#get_employers_async) | **GET** /api/v2/HrmsService/Employers | Get employers
+[**get_employers_count_async**](EmployersApi.md#get_employers_count_async) | **GET** /api/v2/HrmsService/Employers/Count | Count employers
+[**update_employer_async**](EmployersApi.md#update_employer_async) | **PUT** /api/v2/HrmsService/Employers/{employerId} | Update an employer
 
 
 # **create_employer_async**
-> create_employer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, employer_profile_create_dto=employer_profile_create_dto)
+> EmptyEnvelope create_employer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, employer_profile_create_dto=employer_profile_create_dto)
 
+Create an employer
 
+Creates a new employer for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
 from openapi_client.models.employer_profile_create_dto import EmployerProfileCreateDto
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -33,16 +35,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -54,7 +46,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     employer_profile_create_dto = openapi_client.EmployerProfileCreateDto() # EmployerProfileCreateDto |  (optional)
 
     try:
-        api_instance.create_employer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, employer_profile_create_dto=employer_profile_create_dto)
+        # Create an employer
+        api_response = api_instance.create_employer_async(tenant_id, api_version=api_version, x_api_version=x_api_version, employer_profile_create_dto=employer_profile_create_dto)
+        print("The response of EmployersApi->create_employer_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling EmployersApi->create_employer_async: %s\n" % e)
 ```
@@ -73,11 +68,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -91,20 +86,23 @@ void (empty response body)
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_employer_async**
-> delete_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version)
+> EmptyEnvelope delete_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete an employer
 
+Deletes an employer for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -114,16 +112,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -135,7 +123,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_instance.delete_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version)
+        # Delete an employer
+        api_response = api_instance.delete_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of EmployersApi->delete_employer_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling EmployersApi->delete_employer_async: %s\n" % e)
 ```
@@ -154,11 +145,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -172,17 +163,19 @@ void (empty response body)
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_employer_by_id_async**
 > EmployerProfileDtoEnvelope get_employer_by_id_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version)
 
+Get employer by ID
 
+Retrieves a specific employer by its identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -196,16 +189,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -217,6 +200,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Get employer by ID
         api_response = api_instance.get_employer_by_id_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of EmployersApi->get_employer_by_id_async:\n")
         pprint(api_response)
@@ -242,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -262,11 +246,12 @@ Name | Type | Description  | Notes
 # **get_employers_async**
 > EmployerProfileDtoListEnvelope get_employers_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Get employers
 
+Retrieves employers for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -280,16 +265,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -300,6 +275,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Get employers
         api_response = api_instance.get_employers_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of EmployersApi->get_employers_async:\n")
         pprint(api_response)
@@ -324,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -344,11 +320,12 @@ Name | Type | Description  | Notes
 # **get_employers_count_async**
 > Int32Envelope get_employers_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
+Count employers
 
+Counts employers for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -362,16 +339,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -382,6 +349,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
+        # Count employers
         api_response = api_instance.get_employers_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of EmployersApi->get_employers_count_async:\n")
         pprint(api_response)
@@ -406,7 +374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -424,16 +392,18 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employer_async**
-> update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+> EmptyEnvelope update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, body=body)
 
+Update an employer
 
+Updates an existing employer for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -443,16 +413,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -465,7 +425,10 @@ with openapi_client.ApiClient(configuration) as api_client:
     body = None # object |  (optional)
 
     try:
-        api_instance.update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        # Update an employer
+        api_response = api_instance.update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        print("The response of EmployersApi->update_employer_async:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling EmployersApi->update_employer_async: %s\n" % e)
 ```
@@ -485,11 +448,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -503,6 +466,7 @@ void (empty response body)
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **full_name** | **str** |  | [optional] [readonly] 
 **qualified_name** | **str** |  | [optional] 
 **public_name** | **str** |  | [optional] 
+**handler** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **cover_url** | **str** |  | [optional] 
@@ -27,7 +28,7 @@ Name | Type | Description | Notes
 **birthday** | **datetime** |  | [optional] 
 **id_provider** | **str** |  | [optional] 
 **language_id** | **str** |  | [optional] 
-**gender** | **int** |  | [optional] 
+**gender** | **str** |  | [optional] 
 **city_id** | **str** |  | [optional] 
 **state_id** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
@@ -46,11 +47,11 @@ Name | Type | Description | Notes
 **identity_provider** | **str** |  | [optional] 
 **phone_number_confirmed** | **bool** |  | [optional] 
 **email_confirmed** | **bool** |  | [optional] 
-**availability** | **int** |  | [optional] 
+**availability** | **str** |  | [optional] 
 **lockout_enabled** | **bool** |  | [optional] 
 **lockout_end** | **datetime** |  | [optional] 
 **enrollments_count** | **int** |  | [optional] 
-**site_theme** | **int** |  | [optional] 
+**site_theme** | **str** |  | [optional] 
 
 ## Example
 

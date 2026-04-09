@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **description** | **str** |  | [optional] 
 **begin_quantity** | **float** |  | [optional] 
 **end_quantity** | **float** |  | [optional] 
 **percent** | **float** |  | [optional] 
 **value** | **float** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **discount_list_id** | **str** |  | [optional] 
 
 ## Example

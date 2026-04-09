@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **valid_response** | **bool** |  | [optional] 
 **parent_file_upload_id** | **str** |  | [optional] 
 **file_path** | **str** |  | [optional] 
-**file** | **bytearray** |  | [optional] 
 **content_type** | **str** |  | [optional] 
 **file_length** | **int** |  | [optional] 
 

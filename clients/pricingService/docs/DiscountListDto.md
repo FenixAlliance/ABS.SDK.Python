@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

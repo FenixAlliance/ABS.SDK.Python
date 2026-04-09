@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **notes** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **author** | **str** |  | [optional] 
@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **valid_response** | **bool** |  | [optional] 
 **parent_file_upload_id** | **str** |  | [optional] 
 **file_path** | **str** |  | [optional] 
-**file** | **bytearray** |  | [optional] 
 **business_id** | **str** |  | [optional] 
 **business_profile_record_id** | **str** |  | [optional] 
 **metadata** | **str** |  | [optional] 

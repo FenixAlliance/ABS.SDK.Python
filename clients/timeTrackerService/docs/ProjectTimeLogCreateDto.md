@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **time_span** | **str** |  | [optional] 
 **log_date** | **datetime** |  | [optional] 
 **comments** | **str** |  | [optional] 
 **project_task_id** | **str** |  | 
 **project_period_id** | **str** |  | 
-**project_time_log_record_type** | **int** |  | [optional] 
+**project_time_log_record_type** | **str** |  | [optional] 
 **project_id** | **str** |  | [optional] 
 
 ## Example

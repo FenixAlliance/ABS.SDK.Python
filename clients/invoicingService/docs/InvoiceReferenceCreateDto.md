@@ -5,11 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] [readonly] 
-**timestamp** | **datetime** |  | [optional] [readonly] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
-**referral_invoice_id** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **referenced_invoice_id** | **str** |  | [optional] 
 
 ## Example

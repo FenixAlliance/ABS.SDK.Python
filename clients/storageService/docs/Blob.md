@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kind** | **int** |  | [optional] 
+**kind** | **str** |  | [optional] 
 **is_folder** | **bool** |  | [optional] [readonly] 
 **is_file** | **bool** |  | [optional] [readonly] 
 **folder_path** | **str** |  | [optional] [readonly] 

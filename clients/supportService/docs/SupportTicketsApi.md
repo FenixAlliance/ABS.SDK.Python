@@ -4,191 +4,28 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_support_service_support_tickets_count_get**](SupportTicketsApi.md#api_v2_support_service_support_tickets_count_get) | **GET** /api/v2/SupportService/SupportTickets/Count | 
-[**api_v2_support_service_support_tickets_get**](SupportTicketsApi.md#api_v2_support_service_support_tickets_get) | **GET** /api/v2/SupportService/SupportTickets | 
-[**api_v2_support_service_support_tickets_post**](SupportTicketsApi.md#api_v2_support_service_support_tickets_post) | **POST** /api/v2/SupportService/SupportTickets | 
-[**api_v2_support_service_support_tickets_support_ticket_id_conversations_get**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_conversations_get) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations | 
-[**api_v2_support_service_support_tickets_support_ticket_id_conversations_post**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_conversations_post) | **POST** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations | 
-[**api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete) | **DELETE** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations/{supportTicketConversationId} | 
-[**api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations/{supportTicketConversationId} | 
-[**api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations/{supportTicketConversationId}/Messages | 
-[**api_v2_support_service_support_tickets_support_ticket_id_delete**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_delete) | **DELETE** /api/v2/SupportService/SupportTickets/{supportTicketId} | 
-[**api_v2_support_service_support_tickets_support_ticket_id_get**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_get) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId} | 
-[**api_v2_support_service_support_tickets_support_ticket_id_put**](SupportTicketsApi.md#api_v2_support_service_support_tickets_support_ticket_id_put) | **PUT** /api/v2/SupportService/SupportTickets/{supportTicketId} | 
+[**create_support_ticket_async**](SupportTicketsApi.md#create_support_ticket_async) | **POST** /api/v2/SupportService/SupportTickets | Create a new support ticket
+[**delete_support_ticket_async**](SupportTicketsApi.md#delete_support_ticket_async) | **DELETE** /api/v2/SupportService/SupportTickets/{supportTicketId} | Delete a support ticket
+[**delete_support_ticket_conversation_async**](SupportTicketsApi.md#delete_support_ticket_conversation_async) | **DELETE** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations/{supportTicketConversationId} | Delete a conversation from a support ticket
+[**get_support_ticket_async**](SupportTicketsApi.md#get_support_ticket_async) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId} | Retrieve a support ticket by ID
+[**get_support_ticket_conversation_async**](SupportTicketsApi.md#get_support_ticket_conversation_async) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations/{supportTicketConversationId} | Retrieve a specific conversation for a support ticket
+[**get_support_ticket_conversation_messages_async**](SupportTicketsApi.md#get_support_ticket_conversation_messages_async) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations/{supportTicketConversationId}/Messages | Retrieve messages for a support ticket conversation
+[**get_support_ticket_conversations_async**](SupportTicketsApi.md#get_support_ticket_conversations_async) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations | Retrieve conversations for a support ticket
+[**get_support_tickets_async**](SupportTicketsApi.md#get_support_tickets_async) | **GET** /api/v2/SupportService/SupportTickets | Retrieve a list of support tickets
+[**get_support_tickets_count_async**](SupportTicketsApi.md#get_support_tickets_count_async) | **GET** /api/v2/SupportService/SupportTickets/Count | Get the count of support tickets
+[**relate_support_ticket_to_conversation_async**](SupportTicketsApi.md#relate_support_ticket_to_conversation_async) | **POST** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations | Create a conversation for a support ticket
+[**update_support_ticket_async**](SupportTicketsApi.md#update_support_ticket_async) | **PUT** /api/v2/SupportService/SupportTickets/{supportTicketId} | Update a support ticket
 
 
-# **api_v2_support_service_support_tickets_count_get**
-> Int32Envelope api_v2_support_service_support_tickets_count_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **create_support_ticket_async**
+> EmptyEnvelope create_support_ticket_async(tenant_id, api_version=api_version, x_api_version=x_api_version, support_ticket_create_dto=support_ticket_create_dto)
 
+Create a new support ticket
 
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.int32_envelope import Int32Envelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_count_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_count_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_count_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**Int32Envelope**](Int32Envelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_get**
-> SupportTicketDtoListEnvelope api_v2_support_service_support_tickets_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
+Creates a new support ticket for the specified tenant.
 
 ### Example
 
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.support_ticket_dto_list_envelope import SupportTicketDtoListEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_get(tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**SupportTicketDtoListEnvelope**](SupportTicketDtoListEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_post**
-> EmptyEnvelope api_v2_support_service_support_tickets_post(support_ticket_create_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -203,32 +40,23 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportTicketsApi(api_client)
-    support_ticket_create_dto = openapi_client.SupportTicketCreateDto() # SupportTicketCreateDto | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
+    tenant_id = 'tenant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
+    support_ticket_create_dto = openapi_client.SupportTicketCreateDto() # SupportTicketCreateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_tickets_post(support_ticket_create_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_post:\n")
+        # Create a new support ticket
+        api_response = api_instance.create_support_ticket_async(tenant_id, api_version=api_version, x_api_version=x_api_version, support_ticket_create_dto=support_ticket_create_dto)
+        print("The response of SupportTicketsApi->create_support_ticket_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_post: %s\n" % e)
+        print("Exception when calling SupportTicketsApi->create_support_ticket_async: %s\n" % e)
 ```
 
 
@@ -238,10 +66,10 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **support_ticket_create_dto** | [**SupportTicketCreateDto**](SupportTicketCreateDto.md)|  | 
- **tenant_id** | **str**|  | [optional] 
+ **tenant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
+ **support_ticket_create_dto** | [**SupportTicketCreateDto**](SupportTicketCreateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -249,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -262,22 +90,23 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
-**201** | Created |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_support_service_support_tickets_support_ticket_id_conversations_get**
-> SupportTicketConversationDtoListEnvelope api_v2_support_service_support_tickets_support_ticket_id_conversations_get(support_ticket_id, api_version=api_version, x_api_version=x_api_version)
+# **delete_support_ticket_async**
+> EmptyEnvelope delete_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete a support ticket
 
+Deletes a support ticket by its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
-from openapi_client.models.support_ticket_conversation_dto_list_envelope import SupportTicketConversationDtoListEnvelope
+from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -287,31 +116,23 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     support_ticket_id = 'support_ticket_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_conversations_get(support_ticket_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_get:\n")
+        # Delete a support ticket
+        api_response = api_instance.delete_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->delete_support_ticket_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_get: %s\n" % e)
+        print("Exception when calling SupportTicketsApi->delete_support_ticket_async: %s\n" % e)
 ```
 
 
@@ -321,17 +142,18 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **support_ticket_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
-[**SupportTicketConversationDtoListEnvelope**](SupportTicketConversationDtoListEnvelope.md)
+[**EmptyEnvelope**](EmptyEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -348,14 +170,553 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_support_service_support_tickets_support_ticket_id_conversations_post**
-> EmptyEnvelope api_v2_support_service_support_tickets_support_ticket_id_conversations_post(support_ticket_id, support_ticket_conversation_create_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
+# **delete_support_ticket_conversation_async**
+> EmptyEnvelope delete_support_ticket_conversation_async(tenant_id, support_ticket_id, support_ticket_conversation_id, api_version=api_version, x_api_version=x_api_version)
 
+Delete a conversation from a support ticket
 
+Deletes a specific conversation from a support ticket.
 
 ### Example
 
-* Api Key Authentication (Bearer):
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_ticket_id = 'support_ticket_id_example' # str | 
+    support_ticket_conversation_id = 'support_ticket_conversation_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Delete a conversation from a support ticket
+        api_response = api_instance.delete_support_ticket_conversation_async(tenant_id, support_ticket_id, support_ticket_conversation_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->delete_support_ticket_conversation_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->delete_support_ticket_conversation_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_ticket_id** | **str**|  | 
+ **support_ticket_conversation_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_ticket_async**
+> SupportTicketDtoEnvelope get_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version)
+
+Retrieve a support ticket by ID
+
+Retrieves a single support ticket by its unique identifier.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.support_ticket_dto_envelope import SupportTicketDtoEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_ticket_id = 'support_ticket_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Retrieve a support ticket by ID
+        api_response = api_instance.get_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->get_support_ticket_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->get_support_ticket_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_ticket_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**SupportTicketDtoEnvelope**](SupportTicketDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_ticket_conversation_async**
+> SupportTicketConversationDtoEnvelope get_support_ticket_conversation_async(tenant_id, support_ticket_id, support_ticket_conversation_id, api_version=api_version, x_api_version=x_api_version)
+
+Retrieve a specific conversation for a support ticket
+
+Retrieves a single conversation by its ID for a specific support ticket.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.support_ticket_conversation_dto_envelope import SupportTicketConversationDtoEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_ticket_id = 'support_ticket_id_example' # str | 
+    support_ticket_conversation_id = 'support_ticket_conversation_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Retrieve a specific conversation for a support ticket
+        api_response = api_instance.get_support_ticket_conversation_async(tenant_id, support_ticket_id, support_ticket_conversation_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->get_support_ticket_conversation_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->get_support_ticket_conversation_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_ticket_id** | **str**|  | 
+ **support_ticket_conversation_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**SupportTicketConversationDtoEnvelope**](SupportTicketConversationDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_ticket_conversation_messages_async**
+> PrivateMessageDtoListEnvelope get_support_ticket_conversation_messages_async(tenant_id, support_ticket_id, support_ticket_conversation_id, page_number=page_number, page_size=page_size, api_version=api_version, x_api_version=x_api_version)
+
+Retrieve messages for a support ticket conversation
+
+Retrieves the list of messages within a specific conversation of a support ticket.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.private_message_dto_list_envelope import PrivateMessageDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_ticket_id = 'support_ticket_id_example' # str | 
+    support_ticket_conversation_id = 'support_ticket_conversation_id_example' # str | 
+    page_number = 56 # int |  (optional)
+    page_size = 56 # int |  (optional)
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Retrieve messages for a support ticket conversation
+        api_response = api_instance.get_support_ticket_conversation_messages_async(tenant_id, support_ticket_id, support_ticket_conversation_id, page_number=page_number, page_size=page_size, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->get_support_ticket_conversation_messages_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->get_support_ticket_conversation_messages_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_ticket_id** | **str**|  | 
+ **support_ticket_conversation_id** | **str**|  | 
+ **page_number** | **int**|  | [optional] 
+ **page_size** | **int**|  | [optional] 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**PrivateMessageDtoListEnvelope**](PrivateMessageDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_ticket_conversations_async**
+> SupportTicketConversationDtoListEnvelope get_support_ticket_conversations_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version)
+
+Retrieve conversations for a support ticket
+
+Retrieves the list of conversations associated with a specific support ticket.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.support_ticket_conversation_dto_list_envelope import SupportTicketConversationDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_ticket_id = 'support_ticket_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Retrieve conversations for a support ticket
+        api_response = api_instance.get_support_ticket_conversations_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->get_support_ticket_conversations_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->get_support_ticket_conversations_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_ticket_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**SupportTicketConversationDtoListEnvelope**](SupportTicketConversationDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_tickets_async**
+> SupportTicketDtoListEnvelope get_support_tickets_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+
+Retrieve a list of support tickets
+
+Retrieves a list of support tickets for the specified tenant with OData query support.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.support_ticket_dto_list_envelope import SupportTicketDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Retrieve a list of support tickets
+        api_response = api_instance.get_support_tickets_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->get_support_tickets_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->get_support_tickets_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**SupportTicketDtoListEnvelope**](SupportTicketDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_support_tickets_count_async**
+> Int32Envelope get_support_tickets_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+
+Get the count of support tickets
+
+Returns the total count of support tickets for the specified tenant with OData query support.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.int32_envelope import Int32Envelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get the count of support tickets
+        api_response = api_instance.get_support_tickets_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of SupportTicketsApi->get_support_tickets_count_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->get_support_tickets_count_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**Int32Envelope**](Int32Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **relate_support_ticket_to_conversation_async**
+> EmptyEnvelope relate_support_ticket_to_conversation_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version, support_ticket_conversation_create_dto=support_ticket_conversation_create_dto)
+
+Create a conversation for a support ticket
+
+Creates a new conversation and associates it with the specified support ticket.
+
+### Example
+
 
 ```python
 import openapi_client
@@ -370,33 +731,24 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     support_ticket_id = 'support_ticket_id_example' # str | 
-    support_ticket_conversation_create_dto = openapi_client.SupportTicketConversationCreateDto() # SupportTicketConversationCreateDto | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
+    support_ticket_conversation_create_dto = openapi_client.SupportTicketConversationCreateDto() # SupportTicketConversationCreateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_conversations_post(support_ticket_id, support_ticket_conversation_create_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_post:\n")
+        # Create a conversation for a support ticket
+        api_response = api_instance.relate_support_ticket_to_conversation_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version, support_ticket_conversation_create_dto=support_ticket_conversation_create_dto)
+        print("The response of SupportTicketsApi->relate_support_ticket_to_conversation_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_post: %s\n" % e)
+        print("Exception when calling SupportTicketsApi->relate_support_ticket_to_conversation_async: %s\n" % e)
 ```
 
 
@@ -406,11 +758,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **support_ticket_id** | **str**|  | 
- **support_ticket_conversation_create_dto** | [**SupportTicketConversationCreateDto**](SupportTicketConversationCreateDto.md)|  | 
- **tenant_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
+ **support_ticket_conversation_create_dto** | [**SupportTicketConversationCreateDto**](SupportTicketConversationCreateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -418,7 +770,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -431,442 +783,19 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
-**201** | Created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete**
-> EmptyEnvelope api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete(support_ticket_id, support_ticket_conversation_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.empty_envelope import EmptyEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    support_ticket_id = 'support_ticket_id_example' # str | 
-    support_ticket_conversation_id = 'support_ticket_conversation_id_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete(support_ticket_id, support_ticket_conversation_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_delete: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **support_ticket_id** | **str**|  | 
- **support_ticket_conversation_id** | **str**|  | 
- **tenant_id** | **str**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**EmptyEnvelope**](EmptyEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get**
-> SupportTicketConversationDtoEnvelope api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get(support_ticket_id, support_ticket_conversation_id, api_version=api_version, x_api_version=x_api_version)
+# **update_support_ticket_async**
+> EmptyEnvelope update_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version, support_ticket_update_dto=support_ticket_update_dto)
 
+Update a support ticket
 
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.support_ticket_conversation_dto_envelope import SupportTicketConversationDtoEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    support_ticket_id = 'support_ticket_id_example' # str | 
-    support_ticket_conversation_id = 'support_ticket_conversation_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get(support_ticket_id, support_ticket_conversation_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **support_ticket_id** | **str**|  | 
- **support_ticket_conversation_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**SupportTicketConversationDtoEnvelope**](SupportTicketConversationDtoEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get**
-> PrivateMessageDtoListEnvelope api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get(support_ticket_conversation_id, support_ticket_id, page_number=page_number, page_size=page_size, api_version=api_version, x_api_version=x_api_version)
-
-
+Updates an existing support ticket by its unique identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.private_message_dto_list_envelope import PrivateMessageDtoListEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    support_ticket_conversation_id = 'support_ticket_conversation_id_example' # str | 
-    support_ticket_id = 'support_ticket_id_example' # str | 
-    page_number = 56 # int |  (optional)
-    page_size = 56 # int |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get(support_ticket_conversation_id, support_ticket_id, page_number=page_number, page_size=page_size, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_conversations_support_ticket_conversation_id_messages_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **support_ticket_conversation_id** | **str**|  | 
- **support_ticket_id** | **str**|  | 
- **page_number** | **int**|  | [optional] 
- **page_size** | **int**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**PrivateMessageDtoListEnvelope**](PrivateMessageDtoListEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_support_ticket_id_delete**
-> EmptyEnvelope api_v2_support_service_support_tickets_support_ticket_id_delete(support_ticket_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.empty_envelope import EmptyEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    support_ticket_id = 'support_ticket_id_example' # str | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_delete(support_ticket_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_delete:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_delete: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **support_ticket_id** | **str**|  | 
- **tenant_id** | **str**|  | [optional] 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**EmptyEnvelope**](EmptyEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_support_ticket_id_get**
-> SupportTicketDtoEnvelope api_v2_support_service_support_tickets_support_ticket_id_get(support_ticket_id, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
-
-```python
-import openapi_client
-from openapi_client.models.support_ticket_dto_envelope import SupportTicketDtoEnvelope
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SupportTicketsApi(api_client)
-    support_ticket_id = 'support_ticket_id_example' # str | 
-    api_version = 'api_version_example' # str |  (optional)
-    x_api_version = 'x_api_version_example' # str |  (optional)
-
-    try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_get(support_ticket_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **support_ticket_id** | **str**|  | 
- **api_version** | **str**|  | [optional] 
- **x_api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**SupportTicketDtoEnvelope**](SupportTicketDtoEnvelope.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**403** | Forbidden |  -  |
-**401** | Unauthorized |  -  |
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **api_v2_support_service_support_tickets_support_ticket_id_put**
-> EmptyEnvelope api_v2_support_service_support_tickets_support_ticket_id_put(support_ticket_id, support_ticket_update_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-
-
-
-### Example
-
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -881,33 +810,24 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     support_ticket_id = 'support_ticket_id_example' # str | 
-    support_ticket_update_dto = openapi_client.SupportTicketUpdateDto() # SupportTicketUpdateDto | 
-    tenant_id = 'tenant_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
+    support_ticket_update_dto = openapi_client.SupportTicketUpdateDto() # SupportTicketUpdateDto |  (optional)
 
     try:
-        api_response = api_instance.api_v2_support_service_support_tickets_support_ticket_id_put(support_ticket_id, support_ticket_update_dto, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_put:\n")
+        # Update a support ticket
+        api_response = api_instance.update_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version, support_ticket_update_dto=support_ticket_update_dto)
+        print("The response of SupportTicketsApi->update_support_ticket_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SupportTicketsApi->api_v2_support_service_support_tickets_support_ticket_id_put: %s\n" % e)
+        print("Exception when calling SupportTicketsApi->update_support_ticket_async: %s\n" % e)
 ```
 
 
@@ -917,11 +837,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **support_ticket_id** | **str**|  | 
- **support_ticket_update_dto** | [**SupportTicketUpdateDto**](SupportTicketUpdateDto.md)|  | 
- **tenant_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
+ **support_ticket_update_dto** | [**SupportTicketUpdateDto**](SupportTicketUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -929,7 +849,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

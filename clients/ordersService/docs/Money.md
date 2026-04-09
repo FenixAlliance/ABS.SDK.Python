@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **float** |  | [optional] 
-**currency** | [**Currency**](Currency.md) |  | [optional] 
+**currency** | [**CurrencyId**](CurrencyId.md) |  | [optional] 
 
 ## Example
 

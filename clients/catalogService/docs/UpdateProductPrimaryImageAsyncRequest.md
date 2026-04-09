@@ -1,0 +1,29 @@
+# UpdateProductPrimaryImageAsyncRequest
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**data** | **bytearray** |  | [optional] 
+
+## Example
+
+```python
+from openapi_client.models.update_product_primary_image_async_request import UpdateProductPrimaryImageAsyncRequest
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of UpdateProductPrimaryImageAsyncRequest from a JSON string
+update_product_primary_image_async_request_instance = UpdateProductPrimaryImageAsyncRequest.from_json(json)
+# print the JSON string representation of the object
+print(UpdateProductPrimaryImageAsyncRequest.to_json())
+
+# convert the object into a dict
+update_product_primary_image_async_request_dict = update_product_primary_image_async_request_instance.to_dict()
+# create an instance of UpdateProductPrimaryImageAsyncRequest from a dict
+update_product_primary_image_async_request_from_dict = UpdateProductPrimaryImageAsyncRequest.from_dict(update_product_primary_image_async_request_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

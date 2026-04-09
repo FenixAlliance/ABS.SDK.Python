@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **modified_date** | **datetime** |  | [optional] 
 **expiration_date** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**enrolment_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **sales_literature_type_id** | **str** |  | [optional] 
 
 ## Example

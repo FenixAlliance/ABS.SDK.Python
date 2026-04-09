@@ -4,20 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_forex_service_rates_history_currency_id_get**](RatesApi.md#api_v2_forex_service_rates_history_currency_id_get) | **GET** /api/v2/ForexService/Rates/History/{currencyId} | 
-[**api_v2_forex_service_rates_history_get**](RatesApi.md#api_v2_forex_service_rates_history_get) | **GET** /api/v2/ForexService/Rates/History | 
-[**api_v2_forex_service_rates_latest_currency_id_get**](RatesApi.md#api_v2_forex_service_rates_latest_currency_id_get) | **GET** /api/v2/ForexService/Rates/Latest/{currencyId} | 
-[**api_v2_forex_service_rates_latest_get**](RatesApi.md#api_v2_forex_service_rates_latest_get) | **GET** /api/v2/ForexService/Rates/Latest | 
+[**get_historical_currency_rate_async**](RatesApi.md#get_historical_currency_rate_async) | **GET** /api/v2/ForexService/Rates/History/{currencyId} | Get historical rate for a currency
+[**get_historical_currency_rates_async**](RatesApi.md#get_historical_currency_rates_async) | **GET** /api/v2/ForexService/Rates/History | Get historical currency rates
+[**get_latest_currency_rate_async**](RatesApi.md#get_latest_currency_rate_async) | **GET** /api/v2/ForexService/Rates/Latest/{currencyId} | Get latest rate for a currency
+[**get_latest_currency_rates_model_async**](RatesApi.md#get_latest_currency_rates_model_async) | **GET** /api/v2/ForexService/Rates/Latest | Get latest currency rates
 
 
-# **api_v2_forex_service_rates_history_currency_id_get**
-> ExchangeRateEnvelope api_v2_forex_service_rates_history_currency_id_get(currency_id, var_date=var_date, api_version=api_version, x_api_version=x_api_version)
+# **get_historical_currency_rate_async**
+> ExchangeRateEnvelope get_historical_currency_rate_async(currency_id, var_date=var_date, api_version=api_version, x_api_version=x_api_version)
 
+Get historical rate for a currency
 
+Retrieves the exchange rate for a specific currency as of a specific historical date.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -31,16 +32,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -52,11 +43,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_forex_service_rates_history_currency_id_get(currency_id, var_date=var_date, api_version=api_version, x_api_version=x_api_version)
-        print("The response of RatesApi->api_v2_forex_service_rates_history_currency_id_get:\n")
+        # Get historical rate for a currency
+        api_response = api_instance.get_historical_currency_rate_async(currency_id, var_date=var_date, api_version=api_version, x_api_version=x_api_version)
+        print("The response of RatesApi->get_historical_currency_rate_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RatesApi->api_v2_forex_service_rates_history_currency_id_get: %s\n" % e)
+        print("Exception when calling RatesApi->get_historical_currency_rate_async: %s\n" % e)
 ```
 
 
@@ -77,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -94,14 +86,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_forex_service_rates_history_get**
-> ForexRatesDtoEnvelope api_v2_forex_service_rates_history_get(var_date=var_date, api_version=api_version, x_api_version=x_api_version)
+# **get_historical_currency_rates_async**
+> ForexRatesDtoEnvelope get_historical_currency_rates_async(var_date=var_date, api_version=api_version, x_api_version=x_api_version)
 
+Get historical currency rates
 
+Retrieves exchange rates for all supported currencies as of a specific historical date.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -115,16 +108,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -135,11 +118,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_forex_service_rates_history_get(var_date=var_date, api_version=api_version, x_api_version=x_api_version)
-        print("The response of RatesApi->api_v2_forex_service_rates_history_get:\n")
+        # Get historical currency rates
+        api_response = api_instance.get_historical_currency_rates_async(var_date=var_date, api_version=api_version, x_api_version=x_api_version)
+        print("The response of RatesApi->get_historical_currency_rates_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RatesApi->api_v2_forex_service_rates_history_get: %s\n" % e)
+        print("Exception when calling RatesApi->get_historical_currency_rates_async: %s\n" % e)
 ```
 
 
@@ -159,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -176,14 +160,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_forex_service_rates_latest_currency_id_get**
-> ExchangeRateEnvelope api_v2_forex_service_rates_latest_currency_id_get(currency_id, api_version=api_version, x_api_version=x_api_version)
+# **get_latest_currency_rate_async**
+> ExchangeRateEnvelope get_latest_currency_rate_async(currency_id, api_version=api_version, x_api_version=x_api_version)
 
+Get latest rate for a currency
 
+Retrieves the latest exchange rate for a specific currency by its identifier.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -197,16 +182,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -217,11 +192,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_forex_service_rates_latest_currency_id_get(currency_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of RatesApi->api_v2_forex_service_rates_latest_currency_id_get:\n")
+        # Get latest rate for a currency
+        api_response = api_instance.get_latest_currency_rate_async(currency_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of RatesApi->get_latest_currency_rate_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RatesApi->api_v2_forex_service_rates_latest_currency_id_get: %s\n" % e)
+        print("Exception when calling RatesApi->get_latest_currency_rate_async: %s\n" % e)
 ```
 
 
@@ -241,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -258,14 +234,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_forex_service_rates_latest_get**
-> ForexRatesDtoEnvelope api_v2_forex_service_rates_latest_get(api_version=api_version, x_api_version=x_api_version)
+# **get_latest_currency_rates_model_async**
+> ForexRatesDtoEnvelope get_latest_currency_rates_model_async(api_version=api_version, x_api_version=x_api_version)
 
+Get latest currency rates
 
+Retrieves the latest exchange rates for all supported currencies.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -279,16 +256,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -298,11 +265,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_forex_service_rates_latest_get(api_version=api_version, x_api_version=x_api_version)
-        print("The response of RatesApi->api_v2_forex_service_rates_latest_get:\n")
+        # Get latest currency rates
+        api_response = api_instance.get_latest_currency_rates_model_async(api_version=api_version, x_api_version=x_api_version)
+        print("The response of RatesApi->get_latest_currency_rates_model_async:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling RatesApi->api_v2_forex_service_rates_latest_get: %s\n" % e)
+        print("Exception when calling RatesApi->get_latest_currency_rates_model_async: %s\n" % e)
 ```
 
 
@@ -321,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 

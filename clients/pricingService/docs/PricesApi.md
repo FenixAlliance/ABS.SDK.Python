@@ -4,20 +4,21 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v2_pricing_service_prices_item_id_final_price_get**](PricesApi.md#api_v2_pricing_service_prices_item_id_final_price_get) | **GET** /api/v2/PricingService/Prices/{itemId}/FinalPrice | 
-[**api_v2_pricing_service_prices_item_id_price_get**](PricesApi.md#api_v2_pricing_service_prices_item_id_price_get) | **GET** /api/v2/PricingService/Prices/{itemId}/Price | 
-[**api_v2_pricing_service_prices_item_id_total_savings_get**](PricesApi.md#api_v2_pricing_service_prices_item_id_total_savings_get) | **GET** /api/v2/PricingService/Prices/{itemId}/TotalSavings | 
-[**api_v2_pricing_service_prices_item_id_total_taxes_get**](PricesApi.md#api_v2_pricing_service_prices_item_id_total_taxes_get) | **GET** /api/v2/PricingService/Prices/{itemId}/TotalTaxes | 
+[**get_final_price**](PricesApi.md#get_final_price) | **GET** /api/v2/PricingService/Prices/{itemId}/FinalPrice | Gets the final price for an item
+[**get_price**](PricesApi.md#get_price) | **GET** /api/v2/PricingService/Prices/{itemId}/Price | Gets the calculated price for an item
+[**get_total_savings_in_usd**](PricesApi.md#get_total_savings_in_usd) | **GET** /api/v2/PricingService/Prices/{itemId}/TotalSavings | Gets total savings for an item
+[**get_total_taxes_in_usd**](PricesApi.md#get_total_taxes_in_usd) | **GET** /api/v2/PricingService/Prices/{itemId}/TotalTaxes | Gets total taxes for an item
 
 
-# **api_v2_pricing_service_prices_item_id_final_price_get**
-> MoneyEnvelope api_v2_pricing_service_prices_item_id_final_price_get(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+# **get_final_price**
+> MoneyEnvelope get_final_price(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
 
+Gets the final price for an item
 
+Gets the final price for an item after all discounts and taxes in the specified currency.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -31,16 +32,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -52,11 +43,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_pricing_service_prices_item_id_final_price_get(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of PricesApi->api_v2_pricing_service_prices_item_id_final_price_get:\n")
+        # Gets the final price for an item
+        api_response = api_instance.get_final_price(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PricesApi->get_final_price:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PricesApi->api_v2_pricing_service_prices_item_id_final_price_get: %s\n" % e)
+        print("Exception when calling PricesApi->get_final_price: %s\n" % e)
 ```
 
 
@@ -77,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -93,18 +85,19 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_pricing_service_prices_item_id_price_get**
-> PriceCalculationDtoEnvelope api_v2_pricing_service_prices_item_id_price_get(item_id, price_list_id=price_list_id, discounts_list_id=discounts_list_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+# **get_price**
+> ItemPriceCalculationEnvelope get_price(item_id, price_list_id=price_list_id, discounts_list_id=discounts_list_id, quantity=quantity, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
 
+Gets the calculated price for an item
 
+Calculates the price for an item considering price list, discount list, quantity, and currency.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
-from openapi_client.models.price_calculation_dto_envelope import PriceCalculationDtoEnvelope
+from openapi_client.models.item_price_calculation_envelope import ItemPriceCalculationEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -114,16 +107,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -132,16 +115,18 @@ with openapi_client.ApiClient(configuration) as api_client:
     item_id = 'item_id_example' # str | 
     price_list_id = 'price_list_id_example' # str |  (optional)
     discounts_list_id = 'discounts_list_id_example' # str |  (optional)
+    quantity = 1 # float |  (optional) (default to 1)
     currency_id = 'USD.USA' # str |  (optional) (default to 'USD.USA')
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_pricing_service_prices_item_id_price_get(item_id, price_list_id=price_list_id, discounts_list_id=discounts_list_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of PricesApi->api_v2_pricing_service_prices_item_id_price_get:\n")
+        # Gets the calculated price for an item
+        api_response = api_instance.get_price(item_id, price_list_id=price_list_id, discounts_list_id=discounts_list_id, quantity=quantity, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PricesApi->get_price:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PricesApi->api_v2_pricing_service_prices_item_id_price_get: %s\n" % e)
+        print("Exception when calling PricesApi->get_price: %s\n" % e)
 ```
 
 
@@ -154,17 +139,18 @@ Name | Type | Description  | Notes
  **item_id** | **str**|  | 
  **price_list_id** | **str**|  | [optional] 
  **discounts_list_id** | **str**|  | [optional] 
+ **quantity** | **float**|  | [optional] [default to 1]
  **currency_id** | **str**|  | [optional] [default to &#39;USD.USA&#39;]
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
 ### Return type
 
-[**PriceCalculationDtoEnvelope**](PriceCalculationDtoEnvelope.md)
+[**ItemPriceCalculationEnvelope**](ItemPriceCalculationEnvelope.md)
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -180,14 +166,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_pricing_service_prices_item_id_total_savings_get**
-> MoneyEnvelope api_v2_pricing_service_prices_item_id_total_savings_get(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+# **get_total_savings_in_usd**
+> MoneyEnvelope get_total_savings_in_usd(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
 
+Gets total savings for an item
 
+Gets the total savings amount for an item in the specified currency.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -201,16 +188,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -222,11 +199,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_pricing_service_prices_item_id_total_savings_get(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of PricesApi->api_v2_pricing_service_prices_item_id_total_savings_get:\n")
+        # Gets total savings for an item
+        api_response = api_instance.get_total_savings_in_usd(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PricesApi->get_total_savings_in_usd:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PricesApi->api_v2_pricing_service_prices_item_id_total_savings_get: %s\n" % e)
+        print("Exception when calling PricesApi->get_total_savings_in_usd: %s\n" % e)
 ```
 
 
@@ -247,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -263,14 +241,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v2_pricing_service_prices_item_id_total_taxes_get**
-> MoneyEnvelope api_v2_pricing_service_prices_item_id_total_taxes_get(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+# **get_total_taxes_in_usd**
+> MoneyEnvelope get_total_taxes_in_usd(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
 
+Gets total taxes for an item
 
+Gets the total tax amount for an item in the specified currency.
 
 ### Example
 
-* Api Key Authentication (Bearer):
 
 ```python
 import openapi_client
@@ -284,16 +263,6 @@ configuration = openapi_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: Bearer
-configuration.api_key['Bearer'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -305,11 +274,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
-        api_response = api_instance.api_v2_pricing_service_prices_item_id_total_taxes_get(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
-        print("The response of PricesApi->api_v2_pricing_service_prices_item_id_total_taxes_get:\n")
+        # Gets total taxes for an item
+        api_response = api_instance.get_total_taxes_in_usd(item_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PricesApi->get_total_taxes_in_usd:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling PricesApi->api_v2_pricing_service_prices_item_id_total_taxes_get: %s\n" % e)
+        print("Exception when calling PricesApi->get_total_taxes_in_usd: %s\n" % e)
 ```
 
 
@@ -330,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Bearer](../README.md#Bearer)
+No authorization required
 
 ### HTTP request headers
 
