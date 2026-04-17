@@ -6,8 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **date_start** | **datetime** |  | [optional] 
 **date_end** | **datetime** |  | [optional] 
 

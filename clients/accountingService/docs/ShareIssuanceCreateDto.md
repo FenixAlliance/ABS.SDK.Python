@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **unit_price** | **int** |  | [optional] 
 **quantity** | **int** |  | [optional] 
 **currency_id** | **str** |  | [optional] 

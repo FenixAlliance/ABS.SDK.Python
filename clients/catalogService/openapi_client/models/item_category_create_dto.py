@@ -34,10 +34,8 @@ class ItemCategoryCreateDto(BaseModel):
     title: Annotated[str, Field(min_length=0, strict=True, max_length=255)]
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
     image_url: Optional[StrictStr] = Field(default=None, alias="imageURL")
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
-    business_profile_record_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessProfileRecordID")
     parent_item_category_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="parentItemCategoryID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "imageURL", "businessID", "businessProfileRecordID", "parentItemCategoryID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "imageURL", "parentItemCategoryID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,11 +86,6 @@ class ItemCategoryCreateDto(BaseModel):
         if self.image_url is None and "image_url" in self.model_fields_set:
             _dict['imageURL'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if parent_item_category_id (nullable) is None
         # and model_fields_set contains the field
         if self.parent_item_category_id is None and "parent_item_category_id" in self.model_fields_set:
@@ -115,8 +108,6 @@ class ItemCategoryCreateDto(BaseModel):
             "title": obj.get("title"),
             "description": obj.get("description"),
             "imageURL": obj.get("imageURL"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "parentItemCategoryID": obj.get("parentItemCategoryID")
         })
         return _obj

@@ -31,10 +31,8 @@ class DealUnitUpdateDto(BaseModel):
     closed: Optional[StrictBool] = None
     title: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = Field(default=None, alias="userId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
     description: Optional[StrictStr] = None
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
     payment_term_id: Optional[StrictStr] = Field(default=None, alias="paymentTermId")
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
@@ -100,7 +98,7 @@ class DealUnitUpdateDto(BaseModel):
     deal_unit_purchase_process: Optional[StrictStr] = Field(default=None, alias="dealUnitPurchaseProcess")
     deal_unit_forecast_category: Optional[StrictStr] = Field(default=None, alias="dealUnitForecastCategory")
     deal_unit_amounts_calculation: Optional[StrictStr] = Field(default=None, alias="dealUnitAmountsCalculation")
-    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "tenantId", "priceListId", "description", "enrollmentId", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "ordered", "cartId", "dealUnitFeedId", "dealUnitFlowId", "dealUnitFlowStageId", "partnerCreated", "partnerCollaboration", "proposedSolution", "currentSituation", "customerNeed", "wonDate", "lostDate", "expiryDate", "deliveredDate", "closedTimestamp", "expectedCloseDate", "dealUnitStatus", "dealUnitPurchaseProcess", "dealUnitForecastCategory", "dealUnitAmountsCalculation"]
+    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "priceListId", "description", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "ordered", "cartId", "dealUnitFeedId", "dealUnitFlowId", "dealUnitFlowStageId", "partnerCreated", "partnerCollaboration", "proposedSolution", "currentSituation", "customerNeed", "wonDate", "lostDate", "expiryDate", "deliveredDate", "closedTimestamp", "expectedCloseDate", "dealUnitStatus", "dealUnitPurchaseProcess", "dealUnitForecastCategory", "dealUnitAmountsCalculation"]
 
     @field_validator('cost_calculation_method')
     def cost_calculation_method_validate_enum(cls, value):
@@ -211,11 +209,6 @@ class DealUnitUpdateDto(BaseModel):
         if self.user_id is None and "user_id" in self.model_fields_set:
             _dict['userId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if price_list_id (nullable) is None
         # and model_fields_set contains the field
         if self.price_list_id is None and "price_list_id" in self.model_fields_set:
@@ -225,11 +218,6 @@ class DealUnitUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if individual_id (nullable) is None
         # and model_fields_set contains the field
@@ -431,10 +419,8 @@ class DealUnitUpdateDto(BaseModel):
             "closed": obj.get("closed"),
             "title": obj.get("title"),
             "userId": obj.get("userId"),
-            "tenantId": obj.get("tenantId"),
             "priceListId": obj.get("priceListId"),
             "description": obj.get("description"),
-            "enrollmentId": obj.get("enrollmentId"),
             "individualId": obj.get("individualId"),
             "paymentTermId": obj.get("paymentTermId"),
             "organizationId": obj.get("organizationId"),

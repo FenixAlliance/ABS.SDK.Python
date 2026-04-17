@@ -32,14 +32,11 @@ class SupportTicketCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
-    account_holder_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="accountHolderID")
     contact_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="contactID")
-    business_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessProfileRecordID")
     support_ticket_type_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="supportTicketTypeID")
     support_entitlement_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="supportEntitlementID")
     support_priority_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="supportPriorityID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "description", "accountHolderID", "contactID", "businessID", "businessProfileRecordID", "supportTicketTypeID", "supportEntitlementID", "supportPriorityID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "description", "contactID", "supportTicketTypeID", "supportEntitlementID", "supportPriorityID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,25 +82,10 @@ class SupportTicketCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if account_holder_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_holder_id is None and "account_holder_id" in self.model_fields_set:
-            _dict['accountHolderID'] = None
-
         # set to None if contact_id (nullable) is None
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactID'] = None
-
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
 
         # set to None if support_ticket_type_id (nullable) is None
         # and model_fields_set contains the field
@@ -135,10 +117,7 @@ class SupportTicketCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "description": obj.get("description"),
-            "accountHolderID": obj.get("accountHolderID"),
             "contactID": obj.get("contactID"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "supportTicketTypeID": obj.get("supportTicketTypeID"),
             "supportEntitlementID": obj.get("supportEntitlementID"),
             "supportPriorityID": obj.get("supportPriorityID")

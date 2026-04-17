@@ -33,12 +33,11 @@ class CourseCohortCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     name: Annotated[str, Field(min_length=1, strict=True)]
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     start_date_time: Optional[datetime] = Field(default=None, alias="startDateTime")
     end_date_time: Optional[datetime] = Field(default=None, alias="endDateTime")
     expected_start_date_time: Optional[datetime] = Field(default=None, alias="expectedStartDateTime")
     expected_end_date_time: Optional[datetime] = Field(default=None, alias="expectedEndDateTime")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "courseID", "businessID", "startDateTime", "endDateTime", "expectedStartDateTime", "expectedEndDateTime"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "courseID", "startDateTime", "endDateTime", "expectedStartDateTime", "expectedEndDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,7 +114,6 @@ class CourseCohortCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
             "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID"),
             "startDateTime": obj.get("startDateTime"),
             "endDateTime": obj.get("endDateTime"),
             "expectedStartDateTime": obj.get("expectedStartDateTime"),

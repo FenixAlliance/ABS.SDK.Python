@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **business_team_id** | **str** |  | [optional] 
 **contact_id** | **str** |  | [optional] 
 

@@ -35,8 +35,7 @@ class CourseNewsCreateDto(BaseModel):
     description: Optional[StrictStr] = None
     content: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "courseID", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "courseID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,8 +103,7 @@ class CourseNewsCreateDto(BaseModel):
             "title": obj.get("title"),
             "description": obj.get("description"),
             "content": obj.get("content"),
-            "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID")
+            "courseID": obj.get("courseID")
         })
         return _obj
 

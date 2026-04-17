@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 
 ## Example

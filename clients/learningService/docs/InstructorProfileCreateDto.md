@@ -34,9 +34,7 @@ Name | Type | Description | Notes
 **data8_label** | **str** |  | [optional] 
 **data9** | **str** |  | [optional] 
 **data9_label** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
 **contact_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -38,8 +38,7 @@ class CourseHandoutCreateDto(BaseModel):
     release_date_time: Optional[datetime] = Field(default=None, alias="releaseDateTime")
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
     course_unit_id: Optional[StrictStr] = Field(default=None, alias="courseUnitID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "content", "url", "releaseDateTime", "courseID", "courseUnitID", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "content", "url", "releaseDateTime", "courseID", "courseUnitID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -125,8 +124,7 @@ class CourseHandoutCreateDto(BaseModel):
             "url": obj.get("url"),
             "releaseDateTime": obj.get("releaseDateTime"),
             "courseID": obj.get("courseID"),
-            "courseUnitID": obj.get("courseUnitID"),
-            "businessID": obj.get("businessID")
+            "courseUnitID": obj.get("courseUnitID")
         })
         return _obj
 

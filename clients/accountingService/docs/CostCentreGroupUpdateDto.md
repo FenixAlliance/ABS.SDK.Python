@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **parent_cost_centres_group_id** | **str** |  | [optional] 
 
 ## Example

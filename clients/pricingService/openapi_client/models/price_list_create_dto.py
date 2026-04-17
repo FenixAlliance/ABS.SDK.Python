@@ -38,9 +38,7 @@ class PriceListCreateDto(BaseModel):
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     unit_id: Optional[StrictStr] = Field(default=None, alias="unitId")
     unit_group_id: Optional[StrictStr] = Field(default=None, alias="unitGroupId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "startDate", "endDate", "currencyId", "unitId", "unitGroupId", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "startDate", "endDate", "currencyId", "unitId", "unitGroupId"]
 
     @field_validator('name')
     def name_validate_regular_expression(cls, value):
@@ -108,16 +106,6 @@ class PriceListCreateDto(BaseModel):
         if self.unit_group_id is None and "unit_group_id" in self.model_fields_set:
             _dict['unitGroupId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -138,9 +126,7 @@ class PriceListCreateDto(BaseModel):
             "endDate": obj.get("endDate"),
             "currencyId": obj.get("currencyId"),
             "unitId": obj.get("unitId"),
-            "unitGroupId": obj.get("unitGroupId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "unitGroupId": obj.get("unitGroupId")
         })
         return _obj
 

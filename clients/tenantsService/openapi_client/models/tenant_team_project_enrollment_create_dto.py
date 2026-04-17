@@ -31,11 +31,9 @@ class TenantTeamProjectEnrollmentCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
-    business_profile_record_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessProfileRecordID")
     business_team_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessTeamID")
     project_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="projectID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessID", "businessProfileRecordID", "businessTeamID", "projectID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessTeamID", "projectID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +88,6 @@ class TenantTeamProjectEnrollmentCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "businessTeamID": obj.get("businessTeamID"),
             "projectID": obj.get("projectID")
         })

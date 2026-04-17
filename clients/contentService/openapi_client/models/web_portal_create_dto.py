@@ -34,13 +34,11 @@ class WebPortalCreateDto(BaseModel):
     title: Optional[StrictStr] = None
     domain: Optional[StrictStr] = None
     disabled: Optional[StrictBool] = None
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
     description: Optional[StrictStr] = None
     website_theme_id: Optional[StrictStr] = Field(default=None, alias="websiteThemeID")
     business_domain_id: Optional[StrictStr] = Field(default=None, alias="businessDomainID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     business_portal_application_id: Optional[StrictStr] = Field(default=None, alias="businessPortalApplicationID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "root", "title", "domain", "disabled", "businessID", "description", "websiteThemeID", "businessDomainID", "businessProfileRecordID", "businessPortalApplicationID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "root", "title", "domain", "disabled", "description", "websiteThemeID", "businessDomainID", "businessPortalApplicationID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,11 +89,6 @@ class WebPortalCreateDto(BaseModel):
         if self.domain is None and "domain" in self.model_fields_set:
             _dict['domain'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
@@ -110,11 +103,6 @@ class WebPortalCreateDto(BaseModel):
         # and model_fields_set contains the field
         if self.business_domain_id is None and "business_domain_id" in self.model_fields_set:
             _dict['businessDomainID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
 
         # set to None if business_portal_application_id (nullable) is None
         # and model_fields_set contains the field
@@ -139,11 +127,9 @@ class WebPortalCreateDto(BaseModel):
             "title": obj.get("title"),
             "domain": obj.get("domain"),
             "disabled": obj.get("disabled"),
-            "businessID": obj.get("businessID"),
             "description": obj.get("description"),
             "websiteThemeID": obj.get("websiteThemeID"),
             "businessDomainID": obj.get("businessDomainID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "businessPortalApplicationID": obj.get("businessPortalApplicationID")
         })
         return _obj

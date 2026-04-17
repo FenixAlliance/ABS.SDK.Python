@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **closed** | **bool** |  | [optional] 
 **end_date** | **datetime** |  | [optional] 
 **start_date** | **datetime** |  | [optional] 
+**fiscal_authority_id** | **str** |  | [optional] 
 
 ## Example
 

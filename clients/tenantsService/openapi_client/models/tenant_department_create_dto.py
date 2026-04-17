@@ -30,14 +30,12 @@ class TenantDepartmentCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     disabled: Optional[StrictBool] = None
     organization_profile_id: Optional[StrictStr] = Field(default=None, alias="organizationProfileID")
     parent_department_id: Optional[StrictStr] = Field(default=None, alias="parentDepartmentID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessID", "businessProfileRecordID", "name", "description", "disabled", "organizationProfileID", "parentDepartmentID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "disabled", "organizationProfileID", "parentDepartmentID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,16 +76,6 @@ class TenantDepartmentCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
@@ -122,8 +110,6 @@ class TenantDepartmentCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "name": obj.get("name"),
             "description": obj.get("description"),
             "disabled": obj.get("disabled"),

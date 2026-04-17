@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,9 +33,7 @@ class NewsletterCreateDto(BaseModel):
     name: Optional[StrictStr] = None
     code: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "code", "title", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "code", "title"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,16 +89,6 @@ class NewsletterCreateDto(BaseModel):
         if self.title is None and "title" in self.model_fields_set:
             _dict['title'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -117,9 +105,7 @@ class NewsletterCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
             "code": obj.get("code"),
-            "title": obj.get("title"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "title": obj.get("title")
         })
         return _obj
 

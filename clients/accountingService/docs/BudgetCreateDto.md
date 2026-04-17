@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **fiscal_year_id** | **str** |  | [optional] 
 
 ## Example

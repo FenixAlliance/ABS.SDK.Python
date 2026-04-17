@@ -31,10 +31,8 @@ class QuoteUpdateDto(BaseModel):
     closed: Optional[StrictBool] = None
     title: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = Field(default=None, alias="userId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
     description: Optional[StrictStr] = None
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
     payment_term_id: Optional[StrictStr] = Field(default=None, alias="paymentTermId")
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
@@ -94,7 +92,7 @@ class QuoteUpdateDto(BaseModel):
     custom_shipping_cost_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customShippingCostAmount")
     custom_shipping_tax_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customShippingTaxAmount")
     custom_withholding_tax_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customWithholdingTaxAmount")
-    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "tenantId", "priceListId", "description", "enrollmentId", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "cartId", "quoteStatus", "freightTerms", "effectiveTo", "effectiveFrom", "customTaxAmount", "customTotalAmount", "customDetailAmount", "customProfitAmount", "customDiscountsAmount", "customSurchargesAmount", "customShippingCostAmount", "customShippingTaxAmount", "customWithholdingTaxAmount"]
+    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "priceListId", "description", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "cartId", "quoteStatus", "freightTerms", "effectiveTo", "effectiveFrom", "customTaxAmount", "customTotalAmount", "customDetailAmount", "customProfitAmount", "customDiscountsAmount", "customSurchargesAmount", "customShippingCostAmount", "customShippingTaxAmount", "customWithholdingTaxAmount"]
 
     @field_validator('cost_calculation_method')
     def cost_calculation_method_validate_enum(cls, value):
@@ -185,11 +183,6 @@ class QuoteUpdateDto(BaseModel):
         if self.user_id is None and "user_id" in self.model_fields_set:
             _dict['userId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if price_list_id (nullable) is None
         # and model_fields_set contains the field
         if self.price_list_id is None and "price_list_id" in self.model_fields_set:
@@ -199,11 +192,6 @@ class QuoteUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if individual_id (nullable) is None
         # and model_fields_set contains the field
@@ -385,10 +373,8 @@ class QuoteUpdateDto(BaseModel):
             "closed": obj.get("closed"),
             "title": obj.get("title"),
             "userId": obj.get("userId"),
-            "tenantId": obj.get("tenantId"),
             "priceListId": obj.get("priceListId"),
             "description": obj.get("description"),
-            "enrollmentId": obj.get("enrollmentId"),
             "individualId": obj.get("individualId"),
             "paymentTermId": obj.get("paymentTermId"),
             "organizationId": obj.get("organizationId"),

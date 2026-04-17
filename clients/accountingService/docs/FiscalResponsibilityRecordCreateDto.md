@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **fiscal_responsibility_id** | **str** |  | [optional] 
 **billing_profile_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

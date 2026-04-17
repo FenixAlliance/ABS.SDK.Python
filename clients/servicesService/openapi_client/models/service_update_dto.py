@@ -80,7 +80,6 @@ class ServiceUpdateDto(BaseModel):
     material: Optional[StrictStr] = None
     on_discount: Optional[StrictBool] = Field(default=None, alias="onDiscount")
     total_tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalTax")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     permalink: Optional[StrictStr] = None
     brand_name: Optional[StrictStr] = Field(default=None, alias="brandName")
     reviews_count: Optional[StrictInt] = Field(default=None, alias="reviewsCount")
@@ -105,7 +104,6 @@ class ServiceUpdateDto(BaseModel):
     custom_tax_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customTaxValue")
     has_variations: Optional[StrictBool] = Field(default=None, alias="hasVariations")
     questions_count: Optional[StrictInt] = Field(default=None, alias="questionsCount")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     supplier_code: Optional[StrictStr] = Field(default=None, alias="supplierCode")
     auction_end: Optional[datetime] = Field(default=None, alias="auctionEnd")
     purchase_note: Optional[StrictStr] = Field(default=None, alias="purchaseNote")
@@ -203,7 +201,7 @@ class ServiceUpdateDto(BaseModel):
     selected_selling_margin_policies: Optional[List[StrictStr]] = Field(default=None, alias="selectedSellingMarginPolicies")
     individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
     service_plan_id: Optional[StrictStr] = Field(default=None, alias="servicePlanId")
-    __properties: ClassVar[List[str]] = ["hot", "sku", "upc", "ean", "mpn", "skUs", "isbn", "upCs", "eaNs", "asin", "gtin", "mpNs", "part", "name", "onSale", "isbNs", "asiNs", "gtiNs", "width", "model", "auction", "title", "color", "deleted", "digital", "preSale", "taxable", "inStock", "isbN13", "unspsc", "weight", "length", "height", "unitId", "series", "featured", "brands", "trending", "lowStock", "barcode", "unspsCs", "pattern", "published", "byRequest", "summary", "brandId", "viewsCount", "features", "material", "onDiscount", "totalTax", "tenantId", "permalink", "brandName", "reviewsCount", "isDailyDeal", "languageId", "categories", "finalPrice", "itemTypeId", "categoryId", "currencyId", "reviewsAvg", "isNewArrival", "isWeeklyDeal", "isBestSeller", "unitGroupId", "description", "ingredients", "releaseDate", "isMonthlyDeal", "recurrency", "paymentCost", "customTaxValue", "hasVariations", "questionsCount", "enrollmentId", "supplierCode", "auctionEnd", "purchaseNote", "shipsToRules", "regularPrice", "images", "shippingCost", "parentItemId", "itemTypeName", "cartRecordId", "variations", "tariffHeading", "packagedQuantity", "isFixedDiscount", "discountPrice", "isDealersChoice", "currentStock", "manageInventory", "auctionStart", "nutritionFacts", "mozaicCoverUrl", "packageContent", "discountAmount", "youtubeVideoId", "inCartQuantity", "isOfficialChoice", "publishedDate", "primaryImageUrl", "validPrimaryImage", "customTaxAmount", "longDescription", "compareRecordId", "measurementUnit", "shortDescription", "googleCategories", "isDeadlineDiscount", "displayShowcaseTab", "taxIncludedInPrice", "isProductOfTheWeek", "supplierProfileId", "shippingCountryId", "isProductOfTheMonth", "systemRequirements", "isPorcentualDiscount", "discountPercentage", "discountDeadLine", "displayOnGlobalMozaic", "displayOnBrandsMozaic", "customTaxPercentage", "estimatedTaxesInUsd", "customTaxDescription", "disableDefaultPolicies", "estimatedProfitInUsd", "displayOnCategoryMozaic", "officialDescriptionUrl", "energyEfficiencyRating", "pageCoverBackgroundUrl", "estimatedBasePriceInUsd", "estimatedDiscountsInUsd", "operatingSystemSupported", "estimatedSurchargesInUsd", "deadlineDiscountDueDate", "deadlineDiscountFromDate", "estimatedRegularPriceInUsd", "estimatedTaxBasePriceInUsd", "displayOnBannerMarketingRotation", "lastFixedPricesUpdateDateTime", "estimatedWitholdingTaxesInUsd", "estimatedPaymentCostInUsd", "estimatedPaymentTaxInUsd", "estimatedDefaultShippingCostInUsd", "estimatedDefaultShippingTaxInUsd", "estimatedTotalPriceInUsd", "recentlyViewedRecordId", "displayDescriptionEditor", "primaryGoogleCategoryId", "supportedOperatingSystem", "estimatedDealSavingsInUsd", "primaryGoogleCategoryName", "displayShortDescriptionEditor", "estimatedWithholdingTaxesInUsd", "selectedTags", "selectedTypes", "selectedBrands", "selectedCategories", "selectedTaxPolicies", "selectedPricingRules", "selectedRefundPolicies", "selectedReturnPolicies", "selectedPricingPolicies", "selectedGoogleCategories", "selectedWarrantyPolicies", "selectedShipmentPolicies", "selectedAttributesOptions", "selectedSellingMarginPolicies", "individualId", "servicePlanId"]
+    __properties: ClassVar[List[str]] = ["hot", "sku", "upc", "ean", "mpn", "skUs", "isbn", "upCs", "eaNs", "asin", "gtin", "mpNs", "part", "name", "onSale", "isbNs", "asiNs", "gtiNs", "width", "model", "auction", "title", "color", "deleted", "digital", "preSale", "taxable", "inStock", "isbN13", "unspsc", "weight", "length", "height", "unitId", "series", "featured", "brands", "trending", "lowStock", "barcode", "unspsCs", "pattern", "published", "byRequest", "summary", "brandId", "viewsCount", "features", "material", "onDiscount", "totalTax", "permalink", "brandName", "reviewsCount", "isDailyDeal", "languageId", "categories", "finalPrice", "itemTypeId", "categoryId", "currencyId", "reviewsAvg", "isNewArrival", "isWeeklyDeal", "isBestSeller", "unitGroupId", "description", "ingredients", "releaseDate", "isMonthlyDeal", "recurrency", "paymentCost", "customTaxValue", "hasVariations", "questionsCount", "supplierCode", "auctionEnd", "purchaseNote", "shipsToRules", "regularPrice", "images", "shippingCost", "parentItemId", "itemTypeName", "cartRecordId", "variations", "tariffHeading", "packagedQuantity", "isFixedDiscount", "discountPrice", "isDealersChoice", "currentStock", "manageInventory", "auctionStart", "nutritionFacts", "mozaicCoverUrl", "packageContent", "discountAmount", "youtubeVideoId", "inCartQuantity", "isOfficialChoice", "publishedDate", "primaryImageUrl", "validPrimaryImage", "customTaxAmount", "longDescription", "compareRecordId", "measurementUnit", "shortDescription", "googleCategories", "isDeadlineDiscount", "displayShowcaseTab", "taxIncludedInPrice", "isProductOfTheWeek", "supplierProfileId", "shippingCountryId", "isProductOfTheMonth", "systemRequirements", "isPorcentualDiscount", "discountPercentage", "discountDeadLine", "displayOnGlobalMozaic", "displayOnBrandsMozaic", "customTaxPercentage", "estimatedTaxesInUsd", "customTaxDescription", "disableDefaultPolicies", "estimatedProfitInUsd", "displayOnCategoryMozaic", "officialDescriptionUrl", "energyEfficiencyRating", "pageCoverBackgroundUrl", "estimatedBasePriceInUsd", "estimatedDiscountsInUsd", "operatingSystemSupported", "estimatedSurchargesInUsd", "deadlineDiscountDueDate", "deadlineDiscountFromDate", "estimatedRegularPriceInUsd", "estimatedTaxBasePriceInUsd", "displayOnBannerMarketingRotation", "lastFixedPricesUpdateDateTime", "estimatedWitholdingTaxesInUsd", "estimatedPaymentCostInUsd", "estimatedPaymentTaxInUsd", "estimatedDefaultShippingCostInUsd", "estimatedDefaultShippingTaxInUsd", "estimatedTotalPriceInUsd", "recentlyViewedRecordId", "displayDescriptionEditor", "primaryGoogleCategoryId", "supportedOperatingSystem", "estimatedDealSavingsInUsd", "primaryGoogleCategoryName", "displayShortDescriptionEditor", "estimatedWithholdingTaxesInUsd", "selectedTags", "selectedTypes", "selectedBrands", "selectedCategories", "selectedTaxPolicies", "selectedPricingRules", "selectedRefundPolicies", "selectedReturnPolicies", "selectedPricingPolicies", "selectedGoogleCategories", "selectedWarrantyPolicies", "selectedShipmentPolicies", "selectedAttributesOptions", "selectedSellingMarginPolicies", "individualId", "servicePlanId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -399,11 +397,6 @@ class ServiceUpdateDto(BaseModel):
         if self.material is None and "material" in self.model_fields_set:
             _dict['material'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if permalink (nullable) is None
         # and model_fields_set contains the field
         if self.permalink is None and "permalink" in self.model_fields_set:
@@ -458,11 +451,6 @@ class ServiceUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.release_date is None and "release_date" in self.model_fields_set:
             _dict['releaseDate'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if supplier_code (nullable) is None
         # and model_fields_set contains the field
@@ -777,7 +765,6 @@ class ServiceUpdateDto(BaseModel):
             "material": obj.get("material"),
             "onDiscount": obj.get("onDiscount"),
             "totalTax": obj.get("totalTax"),
-            "tenantId": obj.get("tenantId"),
             "permalink": obj.get("permalink"),
             "brandName": obj.get("brandName"),
             "reviewsCount": obj.get("reviewsCount"),
@@ -802,7 +789,6 @@ class ServiceUpdateDto(BaseModel):
             "customTaxValue": obj.get("customTaxValue"),
             "hasVariations": obj.get("hasVariations"),
             "questionsCount": obj.get("questionsCount"),
-            "enrollmentId": obj.get("enrollmentId"),
             "supplierCode": obj.get("supplierCode"),
             "auctionEnd": obj.get("auctionEnd"),
             "purchaseNote": obj.get("purchaseNote"),

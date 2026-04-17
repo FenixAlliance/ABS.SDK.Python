@@ -39,7 +39,6 @@ class LocationUpdateDto(BaseModel):
     state_id: Optional[StrictStr] = Field(default=None, alias="stateId")
     postal_code: Optional[StrictStr] = Field(default=None, alias="postalCode")
     country_id: Optional[StrictStr] = Field(default=None, alias="countryId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     longitude: Optional[Union[StrictFloat, StrictInt]] = None
     latitude: Optional[Union[StrictFloat, StrictInt]] = None
     is_routable: Optional[StrictBool] = Field(default=None, alias="isRoutable")
@@ -49,7 +48,7 @@ class LocationUpdateDto(BaseModel):
     is_default_sender_address: Optional[StrictBool] = Field(default=None, alias="isDefaultSenderAddress")
     is_default_return_address: Optional[StrictBool] = Field(default=None, alias="isDefaultReturnAddress")
     is_default_supping_location: Optional[StrictBool] = Field(default=None, alias="isDefaultSuppingLocation")
-    __properties: ClassVar[List[str]] = ["title", "email", "phone", "fax", "address1", "address2", "address3", "unit", "cityId", "stateId", "postalCode", "countryId", "tenantId", "longitude", "latitude", "isRoutable", "isGlobalPrimary", "isCountryPrimary", "canGenerateLabels", "isDefaultSenderAddress", "isDefaultReturnAddress", "isDefaultSuppingLocation"]
+    __properties: ClassVar[List[str]] = ["title", "email", "phone", "fax", "address1", "address2", "address3", "unit", "cityId", "stateId", "postalCode", "countryId", "longitude", "latitude", "isRoutable", "isGlobalPrimary", "isCountryPrimary", "canGenerateLabels", "isDefaultSenderAddress", "isDefaultReturnAddress", "isDefaultSuppingLocation"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -150,11 +149,6 @@ class LocationUpdateDto(BaseModel):
         if self.country_id is None and "country_id" in self.model_fields_set:
             _dict['countryId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         return _dict
 
     @classmethod
@@ -179,7 +173,6 @@ class LocationUpdateDto(BaseModel):
             "stateId": obj.get("stateId"),
             "postalCode": obj.get("postalCode"),
             "countryId": obj.get("countryId"),
-            "tenantId": obj.get("tenantId"),
             "longitude": obj.get("longitude"),
             "latitude": obj.get("latitude"),
             "isRoutable": obj.get("isRoutable"),

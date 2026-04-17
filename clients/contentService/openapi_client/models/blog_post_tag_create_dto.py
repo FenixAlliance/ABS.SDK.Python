@@ -43,9 +43,7 @@ class BlogPostTagCreateDto(BaseModel):
     image_url: Optional[StrictStr] = Field(default=None, alias="imageURL")
     image: Optional[StrictStr] = None
     web_portal_id: Optional[StrictStr] = Field(default=None, alias="webPortalID")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "slug", "type", "title", "description", "seoTitle", "metaDescription", "cornerstoneContent", "allowSerachEngines", "seoKeyPhrases", "canonicalUrl", "imageURL", "image", "webPortalID", "businessID", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "slug", "type", "title", "description", "seoTitle", "metaDescription", "cornerstoneContent", "allowSerachEngines", "seoKeyPhrases", "canonicalUrl", "imageURL", "image", "webPortalID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -141,16 +139,6 @@ class BlogPostTagCreateDto(BaseModel):
         if self.web_portal_id is None and "web_portal_id" in self.model_fields_set:
             _dict['webPortalID'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         return _dict
 
     @classmethod
@@ -177,9 +165,7 @@ class BlogPostTagCreateDto(BaseModel):
             "canonicalUrl": obj.get("canonicalUrl"),
             "imageURL": obj.get("imageURL"),
             "image": obj.get("image"),
-            "webPortalID": obj.get("webPortalID"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "webPortalID": obj.get("webPortalID")
         })
         return _obj
 

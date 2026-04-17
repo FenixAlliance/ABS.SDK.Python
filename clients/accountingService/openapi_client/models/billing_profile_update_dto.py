@@ -28,7 +28,6 @@ class BillingProfileUpdateDto(BaseModel):
     BillingProfileUpdateDto
     """ # noqa: E501
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     tax_id: Optional[StrictStr] = Field(default=None, alias="taxId")
     phone: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
@@ -48,7 +47,7 @@ class BillingProfileUpdateDto(BaseModel):
     fiscal_identification_type_id: Optional[StrictStr] = Field(default=None, alias="fiscalIdentificationTypeId")
     fiscal_authority_id: Optional[StrictStr] = Field(default=None, alias="fiscalAuthorityId")
     fiscal_regime_id: Optional[StrictStr] = Field(default=None, alias="fiscalRegimeId")
-    __properties: ClassVar[List[str]] = ["contactId", "tenantId", "taxId", "phone", "email", "address", "address1", "address2", "postalCode", "businessName", "commercialName", "ticker", "duns", "isPublicCompany", "isFactaCustomer", "countryId", "stateId", "cityId", "fiscalIdentificationTypeId", "fiscalAuthorityId", "fiscalRegimeId"]
+    __properties: ClassVar[List[str]] = ["contactId", "taxId", "phone", "email", "address", "address1", "address2", "postalCode", "businessName", "commercialName", "ticker", "duns", "isPublicCompany", "isFactaCustomer", "countryId", "stateId", "cityId", "fiscalIdentificationTypeId", "fiscalAuthorityId", "fiscalRegimeId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,11 +92,6 @@ class BillingProfileUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactId'] = None
-
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
 
         # set to None if tax_id (nullable) is None
         # and model_fields_set contains the field
@@ -197,7 +191,6 @@ class BillingProfileUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "contactId": obj.get("contactId"),
-            "tenantId": obj.get("tenantId"),
             "taxId": obj.get("taxId"),
             "phone": obj.get("phone"),
             "email": obj.get("email"),

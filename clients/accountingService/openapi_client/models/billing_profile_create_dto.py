@@ -32,7 +32,6 @@ class BillingProfileCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     tax_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="taxId")
     phone: Annotated[str, Field(min_length=1, strict=True)]
     email: Annotated[str, Field(min_length=1, strict=True)]
@@ -52,7 +51,7 @@ class BillingProfileCreateDto(BaseModel):
     fiscal_identification_type_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="fiscalIdentificationTypeId")
     fiscal_authority_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="fiscalAuthorityId")
     fiscal_regime_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="fiscalRegimeId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "contactId", "tenantId", "taxId", "phone", "email", "address", "address1", "address2", "postalCode", "businessName", "commercialName", "ticker", "duns", "isPublicCompany", "isFactaCustomer", "countryId", "stateId", "cityId", "fiscalIdentificationTypeId", "fiscalAuthorityId", "fiscalRegimeId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "contactId", "taxId", "phone", "email", "address", "address1", "address2", "postalCode", "businessName", "commercialName", "ticker", "duns", "isPublicCompany", "isFactaCustomer", "countryId", "stateId", "cityId", "fiscalIdentificationTypeId", "fiscalAuthorityId", "fiscalRegimeId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,11 +97,6 @@ class BillingProfileCreateDto(BaseModel):
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if address1 (nullable) is None
         # and model_fields_set contains the field
         if self.address1 is None and "address1" in self.model_fields_set:
@@ -138,7 +132,6 @@ class BillingProfileCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "contactId": obj.get("contactId"),
-            "tenantId": obj.get("tenantId"),
             "taxId": obj.get("taxId"),
             "phone": obj.get("phone"),
             "email": obj.get("email"),

@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **content_type** | **str** |  | [optional] 
 **file_length** | **int** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 
 ## Example
 

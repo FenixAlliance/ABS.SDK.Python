@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **date_start** | **datetime** |  | [optional] 
 **date_end** | **datetime** |  | [optional] 
 

@@ -9,11 +9,9 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **item_id** | **str** |  | 
 **unit_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **price_list_id** | **str** |  | [optional] 
 **unit_group_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **discount_list_id** | **str** |  | [optional] 
 **rounding_policy_id** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 

@@ -38,16 +38,14 @@ class BankGuaranteeUpdateDto(BaseModel):
     start_date: Optional[datetime] = Field(default=None, alias="startDate")
     end_date: Optional[datetime] = Field(default=None, alias="endDate")
     validity_in_days: Optional[StrictInt] = Field(default=None, alias="validityInDays")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     bank_guarantee_type: Optional[StrictStr] = Field(default=None, alias="bankGuaranteeType")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     contact_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="contactId")
     project_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="projectId")
     order_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="orderId")
     bank_profile_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="bankProfileId")
     bank_account_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="bankAccountId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    __properties: ClassVar[List[str]] = ["margin", "charges", "beneficiaryName", "guaranteeNumber", "guaranteeConditions", "fixedDepositNumber", "startDate", "endDate", "validityInDays", "tenantId", "bankGuaranteeType", "enrollmentId", "contactId", "projectId", "orderId", "bankProfileId", "bankAccountId", "currencyId"]
+    __properties: ClassVar[List[str]] = ["margin", "charges", "beneficiaryName", "guaranteeNumber", "guaranteeConditions", "fixedDepositNumber", "startDate", "endDate", "validityInDays", "bankGuaranteeType", "contactId", "projectId", "orderId", "bankProfileId", "bankAccountId", "currencyId"]
 
     @field_validator('bank_guarantee_type')
     def bank_guarantee_type_validate_enum(cls, value):
@@ -113,16 +111,6 @@ class BankGuaranteeUpdateDto(BaseModel):
         if self.guarantee_conditions is None and "guarantee_conditions" in self.model_fields_set:
             _dict['guaranteeConditions'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if contact_id (nullable) is None
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
@@ -174,9 +162,7 @@ class BankGuaranteeUpdateDto(BaseModel):
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),
             "validityInDays": obj.get("validityInDays"),
-            "tenantId": obj.get("tenantId"),
             "bankGuaranteeType": obj.get("bankGuaranteeType"),
-            "enrollmentId": obj.get("enrollmentId"),
             "contactId": obj.get("contactId"),
             "projectId": obj.get("projectId"),
             "orderId": obj.get("orderId"),

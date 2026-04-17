@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
@@ -28,6 +29,8 @@ class OAuthApplicationCreateDto(BaseModel):
     """
     OAuthApplicationCreateDto
     """ # noqa: E501
+    id: Optional[StrictStr] = None
+    timestamp: Optional[datetime] = None
     display_name: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="displayName")
     client_id: Optional[StrictStr] = Field(default=None, alias="clientId")
     client_secret: Optional[StrictStr] = Field(default=None, alias="clientSecret")
@@ -37,9 +40,7 @@ class OAuthApplicationCreateDto(BaseModel):
     redirect_uris: Optional[StrictStr] = Field(default=None, alias="redirectUris")
     post_logout_redirect_uris: Optional[StrictStr] = Field(default=None, alias="postLogoutRedirectUris")
     logo: Optional[StrictStr] = None
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["displayName", "clientId", "clientSecret", "consentType", "permissions", "requirements", "redirectUris", "postLogoutRedirectUris", "logo", "businessID", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "displayName", "clientId", "clientSecret", "consentType", "permissions", "requirements", "redirectUris", "postLogoutRedirectUris", "logo"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -120,16 +121,6 @@ class OAuthApplicationCreateDto(BaseModel):
         if self.logo is None and "logo" in self.model_fields_set:
             _dict['logo'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         return _dict
 
     @classmethod
@@ -142,6 +133,8 @@ class OAuthApplicationCreateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "timestamp": obj.get("timestamp"),
             "displayName": obj.get("displayName"),
             "clientId": obj.get("clientId"),
             "clientSecret": obj.get("clientSecret"),
@@ -150,9 +143,7 @@ class OAuthApplicationCreateDto(BaseModel):
             "requirements": obj.get("requirements"),
             "redirectUris": obj.get("redirectUris"),
             "postLogoutRedirectUris": obj.get("postLogoutRedirectUris"),
-            "logo": obj.get("logo"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "logo": obj.get("logo")
         })
         return _obj
 

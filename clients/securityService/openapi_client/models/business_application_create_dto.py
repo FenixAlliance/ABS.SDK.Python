@@ -44,8 +44,6 @@ class BusinessApplicationCreateDto(BaseModel):
     contact_email: Optional[StrictStr] = Field(default=None, alias="contactEmail")
     privacy_policy_url: Optional[StrictStr] = Field(default=None, alias="privacyPolicyURL")
     terms_and_conditions_url: Optional[StrictStr] = Field(default=None, alias="termsAndConditionsURL")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     require_https: Optional[StrictBool] = Field(default=None, alias="requireHttps")
     require_app_secret: Optional[StrictBool] = Field(default=None, alias="requireAppSecret")
     enable_client_oauth_login: Optional[StrictBool] = Field(default=None, alias="enableClientOauthLogin")
@@ -68,7 +66,7 @@ class BusinessApplicationCreateDto(BaseModel):
     spa_development_server_uri: Optional[StrictStr] = Field(default=None, alias="spaDevelopmentServerUri")
     enable_git_repo_management: Optional[StrictBool] = Field(default=None, alias="enableGitRepoManagement")
     git_repo_url: Optional[StrictStr] = Field(default=None, alias="gitRepoUrl")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "namespace", "displayName", "avatarURL", "websiteUrl", "isMultiTenant", "isVerified", "isDisabled", "isSinglePageApplication", "isNativeOrDesktopApp", "contactEmail", "privacyPolicyURL", "termsAndConditionsURL", "businessID", "businessProfileRecordID", "requireHttps", "requireAppSecret", "enableClientOauthLogin", "enableWebOAuthLogin", "enableDeviceOAuthLogin", "allowAccessToSuiteSettings", "requireWebOAuthReauthentication", "requireTwoFactorReauthorization", "enableEmbeddedBrowserOAuthLogin", "useStrictModeForRedirectURIs", "countryRestricted", "spaUIEngine", "spaStaticFilesRootPath", "spaRelativeAppPath", "spaNpmStartScript", "spaNpmPublishScript", "spaRelativeSourcePath", "spaRelativeOutputPath", "useProxyToSpaDevelopmentServer", "spaDevelopmentServerUri", "enableGitRepoManagement", "gitRepoUrl"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "namespace", "displayName", "avatarURL", "websiteUrl", "isMultiTenant", "isVerified", "isDisabled", "isSinglePageApplication", "isNativeOrDesktopApp", "contactEmail", "privacyPolicyURL", "termsAndConditionsURL", "requireHttps", "requireAppSecret", "enableClientOauthLogin", "enableWebOAuthLogin", "enableDeviceOAuthLogin", "allowAccessToSuiteSettings", "requireWebOAuthReauthentication", "requireTwoFactorReauthorization", "enableEmbeddedBrowserOAuthLogin", "useStrictModeForRedirectURIs", "countryRestricted", "spaUIEngine", "spaStaticFilesRootPath", "spaRelativeAppPath", "spaNpmStartScript", "spaNpmPublishScript", "spaRelativeSourcePath", "spaRelativeOutputPath", "useProxyToSpaDevelopmentServer", "spaDevelopmentServerUri", "enableGitRepoManagement", "gitRepoUrl"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -144,16 +142,6 @@ class BusinessApplicationCreateDto(BaseModel):
         if self.terms_and_conditions_url is None and "terms_and_conditions_url" in self.model_fields_set:
             _dict['termsAndConditionsURL'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if spa_ui_engine (nullable) is None
         # and model_fields_set contains the field
         if self.spa_ui_engine is None and "spa_ui_engine" in self.model_fields_set:
@@ -226,8 +214,6 @@ class BusinessApplicationCreateDto(BaseModel):
             "contactEmail": obj.get("contactEmail"),
             "privacyPolicyURL": obj.get("privacyPolicyURL"),
             "termsAndConditionsURL": obj.get("termsAndConditionsURL"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "requireHttps": obj.get("requireHttps"),
             "requireAppSecret": obj.get("requireAppSecret"),
             "enableClientOauthLogin": obj.get("enableClientOauthLogin"),

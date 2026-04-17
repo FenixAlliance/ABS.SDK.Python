@@ -40,9 +40,7 @@ class PaymentTermCreateDto(BaseModel):
     credit_months: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="creditMonths")
     credit_years: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="creditYears")
     payment_mode_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="paymentModeID")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "isTemplate", "percentage", "creditDays", "creditWeeks", "creditMonths", "creditYears", "paymentModeID", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "isTemplate", "percentage", "creditDays", "creditWeeks", "creditMonths", "creditYears", "paymentModeID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,16 +91,6 @@ class PaymentTermCreateDto(BaseModel):
         if self.payment_mode_id is None and "payment_mode_id" in self.model_fields_set:
             _dict['paymentModeID'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -125,9 +113,7 @@ class PaymentTermCreateDto(BaseModel):
             "creditWeeks": obj.get("creditWeeks"),
             "creditMonths": obj.get("creditMonths"),
             "creditYears": obj.get("creditYears"),
-            "paymentModeID": obj.get("paymentModeID"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "paymentModeID": obj.get("paymentModeID")
         })
         return _obj
 

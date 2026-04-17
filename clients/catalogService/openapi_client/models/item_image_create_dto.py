@@ -31,8 +31,6 @@ class ItemImageCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
-    business_profile_record_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessProfileRecordID")
     item_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="itemID")
     is_item_mozaic_bg: Optional[StrictBool] = Field(default=None, alias="isItemMozaicBG")
     m_d5_hash: Optional[Annotated[str, Field(min_length=32, strict=True, max_length=32)]] = Field(default=None, alias="mD5Hash")
@@ -49,8 +47,7 @@ class ItemImageCreateDto(BaseModel):
     valid_response: Optional[StrictBool] = Field(default=None, alias="validResponse")
     social_profile_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="socialProfileID")
     parent_file_upload_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="parentFileUploadID")
-    account_holder_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="accountHolderID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessID", "businessProfileRecordID", "itemID", "isItemMozaicBG", "mD5Hash", "metadata", "fileUploadURL", "fileName", "title", "abstract", "author", "keyWords", "notes", "contentType", "fileLength", "validResponse", "socialProfileID", "parentFileUploadID", "accountHolderID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "itemID", "isItemMozaicBG", "mD5Hash", "metadata", "fileUploadURL", "fileName", "title", "abstract", "author", "keyWords", "notes", "contentType", "fileLength", "validResponse", "socialProfileID", "parentFileUploadID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,11 +88,6 @@ class ItemImageCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if item_id (nullable) is None
         # and model_fields_set contains the field
         if self.item_id is None and "item_id" in self.model_fields_set:
@@ -156,11 +148,6 @@ class ItemImageCreateDto(BaseModel):
         if self.parent_file_upload_id is None and "parent_file_upload_id" in self.model_fields_set:
             _dict['parentFileUploadID'] = None
 
-        # set to None if account_holder_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_holder_id is None and "account_holder_id" in self.model_fields_set:
-            _dict['accountHolderID'] = None
-
         return _dict
 
     @classmethod
@@ -175,8 +162,6 @@ class ItemImageCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "itemID": obj.get("itemID"),
             "isItemMozaicBG": obj.get("isItemMozaicBG"),
             "mD5Hash": obj.get("mD5Hash"),
@@ -192,8 +177,7 @@ class ItemImageCreateDto(BaseModel):
             "fileLength": obj.get("fileLength"),
             "validResponse": obj.get("validResponse"),
             "socialProfileID": obj.get("socialProfileID"),
-            "parentFileUploadID": obj.get("parentFileUploadID"),
-            "accountHolderID": obj.get("accountHolderID")
+            "parentFileUploadID": obj.get("parentFileUploadID")
         })
         return _obj
 

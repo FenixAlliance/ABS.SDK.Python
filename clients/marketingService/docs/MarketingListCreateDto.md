@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **modified_on** | **datetime** |  | [optional] 
 **last_used_on** | **datetime** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **marketing_list_type** | **str** |  | [optional] 
 **marketing_list_target** | **str** |  | [optional] 
 

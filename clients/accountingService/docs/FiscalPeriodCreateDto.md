@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **from_date** | **datetime** |  | [optional] 
 **to_date** | **datetime** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **fiscal_year_id** | **str** |  | [optional] 
 
 ## Example

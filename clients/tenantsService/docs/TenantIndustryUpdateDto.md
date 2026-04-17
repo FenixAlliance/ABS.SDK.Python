@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **parent_business_industry_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -34,9 +34,8 @@ class CostCentreGroupCreateDto(BaseModel):
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=50)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=250)]] = None
     disabled: Optional[StrictBool] = None
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     parent_cost_centres_group_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="parentCostCentresGroupId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "disabled", "tenantId", "parentCostCentresGroupId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "disabled", "parentCostCentresGroupId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,11 +86,6 @@ class CostCentreGroupCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if parent_cost_centres_group_id (nullable) is None
         # and model_fields_set contains the field
         if self.parent_cost_centres_group_id is None and "parent_cost_centres_group_id" in self.model_fields_set:
@@ -114,7 +108,6 @@ class CostCentreGroupCreateDto(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "disabled": obj.get("disabled"),
-            "tenantId": obj.get("tenantId"),
             "parentCostCentresGroupId": obj.get("parentCostCentresGroupId")
         })
         return _obj

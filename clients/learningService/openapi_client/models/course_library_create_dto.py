@@ -35,9 +35,8 @@ class CourseLibraryCreateDto(BaseModel):
     description: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
     course_unit_id: Optional[StrictStr] = Field(default=None, alias="courseUnitID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     release_date_time: Optional[datetime] = Field(default=None, alias="releaseDateTime")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "courseID", "courseUnitID", "businessID", "releaseDateTime"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "courseID", "courseUnitID", "releaseDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,7 +110,6 @@ class CourseLibraryCreateDto(BaseModel):
             "description": obj.get("description"),
             "courseID": obj.get("courseID"),
             "courseUnitID": obj.get("courseUnitID"),
-            "businessID": obj.get("businessID"),
             "releaseDateTime": obj.get("releaseDateTime")
         })
         return _obj

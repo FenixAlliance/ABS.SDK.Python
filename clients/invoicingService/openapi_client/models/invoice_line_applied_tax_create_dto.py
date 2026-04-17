@@ -30,11 +30,9 @@ class InvoiceLineAppliedTaxCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     invoice_id: Optional[StrictStr] = Field(default=None, alias="invoiceId")
     tax_policy_id: Optional[StrictStr] = Field(default=None, alias="taxPolicyId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "tenantId", "invoiceId", "taxPolicyId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "invoiceId", "taxPolicyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,11 +73,6 @@ class InvoiceLineAppliedTaxCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if invoice_id (nullable) is None
         # and model_fields_set contains the field
         if self.invoice_id is None and "invoice_id" in self.model_fields_set:
@@ -89,11 +82,6 @@ class InvoiceLineAppliedTaxCreateDto(BaseModel):
         # and model_fields_set contains the field
         if self.tax_policy_id is None and "tax_policy_id" in self.model_fields_set:
             _dict['taxPolicyId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         return _dict
 
@@ -109,10 +97,8 @@ class InvoiceLineAppliedTaxCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "tenantId": obj.get("tenantId"),
             "invoiceId": obj.get("invoiceId"),
-            "taxPolicyId": obj.get("taxPolicyId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "taxPolicyId": obj.get("taxPolicyId")
         })
         return _obj
 

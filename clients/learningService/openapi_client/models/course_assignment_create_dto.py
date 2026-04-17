@@ -36,14 +36,13 @@ class CourseAssignmentCreateDto(BaseModel):
     instructions: Optional[StrictStr] = None
     points: Optional[Union[StrictFloat, StrictInt]] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     course_unit_id: Optional[StrictStr] = Field(default=None, alias="courseUnitID")
     course_cohort_id: Optional[StrictStr] = Field(default=None, alias="courseCohortID")
     course_assignment_type_id: Optional[StrictStr] = Field(default=None, alias="courseAssignmentTypeID")
     due_date_time: Optional[datetime] = Field(default=None, alias="dueDateTime")
     asign_to_all_cohorts: Optional[StrictBool] = Field(default=None, alias="asignToAllCohorts")
     resources: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "instructions", "points", "courseID", "businessID", "courseUnitID", "courseCohortID", "courseAssignmentTypeID", "dueDateTime", "asignToAllCohorts", "resources"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "instructions", "points", "courseID", "courseUnitID", "courseCohortID", "courseAssignmentTypeID", "dueDateTime", "asignToAllCohorts", "resources"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -138,7 +137,6 @@ class CourseAssignmentCreateDto(BaseModel):
             "instructions": obj.get("instructions"),
             "points": obj.get("points"),
             "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID"),
             "courseUnitID": obj.get("courseUnitID"),
             "courseCohortID": obj.get("courseCohortID"),
             "courseAssignmentTypeID": obj.get("courseAssignmentTypeID"),

@@ -31,12 +31,10 @@ class ShareIssuanceCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     unit_price: Optional[StrictInt] = Field(default=None, alias="unitPrice")
     quantity: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]] = None
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "tenantId", "enrollmentId", "unitPrice", "quantity", "currencyId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "unitPrice", "quantity", "currencyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,16 +75,6 @@ class ShareIssuanceCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if currency_id (nullable) is None
         # and model_fields_set contains the field
         if self.currency_id is None and "currency_id" in self.model_fields_set:
@@ -106,8 +94,6 @@ class ShareIssuanceCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "unitPrice": obj.get("unitPrice"),
             "quantity": obj.get("quantity"),
             "currencyId": obj.get("currencyId")

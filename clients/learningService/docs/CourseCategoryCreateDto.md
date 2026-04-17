@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **image_url** | **str** |  | [optional] 
 **is_featured** | **bool** |  | [optional] 
-**business_id** | **str** |  | 
 
 ## Example
 

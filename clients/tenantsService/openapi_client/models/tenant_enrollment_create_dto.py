@@ -30,9 +30,8 @@ class TenantEnrollmentCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     user_id: Optional[StrictStr] = Field(default=None, alias="userId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "tenantId", "userId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "userId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,11 +72,6 @@ class TenantEnrollmentCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if user_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_id is None and "user_id" in self.model_fields_set:
@@ -97,7 +91,6 @@ class TenantEnrollmentCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "tenantId": obj.get("tenantId"),
             "userId": obj.get("userId")
         })
         return _obj

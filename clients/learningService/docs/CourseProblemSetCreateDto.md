@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **overall_score** | **float** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 **course_unit_id** | **str** |  | [optional] 
 **course_grading_rubric_id** | **str** |  | [optional] 
 **release_date_time** | **datetime** |  | [optional] 

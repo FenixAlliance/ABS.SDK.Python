@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

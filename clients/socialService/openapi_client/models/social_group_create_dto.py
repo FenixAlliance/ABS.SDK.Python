@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -27,11 +28,13 @@ class SocialGroupCreateDto(BaseModel):
     """
     SocialGroupCreateDto
     """ # noqa: E501
+    id: Optional[StrictStr] = None
+    timestamp: Optional[datetime] = None
     name: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     avatar_url: Optional[StrictStr] = Field(default=None, alias="avatarURL")
     social_profile_id: Optional[StrictStr] = Field(default=None, alias="socialProfileID")
-    __properties: ClassVar[List[str]] = ["name", "title", "avatarURL", "socialProfileID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "title", "avatarURL", "socialProfileID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +107,8 @@ class SocialGroupCreateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
             "title": obj.get("title"),
             "avatarURL": obj.get("avatarURL"),

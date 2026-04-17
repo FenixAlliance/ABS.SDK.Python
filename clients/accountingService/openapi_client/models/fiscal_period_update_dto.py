@@ -32,10 +32,8 @@ class FiscalPeriodUpdateDto(BaseModel):
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=50)]] = None
     from_date: Optional[datetime] = Field(default=None, alias="fromDate")
     to_date: Optional[datetime] = Field(default=None, alias="toDate")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     fiscal_year_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="fiscalYearId")
-    __properties: ClassVar[List[str]] = ["name", "fromDate", "toDate", "tenantId", "enrollmentId", "fiscalYearId"]
+    __properties: ClassVar[List[str]] = ["name", "fromDate", "toDate", "fiscalYearId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,16 +79,6 @@ class FiscalPeriodUpdateDto(BaseModel):
         if self.name is None and "name" in self.model_fields_set:
             _dict['name'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if fiscal_year_id (nullable) is None
         # and model_fields_set contains the field
         if self.fiscal_year_id is None and "fiscal_year_id" in self.model_fields_set:
@@ -111,8 +99,6 @@ class FiscalPeriodUpdateDto(BaseModel):
             "name": obj.get("name"),
             "fromDate": obj.get("fromDate"),
             "toDate": obj.get("toDate"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "fiscalYearId": obj.get("fiscalYearId")
         })
         return _obj

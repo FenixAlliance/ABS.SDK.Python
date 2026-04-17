@@ -31,9 +31,8 @@ class DealUnitFlowUpdateDto(BaseModel):
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=100)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
     parent_business_process_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="parentBusinessProcessId")
-    tenant_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     tenant_enrollment_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="tenantEnrollmentId")
-    __properties: ClassVar[List[str]] = ["name", "description", "parentBusinessProcessId", "tenantId", "tenantEnrollmentId"]
+    __properties: ClassVar[List[str]] = ["name", "description", "parentBusinessProcessId", "tenantEnrollmentId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,11 +88,6 @@ class DealUnitFlowUpdateDto(BaseModel):
         if self.parent_business_process_id is None and "parent_business_process_id" in self.model_fields_set:
             _dict['parentBusinessProcessId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if tenant_enrollment_id (nullable) is None
         # and model_fields_set contains the field
         if self.tenant_enrollment_id is None and "tenant_enrollment_id" in self.model_fields_set:
@@ -114,7 +108,6 @@ class DealUnitFlowUpdateDto(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "parentBusinessProcessId": obj.get("parentBusinessProcessId"),
-            "tenantId": obj.get("tenantId"),
             "tenantEnrollmentId": obj.get("tenantEnrollmentId")
         })
         return _obj

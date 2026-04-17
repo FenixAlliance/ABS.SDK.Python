@@ -37,8 +37,7 @@ class CourseFileCreateDto(BaseModel):
     content_type: Optional[StrictStr] = Field(default=None, alias="contentType")
     file_length: Optional[StrictInt] = Field(default=None, alias="fileLength")
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "fileName", "fileUploadURL", "contentType", "fileLength", "courseID", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "fileName", "fileUploadURL", "contentType", "fileLength", "courseID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,8 +102,7 @@ class CourseFileCreateDto(BaseModel):
             "fileUploadURL": obj.get("fileUploadURL"),
             "contentType": obj.get("contentType"),
             "fileLength": obj.get("fileLength"),
-            "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID")
+            "courseID": obj.get("courseID")
         })
         return _obj
 

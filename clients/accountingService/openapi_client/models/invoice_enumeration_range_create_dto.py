@@ -40,10 +40,8 @@ class InvoiceEnumerationRangeCreateDto(BaseModel):
     valid_from: datetime = Field(alias="validFrom")
     valid_to: datetime = Field(alias="validTo")
     fiscal_authority_id: Optional[StrictStr] = Field(default=None, alias="fiscalAuthorityId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     document_type: Optional[StrictStr] = Field(default=None, alias="documentType")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "prefix", "suffix", "identifier", "qualifiedName", "currentNumeration", "numerationFrom", "numerationTo", "validFrom", "validTo", "fiscalAuthorityId", "tenantId", "enrollmentId", "documentType"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "prefix", "suffix", "identifier", "qualifiedName", "currentNumeration", "numerationFrom", "numerationTo", "validFrom", "validTo", "fiscalAuthorityId", "documentType"]
 
     @field_validator('document_type')
     def document_type_validate_enum(cls, value):
@@ -119,16 +117,6 @@ class InvoiceEnumerationRangeCreateDto(BaseModel):
         if self.fiscal_authority_id is None and "fiscal_authority_id" in self.model_fields_set:
             _dict['fiscalAuthorityId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -153,8 +141,6 @@ class InvoiceEnumerationRangeCreateDto(BaseModel):
             "validFrom": obj.get("validFrom"),
             "validTo": obj.get("validTo"),
             "fiscalAuthorityId": obj.get("fiscalAuthorityId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "documentType": obj.get("documentType")
         })
         return _obj

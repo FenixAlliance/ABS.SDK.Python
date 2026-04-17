@@ -29,8 +29,6 @@ class AccountingEntryUpdateDto(BaseModel):
     """
     AccountingEntryUpdateDto
     """ # noqa: E501
-    tenant_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=1000)]] = None
     amount: Optional[Union[Annotated[float, Field(le=1.7976931348623157E+308, strict=True, ge=0.01)], Annotated[int, Field(le=2147483647, strict=True, ge=1)]]] = None
     var_date: Optional[datetime] = Field(default=None, alias="date")
@@ -39,7 +37,7 @@ class AccountingEntryUpdateDto(BaseModel):
     credit_account_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="creditAccountId")
     journal_entry_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="journalEntryId")
     accounting_entry_type: Optional[StrictStr] = Field(default=None, alias="accountingEntryType")
-    __properties: ClassVar[List[str]] = ["tenantId", "enrollmentId", "description", "amount", "date", "currencyId", "debitAccountId", "creditAccountId", "journalEntryId", "accountingEntryType"]
+    __properties: ClassVar[List[str]] = ["description", "amount", "date", "currencyId", "debitAccountId", "creditAccountId", "journalEntryId", "accountingEntryType"]
 
     @field_validator('accounting_entry_type')
     def accounting_entry_type_validate_enum(cls, value):
@@ -90,16 +88,6 @@ class AccountingEntryUpdateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
@@ -142,8 +130,6 @@ class AccountingEntryUpdateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "description": obj.get("description"),
             "amount": obj.get("amount"),
             "date": obj.get("date"),

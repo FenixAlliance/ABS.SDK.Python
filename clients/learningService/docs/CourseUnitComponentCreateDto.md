@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **content** | **str** |  | [optional] 
 **order** | **int** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 **course_unit_id** | **str** |  | [optional] 
 
 ## Example

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,8 +30,7 @@ class TenantPositionUpdateDto(BaseModel):
     title: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["title", "description", "type", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["title", "description", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,11 +86,6 @@ class TenantPositionUpdateDto(BaseModel):
         if self.type is None and "type" in self.model_fields_set:
             _dict['type'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         return _dict
 
     @classmethod
@@ -106,8 +100,7 @@ class TenantPositionUpdateDto(BaseModel):
         _obj = cls.model_validate({
             "title": obj.get("title"),
             "description": obj.get("description"),
-            "type": obj.get("type"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "type": obj.get("type")
         })
         return _obj
 

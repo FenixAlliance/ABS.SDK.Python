@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

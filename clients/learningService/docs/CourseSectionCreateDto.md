@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **icon** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 **release_date_time** | **datetime** |  | [optional] 
 **hide_from_students** | **bool** |  | [optional] 
 

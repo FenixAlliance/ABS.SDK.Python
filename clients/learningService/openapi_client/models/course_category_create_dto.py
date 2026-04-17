@@ -35,8 +35,7 @@ class CourseCategoryCreateDto(BaseModel):
     description: Optional[StrictStr] = None
     image_url: Optional[StrictStr] = Field(default=None, alias="imageURL")
     is_featured: Optional[StrictBool] = Field(default=None, alias="isFeatured")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "imageURL", "isFeatured", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "imageURL", "isFeatured"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,8 +103,7 @@ class CourseCategoryCreateDto(BaseModel):
             "title": obj.get("title"),
             "description": obj.get("description"),
             "imageURL": obj.get("imageURL"),
-            "isFeatured": obj.get("isFeatured"),
-            "businessID": obj.get("businessID")
+            "isFeatured": obj.get("isFeatured")
         })
         return _obj
 

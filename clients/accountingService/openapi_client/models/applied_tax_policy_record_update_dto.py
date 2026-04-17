@@ -28,14 +28,12 @@ class AppliedTaxPolicyRecordUpdateDto(BaseModel):
     """
     AppliedTaxPolicyRecordUpdateDto
     """ # noqa: E501
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     tax_policy_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="taxPolicyId")
     invoice_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="invoiceId")
     item_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="itemId")
     tax_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="taxAmountInUSD")
     tax_base_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="taxBaseAmountInUSD")
-    __properties: ClassVar[List[str]] = ["tenantId", "enrollmentId", "taxPolicyId", "invoiceId", "itemId", "taxAmountInUSD", "taxBaseAmountInUSD"]
+    __properties: ClassVar[List[str]] = ["taxPolicyId", "invoiceId", "itemId", "taxAmountInUSD", "taxBaseAmountInUSD"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,16 +74,6 @@ class AppliedTaxPolicyRecordUpdateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if tax_policy_id (nullable) is None
         # and model_fields_set contains the field
         if self.tax_policy_id is None and "tax_policy_id" in self.model_fields_set:
@@ -113,8 +101,6 @@ class AppliedTaxPolicyRecordUpdateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "taxPolicyId": obj.get("taxPolicyId"),
             "invoiceId": obj.get("invoiceId"),
             "itemId": obj.get("itemId"),

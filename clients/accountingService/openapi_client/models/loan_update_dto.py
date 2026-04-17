@@ -35,8 +35,7 @@ class LoanUpdateDto(BaseModel):
     is_compund_interest_rate: Optional[StrictBool] = Field(default=None, alias="isCompundInterestRate")
     loan_type_id: Optional[StrictStr] = Field(default=None, alias="loanTypeId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["loanTimestamp", "paymentDeadline", "value", "interestRate", "isCompundInterestRate", "loanTypeId", "currencyId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["loanTimestamp", "paymentDeadline", "value", "interestRate", "isCompundInterestRate", "loanTypeId", "currencyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,11 +86,6 @@ class LoanUpdateDto(BaseModel):
         if self.currency_id is None and "currency_id" in self.model_fields_set:
             _dict['currencyId'] = None
 
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -110,8 +104,7 @@ class LoanUpdateDto(BaseModel):
             "interestRate": obj.get("interestRate"),
             "isCompundInterestRate": obj.get("isCompundInterestRate"),
             "loanTypeId": obj.get("loanTypeId"),
-            "currencyId": obj.get("currencyId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "currencyId": obj.get("currencyId")
         })
         return _obj
 

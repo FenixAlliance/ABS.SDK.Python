@@ -32,10 +32,9 @@ class CostCentreBudgetCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     name: Optional[StrictStr] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     fiscal_year_id: Optional[StrictStr] = Field(default=None, alias="fiscalYearId")
     cost_centre_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="costCentreId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "tenantId", "fiscalYearId", "costCentreId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "fiscalYearId", "costCentreId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,11 +80,6 @@ class CostCentreBudgetCreateDto(BaseModel):
         if self.name is None and "name" in self.model_fields_set:
             _dict['name'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if fiscal_year_id (nullable) is None
         # and model_fields_set contains the field
         if self.fiscal_year_id is None and "fiscal_year_id" in self.model_fields_set:
@@ -111,7 +105,6 @@ class CostCentreBudgetCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
-            "tenantId": obj.get("tenantId"),
             "fiscalYearId": obj.get("fiscalYearId"),
             "costCentreId": obj.get("costCentreId")
         })

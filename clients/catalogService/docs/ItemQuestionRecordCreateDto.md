@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **needs_revision** | **bool** |  | 
 **question** | **str** |  | 
 **social_profile_id** | **str** |  | [optional] 
-**business_id** | **str** |  | 
 
 ## Example
 

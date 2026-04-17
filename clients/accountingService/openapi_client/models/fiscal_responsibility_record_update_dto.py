@@ -30,9 +30,7 @@ class FiscalResponsibilityRecordUpdateDto(BaseModel):
     """ # noqa: E501
     fiscal_responsibility_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="fiscalResponsibilityId")
     billing_profile_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="billingProfileId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["fiscalResponsibilityId", "billingProfileId", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["fiscalResponsibilityId", "billingProfileId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,16 +81,6 @@ class FiscalResponsibilityRecordUpdateDto(BaseModel):
         if self.billing_profile_id is None and "billing_profile_id" in self.model_fields_set:
             _dict['billingProfileId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -106,9 +94,7 @@ class FiscalResponsibilityRecordUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "fiscalResponsibilityId": obj.get("fiscalResponsibilityId"),
-            "billingProfileId": obj.get("billingProfileId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "billingProfileId": obj.get("billingProfileId")
         })
         return _obj
 

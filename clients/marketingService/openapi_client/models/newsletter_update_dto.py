@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,10 +29,8 @@ class NewsletterUpdateDto(BaseModel):
     """ # noqa: E501
     code: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["code", "title", "tenantId", "enrollmentId", "name"]
+    __properties: ClassVar[List[str]] = ["code", "title", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,16 +81,6 @@ class NewsletterUpdateDto(BaseModel):
         if self.title is None and "title" in self.model_fields_set:
             _dict['title'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
@@ -112,8 +100,6 @@ class NewsletterUpdateDto(BaseModel):
         _obj = cls.model_validate({
             "code": obj.get("code"),
             "title": obj.get("title"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "name": obj.get("name")
         })
         return _obj

@@ -18,12 +18,11 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Optional
+from typing import Any, Dict, Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.grant_create_dto import GrantCreateDto
 from openapi_client.models.grant_dto_envelope import GrantDtoEnvelope
 from openapi_client.models.grant_dto_i_read_only_list_envelope import GrantDtoIReadOnlyListEnvelope
-from openapi_client.models.grant_update_dto import GrantUpdateDto
 from openapi_client.models.int32_envelope import Int32Envelope
 
 from openapi_client.api_client import ApiClient, RequestSerialized
@@ -1585,7 +1584,7 @@ class GrantsApi:
         grant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
-        grant_update_dto: Optional[GrantUpdateDto] = None,
+        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1611,8 +1610,8 @@ class GrantsApi:
         :type api_version: str
         :param x_api_version:
         :type x_api_version: str
-        :param grant_update_dto:
-        :type grant_update_dto: GrantUpdateDto
+        :param body:
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1640,7 +1639,7 @@ class GrantsApi:
             grant_id=grant_id,
             api_version=api_version,
             x_api_version=x_api_version,
-            grant_update_dto=grant_update_dto,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1668,7 +1667,7 @@ class GrantsApi:
         grant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
-        grant_update_dto: Optional[GrantUpdateDto] = None,
+        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1694,8 +1693,8 @@ class GrantsApi:
         :type api_version: str
         :param x_api_version:
         :type x_api_version: str
-        :param grant_update_dto:
-        :type grant_update_dto: GrantUpdateDto
+        :param body:
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1723,7 +1722,7 @@ class GrantsApi:
             grant_id=grant_id,
             api_version=api_version,
             x_api_version=x_api_version,
-            grant_update_dto=grant_update_dto,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1751,7 +1750,7 @@ class GrantsApi:
         grant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
-        grant_update_dto: Optional[GrantUpdateDto] = None,
+        body: Optional[Dict[str, Any]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1777,8 +1776,8 @@ class GrantsApi:
         :type api_version: str
         :param x_api_version:
         :type x_api_version: str
-        :param grant_update_dto:
-        :type grant_update_dto: GrantUpdateDto
+        :param body:
+        :type body: object
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1806,7 +1805,7 @@ class GrantsApi:
             grant_id=grant_id,
             api_version=api_version,
             x_api_version=x_api_version,
-            grant_update_dto=grant_update_dto,
+            body=body,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1829,7 +1828,7 @@ class GrantsApi:
         grant_id,
         api_version,
         x_api_version,
-        grant_update_dto,
+        body,
         _request_auth,
         _content_type,
         _headers,
@@ -1867,8 +1866,8 @@ class GrantsApi:
             _header_params['x-api-version'] = x_api_version
         # process the form parameters
         # process the body parameter
-        if grant_update_dto is not None:
-            _body_params = grant_update_dto
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`

@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **student_profile_id** | **str** |  | 
 **course_enrollment_id** | **str** |  | 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **course_completion_certificate_template_id** | **str** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 

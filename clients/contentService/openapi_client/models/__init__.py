@@ -156,6 +156,7 @@ from openapi_client.models.web_page_update_dto import WebPageUpdateDto
 from openapi_client.models.web_portal_create_dto import WebPortalCreateDto
 from openapi_client.models.web_portal_dto import WebPortalDto
 from openapi_client.models.web_portal_dto_envelope import WebPortalDtoEnvelope
+from openapi_client.models.web_portal_dto_list_envelope import WebPortalDtoListEnvelope
 from openapi_client.models.web_portal_update_dto import WebPortalUpdateDto
 from openapi_client.models.web_template_create_dto import WebTemplateCreateDto
 from openapi_client.models.web_template_dto import WebTemplateDto

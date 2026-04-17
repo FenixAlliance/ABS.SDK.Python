@@ -57,10 +57,8 @@ class InstructorProfileCreateDto(BaseModel):
     data8_label: Optional[StrictStr] = Field(default=None, alias="data8Label")
     data9: Optional[StrictStr] = None
     data9_label: Optional[StrictStr] = Field(default=None, alias="data9Label")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "authorized", "about", "verified", "submitted", "avatarUrl", "qualifiedName", "verificationTimestamp", "data", "dataLabel", "data1", "data1Label", "data2", "data2Label", "data3", "data3Label", "data4", "data4Label", "data5", "data5Label", "data6", "data6Label", "data7", "data7Label", "data8", "data8Label", "data9", "data9Label", "businessID", "contactID", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "authorized", "about", "verified", "submitted", "avatarUrl", "qualifiedName", "verificationTimestamp", "data", "dataLabel", "data1", "data1Label", "data2", "data2Label", "data3", "data3Label", "data4", "data4Label", "data5", "data5Label", "data6", "data6Label", "data7", "data7Label", "data8", "data8Label", "data9", "data9Label", "contactID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -216,20 +214,10 @@ class InstructorProfileCreateDto(BaseModel):
         if self.data9_label is None and "data9_label" in self.model_fields_set:
             _dict['data9Label'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
         # set to None if contact_id (nullable) is None
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
 
         return _dict
 
@@ -272,9 +260,7 @@ class InstructorProfileCreateDto(BaseModel):
             "data8Label": obj.get("data8Label"),
             "data9": obj.get("data9"),
             "data9Label": obj.get("data9Label"),
-            "businessID": obj.get("businessID"),
-            "contactID": obj.get("contactID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "contactID": obj.get("contactID")
         })
         return _obj
 

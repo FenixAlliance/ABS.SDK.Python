@@ -33,9 +33,8 @@ class CourseEnrollmentCreateDto(BaseModel):
     course_id: Optional[StrictStr] = Field(default=None, alias="courseID")
     course_cohort_id: Optional[StrictStr] = Field(default=None, alias="courseCohortID")
     student_profile_id: Optional[StrictStr] = Field(default=None, alias="studentProfileID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     course_completion_certificate_id: Optional[StrictStr] = Field(default=None, alias="courseCompletionCertificateID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "courseID", "courseCohortID", "studentProfileID", "businessProfileRecordID", "courseCompletionCertificateID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "courseID", "courseCohortID", "studentProfileID", "courseCompletionCertificateID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,11 +90,6 @@ class CourseEnrollmentCreateDto(BaseModel):
         if self.student_profile_id is None and "student_profile_id" in self.model_fields_set:
             _dict['studentProfileID'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if course_completion_certificate_id (nullable) is None
         # and model_fields_set contains the field
         if self.course_completion_certificate_id is None and "course_completion_certificate_id" in self.model_fields_set:
@@ -118,7 +112,6 @@ class CourseEnrollmentCreateDto(BaseModel):
             "courseID": obj.get("courseID"),
             "courseCohortID": obj.get("courseCohortID"),
             "studentProfileID": obj.get("studentProfileID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "courseCompletionCertificateID": obj.get("courseCompletionCertificateID")
         })
         return _obj

@@ -32,10 +32,9 @@ class CostCentreUpdateDto(BaseModel):
     disabled: Optional[StrictBool] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=250)]] = None
     cost_centre_type: Optional[StrictStr] = Field(default=None, alias="costCentreType")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     cost_centres_group_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="costCentresGroupId")
     parent_cost_centre_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="parentCostCentreId")
-    __properties: ClassVar[List[str]] = ["name", "disabled", "description", "costCentreType", "tenantId", "costCentresGroupId", "parentCostCentreId"]
+    __properties: ClassVar[List[str]] = ["name", "disabled", "description", "costCentreType", "costCentresGroupId", "parentCostCentreId"]
 
     @field_validator('cost_centre_type')
     def cost_centre_type_validate_enum(cls, value):
@@ -96,11 +95,6 @@ class CostCentreUpdateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if cost_centres_group_id (nullable) is None
         # and model_fields_set contains the field
         if self.cost_centres_group_id is None and "cost_centres_group_id" in self.model_fields_set:
@@ -127,7 +121,6 @@ class CostCentreUpdateDto(BaseModel):
             "disabled": obj.get("disabled"),
             "description": obj.get("description"),
             "costCentreType": obj.get("costCentreType"),
-            "tenantId": obj.get("tenantId"),
             "costCentresGroupId": obj.get("costCentresGroupId"),
             "parentCostCentreId": obj.get("parentCostCentreId")
         })

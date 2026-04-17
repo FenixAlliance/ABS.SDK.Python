@@ -31,15 +31,13 @@ class TenantTeamCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
-    business_profile_record_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessProfileRecordID")
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
     avatar_url: Optional[StrictStr] = Field(default=None, alias="avatarURL")
     is_public: Optional[StrictBool] = Field(default=None, alias="isPublic")
     business_unit_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessUnitID")
     organization_profile_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="organizationProfileID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessID", "businessProfileRecordID", "name", "description", "avatarURL", "isPublic", "businessUnitID", "organizationProfileID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "avatarURL", "isPublic", "businessUnitID", "organizationProfileID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,11 +78,6 @@ class TenantTeamCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
@@ -124,8 +117,6 @@ class TenantTeamCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "name": obj.get("name"),
             "description": obj.get("description"),
             "avatarURL": obj.get("avatarURL"),

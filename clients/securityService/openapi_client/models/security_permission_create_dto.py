@@ -32,9 +32,8 @@ class SecurityPermissionCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     name: Annotated[str, Field(min_length=1, strict=True)]
-    tenant_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="tenantId")
     description: Optional[Annotated[str, Field(strict=True, max_length=500)]] = None
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "tenantId", "description"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +94,6 @@ class SecurityPermissionCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
-            "tenantId": obj.get("tenantId"),
             "description": obj.get("description")
         })
         return _obj

@@ -35,11 +35,10 @@ class CourseProblemSetCreateDto(BaseModel):
     description: Optional[StrictStr] = None
     overall_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="overallScore")
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     course_unit_id: Optional[StrictStr] = Field(default=None, alias="courseUnitID")
     course_grading_rubric_id: Optional[StrictStr] = Field(default=None, alias="courseGradingRubricID")
     release_date_time: Optional[datetime] = Field(default=None, alias="releaseDateTime")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "overallScore", "courseID", "businessID", "courseUnitID", "courseGradingRubricID", "releaseDateTime"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "overallScore", "courseID", "courseUnitID", "courseGradingRubricID", "releaseDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,7 +117,6 @@ class CourseProblemSetCreateDto(BaseModel):
             "description": obj.get("description"),
             "overallScore": obj.get("overallScore"),
             "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID"),
             "courseUnitID": obj.get("courseUnitID"),
             "courseGradingRubricID": obj.get("courseGradingRubricID"),
             "releaseDateTime": obj.get("releaseDateTime")

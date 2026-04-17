@@ -27,11 +27,9 @@ class TenantTeamContactEnrollmentUpdateDto(BaseModel):
     """
     TenantTeamContactEnrollmentUpdateDto
     """ # noqa: E501
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     business_team_id: Optional[StrictStr] = Field(default=None, alias="businessTeamID")
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactID")
-    __properties: ClassVar[List[str]] = ["businessID", "businessProfileRecordID", "businessTeamID", "contactID"]
+    __properties: ClassVar[List[str]] = ["businessTeamID", "contactID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,16 +70,6 @@ class TenantTeamContactEnrollmentUpdateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if business_team_id (nullable) is None
         # and model_fields_set contains the field
         if self.business_team_id is None and "business_team_id" in self.model_fields_set:
@@ -104,8 +92,6 @@ class TenantTeamContactEnrollmentUpdateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "businessTeamID": obj.get("businessTeamID"),
             "contactID": obj.get("contactID")
         })

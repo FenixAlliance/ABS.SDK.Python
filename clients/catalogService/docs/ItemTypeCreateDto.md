@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **image_url** | **str** |  | [optional] 
 **google_category_taxonomy** | **str** |  | [optional] 
-**business_id** | **str** |  | 
 **item_category_id** | **str** |  | 
 **item_google_category_id** | **str** |  | [optional] 
 

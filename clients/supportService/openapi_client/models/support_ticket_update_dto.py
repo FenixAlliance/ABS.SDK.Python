@@ -28,13 +28,11 @@ class SupportTicketUpdateDto(BaseModel):
     SupportTicketUpdateDto
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    account_holder_id: Optional[StrictStr] = Field(default=None, alias="accountHolderID")
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     support_ticket_type_id: Optional[StrictStr] = Field(default=None, alias="supportTicketTypeID")
     support_entitlement_id: Optional[StrictStr] = Field(default=None, alias="supportEntitlementID")
     support_priority_id: Optional[StrictStr] = Field(default=None, alias="supportPriorityID")
-    __properties: ClassVar[List[str]] = ["description", "accountHolderID", "contactID", "businessProfileRecordID", "supportTicketTypeID", "supportEntitlementID", "supportPriorityID"]
+    __properties: ClassVar[List[str]] = ["description", "contactID", "supportTicketTypeID", "supportEntitlementID", "supportPriorityID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,20 +78,10 @@ class SupportTicketUpdateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if account_holder_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_holder_id is None and "account_holder_id" in self.model_fields_set:
-            _dict['accountHolderID'] = None
-
         # set to None if contact_id (nullable) is None
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
 
         # set to None if support_ticket_type_id (nullable) is None
         # and model_fields_set contains the field
@@ -123,9 +111,7 @@ class SupportTicketUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "accountHolderID": obj.get("accountHolderID"),
             "contactID": obj.get("contactID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "supportTicketTypeID": obj.get("supportTicketTypeID"),
             "supportEntitlementID": obj.get("supportEntitlementID"),
             "supportPriorityID": obj.get("supportPriorityID")

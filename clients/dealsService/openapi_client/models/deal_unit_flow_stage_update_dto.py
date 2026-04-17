@@ -30,10 +30,9 @@ class DealUnitFlowStageUpdateDto(BaseModel):
     order: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     deal_unit_flow_id: Optional[StrictStr] = Field(default=None, alias="dealUnitFlowId")
     parent_business_process_stage_id: Optional[StrictStr] = Field(default=None, alias="parentBusinessProcessStageId")
-    __properties: ClassVar[List[str]] = ["order", "name", "description", "enrollmentId", "dealUnitFlowId", "parentBusinessProcessStageId"]
+    __properties: ClassVar[List[str]] = ["order", "name", "description", "dealUnitFlowId", "parentBusinessProcessStageId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,11 +83,6 @@ class DealUnitFlowStageUpdateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if deal_unit_flow_id (nullable) is None
         # and model_fields_set contains the field
         if self.deal_unit_flow_id is None and "deal_unit_flow_id" in self.model_fields_set:
@@ -114,7 +108,6 @@ class DealUnitFlowStageUpdateDto(BaseModel):
             "order": obj.get("order"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "enrollmentId": obj.get("enrollmentId"),
             "dealUnitFlowId": obj.get("dealUnitFlowId"),
             "parentBusinessProcessStageId": obj.get("parentBusinessProcessStageId")
         })

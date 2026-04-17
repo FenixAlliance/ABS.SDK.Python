@@ -10,9 +10,7 @@ Name | Type | Description | Notes
 **order** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **deal_unit_flow_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **parent_business_process_stage_id** | **str** |  | [optional] 
 
 ## Example

@@ -33,16 +33,14 @@ class ItemPriceCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     item_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="itemId")
     unit_id: Optional[StrictStr] = Field(default=None, alias="unitId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
     unit_group_id: Optional[StrictStr] = Field(default=None, alias="unitGroupId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     discount_list_id: Optional[StrictStr] = Field(default=None, alias="discountListId")
     rounding_policy_id: Optional[StrictStr] = Field(default=None, alias="roundingPolicyId")
     price: Optional[Union[StrictFloat, StrictInt]] = None
     percent: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "itemId", "unitId", "tenantId", "currencyId", "priceListId", "unitGroupId", "enrollmentId", "discountListId", "roundingPolicyId", "price", "percent"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "itemId", "unitId", "currencyId", "priceListId", "unitGroupId", "discountListId", "roundingPolicyId", "price", "percent"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,11 +86,6 @@ class ItemPriceCreateDto(BaseModel):
         if self.unit_id is None and "unit_id" in self.model_fields_set:
             _dict['unitId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if currency_id (nullable) is None
         # and model_fields_set contains the field
         if self.currency_id is None and "currency_id" in self.model_fields_set:
@@ -107,11 +100,6 @@ class ItemPriceCreateDto(BaseModel):
         # and model_fields_set contains the field
         if self.unit_group_id is None and "unit_group_id" in self.model_fields_set:
             _dict['unitGroupId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if discount_list_id (nullable) is None
         # and model_fields_set contains the field
@@ -139,11 +127,9 @@ class ItemPriceCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "itemId": obj.get("itemId"),
             "unitId": obj.get("unitId"),
-            "tenantId": obj.get("tenantId"),
             "currencyId": obj.get("currencyId"),
             "priceListId": obj.get("priceListId"),
             "unitGroupId": obj.get("unitGroupId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "discountListId": obj.get("discountListId"),
             "roundingPolicyId": obj.get("roundingPolicyId"),
             "price": obj.get("price"),

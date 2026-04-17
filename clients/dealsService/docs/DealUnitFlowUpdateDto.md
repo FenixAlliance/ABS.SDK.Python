@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **parent_business_process_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **tenant_enrollment_id** | **str** |  | [optional] 
 
 ## Example

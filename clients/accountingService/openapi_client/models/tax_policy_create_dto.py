@@ -52,13 +52,11 @@ class TaxPolicyCreateDto(BaseModel):
     custom_state: Optional[StrictStr] = Field(default=None, alias="customState")
     custom_city: Optional[StrictStr] = Field(default=None, alias="customCity")
     city_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="cityId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     zero: Optional[StrictBool] = None
     reduced: Optional[StrictBool] = None
     withholding: Optional[StrictBool] = None
     fiscal_authority_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="fiscalAuthorityId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "title", "description", "isFree", "reduce", "isEnabled", "isDefault", "allowInternational", "hours", "days", "weeks", "months", "years", "value", "percentage", "currencyId", "countryId", "countryStateId", "customState", "customCity", "cityId", "enrollmentId", "tenantId", "zero", "reduced", "withholding", "fiscalAuthorityId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "title", "description", "isFree", "reduce", "isEnabled", "isDefault", "allowInternational", "hours", "days", "weeks", "months", "years", "value", "percentage", "currencyId", "countryId", "countryStateId", "customState", "customCity", "cityId", "zero", "reduced", "withholding", "fiscalAuthorityId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -144,16 +142,6 @@ class TaxPolicyCreateDto(BaseModel):
         if self.city_id is None and "city_id" in self.model_fields_set:
             _dict['cityId'] = None
 
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if fiscal_authority_id (nullable) is None
         # and model_fields_set contains the field
         if self.fiscal_authority_id is None and "fiscal_authority_id" in self.model_fields_set:
@@ -194,8 +182,6 @@ class TaxPolicyCreateDto(BaseModel):
             "customState": obj.get("customState"),
             "customCity": obj.get("customCity"),
             "cityId": obj.get("cityId"),
-            "enrollmentId": obj.get("enrollmentId"),
-            "tenantId": obj.get("tenantId"),
             "zero": obj.get("zero"),
             "reduced": obj.get("reduced"),
             "withholding": obj.get("withholding"),

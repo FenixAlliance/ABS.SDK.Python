@@ -31,8 +31,6 @@ class BudgetAccountEntryCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    tenant_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     description: Annotated[str, Field(min_length=1, strict=True, max_length=300)]
     var_date: Optional[datetime] = Field(default=None, alias="date")
     amount: Optional[Union[StrictFloat, StrictInt]] = None
@@ -42,7 +40,7 @@ class BudgetAccountEntryCreateDto(BaseModel):
     journal_entry_id: Optional[StrictStr] = Field(default=None, alias="journalEntryId")
     accounting_entry_type: Optional[StrictStr] = Field(default=None, alias="accountingEntryType")
     budget_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="budgetId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "tenantId", "enrollmentId", "description", "date", "amount", "currencyId", "debitAccountId", "creditAccountId", "journalEntryId", "accountingEntryType", "budgetId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "description", "date", "amount", "currencyId", "debitAccountId", "creditAccountId", "journalEntryId", "accountingEntryType", "budgetId"]
 
     @field_validator('accounting_entry_type')
     def accounting_entry_type_validate_enum(cls, value):
@@ -93,16 +91,6 @@ class BudgetAccountEntryCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if var_date (nullable) is None
         # and model_fields_set contains the field
         if self.var_date is None and "var_date" in self.model_fields_set:
@@ -142,8 +130,6 @@ class BudgetAccountEntryCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "description": obj.get("description"),
             "date": obj.get("date"),
             "amount": obj.get("amount"),

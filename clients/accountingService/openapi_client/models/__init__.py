@@ -154,7 +154,6 @@ from openapi_client.models.grant_create_dto import GrantCreateDto
 from openapi_client.models.grant_dto import GrantDto
 from openapi_client.models.grant_dto_envelope import GrantDtoEnvelope
 from openapi_client.models.grant_dto_i_read_only_list_envelope import GrantDtoIReadOnlyListEnvelope
-from openapi_client.models.grant_update_dto import GrantUpdateDto
 from openapi_client.models.http_validation_problem_details import HttpValidationProblemDetails
 from openapi_client.models.info_request import InfoRequest
 from openapi_client.models.info_response import InfoResponse
@@ -195,7 +194,6 @@ from openapi_client.models.loan_application_create_dto import LoanApplicationCre
 from openapi_client.models.loan_application_dto import LoanApplicationDto
 from openapi_client.models.loan_application_dto_envelope import LoanApplicationDtoEnvelope
 from openapi_client.models.loan_application_dto_i_read_only_list_envelope import LoanApplicationDtoIReadOnlyListEnvelope
-from openapi_client.models.loan_application_update_dto import LoanApplicationUpdateDto
 from openapi_client.models.loan_create_dto import LoanCreateDto
 from openapi_client.models.loan_dto import LoanDto
 from openapi_client.models.loan_dto_envelope import LoanDtoEnvelope

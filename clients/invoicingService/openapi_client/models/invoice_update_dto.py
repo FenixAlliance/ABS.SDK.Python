@@ -34,10 +34,8 @@ class InvoiceUpdateDto(BaseModel):
     closed: Optional[StrictBool] = None
     title: Optional[StrictStr] = None
     user_id: Optional[StrictStr] = Field(default=None, alias="userId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
     description: Optional[StrictStr] = None
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
     payment_term_id: Optional[StrictStr] = Field(default=None, alias="paymentTermId")
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
@@ -104,7 +102,7 @@ class InvoiceUpdateDto(BaseModel):
     invoice_lines: Optional[List[InvoiceLineCreateDto]] = Field(default=None, alias="invoiceLines")
     invoice_references: Optional[List[InvoiceReferenceCreateDto]] = Field(default=None, alias="invoiceReferences")
     invoice_adjustments: Optional[List[InvoiceAdjustmentCreateDto]] = Field(default=None, alias="invoiceAdjustments")
-    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "tenantId", "priceListId", "description", "enrollmentId", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "paid", "number", "notes", "orderId", "enumeration", "paymentModeId", "enumerationRangeId", "emisorBillingProfileId", "receiverBillingProfileId", "emisorWalletAccountId", "receiverWalletAccountId", "customerNotes", "invoiceType", "documentType", "invoiceStatus", "paymentDue", "validFrom", "validTo", "invoiceLines", "invoiceReferences", "invoiceAdjustments"]
+    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "priceListId", "description", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "paid", "number", "notes", "orderId", "enumeration", "paymentModeId", "enumerationRangeId", "emisorBillingProfileId", "receiverBillingProfileId", "emisorWalletAccountId", "receiverWalletAccountId", "customerNotes", "invoiceType", "documentType", "invoiceStatus", "paymentDue", "validFrom", "validTo", "invoiceLines", "invoiceReferences", "invoiceAdjustments"]
 
     @field_validator('cost_calculation_method')
     def cost_calculation_method_validate_enum(cls, value):
@@ -226,11 +224,6 @@ class InvoiceUpdateDto(BaseModel):
         if self.user_id is None and "user_id" in self.model_fields_set:
             _dict['userId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if price_list_id (nullable) is None
         # and model_fields_set contains the field
         if self.price_list_id is None and "price_list_id" in self.model_fields_set:
@@ -240,11 +233,6 @@ class InvoiceUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if individual_id (nullable) is None
         # and model_fields_set contains the field
@@ -491,10 +479,8 @@ class InvoiceUpdateDto(BaseModel):
             "closed": obj.get("closed"),
             "title": obj.get("title"),
             "userId": obj.get("userId"),
-            "tenantId": obj.get("tenantId"),
             "priceListId": obj.get("priceListId"),
             "description": obj.get("description"),
-            "enrollmentId": obj.get("enrollmentId"),
             "individualId": obj.get("individualId"),
             "paymentTermId": obj.get("paymentTermId"),
             "organizationId": obj.get("organizationId"),

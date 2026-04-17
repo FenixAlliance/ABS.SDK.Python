@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **image_url** | **str** |  | [optional] 
 **image** | **str** |  | [optional] 
 **web_portal_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

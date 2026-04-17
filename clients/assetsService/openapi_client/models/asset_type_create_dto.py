@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,11 +30,9 @@ class AssetTypeCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessId")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordId")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessId", "businessProfileRecordId", "name", "description"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,16 +73,6 @@ class AssetTypeCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessId'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordId'] = None
-
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
@@ -109,8 +97,6 @@ class AssetTypeCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "businessId": obj.get("businessId"),
-            "businessProfileRecordId": obj.get("businessProfileRecordId"),
             "name": obj.get("name"),
             "description": obj.get("description")
         })

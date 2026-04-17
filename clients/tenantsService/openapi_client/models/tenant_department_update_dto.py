@@ -30,10 +30,9 @@ class TenantDepartmentUpdateDto(BaseModel):
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     disabled: Optional[StrictBool] = None
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     organization_profile_id: Optional[StrictStr] = Field(default=None, alias="organizationProfileID")
     parent_department_id: Optional[StrictStr] = Field(default=None, alias="parentDepartmentID")
-    __properties: ClassVar[List[str]] = ["name", "description", "disabled", "businessProfileRecordID", "organizationProfileID", "parentDepartmentID"]
+    __properties: ClassVar[List[str]] = ["name", "description", "disabled", "organizationProfileID", "parentDepartmentID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,11 +83,6 @@ class TenantDepartmentUpdateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if organization_profile_id (nullable) is None
         # and model_fields_set contains the field
         if self.organization_profile_id is None and "organization_profile_id" in self.model_fields_set:
@@ -114,7 +108,6 @@ class TenantDepartmentUpdateDto(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "disabled": obj.get("disabled"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "organizationProfileID": obj.get("organizationProfileID"),
             "parentDepartmentID": obj.get("parentDepartmentID")
         })

@@ -15,8 +15,6 @@ Name | Type | Description | Notes
 **valid_from** | **datetime** |  | [optional] 
 **valid_to** | **datetime** |  | [optional] 
 **fiscal_authority_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **document_type** | **str** |  | [optional] 
 
 ## Example

@@ -37,11 +37,9 @@ class MarketingListUpdateDto(BaseModel):
     modified_on: Optional[datetime] = Field(default=None, alias="modifiedOn")
     last_used_on: Optional[datetime] = Field(default=None, alias="lastUsedOn")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     marketing_list_type: Optional[StrictStr] = Field(default=None, alias="marketingListType")
     marketing_list_target: Optional[StrictStr] = Field(default=None, alias="marketingListTarget")
-    __properties: ClassVar[List[str]] = ["locked", "name", "purpose", "description", "source", "cost", "modifiedOn", "lastUsedOn", "currencyId", "tenantId", "enrollmentId", "marketingListType", "marketingListTarget"]
+    __properties: ClassVar[List[str]] = ["locked", "name", "purpose", "description", "source", "cost", "modifiedOn", "lastUsedOn", "currencyId", "marketingListType", "marketingListTarget"]
 
     @field_validator('marketing_list_type')
     def marketing_list_type_validate_enum(cls, value):
@@ -127,16 +125,6 @@ class MarketingListUpdateDto(BaseModel):
         if self.currency_id is None and "currency_id" in self.model_fields_set:
             _dict['currencyId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -158,8 +146,6 @@ class MarketingListUpdateDto(BaseModel):
             "modifiedOn": obj.get("modifiedOn"),
             "lastUsedOn": obj.get("lastUsedOn"),
             "currencyId": obj.get("currencyId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "marketingListType": obj.get("marketingListType"),
             "marketingListTarget": obj.get("marketingListTarget")
         })

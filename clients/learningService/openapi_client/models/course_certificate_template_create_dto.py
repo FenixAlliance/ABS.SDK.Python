@@ -32,14 +32,12 @@ class CourseCertificateTemplateCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     course_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
     web_portal_id: Optional[StrictStr] = Field(default=None, alias="webPortalID")
     website_theme_id: Optional[StrictStr] = Field(default=None, alias="websiteThemeID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     social_profile_id: Optional[StrictStr] = Field(default=None, alias="socialProfileID")
     parent_web_content_id: Optional[StrictStr] = Field(default=None, alias="parentWebContentID")
     parent_web_content_version_id: Optional[StrictStr] = Field(default=None, alias="parentWebContentVersionID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "courseID", "businessID", "webPortalID", "websiteThemeID", "businessProfileRecordID", "socialProfileID", "parentWebContentID", "parentWebContentVersionID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "courseID", "webPortalID", "websiteThemeID", "socialProfileID", "parentWebContentID", "parentWebContentVersionID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,11 +88,6 @@ class CourseCertificateTemplateCreateDto(BaseModel):
         if self.website_theme_id is None and "website_theme_id" in self.model_fields_set:
             _dict['websiteThemeID'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if social_profile_id (nullable) is None
         # and model_fields_set contains the field
         if self.social_profile_id is None and "social_profile_id" in self.model_fields_set:
@@ -125,10 +118,8 @@ class CourseCertificateTemplateCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID"),
             "webPortalID": obj.get("webPortalID"),
             "websiteThemeID": obj.get("websiteThemeID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "socialProfileID": obj.get("socialProfileID"),
             "parentWebContentID": obj.get("parentWebContentID"),
             "parentWebContentVersionID": obj.get("parentWebContentVersionID")

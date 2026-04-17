@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **website_url** | **str** |  | [optional] 
 **featured** | **bool** |  | [optional] 
 **trending** | **bool** |  | [optional] 
-**business_id** | **str** |  | 
 
 ## Example
 

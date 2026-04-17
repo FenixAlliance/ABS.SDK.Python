@@ -36,10 +36,9 @@ class ItemTypeCreateDto(BaseModel):
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
     image_url: Optional[StrictStr] = Field(default=None, alias="imageURL")
     google_category_taxonomy: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = Field(default=None, alias="googleCategoryTaxonomy")
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
     item_category_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="itemCategoryID")
     item_google_category_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="itemGoogleCategoryID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "pluralTitle", "singularTitle", "description", "imageURL", "googleCategoryTaxonomy", "businessID", "itemCategoryID", "itemGoogleCategoryID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "pluralTitle", "singularTitle", "description", "imageURL", "googleCategoryTaxonomy", "itemCategoryID", "itemGoogleCategoryID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -129,7 +128,6 @@ class ItemTypeCreateDto(BaseModel):
             "description": obj.get("description"),
             "imageURL": obj.get("imageURL"),
             "googleCategoryTaxonomy": obj.get("googleCategoryTaxonomy"),
-            "businessID": obj.get("businessID"),
             "itemCategoryID": obj.get("itemCategoryID"),
             "itemGoogleCategoryID": obj.get("itemGoogleCategoryID")
         })

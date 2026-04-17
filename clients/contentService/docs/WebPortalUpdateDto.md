@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **website_theme_id** | **str** |  | [optional] 
 **business_domain_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **business_portal_application_id** | **str** |  | [optional] 
 
 ## Example

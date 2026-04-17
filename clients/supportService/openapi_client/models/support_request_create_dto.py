@@ -35,12 +35,9 @@ class SupportRequestCreateDto(BaseModel):
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=4000)]] = None
     approved: Optional[StrictBool] = None
     approved_timestamp: Optional[datetime] = Field(default=None, alias="approvedTimestamp")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     support_entitlement_id: Optional[StrictStr] = Field(default=None, alias="supportEntitlementID")
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactID")
-    account_holder_id: Optional[StrictStr] = Field(default=None, alias="accountHolderID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "approved", "approvedTimestamp", "businessID", "businessProfileRecordID", "supportEntitlementID", "contactID", "accountHolderID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "approved", "approvedTimestamp", "supportEntitlementID", "contactID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,16 +83,6 @@ class SupportRequestCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if support_entitlement_id (nullable) is None
         # and model_fields_set contains the field
         if self.support_entitlement_id is None and "support_entitlement_id" in self.model_fields_set:
@@ -105,11 +92,6 @@ class SupportRequestCreateDto(BaseModel):
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactID'] = None
-
-        # set to None if account_holder_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_holder_id is None and "account_holder_id" in self.model_fields_set:
-            _dict['accountHolderID'] = None
 
         return _dict
 
@@ -129,11 +111,8 @@ class SupportRequestCreateDto(BaseModel):
             "description": obj.get("description"),
             "approved": obj.get("approved"),
             "approvedTimestamp": obj.get("approvedTimestamp"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "supportEntitlementID": obj.get("supportEntitlementID"),
-            "contactID": obj.get("contactID"),
-            "accountHolderID": obj.get("accountHolderID")
+            "contactID": obj.get("contactID")
         })
         return _obj
 

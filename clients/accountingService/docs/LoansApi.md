@@ -773,7 +773,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_loan_application_async**
-> EmptyEnvelope update_loan_application_async(tenant_id, application_id, loan_application_update_dto, api_version=api_version, x_api_version=x_api_version)
+> EmptyEnvelope update_loan_application_async(tenant_id, application_id, body, api_version=api_version, x_api_version=x_api_version)
 
 Updates a loan application
 
@@ -785,7 +785,6 @@ Updates the specified loan application.
 ```python
 import openapi_client
 from openapi_client.models.empty_envelope import EmptyEnvelope
-from openapi_client.models.loan_application_update_dto import LoanApplicationUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -802,13 +801,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.LoansApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     application_id = 'application_id_example' # str | 
-    loan_application_update_dto = openapi_client.LoanApplicationUpdateDto() # LoanApplicationUpdateDto | 
+    body = None # object | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Updates a loan application
-        api_response = api_instance.update_loan_application_async(tenant_id, application_id, loan_application_update_dto, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.update_loan_application_async(tenant_id, application_id, body, api_version=api_version, x_api_version=x_api_version)
         print("The response of LoansApi->update_loan_application_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -824,7 +823,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
  **application_id** | **str**|  | 
- **loan_application_update_dto** | [**LoanApplicationUpdateDto**](LoanApplicationUpdateDto.md)|  | 
+ **body** | **object**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 

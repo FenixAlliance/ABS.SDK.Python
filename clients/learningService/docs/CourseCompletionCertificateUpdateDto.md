@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **student_profile_id** | **str** |  | [optional] 
 **course_enrollment_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **course_completion_certificate_template_id** | **str** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 

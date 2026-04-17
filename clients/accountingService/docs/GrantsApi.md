@@ -380,7 +380,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_grant_async**
-> EmptyEnvelope update_grant_async(tenant_id, grant_id, api_version=api_version, x_api_version=x_api_version, grant_update_dto=grant_update_dto)
+> EmptyEnvelope update_grant_async(tenant_id, grant_id, api_version=api_version, x_api_version=x_api_version, body=body)
 
 Update grant
 
@@ -392,7 +392,6 @@ Updates an existing grant identified by its ID.
 ```python
 import openapi_client
 from openapi_client.models.empty_envelope import EmptyEnvelope
-from openapi_client.models.grant_update_dto import GrantUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -411,11 +410,11 @@ with openapi_client.ApiClient(configuration) as api_client:
     grant_id = 'grant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
-    grant_update_dto = openapi_client.GrantUpdateDto() # GrantUpdateDto |  (optional)
+    body = None # object |  (optional)
 
     try:
         # Update grant
-        api_response = api_instance.update_grant_async(tenant_id, grant_id, api_version=api_version, x_api_version=x_api_version, grant_update_dto=grant_update_dto)
+        api_response = api_instance.update_grant_async(tenant_id, grant_id, api_version=api_version, x_api_version=x_api_version, body=body)
         print("The response of GrantsApi->update_grant_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -433,7 +432,7 @@ Name | Type | Description  | Notes
  **grant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
- **grant_update_dto** | [**GrantUpdateDto**](GrantUpdateDto.md)|  | [optional] 
+ **body** | **object**|  | [optional] 
 
 ### Return type
 

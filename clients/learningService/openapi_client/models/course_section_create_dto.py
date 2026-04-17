@@ -35,10 +35,9 @@ class CourseSectionCreateDto(BaseModel):
     icon: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     release_date_time: Optional[datetime] = Field(default=None, alias="releaseDateTime")
     hide_from_students: Optional[StrictBool] = Field(default=None, alias="hideFromStudents")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "icon", "description", "courseID", "businessID", "releaseDateTime", "hideFromStudents"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "icon", "description", "courseID", "releaseDateTime", "hideFromStudents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,7 +111,6 @@ class CourseSectionCreateDto(BaseModel):
             "icon": obj.get("icon"),
             "description": obj.get("description"),
             "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID"),
             "releaseDateTime": obj.get("releaseDateTime"),
             "hideFromStudents": obj.get("hideFromStudents")
         })

@@ -10,10 +10,9 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **closed** | **bool** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **end_date** | **datetime** |  | [optional] 
 **start_date** | **datetime** |  | [optional] 
+**fiscal_authority_id** | **str** |  | [optional] 
 
 ## Example
 

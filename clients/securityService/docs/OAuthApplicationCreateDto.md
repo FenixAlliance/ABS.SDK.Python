@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **display_name** | **str** |  | 
 **client_id** | **str** |  | [optional] 
 **client_secret** | **str** |  | [optional] 
@@ -14,8 +16,6 @@ Name | Type | Description | Notes
 **redirect_uris** | **str** |  | [optional] 
 **post_logout_redirect_uris** | **str** |  | [optional] 
 **logo** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

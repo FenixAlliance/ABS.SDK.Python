@@ -34,9 +34,7 @@ class FiscalIdentificationTypeCreateDto(BaseModel):
     code: Optional[StrictStr] = None
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=50)]] = None
     fiscal_authority_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="fiscalAuthorityId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "name", "fiscalAuthorityId", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "name", "fiscalAuthorityId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,16 +90,6 @@ class FiscalIdentificationTypeCreateDto(BaseModel):
         if self.fiscal_authority_id is None and "fiscal_authority_id" in self.model_fields_set:
             _dict['fiscalAuthorityId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -118,9 +106,7 @@ class FiscalIdentificationTypeCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "code": obj.get("code"),
             "name": obj.get("name"),
-            "fiscalAuthorityId": obj.get("fiscalAuthorityId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "fiscalAuthorityId": obj.get("fiscalAuthorityId")
         })
         return _obj
 

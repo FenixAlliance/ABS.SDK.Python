@@ -11,11 +11,9 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **domain** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
-**business_id** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **website_theme_id** | **str** |  | [optional] 
 **business_domain_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **business_portal_application_id** | **str** |  | [optional] 
 
 ## Example

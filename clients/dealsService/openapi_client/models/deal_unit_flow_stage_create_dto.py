@@ -33,11 +33,9 @@ class DealUnitFlowStageCreateDto(BaseModel):
     order: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     deal_unit_flow_id: Optional[StrictStr] = Field(default=None, alias="dealUnitFlowId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     description: Optional[StrictStr] = None
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     parent_business_process_stage_id: Optional[StrictStr] = Field(default=None, alias="parentBusinessProcessStageId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "order", "name", "dealUnitFlowId", "tenantId", "description", "enrollmentId", "parentBusinessProcessStageId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "order", "name", "dealUnitFlowId", "description", "parentBusinessProcessStageId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,20 +86,10 @@ class DealUnitFlowStageCreateDto(BaseModel):
         if self.deal_unit_flow_id is None and "deal_unit_flow_id" in self.model_fields_set:
             _dict['dealUnitFlowId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if parent_business_process_stage_id (nullable) is None
         # and model_fields_set contains the field
@@ -125,9 +113,7 @@ class DealUnitFlowStageCreateDto(BaseModel):
             "order": obj.get("order"),
             "name": obj.get("name"),
             "dealUnitFlowId": obj.get("dealUnitFlowId"),
-            "tenantId": obj.get("tenantId"),
             "description": obj.get("description"),
-            "enrollmentId": obj.get("enrollmentId"),
             "parentBusinessProcessStageId": obj.get("parentBusinessProcessStageId")
         })
         return _obj

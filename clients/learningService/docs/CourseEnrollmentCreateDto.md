@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **course_id** | **str** |  | [optional] 
 **course_cohort_id** | **str** |  | [optional] 
 **student_profile_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **course_completion_certificate_id** | **str** |  | [optional] 
 
 ## Example

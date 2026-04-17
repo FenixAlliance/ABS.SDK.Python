@@ -33,9 +33,7 @@ class LedgerTypeCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     name: Annotated[str, Field(min_length=0, strict=True, max_length=50)]
     ledger_class: Optional[StrictStr] = Field(default=None, alias="ledgerClass")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "ledgerClass", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "ledgerClass"]
 
     @field_validator('ledger_class')
     def ledger_class_validate_enum(cls, value):
@@ -86,16 +84,6 @@ class LedgerTypeCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -111,9 +99,7 @@ class LedgerTypeCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
-            "ledgerClass": obj.get("ledgerClass"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "ledgerClass": obj.get("ledgerClass")
         })
         return _obj
 

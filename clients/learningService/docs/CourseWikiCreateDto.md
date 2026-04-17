@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **description** | **str** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 **course_unit_id** | **str** |  | [optional] 
 **release_date_time** | **datetime** |  | [optional] 
 

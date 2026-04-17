@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
 **date_time** | **datetime** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **parent_journal_id** | **str** |  | [optional] 
 **journal_type_id** | **str** |  | [optional] 
 **ledger_id** | **str** |  | [optional] 

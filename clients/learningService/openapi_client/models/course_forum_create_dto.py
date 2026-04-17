@@ -34,8 +34,7 @@ class CourseForumCreateDto(BaseModel):
     title: Annotated[str, Field(min_length=1, strict=True)]
     description: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "courseID", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "courseID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,8 +96,7 @@ class CourseForumCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "title": obj.get("title"),
             "description": obj.get("description"),
-            "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID")
+            "courseID": obj.get("courseID")
         })
         return _obj
 

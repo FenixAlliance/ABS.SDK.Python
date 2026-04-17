@@ -21,12 +21,10 @@ Name | Type | Description | Notes
 **cumulative_transaction_threshold** | **float** |  | [optional] 
 **fiscal_authority_id** | **str** |  | [optional] 
 **fiscal_year_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **country_id** | **str** |  | [optional] 
 **tax_class_id** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **tax_policy_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

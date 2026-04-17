@@ -28,6 +28,8 @@ class AssetDepreciationRecordCreateDto(BaseModel):
     """
     AssetDepreciationRecordCreateDto
     """ # noqa: E501
+    id: Optional[StrictStr] = None
+    timestamp: Optional[datetime] = None
     asset_id: Optional[StrictStr] = Field(default=None, alias="assetId")
     asset_depreciation_policy_id: Optional[StrictStr] = Field(default=None, alias="assetDepreciationPolicyId")
     depreciation_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="depreciationAmount")
@@ -36,7 +38,7 @@ class AssetDepreciationRecordCreateDto(BaseModel):
     depreciation_date: Optional[datetime] = Field(default=None, alias="depreciationDate")
     year: Optional[StrictInt] = None
     month: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["assetId", "assetDepreciationPolicyId", "depreciationAmount", "accumulatedDepreciation", "bookValue", "depreciationDate", "year", "month"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "assetId", "assetDepreciationPolicyId", "depreciationAmount", "accumulatedDepreciation", "bookValue", "depreciationDate", "year", "month"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +101,8 @@ class AssetDepreciationRecordCreateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "timestamp": obj.get("timestamp"),
             "assetId": obj.get("assetId"),
             "assetDepreciationPolicyId": obj.get("assetDepreciationPolicyId"),
             "depreciationAmount": obj.get("depreciationAmount"),

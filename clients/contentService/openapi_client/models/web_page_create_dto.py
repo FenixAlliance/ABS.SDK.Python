@@ -30,8 +30,6 @@ class WebPageCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     title: Optional[StrictStr] = None
     code: Optional[StrictStr] = None
     published: Optional[StrictBool] = None
@@ -40,7 +38,7 @@ class WebPageCreateDto(BaseModel):
     featured_image_url: Optional[StrictStr] = Field(default=None, alias="featuredImageUrl")
     code_type: Optional[StrictStr] = Field(default=None, alias="codeType")
     web_template_id: Optional[StrictStr] = Field(default=None, alias="webTemplateID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "tenantId", "enrollmentId", "title", "code", "published", "description", "htmlContent", "featuredImageUrl", "codeType", "webTemplateID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "code", "published", "description", "htmlContent", "featuredImageUrl", "codeType", "webTemplateID"]
 
     @field_validator('code_type')
     def code_type_validate_enum(cls, value):
@@ -91,16 +89,6 @@ class WebPageCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if title (nullable) is None
         # and model_fields_set contains the field
         if self.title is None and "title" in self.model_fields_set:
@@ -150,8 +138,6 @@ class WebPageCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "title": obj.get("title"),
             "code": obj.get("code"),
             "published": obj.get("published"),

@@ -18,7 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -28,11 +29,12 @@ class SupportTicketPriorityCreateDto(BaseModel):
     """
     SupportTicketPriorityCreateDto
     """ # noqa: E501
+    id: Optional[StrictStr] = None
+    timestamp: Optional[datetime] = None
     title: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
-    business_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessID")
     support_entitlement_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="supportEntitlementID")
-    __properties: ClassVar[List[str]] = ["title", "description", "businessID", "supportEntitlementID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "supportEntitlementID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,11 +85,6 @@ class SupportTicketPriorityCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
         # set to None if support_entitlement_id (nullable) is None
         # and model_fields_set contains the field
         if self.support_entitlement_id is None and "support_entitlement_id" in self.model_fields_set:
@@ -105,9 +102,10 @@ class SupportTicketPriorityCreateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "timestamp": obj.get("timestamp"),
             "title": obj.get("title"),
             "description": obj.get("description"),
-            "businessID": obj.get("businessID"),
             "supportEntitlementID": obj.get("supportEntitlementID")
         })
         return _obj

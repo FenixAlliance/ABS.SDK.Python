@@ -29,8 +29,7 @@ class TenantIndustryUpdateDto(BaseModel):
     """ # noqa: E501
     name: Optional[StrictStr] = None
     parent_business_industry_id: Optional[StrictStr] = Field(default=None, alias="parentBusinessIndustryID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["name", "parentBusinessIndustryID", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["name", "parentBusinessIndustryID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,11 +80,6 @@ class TenantIndustryUpdateDto(BaseModel):
         if self.parent_business_industry_id is None and "parent_business_industry_id" in self.model_fields_set:
             _dict['parentBusinessIndustryID'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         return _dict
 
     @classmethod
@@ -99,8 +93,7 @@ class TenantIndustryUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
-            "parentBusinessIndustryID": obj.get("parentBusinessIndustryID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "parentBusinessIndustryID": obj.get("parentBusinessIndustryID")
         })
         return _obj
 

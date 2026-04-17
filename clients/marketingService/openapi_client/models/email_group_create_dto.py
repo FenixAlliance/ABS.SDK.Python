@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,9 +33,7 @@ class EmailGroupCreateDto(BaseModel):
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     enabled: Optional[StrictBool] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "enabled", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "enabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,16 +84,6 @@ class EmailGroupCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -112,9 +100,7 @@ class EmailGroupCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "enabled": obj.get("enabled"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "enabled": obj.get("enabled")
         })
         return _obj
 

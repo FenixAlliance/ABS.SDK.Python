@@ -37,13 +37,11 @@ class AccountCreateDto(BaseModel):
     code: Optional[StrictStr] = None
     path: Optional[StrictStr] = None
     prefix: Optional[StrictStr] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     currency_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="currencyId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     account_type_id: Optional[StrictStr] = Field(default=None, alias="accountTypeId")
     parent_account_id: Optional[StrictStr] = Field(default=None, alias="parentAccountId")
     account_category: StrictStr = Field(alias="accountCategory")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "group", "frozen", "name", "code", "path", "prefix", "tenantId", "currencyId", "enrollmentId", "accountTypeId", "parentAccountId", "accountCategory"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "group", "frozen", "name", "code", "path", "prefix", "currencyId", "accountTypeId", "parentAccountId", "accountCategory"]
 
     @field_validator('account_category')
     def account_category_validate_enum(cls, value):
@@ -106,16 +104,6 @@ class AccountCreateDto(BaseModel):
         if self.prefix is None and "prefix" in self.model_fields_set:
             _dict['prefix'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if account_type_id (nullable) is None
         # and model_fields_set contains the field
         if self.account_type_id is None and "account_type_id" in self.model_fields_set:
@@ -146,9 +134,7 @@ class AccountCreateDto(BaseModel):
             "code": obj.get("code"),
             "path": obj.get("path"),
             "prefix": obj.get("prefix"),
-            "tenantId": obj.get("tenantId"),
             "currencyId": obj.get("currencyId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "accountTypeId": obj.get("accountTypeId"),
             "parentAccountId": obj.get("parentAccountId"),
             "accountCategory": obj.get("accountCategory")

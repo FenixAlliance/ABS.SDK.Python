@@ -36,8 +36,7 @@ class CoursePageCreateDto(BaseModel):
     content: Optional[StrictStr] = None
     slug: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "slug", "courseID", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "slug", "courseID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,8 +110,7 @@ class CoursePageCreateDto(BaseModel):
             "description": obj.get("description"),
             "content": obj.get("content"),
             "slug": obj.get("slug"),
-            "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID")
+            "courseID": obj.get("courseID")
         })
         return _obj
 

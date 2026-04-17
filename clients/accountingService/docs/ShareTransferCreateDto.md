@@ -12,8 +12,6 @@ Name | Type | Description | Notes
 **new_share_holder_id** | **str** |  | [optional] 
 **former_share_holder_id** | **str** |  | [optional] 
 **share_transfer_reason_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

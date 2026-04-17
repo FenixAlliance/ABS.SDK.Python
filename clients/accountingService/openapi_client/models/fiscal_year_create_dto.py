@@ -33,11 +33,10 @@ class FiscalYearCreateDto(BaseModel):
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     closed: Optional[StrictBool] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     end_date: Optional[datetime] = Field(default=None, alias="endDate")
     start_date: Optional[datetime] = Field(default=None, alias="startDate")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "closed", "tenantId", "enrollmentId", "endDate", "startDate"]
+    fiscal_authority_id: Optional[StrictStr] = Field(default=None, alias="fiscalAuthorityId")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "closed", "endDate", "startDate", "fiscalAuthorityId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,15 +87,10 @@ class FiscalYearCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if tenant_id (nullable) is None
+        # set to None if fiscal_authority_id (nullable) is None
         # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
+        if self.fiscal_authority_id is None and "fiscal_authority_id" in self.model_fields_set:
+            _dict['fiscalAuthorityId'] = None
 
         return _dict
 
@@ -115,10 +109,9 @@ class FiscalYearCreateDto(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "closed": obj.get("closed"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "endDate": obj.get("endDate"),
-            "startDate": obj.get("startDate")
+            "startDate": obj.get("startDate"),
+            "fiscalAuthorityId": obj.get("fiscalAuthorityId")
         })
         return _obj
 

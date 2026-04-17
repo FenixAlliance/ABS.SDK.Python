@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **currency_id** | **str** |  | [optional] 
 **unit_id** | **str** |  | [optional] 
 **unit_group_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

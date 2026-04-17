@@ -33,11 +33,9 @@ class CourseCompletionCertificateCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     student_profile_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="studentProfileID")
     course_enrollment_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="courseEnrollmentID")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     course_completion_certificate_template_id: Optional[StrictStr] = Field(default=None, alias="courseCompletionCertificateTemplateID")
     course_id: Optional[StrictStr] = Field(default=None, alias="courseID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "studentProfileID", "courseEnrollmentID", "businessID", "businessProfileRecordID", "courseCompletionCertificateTemplateID", "courseID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "studentProfileID", "courseEnrollmentID", "courseCompletionCertificateTemplateID", "courseID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,16 +76,6 @@ class CourseCompletionCertificateCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if course_completion_certificate_template_id (nullable) is None
         # and model_fields_set contains the field
         if self.course_completion_certificate_template_id is None and "course_completion_certificate_template_id" in self.model_fields_set:
@@ -114,8 +102,6 @@ class CourseCompletionCertificateCreateDto(BaseModel):
             "timestamp": obj.get("timestamp"),
             "studentProfileID": obj.get("studentProfileID"),
             "courseEnrollmentID": obj.get("courseEnrollmentID"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "courseCompletionCertificateTemplateID": obj.get("courseCompletionCertificateTemplateID"),
             "courseID": obj.get("courseID")
         })

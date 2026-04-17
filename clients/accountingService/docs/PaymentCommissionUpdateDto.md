@@ -11,8 +11,6 @@ Name | Type | Description | Notes
 **added_percent** | **float** |  | [optional] 
 **added_amount** | **float** |  | [optional] 
 **tax_comission** | **float** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **salary_id** | **str** |  | [optional] 
 **emisor_wallet_account_id** | **str** |  | [optional] 
 **receiver_wallet_account_id** | **str** |  | [optional] 

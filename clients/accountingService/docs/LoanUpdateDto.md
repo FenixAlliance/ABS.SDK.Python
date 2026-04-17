@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **is_compund_interest_rate** | **bool** |  | [optional] 
 **loan_type_id** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

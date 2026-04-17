@@ -34,12 +34,10 @@ class JournalCreateDto(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True, max_length=255)]
     description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=1000)]] = None
     date_time: Optional[datetime] = Field(default=None, alias="dateTime")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantID")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentID")
     parent_journal_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="parentJournalID")
     journal_type_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="journalTypeID")
     ledger_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="ledgerID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "dateTime", "tenantID", "enrollmentID", "parentJournalID", "journalTypeID", "ledgerID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "dateTime", "parentJournalID", "journalTypeID", "ledgerID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,16 +83,6 @@ class JournalCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantID'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentID'] = None
-
         # set to None if parent_journal_id (nullable) is None
         # and model_fields_set contains the field
         if self.parent_journal_id is None and "parent_journal_id" in self.model_fields_set:
@@ -127,8 +115,6 @@ class JournalCreateDto(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "dateTime": obj.get("dateTime"),
-            "tenantID": obj.get("tenantID"),
-            "enrollmentID": obj.get("enrollmentID"),
             "parentJournalID": obj.get("parentJournalID"),
             "journalTypeID": obj.get("journalTypeID"),
             "ledgerID": obj.get("ledgerID")

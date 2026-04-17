@@ -42,9 +42,7 @@ class MarketingCampaignUpdateDto(BaseModel):
     expected_response_percent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="expectedResponsePercent")
     marketing_area_id: Optional[StrictStr] = Field(default=None, alias="marketingAreaId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["name", "offer", "active", "proposedStart", "proposedEnd", "actualStart", "actualEnd", "code", "allocatedBudget", "activityCost", "miscCost", "expectedResponsePercent", "marketingAreaId", "currencyId", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["name", "offer", "active", "proposedStart", "proposedEnd", "actualStart", "actualEnd", "code", "allocatedBudget", "activityCost", "miscCost", "expectedResponsePercent", "marketingAreaId", "currencyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,16 +108,6 @@ class MarketingCampaignUpdateDto(BaseModel):
         if self.currency_id is None and "currency_id" in self.model_fields_set:
             _dict['currencyId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -145,9 +133,7 @@ class MarketingCampaignUpdateDto(BaseModel):
             "miscCost": obj.get("miscCost"),
             "expectedResponsePercent": obj.get("expectedResponsePercent"),
             "marketingAreaId": obj.get("marketingAreaId"),
-            "currencyId": obj.get("currencyId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "currencyId": obj.get("currencyId")
         })
         return _obj
 

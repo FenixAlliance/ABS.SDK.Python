@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **title** | **str** |  | [optional] 
 **content** | **str** |  | [optional] 
 **featured_image_url** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **social_post_bucket_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

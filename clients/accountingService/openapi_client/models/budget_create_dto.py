@@ -31,9 +31,8 @@ class BudgetCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     name: Optional[StrictStr] = None
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     fiscal_year_id: Optional[StrictStr] = Field(default=None, alias="fiscalYearId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "tenantId", "fiscalYearId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "fiscalYearId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,11 +78,6 @@ class BudgetCreateDto(BaseModel):
         if self.name is None and "name" in self.model_fields_set:
             _dict['name'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if fiscal_year_id (nullable) is None
         # and model_fields_set contains the field
         if self.fiscal_year_id is None and "fiscal_year_id" in self.model_fields_set:
@@ -104,7 +98,6 @@ class BudgetCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
-            "tenantId": obj.get("tenantId"),
             "fiscalYearId": obj.get("fiscalYearId")
         })
         return _obj

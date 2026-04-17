@@ -30,8 +30,7 @@ class FinancialBookUpdateDto(BaseModel):
     """ # noqa: E501
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = None
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    __properties: ClassVar[List[str]] = ["name", "description", "tenantId"]
+    __properties: ClassVar[List[str]] = ["name", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,11 +81,6 @@ class FinancialBookUpdateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         return _dict
 
     @classmethod
@@ -100,8 +94,7 @@ class FinancialBookUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
-            "description": obj.get("description"),
-            "tenantId": obj.get("tenantId")
+            "description": obj.get("description")
         })
         return _obj
 

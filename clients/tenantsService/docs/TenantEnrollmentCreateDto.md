@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **user_id** | **str** |  | [optional] 
 
 ## Example

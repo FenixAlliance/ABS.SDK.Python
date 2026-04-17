@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **description** | **str** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 
 ## Example
 

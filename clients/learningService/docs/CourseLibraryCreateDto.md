@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **course_id** | **str** |  | 
 **course_unit_id** | **str** |  | [optional] 
-**business_id** | **str** |  | 
 **release_date_time** | **datetime** |  | [optional] 
 
 ## Example

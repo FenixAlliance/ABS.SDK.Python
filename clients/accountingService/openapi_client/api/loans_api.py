@@ -18,13 +18,12 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Optional
+from typing import Any, Dict, Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.models.loan_application_create_dto import LoanApplicationCreateDto
 from openapi_client.models.loan_application_dto_envelope import LoanApplicationDtoEnvelope
 from openapi_client.models.loan_application_dto_i_read_only_list_envelope import LoanApplicationDtoIReadOnlyListEnvelope
-from openapi_client.models.loan_application_update_dto import LoanApplicationUpdateDto
 from openapi_client.models.loan_create_dto import LoanCreateDto
 from openapi_client.models.loan_dto_envelope import LoanDtoEnvelope
 from openapi_client.models.loan_dto_i_read_only_list_envelope import LoanDtoIReadOnlyListEnvelope
@@ -3181,7 +3180,7 @@ class LoansApi:
         self,
         tenant_id: StrictStr,
         application_id: StrictStr,
-        loan_application_update_dto: LoanApplicationUpdateDto,
+        body: Dict[str, Any],
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -3205,8 +3204,8 @@ class LoansApi:
         :type tenant_id: str
         :param application_id: (required)
         :type application_id: str
-        :param loan_application_update_dto: (required)
-        :type loan_application_update_dto: LoanApplicationUpdateDto
+        :param body: (required)
+        :type body: object
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -3236,7 +3235,7 @@ class LoansApi:
         _param = self._update_loan_application_async_serialize(
             tenant_id=tenant_id,
             application_id=application_id,
-            loan_application_update_dto=loan_application_update_dto,
+            body=body,
             api_version=api_version,
             x_api_version=x_api_version,
             _request_auth=_request_auth,
@@ -3266,7 +3265,7 @@ class LoansApi:
         self,
         tenant_id: StrictStr,
         application_id: StrictStr,
-        loan_application_update_dto: LoanApplicationUpdateDto,
+        body: Dict[str, Any],
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -3290,8 +3289,8 @@ class LoansApi:
         :type tenant_id: str
         :param application_id: (required)
         :type application_id: str
-        :param loan_application_update_dto: (required)
-        :type loan_application_update_dto: LoanApplicationUpdateDto
+        :param body: (required)
+        :type body: object
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -3321,7 +3320,7 @@ class LoansApi:
         _param = self._update_loan_application_async_serialize(
             tenant_id=tenant_id,
             application_id=application_id,
-            loan_application_update_dto=loan_application_update_dto,
+            body=body,
             api_version=api_version,
             x_api_version=x_api_version,
             _request_auth=_request_auth,
@@ -3351,7 +3350,7 @@ class LoansApi:
         self,
         tenant_id: StrictStr,
         application_id: StrictStr,
-        loan_application_update_dto: LoanApplicationUpdateDto,
+        body: Dict[str, Any],
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -3375,8 +3374,8 @@ class LoansApi:
         :type tenant_id: str
         :param application_id: (required)
         :type application_id: str
-        :param loan_application_update_dto: (required)
-        :type loan_application_update_dto: LoanApplicationUpdateDto
+        :param body: (required)
+        :type body: object
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -3406,7 +3405,7 @@ class LoansApi:
         _param = self._update_loan_application_async_serialize(
             tenant_id=tenant_id,
             application_id=application_id,
-            loan_application_update_dto=loan_application_update_dto,
+            body=body,
             api_version=api_version,
             x_api_version=x_api_version,
             _request_auth=_request_auth,
@@ -3431,7 +3430,7 @@ class LoansApi:
         self,
         tenant_id,
         application_id,
-        loan_application_update_dto,
+        body,
         api_version,
         x_api_version,
         _request_auth,
@@ -3471,8 +3470,8 @@ class LoansApi:
             _header_params['x-api-version'] = x_api_version
         # process the form parameters
         # process the body parameter
-        if loan_application_update_dto is not None:
-            _body_params = loan_application_update_dto
+        if body is not None:
+            _body_params = body
 
 
         # set the HTTP header `Accept`

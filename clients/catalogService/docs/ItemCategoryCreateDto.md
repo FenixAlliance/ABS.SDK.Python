@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **description** | **str** |  | [optional] 
 **image_url** | **str** |  | [optional] 
-**business_id** | **str** |  | 
-**business_profile_record_id** | **str** |  | [optional] 
 **parent_item_category_id** | **str** |  | [optional] 
 
 ## Example

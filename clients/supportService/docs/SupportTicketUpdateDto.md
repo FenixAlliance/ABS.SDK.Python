@@ -6,9 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**account_holder_id** | **str** |  | [optional] 
 **contact_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **support_ticket_type_id** | **str** |  | [optional] 
 **support_entitlement_id** | **str** |  | [optional] 
 **support_priority_id** | **str** |  | [optional] 

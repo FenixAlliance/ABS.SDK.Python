@@ -19,8 +19,6 @@ Name | Type | Description | Notes
 **expected_response_percent** | **float** |  | [optional] 
 **marketing_area_id** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

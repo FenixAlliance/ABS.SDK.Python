@@ -33,7 +33,8 @@ class FiscalYearUpdateDto(BaseModel):
     closed: Optional[StrictBool] = None
     end_date: Optional[datetime] = Field(default=None, alias="endDate")
     start_date: Optional[datetime] = Field(default=None, alias="startDate")
-    __properties: ClassVar[List[str]] = ["name", "description", "closed", "endDate", "startDate"]
+    fiscal_authority_id: Optional[StrictStr] = Field(default=None, alias="fiscalAuthorityId")
+    __properties: ClassVar[List[str]] = ["name", "description", "closed", "endDate", "startDate", "fiscalAuthorityId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,6 +85,11 @@ class FiscalYearUpdateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
+        # set to None if fiscal_authority_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.fiscal_authority_id is None and "fiscal_authority_id" in self.model_fields_set:
+            _dict['fiscalAuthorityId'] = None
+
         return _dict
 
     @classmethod
@@ -100,7 +106,8 @@ class FiscalYearUpdateDto(BaseModel):
             "description": obj.get("description"),
             "closed": obj.get("closed"),
             "endDate": obj.get("endDate"),
-            "startDate": obj.get("startDate")
+            "startDate": obj.get("startDate"),
+            "fiscalAuthorityId": obj.get("fiscalAuthorityId")
         })
         return _obj
 

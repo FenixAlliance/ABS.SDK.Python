@@ -8,10 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 **web_portal_id** | **str** |  | [optional] 
 **website_theme_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 **social_profile_id** | **str** |  | [optional] 
 **parent_web_content_id** | **str** |  | [optional] 
 **parent_web_content_version_id** | **str** |  | [optional] 

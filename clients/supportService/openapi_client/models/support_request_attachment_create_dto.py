@@ -21,7 +21,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -41,11 +40,9 @@ class SupportRequestAttachmentCreateDto(BaseModel):
     valid_response: Optional[StrictBool] = Field(default=None, alias="validResponse")
     parent_file_upload_id: Optional[StrictStr] = Field(default=None, alias="parentFileUploadId")
     file_path: Optional[StrictStr] = Field(default=None, alias="filePath")
-    business_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessProfileRecordID")
     metadata: Optional[StrictStr] = None
     support_request_id: Optional[StrictStr] = Field(default=None, alias="supportRequestID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "notes", "title", "author", "isFolder", "fileName", "abstract", "keyWords", "validResponse", "parentFileUploadId", "filePath", "businessID", "businessProfileRecordID", "metadata", "supportRequestID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "notes", "title", "author", "isFolder", "fileName", "abstract", "keyWords", "validResponse", "parentFileUploadId", "filePath", "metadata", "supportRequestID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -126,16 +123,6 @@ class SupportRequestAttachmentCreateDto(BaseModel):
         if self.file_path is None and "file_path" in self.model_fields_set:
             _dict['filePath'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if metadata (nullable) is None
         # and model_fields_set contains the field
         if self.metadata is None and "metadata" in self.model_fields_set:
@@ -170,8 +157,6 @@ class SupportRequestAttachmentCreateDto(BaseModel):
             "validResponse": obj.get("validResponse"),
             "parentFileUploadId": obj.get("parentFileUploadId"),
             "filePath": obj.get("filePath"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "metadata": obj.get("metadata"),
             "supportRequestID": obj.get("supportRequestID")
         })

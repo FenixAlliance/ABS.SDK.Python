@@ -5,6 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **asset_id** | **str** |  | [optional] 
 **asset_depreciation_policy_id** | **str** |  | [optional] 
 **depreciation_amount** | **float** |  | [optional] 

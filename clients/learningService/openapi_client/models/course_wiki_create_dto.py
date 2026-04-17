@@ -34,10 +34,9 @@ class CourseWikiCreateDto(BaseModel):
     title: Annotated[str, Field(min_length=1, strict=True)]
     description: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     course_unit_id: Optional[StrictStr] = Field(default=None, alias="courseUnitID")
     release_date_time: Optional[datetime] = Field(default=None, alias="releaseDateTime")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "courseID", "businessID", "courseUnitID", "releaseDateTime"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "courseID", "courseUnitID", "releaseDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,7 +109,6 @@ class CourseWikiCreateDto(BaseModel):
             "title": obj.get("title"),
             "description": obj.get("description"),
             "courseID": obj.get("courseID"),
-            "businessID": obj.get("businessID"),
             "courseUnitID": obj.get("courseUnitID"),
             "releaseDateTime": obj.get("releaseDateTime")
         })

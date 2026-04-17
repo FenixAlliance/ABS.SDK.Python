@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **course_id** | **str** |  | 
-**business_id** | **str** |  | 
 **start_date_time** | **datetime** |  | [optional] 
 **end_date_time** | **datetime** |  | [optional] 
 **expected_start_date_time** | **datetime** |  | [optional] 

@@ -30,8 +30,6 @@ class AssetCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessId")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordId")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     asset_class: Optional[StrictStr] = Field(default=None, alias="assetClass")
@@ -50,7 +48,7 @@ class AssetCreateDto(BaseModel):
     asset_location_id: Optional[StrictStr] = Field(default=None, alias="assetLocationId")
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactId")
     organization_department_id: Optional[StrictStr] = Field(default=None, alias="organizationDepartmentId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "businessId", "businessProfileRecordId", "name", "description", "assetClass", "assetOwner", "isExistingAsset", "calculateDepreciation", "allowMonthlyDepreciation", "openingDepreciation", "purchaseDate", "purchasePrice", "currencyId", "itemId", "assetCategoryId", "purchaseInvoiceId", "purchaseReceiptId", "assetLocationId", "contactId", "organizationDepartmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "assetClass", "assetOwner", "isExistingAsset", "calculateDepreciation", "allowMonthlyDepreciation", "openingDepreciation", "purchaseDate", "purchasePrice", "currencyId", "itemId", "assetCategoryId", "purchaseInvoiceId", "purchaseReceiptId", "assetLocationId", "contactId", "organizationDepartmentId"]
 
     @field_validator('asset_class')
     def asset_class_validate_enum(cls, value):
@@ -111,16 +109,6 @@ class AssetCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessId'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordId'] = None
-
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
@@ -185,8 +173,6 @@ class AssetCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "businessId": obj.get("businessId"),
-            "businessProfileRecordId": obj.get("businessProfileRecordId"),
             "name": obj.get("name"),
             "description": obj.get("description"),
             "assetClass": obj.get("assetClass"),

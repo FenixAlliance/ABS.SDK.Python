@@ -33,9 +33,7 @@ class ShareTransferReasonCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     name: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=50)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=150)]] = None
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description", "enrollmentId", "tenantId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,16 +84,6 @@ class ShareTransferReasonCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         return _dict
 
     @classmethod
@@ -111,9 +99,7 @@ class ShareTransferReasonCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
-            "description": obj.get("description"),
-            "enrollmentId": obj.get("enrollmentId"),
-            "tenantId": obj.get("tenantId")
+            "description": obj.get("description")
         })
         return _obj
 

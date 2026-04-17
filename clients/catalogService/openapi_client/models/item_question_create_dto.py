@@ -35,9 +35,8 @@ class ItemQuestionCreateDto(BaseModel):
     needs_revision: StrictBool = Field(alias="needsRevision")
     question: Annotated[str, Field(min_length=0, strict=True, max_length=1000)]
     social_profile_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="socialProfileID")
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
     item_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="itemID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "needsRevision", "question", "socialProfileID", "businessID", "itemID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "needsRevision", "question", "socialProfileID", "itemID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,7 +100,6 @@ class ItemQuestionCreateDto(BaseModel):
             "needsRevision": obj.get("needsRevision"),
             "question": obj.get("question"),
             "socialProfileID": obj.get("socialProfileID"),
-            "businessID": obj.get("businessID"),
             "itemID": obj.get("itemID")
         })
         return _obj

@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **unit_price** | **int** |  | [optional] 
 **quantity** | **int** |  | [optional] 
 **currency_id** | **str** |  | [optional] 

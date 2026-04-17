@@ -30,7 +30,6 @@ class PaymentUpdateDto(BaseModel):
     PaymentUpdateDto
     """ # noqa: E501
     invoice_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="invoiceId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     emisor_wallet_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="emisorWalletId")
     receiver_wallet_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="receiverWalletId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
@@ -82,12 +81,11 @@ class PaymentUpdateDto(BaseModel):
     accounting_entry_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="accountingEntryId")
     payment_gateway_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="paymentGatewayId")
     bank_account_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="bankAccountId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
     bank_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="bankId")
     payment_token_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="paymentTokenId")
     emisor_wallet_account_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="emisorWalletAccountId")
     receiver_wallet_account_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="receiverWalletAccountId")
-    __properties: ClassVar[List[str]] = ["invoiceId", "tenantId", "emisorWalletId", "receiverWalletId", "currencyId", "forexRate", "totalCost", "totalTaxes", "closed", "data", "dataLabel", "data1", "data1Label", "response", "authorization", "referenceCode", "correlationCode", "lastUpdated", "onBehalfOf", "paymentType", "paymentStatus", "baseCost", "signature", "signatureMismatch", "isExternal", "markedForRevision", "forexRatesSnapshot", "officialId", "officialIdExpeditionDate", "fiscalIdentificationTypeId", "billingAddress", "phone", "cellphone", "department", "city", "countryId", "locationId", "entitlementId", "antiFraudScore", "callRecordURL", "called", "verified", "payerPictureTimestamp", "payerPicture", "identificationPictureTimestamp", "identificationPicture", "identificationBackPicture", "identificationBackPictureTimestamp", "ipLookupId", "orderId", "accountingEntryId", "paymentGatewayId", "bankAccountId", "enrollmentId", "bankId", "paymentTokenId", "emisorWalletAccountId", "receiverWalletAccountId"]
+    __properties: ClassVar[List[str]] = ["invoiceId", "emisorWalletId", "receiverWalletId", "currencyId", "forexRate", "totalCost", "totalTaxes", "closed", "data", "dataLabel", "data1", "data1Label", "response", "authorization", "referenceCode", "correlationCode", "lastUpdated", "onBehalfOf", "paymentType", "paymentStatus", "baseCost", "signature", "signatureMismatch", "isExternal", "markedForRevision", "forexRatesSnapshot", "officialId", "officialIdExpeditionDate", "fiscalIdentificationTypeId", "billingAddress", "phone", "cellphone", "department", "city", "countryId", "locationId", "entitlementId", "antiFraudScore", "callRecordURL", "called", "verified", "payerPictureTimestamp", "payerPicture", "identificationPictureTimestamp", "identificationPicture", "identificationBackPicture", "identificationBackPictureTimestamp", "ipLookupId", "orderId", "accountingEntryId", "paymentGatewayId", "bankAccountId", "bankId", "paymentTokenId", "emisorWalletAccountId", "receiverWalletAccountId"]
 
     @field_validator('on_behalf_of')
     def on_behalf_of_validate_enum(cls, value):
@@ -162,11 +160,6 @@ class PaymentUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.invoice_id is None and "invoice_id" in self.model_fields_set:
             _dict['invoiceId'] = None
-
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
 
         # set to None if emisor_wallet_id (nullable) is None
         # and model_fields_set contains the field
@@ -343,11 +336,6 @@ class PaymentUpdateDto(BaseModel):
         if self.bank_account_id is None and "bank_account_id" in self.model_fields_set:
             _dict['bankAccountId'] = None
 
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if bank_id (nullable) is None
         # and model_fields_set contains the field
         if self.bank_id is None and "bank_id" in self.model_fields_set:
@@ -381,7 +369,6 @@ class PaymentUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "invoiceId": obj.get("invoiceId"),
-            "tenantId": obj.get("tenantId"),
             "emisorWalletId": obj.get("emisorWalletId"),
             "receiverWalletId": obj.get("receiverWalletId"),
             "currencyId": obj.get("currencyId"),
@@ -433,7 +420,6 @@ class PaymentUpdateDto(BaseModel):
             "accountingEntryId": obj.get("accountingEntryId"),
             "paymentGatewayId": obj.get("paymentGatewayId"),
             "bankAccountId": obj.get("bankAccountId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "bankId": obj.get("bankId"),
             "paymentTokenId": obj.get("paymentTokenId"),
             "emisorWalletAccountId": obj.get("emisorWalletAccountId"),

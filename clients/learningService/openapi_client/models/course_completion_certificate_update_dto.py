@@ -29,11 +29,9 @@ class CourseCompletionCertificateUpdateDto(BaseModel):
     """ # noqa: E501
     student_profile_id: Optional[StrictStr] = Field(default=None, alias="studentProfileID")
     course_enrollment_id: Optional[StrictStr] = Field(default=None, alias="courseEnrollmentID")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     course_completion_certificate_template_id: Optional[StrictStr] = Field(default=None, alias="courseCompletionCertificateTemplateID")
     course_id: Optional[StrictStr] = Field(default=None, alias="courseID")
-    __properties: ClassVar[List[str]] = ["studentProfileID", "courseEnrollmentID", "businessID", "businessProfileRecordID", "courseCompletionCertificateTemplateID", "courseID"]
+    __properties: ClassVar[List[str]] = ["studentProfileID", "courseEnrollmentID", "courseCompletionCertificateTemplateID", "courseID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,16 +82,6 @@ class CourseCompletionCertificateUpdateDto(BaseModel):
         if self.course_enrollment_id is None and "course_enrollment_id" in self.model_fields_set:
             _dict['courseEnrollmentID'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         # set to None if course_completion_certificate_template_id (nullable) is None
         # and model_fields_set contains the field
         if self.course_completion_certificate_template_id is None and "course_completion_certificate_template_id" in self.model_fields_set:
@@ -118,8 +106,6 @@ class CourseCompletionCertificateUpdateDto(BaseModel):
         _obj = cls.model_validate({
             "studentProfileID": obj.get("studentProfileID"),
             "courseEnrollmentID": obj.get("courseEnrollmentID"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "courseCompletionCertificateTemplateID": obj.get("courseCompletionCertificateTemplateID"),
             "courseID": obj.get("courseID")
         })

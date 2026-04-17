@@ -28,7 +28,6 @@ class OrderUpdateDto(BaseModel):
     """
     OrderUpdateDto
     """ # noqa: E501
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
     last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
     company_name: Optional[StrictStr] = Field(default=None, alias="companyName")
@@ -72,7 +71,6 @@ class OrderUpdateDto(BaseModel):
     user_id: Optional[StrictStr] = Field(default=None, alias="userId")
     forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     total_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalAmountInUsd")
@@ -86,7 +84,7 @@ class OrderUpdateDto(BaseModel):
     effective_from: Optional[datetime] = Field(default=None, alias="effectiveFrom")
     description: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["tenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "cartId", "userId", "forexRate", "currencyId", "enrollmentId", "individualId", "organizationId", "totalAmountInUsd", "totalTaxesInUsd", "receiverTenantId", "closed", "priceListId", "paymentTermId", "quoteStatus", "effectiveTo", "effectiveFrom", "description", "title"]
+    __properties: ClassVar[List[str]] = ["firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "cartId", "userId", "forexRate", "currencyId", "individualId", "organizationId", "totalAmountInUsd", "totalTaxesInUsd", "receiverTenantId", "closed", "priceListId", "paymentTermId", "quoteStatus", "effectiveTo", "effectiveFrom", "description", "title"]
 
     @field_validator('cost_calculation_method')
     def cost_calculation_method_validate_enum(cls, value):
@@ -147,11 +145,6 @@ class OrderUpdateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if first_name (nullable) is None
         # and model_fields_set contains the field
         if self.first_name is None and "first_name" in self.model_fields_set:
@@ -292,11 +285,6 @@ class OrderUpdateDto(BaseModel):
         if self.currency_id is None and "currency_id" in self.model_fields_set:
             _dict['currencyId'] = None
 
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         # set to None if individual_id (nullable) is None
         # and model_fields_set contains the field
         if self.individual_id is None and "individual_id" in self.model_fields_set:
@@ -359,7 +347,6 @@ class OrderUpdateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "tenantId": obj.get("tenantId"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
             "companyName": obj.get("companyName"),
@@ -403,7 +390,6 @@ class OrderUpdateDto(BaseModel):
             "userId": obj.get("userId"),
             "forexRate": obj.get("forexRate"),
             "currencyId": obj.get("currencyId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "individualId": obj.get("individualId"),
             "organizationId": obj.get("organizationId"),
             "totalAmountInUsd": obj.get("totalAmountInUsd"),

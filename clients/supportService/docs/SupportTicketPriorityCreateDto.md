@@ -5,9 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
 **support_entitlement_id** | **str** |  | [optional] 
 
 ## Example

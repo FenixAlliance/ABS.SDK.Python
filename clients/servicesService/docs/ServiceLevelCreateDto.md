@@ -37,7 +37,6 @@ Name | Type | Description | Notes
 **pattern** | **str** |  | [optional] 
 **features** | **str** |  | [optional] 
 **material** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 **permalink** | **str** |  | [optional] 
 **brand_name** | **str** |  | [optional] 
 **variations** | **str** |  | [optional] 

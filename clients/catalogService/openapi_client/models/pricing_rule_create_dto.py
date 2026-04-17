@@ -51,9 +51,7 @@ class PricingRuleCreateDto(BaseModel):
     custom_state: Optional[StrictStr] = Field(default=None, alias="customState")
     custom_city: Optional[StrictStr] = Field(default=None, alias="customCity")
     city_id: Optional[StrictStr] = Field(default=None, alias="cityID")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "title", "description", "isFree", "reduce", "isEnabled", "isDefault", "allowInternational", "hours", "days", "weeks", "months", "years", "value", "percentage", "currencyID", "countryID", "countryStateID", "customState", "customCity", "cityID", "businessID", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "title", "description", "isFree", "reduce", "isEnabled", "isDefault", "allowInternational", "hours", "days", "weeks", "months", "years", "value", "percentage", "currencyID", "countryID", "countryStateID", "customState", "customCity", "cityID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -139,16 +137,6 @@ class PricingRuleCreateDto(BaseModel):
         if self.city_id is None and "city_id" in self.model_fields_set:
             _dict['cityID'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         return _dict
 
     @classmethod
@@ -183,9 +171,7 @@ class PricingRuleCreateDto(BaseModel):
             "countryStateID": obj.get("countryStateID"),
             "customState": obj.get("customState"),
             "customCity": obj.get("customCity"),
-            "cityID": obj.get("cityID"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "cityID": obj.get("cityID")
         })
         return _obj
 

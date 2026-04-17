@@ -42,13 +42,11 @@ class TaxRateUpdateDto(BaseModel):
     cumulative_transaction_threshold: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="cumulativeTransactionThreshold")
     fiscal_authority_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="fiscalAuthorityId")
     fiscal_year_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="fiscalYearId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     country_id: Optional[StrictStr] = Field(default=None, alias="countryId")
     tax_class_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="taxClassId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     tax_policy_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="taxPolicyId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["name", "rate", "value", "um", "unitId", "unitGroupId", "priority", "compound", "shipping", "withholding", "singleTransactionThreshold", "cumulativeTransactionThreshold", "fiscalAuthorityId", "fiscalYearId", "tenantId", "countryId", "taxClassId", "currencyId", "taxPolicyId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["name", "rate", "value", "um", "unitId", "unitGroupId", "priority", "compound", "shipping", "withholding", "singleTransactionThreshold", "cumulativeTransactionThreshold", "fiscalAuthorityId", "fiscalYearId", "countryId", "taxClassId", "currencyId", "taxPolicyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,11 +117,6 @@ class TaxRateUpdateDto(BaseModel):
         if self.fiscal_year_id is None and "fiscal_year_id" in self.model_fields_set:
             _dict['fiscalYearId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if country_id (nullable) is None
         # and model_fields_set contains the field
         if self.country_id is None and "country_id" in self.model_fields_set:
@@ -143,11 +136,6 @@ class TaxRateUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.tax_policy_id is None and "tax_policy_id" in self.model_fields_set:
             _dict['taxPolicyId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         return _dict
 
@@ -175,12 +163,10 @@ class TaxRateUpdateDto(BaseModel):
             "cumulativeTransactionThreshold": obj.get("cumulativeTransactionThreshold"),
             "fiscalAuthorityId": obj.get("fiscalAuthorityId"),
             "fiscalYearId": obj.get("fiscalYearId"),
-            "tenantId": obj.get("tenantId"),
             "countryId": obj.get("countryId"),
             "taxClassId": obj.get("taxClassId"),
             "currencyId": obj.get("currencyId"),
-            "taxPolicyId": obj.get("taxPolicyId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "taxPolicyId": obj.get("taxPolicyId")
         })
         return _obj
 

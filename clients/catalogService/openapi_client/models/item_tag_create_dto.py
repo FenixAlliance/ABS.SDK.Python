@@ -33,8 +33,7 @@ class ItemTagCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     title: Annotated[str, Field(min_length=0, strict=True, max_length=255)]
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,8 +94,7 @@ class ItemTagCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "title": obj.get("title"),
-            "description": obj.get("description"),
-            "businessID": obj.get("businessID")
+            "description": obj.get("description")
         })
         return _obj
 

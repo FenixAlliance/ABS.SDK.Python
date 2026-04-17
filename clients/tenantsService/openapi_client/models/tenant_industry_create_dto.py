@@ -32,8 +32,7 @@ class TenantIndustryCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     name: Optional[StrictStr] = None
     parent_business_industry_id: Optional[StrictStr] = Field(default=None, alias="parentBusinessIndustryID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "parentBusinessIndustryID", "businessProfileRecordID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "parentBusinessIndustryID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,11 +83,6 @@ class TenantIndustryCreateDto(BaseModel):
         if self.parent_business_industry_id is None and "parent_business_industry_id" in self.model_fields_set:
             _dict['parentBusinessIndustryID'] = None
 
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
-
         return _dict
 
     @classmethod
@@ -104,8 +98,7 @@ class TenantIndustryCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "name": obj.get("name"),
-            "parentBusinessIndustryID": obj.get("parentBusinessIndustryID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID")
+            "parentBusinessIndustryID": obj.get("parentBusinessIndustryID")
         })
         return _obj
 

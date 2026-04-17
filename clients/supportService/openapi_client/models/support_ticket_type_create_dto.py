@@ -33,8 +33,7 @@ class SupportTicketTypeCreateDto(BaseModel):
     timestamp: Optional[datetime] = None
     title: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
-    business_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,11 +84,6 @@ class SupportTicketTypeCreateDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
         return _dict
 
     @classmethod
@@ -105,8 +99,7 @@ class SupportTicketTypeCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "title": obj.get("title"),
-            "description": obj.get("description"),
-            "businessID": obj.get("businessID")
+            "description": obj.get("description")
         })
         return _obj
 

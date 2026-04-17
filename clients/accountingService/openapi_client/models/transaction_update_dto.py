@@ -39,9 +39,7 @@ class TransactionUpdateDto(BaseModel):
     unit_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="unitId")
     transaction_category_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="transactionCategoryId")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["description", "price", "quantity", "externalDescription", "basisQuantity", "basisAmount", "percent", "unitGroupId", "unitId", "transactionCategoryId", "currencyId", "tenantId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["description", "price", "quantity", "externalDescription", "basisQuantity", "basisAmount", "percent", "unitGroupId", "unitId", "transactionCategoryId", "currencyId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,16 +110,6 @@ class TransactionUpdateDto(BaseModel):
         if self.currency_id is None and "currency_id" in self.model_fields_set:
             _dict['currencyId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
-
         return _dict
 
     @classmethod
@@ -144,9 +132,7 @@ class TransactionUpdateDto(BaseModel):
             "unitGroupId": obj.get("unitGroupId"),
             "unitId": obj.get("unitId"),
             "transactionCategoryId": obj.get("transactionCategoryId"),
-            "currencyId": obj.get("currencyId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "currencyId": obj.get("currencyId")
         })
         return _obj
 

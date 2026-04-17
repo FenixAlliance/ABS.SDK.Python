@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **content** | **str** |  | [optional] 
 **course_id** | **str** |  | 
 **course_section_id** | **str** |  | 
-**business_id** | **str** |  | 
 **course_content_group_id** | **str** |  | [optional] 
 **release_date_time** | **datetime** |  | [optional] 
 

@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**business_id** | **str** |  | 
-**business_profile_record_id** | **str** |  | 
 **business_team_id** | **str** |  | 
 **employee_profile_id** | **str** |  | 
 

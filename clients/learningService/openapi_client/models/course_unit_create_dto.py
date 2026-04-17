@@ -36,10 +36,9 @@ class CourseUnitCreateDto(BaseModel):
     content: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
     course_section_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseSectionID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
     course_content_group_id: Optional[StrictStr] = Field(default=None, alias="courseContentGroupID")
     release_date_time: Optional[datetime] = Field(default=None, alias="releaseDateTime")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "courseID", "courseSectionID", "businessID", "courseContentGroupID", "releaseDateTime"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "courseID", "courseSectionID", "courseContentGroupID", "releaseDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,7 +118,6 @@ class CourseUnitCreateDto(BaseModel):
             "content": obj.get("content"),
             "courseID": obj.get("courseID"),
             "courseSectionID": obj.get("courseSectionID"),
-            "businessID": obj.get("businessID"),
             "courseContentGroupID": obj.get("courseContentGroupID"),
             "releaseDateTime": obj.get("releaseDateTime")
         })

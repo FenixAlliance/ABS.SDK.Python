@@ -28,18 +28,15 @@ class ReceiptUpdateDto(BaseModel):
     ReceiptUpdateDto
     """ # noqa: E501
     payment_id: Optional[StrictStr] = Field(default=None, alias="paymentId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
     total_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalAmount")
     total_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalAmountInUsd")
     closed: Optional[StrictBool] = None
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    account_holder_id: Optional[StrictStr] = Field(default=None, alias="accountHolderId")
     contact_id: Optional[StrictStr] = Field(default=None, alias="contactId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
     order_id: Optional[StrictStr] = Field(default=None, alias="orderId")
     invoice_id: Optional[StrictStr] = Field(default=None, alias="invoiceId")
-    __properties: ClassVar[List[str]] = ["paymentId", "tenantId", "forexRate", "totalAmount", "totalAmountInUsd", "closed", "currencyId", "accountHolderId", "contactId", "enrollmentId", "orderId", "invoiceId"]
+    __properties: ClassVar[List[str]] = ["paymentId", "forexRate", "totalAmount", "totalAmountInUsd", "closed", "currencyId", "contactId", "orderId", "invoiceId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,30 +82,15 @@ class ReceiptUpdateDto(BaseModel):
         if self.payment_id is None and "payment_id" in self.model_fields_set:
             _dict['paymentId'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if currency_id (nullable) is None
         # and model_fields_set contains the field
         if self.currency_id is None and "currency_id" in self.model_fields_set:
             _dict['currencyId'] = None
 
-        # set to None if account_holder_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_holder_id is None and "account_holder_id" in self.model_fields_set:
-            _dict['accountHolderId'] = None
-
         # set to None if contact_id (nullable) is None
         # and model_fields_set contains the field
         if self.contact_id is None and "contact_id" in self.model_fields_set:
             _dict['contactId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if order_id (nullable) is None
         # and model_fields_set contains the field
@@ -133,15 +115,12 @@ class ReceiptUpdateDto(BaseModel):
 
         _obj = cls.model_validate({
             "paymentId": obj.get("paymentId"),
-            "tenantId": obj.get("tenantId"),
             "forexRate": obj.get("forexRate"),
             "totalAmount": obj.get("totalAmount"),
             "totalAmountInUsd": obj.get("totalAmountInUsd"),
             "closed": obj.get("closed"),
             "currencyId": obj.get("currencyId"),
-            "accountHolderId": obj.get("accountHolderId"),
             "contactId": obj.get("contactId"),
-            "enrollmentId": obj.get("enrollmentId"),
             "orderId": obj.get("orderId"),
             "invoiceId": obj.get("invoiceId")
         })

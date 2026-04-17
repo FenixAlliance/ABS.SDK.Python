@@ -37,8 +37,7 @@ class ItemBrandCreateDto(BaseModel):
     website_url: Optional[StrictStr] = Field(default=None, alias="websiteURL")
     featured: Optional[StrictBool] = None
     trending: Optional[StrictBool] = None
-    business_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "name", "description", "websiteURL", "featured", "trending", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "code", "name", "description", "websiteURL", "featured", "trending"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,8 +112,7 @@ class ItemBrandCreateDto(BaseModel):
             "description": obj.get("description"),
             "websiteURL": obj.get("websiteURL"),
             "featured": obj.get("featured"),
-            "trending": obj.get("trending"),
-            "businessID": obj.get("businessID")
+            "trending": obj.get("trending")
         })
         return _obj
 

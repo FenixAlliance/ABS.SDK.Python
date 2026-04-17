@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -27,6 +28,8 @@ class AssetTransferCreateDto(BaseModel):
     """
     AssetTransferCreateDto
     """ # noqa: E501
+    id: Optional[StrictStr] = None
+    timestamp: Optional[datetime] = None
     asset_id: Optional[StrictStr] = Field(default=None, alias="assetId")
     is_root_transfer: Optional[StrictBool] = Field(default=None, alias="isRootTransfer")
     serial_list: Optional[StrictStr] = Field(default=None, alias="serialList")
@@ -39,7 +42,7 @@ class AssetTransferCreateDto(BaseModel):
     destination_contact_id: Optional[StrictStr] = Field(default=None, alias="destinationContactId")
     source_department_id: Optional[StrictStr] = Field(default=None, alias="sourceDepartmentId")
     destination_department_id: Optional[StrictStr] = Field(default=None, alias="destinationDepartmentId")
-    __properties: ClassVar[List[str]] = ["assetId", "isRootTransfer", "serialList", "quantity", "serial", "previousAssetTransferId", "sourceLocationId", "destinationLocationId", "sourceContactId", "destinationContactId", "sourceDepartmentId", "destinationDepartmentId"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "assetId", "isRootTransfer", "serialList", "quantity", "serial", "previousAssetTransferId", "sourceLocationId", "destinationLocationId", "sourceContactId", "destinationContactId", "sourceDepartmentId", "destinationDepartmentId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -147,6 +150,8 @@ class AssetTransferCreateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "timestamp": obj.get("timestamp"),
             "assetId": obj.get("assetId"),
             "isRootTransfer": obj.get("isRootTransfer"),
             "serialList": obj.get("serialList"),

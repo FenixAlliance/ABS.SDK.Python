@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **code** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

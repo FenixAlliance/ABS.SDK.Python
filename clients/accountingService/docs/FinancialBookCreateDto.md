@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

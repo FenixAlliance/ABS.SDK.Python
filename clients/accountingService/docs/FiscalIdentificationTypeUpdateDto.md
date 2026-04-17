@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **code** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **fiscal_authority_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

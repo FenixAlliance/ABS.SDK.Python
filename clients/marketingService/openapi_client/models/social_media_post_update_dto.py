@@ -31,10 +31,8 @@ class SocialMediaPostUpdateDto(BaseModel):
     title: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=99)]] = None
     content: Optional[StrictStr] = None
     featured_image_url: Optional[StrictStr] = Field(default=None, alias="featuredImageUrl")
-    tenant_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="tenantId")
     social_post_bucket_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="socialPostBucketId")
-    enrollment_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="enrollmentId")
-    __properties: ClassVar[List[str]] = ["title", "content", "featuredImageUrl", "tenantId", "socialPostBucketId", "enrollmentId"]
+    __properties: ClassVar[List[str]] = ["title", "content", "featuredImageUrl", "socialPostBucketId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,20 +88,10 @@ class SocialMediaPostUpdateDto(BaseModel):
         if self.featured_image_url is None and "featured_image_url" in self.model_fields_set:
             _dict['featuredImageUrl'] = None
 
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
         # set to None if social_post_bucket_id (nullable) is None
         # and model_fields_set contains the field
         if self.social_post_bucket_id is None and "social_post_bucket_id" in self.model_fields_set:
             _dict['socialPostBucketId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         return _dict
 
@@ -120,9 +108,7 @@ class SocialMediaPostUpdateDto(BaseModel):
             "title": obj.get("title"),
             "content": obj.get("content"),
             "featuredImageUrl": obj.get("featuredImageUrl"),
-            "tenantId": obj.get("tenantId"),
-            "socialPostBucketId": obj.get("socialPostBucketId"),
-            "enrollmentId": obj.get("enrollmentId")
+            "socialPostBucketId": obj.get("socialPostBucketId")
         })
         return _obj
 

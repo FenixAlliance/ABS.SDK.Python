@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tenant_id** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **company_name** | **str** |  | [optional] 
@@ -49,7 +48,6 @@ Name | Type | Description | Notes
 **user_id** | **str** |  | [optional] 
 **forex_rate** | **float** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **individual_id** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **total_amount_in_usd** | **float** |  | [optional] 

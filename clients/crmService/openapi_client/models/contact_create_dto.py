@@ -31,7 +31,6 @@ class ContactCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    tenant_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="tenantId")
     type: StrictStr
     first_name: Annotated[str, Field(min_length=1, strict=True, max_length=50)] = Field(alias="firstName")
     last_name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, alias="lastName")
@@ -72,7 +71,7 @@ class ContactCreateDto(BaseModel):
     stack_overflow_url: Optional[StrictStr] = Field(default=None, alias="stackOverflowUrl")
     parent_contact_id: Optional[StrictStr] = Field(default=None, alias="parentContactId")
     fax_number: Optional[StrictStr] = Field(default=None, alias="faxNumber")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "tenantId", "type", "firstName", "lastName", "email", "taxId", "primaryContactId", "qualifiedName", "about", "countryId", "stateId", "cityId", "mobilePhone", "businessPhone", "postalCode", "duns", "jobTitle", "webUrl", "currencyId", "languageId", "timezoneId", "birthday", "streetLine1", "streetLine2", "gitHubUrl", "twitchUrl", "redditUrl", "tikTokUrl", "websiteUrl", "twitterUrl", "facebookUrl", "youTubeUrl", "linkedInUrl", "instagramUrl", "githubUsername", "instagramUsername", "tikTokUsername", "stackExchangeUrl", "stackOverflowUrl", "parentContactId", "faxNumber"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "type", "firstName", "lastName", "email", "taxId", "primaryContactId", "qualifiedName", "about", "countryId", "stateId", "cityId", "mobilePhone", "businessPhone", "postalCode", "duns", "jobTitle", "webUrl", "currencyId", "languageId", "timezoneId", "birthday", "streetLine1", "streetLine2", "gitHubUrl", "twitchUrl", "redditUrl", "tikTokUrl", "websiteUrl", "twitterUrl", "facebookUrl", "youTubeUrl", "linkedInUrl", "instagramUrl", "githubUsername", "instagramUsername", "tikTokUsername", "stackExchangeUrl", "stackOverflowUrl", "parentContactId", "faxNumber"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -331,7 +330,6 @@ class ContactCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "tenantId": obj.get("tenantId"),
             "type": obj.get("type"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),

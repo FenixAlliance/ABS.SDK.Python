@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **credit_months** | **float** |  | [optional] 
 **credit_years** | **float** |  | [optional] 
 **payment_mode_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

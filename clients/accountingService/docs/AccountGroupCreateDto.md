@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **parent_account_group_id** | **str** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

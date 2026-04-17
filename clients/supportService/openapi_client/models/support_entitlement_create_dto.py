@@ -70,16 +70,13 @@ class SupportEntitlementCreateDto(BaseModel):
     data8_label: Optional[StrictStr] = Field(default=None, alias="data8Label")
     data9: Optional[StrictStr] = None
     data9_label: Optional[StrictStr] = Field(default=None, alias="data9Label")
-    account_holder_id: Optional[StrictStr] = Field(default=None, alias="accountHolderID")
     individual_id: Optional[StrictStr] = Field(default=None, alias="individualID")
     organization_id: Optional[StrictStr] = Field(default=None, alias="organizationID")
     receiver_business_id: Optional[StrictStr] = Field(default=None, alias="receiverBusinessID")
-    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
     payment_token_id: Optional[StrictStr] = Field(default=None, alias="paymentTokenID")
     wallet_account_id: Optional[StrictStr] = Field(default=None, alias="walletAccountID")
     security_certificate_id: Optional[StrictStr] = Field(default=None, alias="securityCertificateID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "startDateTime", "endDateTime", "nextInvoiceDateTime", "code", "signature", "quantity", "repetitions", "chargeAttempts", "freeTrialInDays", "gracePeriodInDays", "customRenewalPeriod", "enableAutomaticRenew", "enableProRateBilling", "enableUsageThreshold", "enableAutomaticDisable", "enableAutomaticPayments", "usageThreshold", "data", "dataLabel", "data1", "data1Label", "data2", "data2Label", "data3", "data3Label", "data4", "data4Label", "data5", "data5Label", "data6", "data6Label", "data7", "data7Label", "data8", "data8Label", "data9", "data9Label", "accountHolderID", "individualID", "organizationID", "receiverBusinessID", "businessID", "businessProfileRecordID", "paymentTokenID", "walletAccountID", "securityCertificateID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "startDateTime", "endDateTime", "nextInvoiceDateTime", "code", "signature", "quantity", "repetitions", "chargeAttempts", "freeTrialInDays", "gracePeriodInDays", "customRenewalPeriod", "enableAutomaticRenew", "enableProRateBilling", "enableUsageThreshold", "enableAutomaticDisable", "enableAutomaticPayments", "usageThreshold", "data", "dataLabel", "data1", "data1Label", "data2", "data2Label", "data3", "data3Label", "data4", "data4Label", "data5", "data5Label", "data6", "data6Label", "data7", "data7Label", "data8", "data8Label", "data9", "data9Label", "individualID", "organizationID", "receiverBusinessID", "paymentTokenID", "walletAccountID", "securityCertificateID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -240,11 +237,6 @@ class SupportEntitlementCreateDto(BaseModel):
         if self.data9_label is None and "data9_label" in self.model_fields_set:
             _dict['data9Label'] = None
 
-        # set to None if account_holder_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_holder_id is None and "account_holder_id" in self.model_fields_set:
-            _dict['accountHolderID'] = None
-
         # set to None if individual_id (nullable) is None
         # and model_fields_set contains the field
         if self.individual_id is None and "individual_id" in self.model_fields_set:
@@ -259,16 +251,6 @@ class SupportEntitlementCreateDto(BaseModel):
         # and model_fields_set contains the field
         if self.receiver_business_id is None and "receiver_business_id" in self.model_fields_set:
             _dict['receiverBusinessID'] = None
-
-        # set to None if business_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_id is None and "business_id" in self.model_fields_set:
-            _dict['businessID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
 
         # set to None if payment_token_id (nullable) is None
         # and model_fields_set contains the field
@@ -338,12 +320,9 @@ class SupportEntitlementCreateDto(BaseModel):
             "data8Label": obj.get("data8Label"),
             "data9": obj.get("data9"),
             "data9Label": obj.get("data9Label"),
-            "accountHolderID": obj.get("accountHolderID"),
             "individualID": obj.get("individualID"),
             "organizationID": obj.get("organizationID"),
             "receiverBusinessID": obj.get("receiverBusinessID"),
-            "businessID": obj.get("businessID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
             "paymentTokenID": obj.get("paymentTokenID"),
             "walletAccountID": obj.get("walletAccountID"),
             "securityCertificateID": obj.get("securityCertificateID")

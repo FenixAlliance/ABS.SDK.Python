@@ -36,8 +36,7 @@ class CourseArticleCreateDto(BaseModel):
     content: Optional[StrictStr] = None
     course_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseID")
     course_wiki_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="courseWikiID")
-    business_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="businessID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "courseID", "courseWikiID", "businessID"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "content", "courseID", "courseWikiID"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,8 +105,7 @@ class CourseArticleCreateDto(BaseModel):
             "description": obj.get("description"),
             "content": obj.get("content"),
             "courseID": obj.get("courseID"),
-            "courseWikiID": obj.get("courseWikiID"),
-            "businessID": obj.get("businessID")
+            "courseWikiID": obj.get("courseWikiID")
         })
         return _obj
 
