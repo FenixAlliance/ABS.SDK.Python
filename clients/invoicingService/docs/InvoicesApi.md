@@ -1,6 +1,6 @@
 # openapi_client.InvoicesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -65,10 +65,10 @@ from openapi_client.models.money_envelope import MoneyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -135,10 +135,10 @@ from openapi_client.models.money_envelope import MoneyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -205,10 +205,10 @@ from openapi_client.models.money_envelope import MoneyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -275,10 +275,10 @@ from openapi_client.models.money_envelope import MoneyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -345,10 +345,10 @@ from openapi_client.models.money_envelope import MoneyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -415,10 +415,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -486,10 +486,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -559,10 +559,10 @@ from openapi_client.models.invoice_create_dto import InvoiceCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -631,10 +631,10 @@ from openapi_client.models.invoice_adjustment_create_dto import InvoiceAdjustmen
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -704,10 +704,10 @@ from openapi_client.models.invoice_line_dto_i_read_only_list_envelope import Inv
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -777,10 +777,10 @@ from openapi_client.models.invoice_line_applied_tax_create_dto import InvoiceLin
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -852,10 +852,10 @@ from openapi_client.models.invoice_reference_create_dto import InvoiceReferenceC
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -924,10 +924,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -995,10 +995,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1067,10 +1067,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1139,10 +1139,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1213,10 +1213,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1285,10 +1285,10 @@ from openapi_client.models.invoice_dto_envelope import InvoiceDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1356,10 +1356,10 @@ from openapi_client.models.extended_invoice_dto_list_envelope import ExtendedInv
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1425,10 +1425,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1494,10 +1494,10 @@ from openapi_client.models.invoice_dto_envelope import InvoiceDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1565,10 +1565,10 @@ from openapi_client.models.invoice_adjustment_dto_envelope import InvoiceAdjustm
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1637,10 +1637,10 @@ from openapi_client.models.invoice_adjustment_dto_i_read_only_list_envelope impo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1707,10 +1707,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1777,10 +1777,10 @@ from openapi_client.models.invoice_line_dto_envelope import InvoiceLineDtoEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1849,10 +1849,10 @@ from openapi_client.models.invoice_line_applied_tax_dto_i_read_only_list_envelop
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1921,10 +1921,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1993,10 +1993,10 @@ from openapi_client.models.invoice_line_dto_list_envelope import InvoiceLineDtoL
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2065,10 +2065,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2135,10 +2135,10 @@ from openapi_client.models.payment_dto_i_read_only_list_envelope import PaymentD
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2203,10 +2203,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2271,10 +2271,10 @@ from openapi_client.models.invoice_reference_dto_envelope import InvoiceReferenc
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2343,10 +2343,10 @@ from openapi_client.models.invoice_reference_dto_i_read_only_list_envelope impor
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2413,10 +2413,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2483,10 +2483,10 @@ from openapi_client.models.invoice_dto_list_envelope import InvoiceDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2552,10 +2552,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2621,10 +2621,10 @@ from openapi_client.models.email_dispatch_request import EmailDispatchRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2692,10 +2692,10 @@ from openapi_client.models.envelope import Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2765,10 +2765,10 @@ from openapi_client.models.invoice_update_dto import InvoiceUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2839,10 +2839,10 @@ from openapi_client.models.invoice_adjustment_update_dto import InvoiceAdjustmen
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2914,10 +2914,10 @@ from openapi_client.models.invoice_line_update_dto import InvoiceLineUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2989,10 +2989,10 @@ from openapi_client.models.invoice_line_applied_tax_update_dto import InvoiceLin
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -3066,10 +3066,10 @@ from openapi_client.models.invoice_reference_update_dto import InvoiceReferenceU
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 

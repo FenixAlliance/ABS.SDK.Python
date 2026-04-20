@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**title** | **str** |  | [optional] 
-**code** | **str** |  | [optional] 
+**title** | **str** |  | 
 **published** | **bool** |  | [optional] 
 **description** | **str** |  | [optional] 
-**html_content** | **str** |  | [optional] 
+**code** | **str** |  | [optional] 
+**markup** | **str** |  | [optional] 
 **featured_image_url** | **str** |  | [optional] 
 **code_type** | **str** |  | [optional] 
 

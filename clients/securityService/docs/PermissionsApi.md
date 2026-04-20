@@ -1,6 +1,6 @@
 # openapi_client.PermissionsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -38,10 +38,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -117,10 +117,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -196,10 +196,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -276,10 +276,10 @@ from openapi_client.models.security_permission_create_dto import SecurityPermiss
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -353,10 +353,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -430,10 +430,10 @@ from openapi_client.models.business_application_simple_dto_list_envelope import 
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -506,10 +506,10 @@ from openapi_client.models.tenant_enrollment_dto_list_envelope import TenantEnro
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -582,10 +582,10 @@ from openapi_client.models.security_permission_dto_envelope import SecurityPermi
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -658,10 +658,10 @@ from openapi_client.models.security_permission_dto_list_envelope import Security
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -732,10 +732,10 @@ from openapi_client.models.security_permission_dto_list_envelope import Security
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -808,10 +808,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -882,10 +882,10 @@ from openapi_client.models.security_role_dto_list_envelope import SecurityRoleDt
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -958,10 +958,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1037,10 +1037,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1116,10 +1116,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1196,10 +1196,10 @@ from openapi_client.models.security_permission_update_dto import SecurityPermiss
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 

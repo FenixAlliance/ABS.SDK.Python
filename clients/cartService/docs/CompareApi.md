@@ -1,6 +1,6 @@
 # openapi_client.CompareApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,10 +27,10 @@ from openapi_client.models.item_cart_record_dto import ItemCartRecordDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -100,10 +100,10 @@ from openapi_client.models.item_to_compare_cart_record_dto_envelope import ItemT
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -173,10 +173,10 @@ from openapi_client.models.item_to_compare_cart_record_dto_list_envelope import 
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -247,10 +247,10 @@ from openapi_client.models.item_to_compare_cart_record_dto import ItemToCompareC
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 

@@ -87,9 +87,9 @@ class BlogPostDto(BaseModel):
     social_profile_id: Optional[StrictStr] = Field(default=None, alias="socialProfileId")
     parent_web_content_id: Optional[StrictStr] = Field(default=None, alias="parentWebContentId")
     parent_web_content_version_id: Optional[StrictStr] = Field(default=None, alias="parentWebContentVersionId")
-    blog_post_category_id: Optional[StrictStr] = Field(default=None, alias="blogPostCategoryID")
-    web_template_id: Optional[StrictStr] = Field(default=None, alias="webTemplateID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "codeType", "order", "slug", "name", "title", "excerpt", "password", "description", "highlightImage", "canonicalUrl", "emitResult", "seoTitle", "seoKeyWords", "seoKeyPhrases", "metaDescription", "twitterImage", "twitterTitle", "twitterDescription", "facebookImage", "facebookTitle", "facebookDescription", "featuredImageUrl", "content", "code", "namespace", "typeName", "generatedCode", "compilationPath", "htmlContent", "cSharpContent", "razorContent", "cssContent", "jsContent", "cssFiles", "jsFiles", "razorGeneratedCode", "cSharpGeneratedCode", "template", "default", "enable", "enableComments", "displaySocialBox", "published", "inTrashCan", "systemLocked", "allowPingBacks", "allowTrackbacks", "cornerstoneContent", "isEssentialContent", "allowSearchEngineIndexing", "tenantId", "webPortalId", "websiteThemeId", "enrollmentId", "socialProfileId", "parentWebContentId", "parentWebContentVersionId", "blogPostCategoryID", "webTemplateID"]
+    blog_post_category_id: Optional[StrictStr] = Field(default=None, alias="blogPostCategoryId")
+    web_template_id: Optional[StrictStr] = Field(default=None, alias="webTemplateId")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "codeType", "order", "slug", "name", "title", "excerpt", "password", "description", "highlightImage", "canonicalUrl", "emitResult", "seoTitle", "seoKeyWords", "seoKeyPhrases", "metaDescription", "twitterImage", "twitterTitle", "twitterDescription", "facebookImage", "facebookTitle", "facebookDescription", "featuredImageUrl", "content", "code", "namespace", "typeName", "generatedCode", "compilationPath", "htmlContent", "cSharpContent", "razorContent", "cssContent", "jsContent", "cssFiles", "jsFiles", "razorGeneratedCode", "cSharpGeneratedCode", "template", "default", "enable", "enableComments", "displaySocialBox", "published", "inTrashCan", "systemLocked", "allowPingBacks", "allowTrackbacks", "cornerstoneContent", "isEssentialContent", "allowSearchEngineIndexing", "tenantId", "webPortalId", "websiteThemeId", "enrollmentId", "socialProfileId", "parentWebContentId", "parentWebContentVersionId", "blogPostCategoryId", "webTemplateId"]
 
     @field_validator('code_type')
     def code_type_validate_enum(cls, value):
@@ -97,8 +97,8 @@ class BlogPostDto(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown']):
-            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown')")
+        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup']):
+            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup')")
         return value
 
     model_config = ConfigDict(
@@ -368,12 +368,12 @@ class BlogPostDto(BaseModel):
         # set to None if blog_post_category_id (nullable) is None
         # and model_fields_set contains the field
         if self.blog_post_category_id is None and "blog_post_category_id" in self.model_fields_set:
-            _dict['blogPostCategoryID'] = None
+            _dict['blogPostCategoryId'] = None
 
         # set to None if web_template_id (nullable) is None
         # and model_fields_set contains the field
         if self.web_template_id is None and "web_template_id" in self.model_fields_set:
-            _dict['webTemplateID'] = None
+            _dict['webTemplateId'] = None
 
         return _dict
 
@@ -446,8 +446,8 @@ class BlogPostDto(BaseModel):
             "socialProfileId": obj.get("socialProfileId"),
             "parentWebContentId": obj.get("parentWebContentId"),
             "parentWebContentVersionId": obj.get("parentWebContentVersionId"),
-            "blogPostCategoryID": obj.get("blogPostCategoryID"),
-            "webTemplateID": obj.get("webTemplateID")
+            "blogPostCategoryId": obj.get("blogPostCategoryId"),
+            "webTemplateId": obj.get("webTemplateId")
         })
         return _obj
 

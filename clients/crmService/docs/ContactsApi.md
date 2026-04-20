@@ -1,6 +1,6 @@
 # openapi_client.ContactsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://absuite.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -54,10 +54,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -130,10 +130,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -206,10 +206,10 @@ from openapi_client.models.contact_dto_envelope import ContactDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -283,10 +283,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -357,10 +357,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -431,10 +431,10 @@ from openapi_client.models.contact_dto_envelope import ContactDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -508,10 +508,10 @@ from openapi_client.models.contact_dto import ContactDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -582,10 +582,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -656,10 +656,10 @@ from openapi_client.models.contact_dto_envelope import ContactDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -732,10 +732,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -808,10 +808,10 @@ from openapi_client.models.cart_dto_envelope import CartDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -885,10 +885,10 @@ from openapi_client.models.contact_profile_dto_list_envelope import ContactProfi
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -962,10 +962,10 @@ from openapi_client.models.social_profile_dto_envelope import SocialProfileDtoEn
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1039,10 +1039,10 @@ from openapi_client.models.wallet_dto_envelope import WalletDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1116,10 +1116,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1190,10 +1190,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1264,10 +1264,10 @@ from openapi_client.models.extended_contact_dto_list_envelope import ExtendedCon
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1338,10 +1338,10 @@ from openapi_client.models.extended_contact_dto_list_envelope import ExtendedCon
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1412,10 +1412,10 @@ from openapi_client.models.extended_contact_dto_envelope import ExtendedContactD
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1488,10 +1488,10 @@ from openapi_client.models.extended_contact_dto_list_envelope import ExtendedCon
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1562,10 +1562,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1638,10 +1638,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1714,10 +1714,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1790,10 +1790,10 @@ from openapi_client.models.contact_dto_list_envelope import ContactDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1867,10 +1867,10 @@ from openapi_client.models.operation import Operation
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -1945,10 +1945,10 @@ from openapi_client.models.email_dispatch_request import EmailDispatchRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2017,10 +2017,10 @@ from openapi_client.models.email_dispatch_request import EmailDispatchRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2090,10 +2090,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2168,10 +2168,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2246,10 +2246,10 @@ from openapi_client.models.contact_dto_envelope import ContactDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 
@@ -2322,10 +2322,10 @@ from openapi_client.models.contact_dto_envelope import ContactDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://absuite.net
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "http://localhost"
+    host = "https://absuite.net"
 )
 
 

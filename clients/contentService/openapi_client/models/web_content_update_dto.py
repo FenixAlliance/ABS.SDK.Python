@@ -89,8 +89,8 @@ class WebContentUpdateDto(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown']):
-            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown')")
+        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup']):
+            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup')")
         return value
 
     model_config = ConfigDict(

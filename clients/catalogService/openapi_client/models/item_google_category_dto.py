@@ -43,7 +43,7 @@ class ItemGoogleCategoryDto(BaseModel):
     banner_image: Optional[StrictStr] = Field(default=None, alias="bannerImage")
     primary_image: Optional[StrictStr] = Field(default=None, alias="primaryImage")
     parent_category_id: Optional[StrictStr] = Field(default=None, alias="parentCategoryId")
-    starting_at_amount_in_usd: Optional[Union[Annotated[float, Field(le=1.7976931348623157E+308, strict=True, ge=0)], Annotated[int, Field(le=2147483647, strict=True, ge=0)]]] = Field(default=None, alias="startingAtAmountInUsd")
+    starting_at_amount_in_usd: Optional[Union[Annotated[float, Field(le=999999999999999, strict=True, ge=0)], Annotated[int, Field(le=2147483647, strict=True, ge=0)]]] = Field(default=None, alias="startingAtAmountInUsd")
     __properties: ClassVar[List[str]] = ["id", "timestamp", "path", "icon", "name", "disabled", "featured", "displayOnMenu", "hasChildren", "menuImage", "bannerCode", "bannerImage", "primaryImage", "parentCategoryId", "startingAtAmountInUsd"]
 
     model_config = ConfigDict(

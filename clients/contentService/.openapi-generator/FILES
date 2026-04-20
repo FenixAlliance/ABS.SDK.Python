@@ -341,5 +341,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_web_portal_dto_list_envelope.py
 tox.ini

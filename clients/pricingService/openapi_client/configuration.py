@@ -78,7 +78,7 @@ class Configuration:
                  ) -> None:
         """Constructor
         """
-        self._base_path = "http://localhost" if host is None else host
+        self._base_path = "https://absuite.net" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -395,8 +395,20 @@ class Configuration:
         """
         return [
             {
-                'url': "",
-                'description': "No description provided",
+                'url': "{server}",
+                'description': "Alliance Business Suite API",
+                'variables': {
+                    'server': {
+                        'description': "ABS instance base URL",
+                        'default_value': "https://absuite.net",
+                        'enum_values': [
+                            "https://absuite.net",
+                            "https://test.absuite.net",
+                            "https://dev.absuite.net",
+                            "https://localhost:44388"
+                        ]
+                        }
+                    }
             }
         ]
 

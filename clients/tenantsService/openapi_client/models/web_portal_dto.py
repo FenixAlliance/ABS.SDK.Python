@@ -36,11 +36,11 @@ class WebPortalDto(BaseModel):
     disabled: Optional[StrictBool] = None
     tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
     description: Optional[StrictStr] = None
-    website_theme_id: Optional[StrictStr] = Field(default=None, alias="websiteThemeID")
-    business_domain_id: Optional[StrictStr] = Field(default=None, alias="businessDomainID")
-    business_profile_record_id: Optional[StrictStr] = Field(default=None, alias="businessProfileRecordID")
-    business_portal_application_id: Optional[StrictStr] = Field(default=None, alias="businessPortalApplicationID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "root", "title", "domain", "disabled", "tenantId", "description", "websiteThemeID", "businessDomainID", "businessProfileRecordID", "businessPortalApplicationID"]
+    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
+    website_theme_id: Optional[StrictStr] = Field(default=None, alias="websiteThemeId")
+    business_domain_id: Optional[StrictStr] = Field(default=None, alias="businessDomainId")
+    business_portal_application_id: Optional[StrictStr] = Field(default=None, alias="businessPortalApplicationId")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "root", "title", "domain", "disabled", "tenantId", "description", "enrollmentId", "websiteThemeId", "businessDomainId", "businessPortalApplicationId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,25 +111,25 @@ class WebPortalDto(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
+        # set to None if enrollment_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
+            _dict['enrollmentId'] = None
+
         # set to None if website_theme_id (nullable) is None
         # and model_fields_set contains the field
         if self.website_theme_id is None and "website_theme_id" in self.model_fields_set:
-            _dict['websiteThemeID'] = None
+            _dict['websiteThemeId'] = None
 
         # set to None if business_domain_id (nullable) is None
         # and model_fields_set contains the field
         if self.business_domain_id is None and "business_domain_id" in self.model_fields_set:
-            _dict['businessDomainID'] = None
-
-        # set to None if business_profile_record_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.business_profile_record_id is None and "business_profile_record_id" in self.model_fields_set:
-            _dict['businessProfileRecordID'] = None
+            _dict['businessDomainId'] = None
 
         # set to None if business_portal_application_id (nullable) is None
         # and model_fields_set contains the field
         if self.business_portal_application_id is None and "business_portal_application_id" in self.model_fields_set:
-            _dict['businessPortalApplicationID'] = None
+            _dict['businessPortalApplicationId'] = None
 
         return _dict
 
@@ -151,10 +151,10 @@ class WebPortalDto(BaseModel):
             "disabled": obj.get("disabled"),
             "tenantId": obj.get("tenantId"),
             "description": obj.get("description"),
-            "websiteThemeID": obj.get("websiteThemeID"),
-            "businessDomainID": obj.get("businessDomainID"),
-            "businessProfileRecordID": obj.get("businessProfileRecordID"),
-            "businessPortalApplicationID": obj.get("businessPortalApplicationID")
+            "enrollmentId": obj.get("enrollmentId"),
+            "websiteThemeId": obj.get("websiteThemeId"),
+            "businessDomainId": obj.get("businessDomainId"),
+            "businessPortalApplicationId": obj.get("businessPortalApplicationId")
         })
         return _obj
 

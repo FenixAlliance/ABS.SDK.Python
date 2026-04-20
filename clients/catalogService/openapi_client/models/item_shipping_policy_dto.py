@@ -47,7 +47,7 @@ class ItemShippingPolicyDto(BaseModel):
     weeks: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = None
     months: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = None
     years: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = None
-    value: Optional[Union[Annotated[float, Field(le=1.7976931348623157E+308, strict=True, ge=0)], Annotated[int, Field(le=2147483647, strict=True, ge=0)]]] = None
+    value: Optional[Union[Annotated[float, Field(le=999999999999999, strict=True, ge=0)], Annotated[int, Field(le=2147483647, strict=True, ge=0)]]] = None
     percentage: Optional[Union[Annotated[float, Field(le=100, strict=True, ge=0)], Annotated[int, Field(le=100, strict=True, ge=0)]]] = None
     currency_id: Annotated[str, Field(min_length=36, strict=True, max_length=36)] = Field(alias="currencyID")
     country_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="countryID")

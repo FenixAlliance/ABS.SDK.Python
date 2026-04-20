@@ -81,7 +81,9 @@ class BlogPostUpdateDto(BaseModel):
     cornerstone_content: Optional[StrictBool] = Field(default=None, alias="cornerstoneContent")
     is_essential_content: Optional[StrictBool] = Field(default=None, alias="isEssentialContent")
     allow_search_engine_indexing: Optional[StrictBool] = Field(default=None, alias="allowSearchEngineIndexing")
-    __properties: ClassVar[List[str]] = ["order", "slug", "name", "title", "excerpt", "password", "description", "highlightImage", "canonicalUrl", "seoTitle", "seoKeyWords", "seoKeyPhrases", "metaDescription", "twitterImage", "twitterTitle", "twitterDescription", "facebookImage", "facebookTitle", "facebookDescription", "featuredImageUrl", "content", "code", "namespace", "typeName", "generatedCode", "compilationPath", "htmlContent", "codeType", "cSharpContent", "razorContent", "cssContent", "jsContent", "cssFiles", "jsFiles", "razorGeneratedCode", "cSharpGeneratedCode", "precompiledLogicSize", "precompiledLogicSizeLong", "precompiledViewSize", "precompiledViewSizeLong", "precompiledLogicViewSize", "template", "default", "enable", "enableComments", "displaySocialBox", "published", "inTrashCan", "systemLocked", "allowPingbacks", "allowTrackbacks", "cornerstoneContent", "isEssentialContent", "allowSearchEngineIndexing"]
+    blog_post_category_id: Optional[StrictStr] = Field(default=None, alias="blogPostCategoryId")
+    web_template_id: Optional[StrictStr] = Field(default=None, alias="webTemplateId")
+    __properties: ClassVar[List[str]] = ["order", "slug", "name", "title", "excerpt", "password", "description", "highlightImage", "canonicalUrl", "seoTitle", "seoKeyWords", "seoKeyPhrases", "metaDescription", "twitterImage", "twitterTitle", "twitterDescription", "facebookImage", "facebookTitle", "facebookDescription", "featuredImageUrl", "content", "code", "namespace", "typeName", "generatedCode", "compilationPath", "htmlContent", "codeType", "cSharpContent", "razorContent", "cssContent", "jsContent", "cssFiles", "jsFiles", "razorGeneratedCode", "cSharpGeneratedCode", "precompiledLogicSize", "precompiledLogicSizeLong", "precompiledViewSize", "precompiledViewSizeLong", "precompiledLogicViewSize", "template", "default", "enable", "enableComments", "displaySocialBox", "published", "inTrashCan", "systemLocked", "allowPingbacks", "allowTrackbacks", "cornerstoneContent", "isEssentialContent", "allowSearchEngineIndexing", "blogPostCategoryId", "webTemplateId"]
 
     @field_validator('code_type')
     def code_type_validate_enum(cls, value):
@@ -89,8 +91,8 @@ class BlogPostUpdateDto(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown']):
-            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown')")
+        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup']):
+            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup')")
         return value
 
     model_config = ConfigDict(
@@ -307,6 +309,16 @@ class BlogPostUpdateDto(BaseModel):
         if self.c_sharp_generated_code is None and "c_sharp_generated_code" in self.model_fields_set:
             _dict['cSharpGeneratedCode'] = None
 
+        # set to None if blog_post_category_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.blog_post_category_id is None and "blog_post_category_id" in self.model_fields_set:
+            _dict['blogPostCategoryId'] = None
+
+        # set to None if web_template_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.web_template_id is None and "web_template_id" in self.model_fields_set:
+            _dict['webTemplateId'] = None
+
         return _dict
 
     @classmethod
@@ -372,7 +384,9 @@ class BlogPostUpdateDto(BaseModel):
             "allowTrackbacks": obj.get("allowTrackbacks"),
             "cornerstoneContent": obj.get("cornerstoneContent"),
             "isEssentialContent": obj.get("isEssentialContent"),
-            "allowSearchEngineIndexing": obj.get("allowSearchEngineIndexing")
+            "allowSearchEngineIndexing": obj.get("allowSearchEngineIndexing"),
+            "blogPostCategoryId": obj.get("blogPostCategoryId"),
+            "webTemplateId": obj.get("webTemplateId")
         })
         return _obj
 

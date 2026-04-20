@@ -21,6 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,16 +31,16 @@ class BlogPostCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    title: Optional[StrictStr] = None
-    code: Optional[StrictStr] = None
+    title: Annotated[str, Field(min_length=3, strict=True, max_length=100)]
     published: Optional[StrictBool] = None
     description: Optional[StrictStr] = None
-    html_content: Optional[StrictStr] = Field(default=None, alias="htmlContent")
+    code: Optional[StrictStr] = None
+    markup: Optional[StrictStr] = None
     featured_image_url: Optional[StrictStr] = Field(default=None, alias="featuredImageUrl")
     code_type: Optional[StrictStr] = Field(default=None, alias="codeType")
-    blog_post_category_id: Optional[StrictStr] = Field(default=None, alias="blogPostCategoryID")
-    web_template_id: Optional[StrictStr] = Field(default=None, alias="webTemplateID")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "code", "published", "description", "htmlContent", "featuredImageUrl", "codeType", "blogPostCategoryID", "webTemplateID"]
+    blog_post_category_id: Optional[StrictStr] = Field(default=None, alias="blogPostCategoryId")
+    web_template_id: Optional[StrictStr] = Field(default=None, alias="webTemplateId")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "published", "description", "code", "markup", "featuredImageUrl", "codeType", "blogPostCategoryId", "webTemplateId"]
 
     @field_validator('code_type')
     def code_type_validate_enum(cls, value):
@@ -47,8 +48,8 @@ class BlogPostCreateDto(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown']):
-            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown')")
+        if value not in set(['Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup']):
+            raise ValueError("must be one of enum values ('Razor', 'CSharp', 'CSHtml', 'Liquid', 'Html5', 'Markdown', 'Markup')")
         return value
 
     model_config = ConfigDict(
@@ -90,25 +91,20 @@ class BlogPostCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if title (nullable) is None
+        # set to None if description (nullable) is None
         # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
 
         # set to None if code (nullable) is None
         # and model_fields_set contains the field
         if self.code is None and "code" in self.model_fields_set:
             _dict['code'] = None
 
-        # set to None if description (nullable) is None
+        # set to None if markup (nullable) is None
         # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
-
-        # set to None if html_content (nullable) is None
-        # and model_fields_set contains the field
-        if self.html_content is None and "html_content" in self.model_fields_set:
-            _dict['htmlContent'] = None
+        if self.markup is None and "markup" in self.model_fields_set:
+            _dict['markup'] = None
 
         # set to None if featured_image_url (nullable) is None
         # and model_fields_set contains the field
@@ -123,12 +119,12 @@ class BlogPostCreateDto(BaseModel):
         # set to None if blog_post_category_id (nullable) is None
         # and model_fields_set contains the field
         if self.blog_post_category_id is None and "blog_post_category_id" in self.model_fields_set:
-            _dict['blogPostCategoryID'] = None
+            _dict['blogPostCategoryId'] = None
 
         # set to None if web_template_id (nullable) is None
         # and model_fields_set contains the field
         if self.web_template_id is None and "web_template_id" in self.model_fields_set:
-            _dict['webTemplateID'] = None
+            _dict['webTemplateId'] = None
 
         return _dict
 
@@ -145,14 +141,14 @@ class BlogPostCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "title": obj.get("title"),
-            "code": obj.get("code"),
             "published": obj.get("published"),
             "description": obj.get("description"),
-            "htmlContent": obj.get("htmlContent"),
+            "code": obj.get("code"),
+            "markup": obj.get("markup"),
             "featuredImageUrl": obj.get("featuredImageUrl"),
             "codeType": obj.get("codeType"),
-            "blogPostCategoryID": obj.get("blogPostCategoryID"),
-            "webTemplateID": obj.get("webTemplateID")
+            "blogPostCategoryId": obj.get("blogPostCategoryId"),
+            "webTemplateId": obj.get("webTemplateId")
         })
         return _obj
 

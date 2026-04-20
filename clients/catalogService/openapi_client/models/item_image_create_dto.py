@@ -43,7 +43,7 @@ class ItemImageCreateDto(BaseModel):
     key_words: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=500)]] = Field(default=None, alias="keyWords")
     notes: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=1000)]] = None
     content_type: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=100)]] = Field(default=None, alias="contentType")
-    file_length: Optional[Annotated[int, Field(le=-9223372036854775616, strict=True, ge=0)]] = Field(default=None, alias="fileLength")
+    file_length: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, alias="fileLength")
     valid_response: Optional[StrictBool] = Field(default=None, alias="validResponse")
     social_profile_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="socialProfileID")
     parent_file_upload_id: Optional[Annotated[str, Field(min_length=36, strict=True, max_length=36)]] = Field(default=None, alias="parentFileUploadID")

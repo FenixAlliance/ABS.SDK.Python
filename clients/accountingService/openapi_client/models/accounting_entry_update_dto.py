@@ -30,7 +30,7 @@ class AccountingEntryUpdateDto(BaseModel):
     AccountingEntryUpdateDto
     """ # noqa: E501
     description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=1000)]] = None
-    amount: Optional[Union[Annotated[float, Field(le=1.7976931348623157E+308, strict=True, ge=0.01)], Annotated[int, Field(le=2147483647, strict=True, ge=1)]]] = None
+    amount: Optional[Union[Annotated[float, Field(le=999999999999999, strict=True, ge=0.01)], Annotated[int, Field(le=2147483647, strict=True, ge=1)]]] = None
     var_date: Optional[datetime] = Field(default=None, alias="date")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     debit_account_id: Optional[StrictStr] = Field(default=None, alias="debitAccountId")
