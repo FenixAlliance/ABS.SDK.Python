@@ -18,7 +18,7 @@
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.item_attachments_api import ItemAttachmentsApi
 from openapi_client.api.item_attributes_api import ItemAttributesApi
 from openapi_client.api.item_brands_api import ItemBrandsApi

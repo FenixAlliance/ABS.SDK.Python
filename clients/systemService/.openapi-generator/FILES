@@ -16,7 +16,7 @@ docs/ExtendedTenantDtoListEnvelope.md
 docs/ExtendedUserDto.md
 docs/ExtendedUserDtoEnvelope.md
 docs/ExtendedUserDtoListEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/ISwaggerContact.md
@@ -76,7 +76,7 @@ openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/antiforgery_api.py
 openapi_client/api/emails_api.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/licensing_api.py
 openapi_client/api/migrations_api.py
 openapi_client/api/modules_api.py
@@ -155,4 +155,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_fenix_alliance_abs_web_api.py
 tox.ini

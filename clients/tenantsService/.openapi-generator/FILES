@@ -16,7 +16,7 @@ docs/ExtendedTenantDto.md
 docs/ExtendedTenantDtoEnvelope.md
 docs/ExtendedTenantEnrollmentDto.md
 docs/ExtendedTenantEnrollmentDtoEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/IndustriesApi.md
@@ -162,7 +162,7 @@ openapi_client/api/__init__.py
 openapi_client/api/departments_api.py
 openapi_client/api/employee_enrollments_api.py
 openapi_client/api/enrollments_api.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/industries_api.py
 openapi_client/api/invitations_api.py
 openapi_client/api/options_api.py
@@ -325,4 +325,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_fenix_alliance_abs_web_api.py
 tox.ini

@@ -20,7 +20,7 @@ __version__ = "1.0.0"
 # import apis into sdk package
 from openapi_client.api.exchange_api import ExchangeApi
 from openapi_client.api.exchange_v_api import ExchangeVApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.rates_api import RatesApi
 
 # import ApiClient

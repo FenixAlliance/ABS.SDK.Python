@@ -9,7 +9,7 @@ docs/AuthorizationResult.md
 docs/AuthorizationResultEnvelope.md
 docs/CheckerApi.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -43,7 +43,7 @@ openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/applications_api.py
 openapi_client/api/checker_api.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/o_auth_api.py
 openapi_client/api/resource_api.py
 openapi_client/api/user_info_api.py

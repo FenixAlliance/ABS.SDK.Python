@@ -16,7 +16,7 @@ docs/ExtendedTenantEnrollmentDto.md
 docs/ExtendedTenantEnrollmentDtoListEnvelope.md
 docs/ExtendedUserDto.md
 docs/ExtendedUserDtoEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/FollowRecordDto.md
 docs/FollowRecordDtoListEnvelope.md
 docs/ForgotPasswordRequest.md
@@ -62,7 +62,7 @@ docs/WalletDtoEnvelope.md
 git_push.sh
 openapi_client/__init__.py
 openapi_client/api/__init__.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/options_api.py
 openapi_client/api/users_api.py
 openapi_client/api_client.py

@@ -10,7 +10,7 @@ docs/ExchangeApi.md
 docs/ExchangeRate.md
 docs/ExchangeRateEnvelope.md
 docs/ExchangeVApi.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForexRatesDto.md
 docs/ForexRatesDtoEnvelope.md
 docs/ForgotPasswordRequest.md
@@ -32,7 +32,7 @@ openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/exchange_api.py
 openapi_client/api/exchange_v_api.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/rates_api.py
 openapi_client/api_client.py
 openapi_client/api_response.py

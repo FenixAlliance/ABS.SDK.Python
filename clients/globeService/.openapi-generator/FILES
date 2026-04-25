@@ -25,7 +25,7 @@ docs/CurrencyDto.md
 docs/CurrencyDtoEnvelope.md
 docs/CurrencyDtoListEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -48,7 +48,7 @@ openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/countries_api.py
 openapi_client/api/currencies_api.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/languages_api.py
 openapi_client/api/timezones_api.py
 openapi_client/api_client.py

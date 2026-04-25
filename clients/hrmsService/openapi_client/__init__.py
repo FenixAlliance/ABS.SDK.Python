@@ -20,7 +20,7 @@ __version__ = "1.0.0"
 # import apis into sdk package
 from openapi_client.api.employees_api import EmployeesApi
 from openapi_client.api.employers_api import EmployersApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.gigs_api import GigsApi
 from openapi_client.api.job_offers_api import JobOffersApi
 

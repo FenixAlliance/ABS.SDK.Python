@@ -9,7 +9,7 @@ from openapi_client.api.billing_profiles_api import BillingProfilesApi
 from openapi_client.api.budgets_api import BudgetsApi
 from openapi_client.api.commissions_api import CommissionsApi
 from openapi_client.api.cost_centres_api import CostCentresApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.financial_books_api import FinancialBooksApi
 from openapi_client.api.fiscal_authorities_api import FiscalAuthoritiesApi
 from openapi_client.api.fiscal_authority_years_api import FiscalAuthorityYearsApi

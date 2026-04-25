@@ -3,7 +3,7 @@
 # import apis into api package
 from openapi_client.api.antiforgery_api import AntiforgeryApi
 from openapi_client.api.emails_api import EmailsApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.licensing_api import LicensingApi
 from openapi_client.api.migrations_api import MigrationsApi
 from openapi_client.api.modules_api import ModulesApi

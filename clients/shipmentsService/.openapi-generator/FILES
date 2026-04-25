@@ -5,7 +5,7 @@
 README.md
 docs/AccessTokenResponse.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -23,7 +23,7 @@ docs/TwoFactorResponse.md
 git_push.sh
 openapi_client/__init__.py
 openapi_client/api/__init__.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/shipments_api.py
 openapi_client/api_client.py
 openapi_client/api_response.py
@@ -53,4 +53,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_fenix_alliance_abs_web_api.py
 tox.ini

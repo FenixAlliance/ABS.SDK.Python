@@ -23,7 +23,7 @@ from openapi_client.api.blog_post_categories_api import BlogPostCategoriesApi
 from openapi_client.api.blog_post_tags_api import BlogPostTagsApi
 from openapi_client.api.blog_posts_api import BlogPostsApi
 from openapi_client.api.business_domains_api import BusinessDomainsApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.portals_api import PortalsApi
 from openapi_client.api.themes_api import ThemesApi
 from openapi_client.api.web_contents_api import WebContentsApi

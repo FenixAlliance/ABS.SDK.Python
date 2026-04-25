@@ -19,7 +19,7 @@ from openapi_client.api.course_units_api import CourseUnitsApi
 from openapi_client.api.course_updates_api import CourseUpdatesApi
 from openapi_client.api.course_wikis_api import CourseWikisApi
 from openapi_client.api.courses_api import CoursesApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.instructor_profiles_api import InstructorProfilesApi
 from openapi_client.api.student_profiles_api import StudentProfilesApi
 

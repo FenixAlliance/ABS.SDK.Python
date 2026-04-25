@@ -24,7 +24,7 @@ docs/EmailTemplateUpdateDto.md
 docs/EmailTemplatesApi.md
 docs/EmptyEnvelope.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABPWebApi.md
+docs/FenixAllianceABSWebApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -74,7 +74,7 @@ openapi_client/api/__init__.py
 openapi_client/api/email_groups_api.py
 openapi_client/api/email_signatures_api.py
 openapi_client/api/email_templates_api.py
-openapi_client/api/fenix_alliance_abp_web_api.py
+openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/marketing_campaigns_api.py
 openapi_client/api/marketing_lists_api.py
 openapi_client/api/newsletters_api.py
@@ -149,4 +149,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_fenix_alliance_abs_web_api.py
 tox.ini

@@ -20,7 +20,7 @@ __version__ = "1.0.0"
 # import apis into sdk package
 from openapi_client.api.carts_api import CartsApi
 from openapi_client.api.compare_api import CompareApi
-from openapi_client.api.fenix_alliance_abp_web_api import FenixAllianceABPWebApi
+from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.records_api import RecordsApi
 from openapi_client.api.wish_lists_api import WishListsApi
 

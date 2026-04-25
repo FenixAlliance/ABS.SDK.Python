@@ -92,19 +92,23 @@ Class | Method | HTTP request | Description
 *ExchangeApi* | [**exchange_amount_historical_async**](docs/ExchangeApi.md#exchange_amount_historical_async) | **GET** /api/v2/ForexService/Exchange/History | Exchange currency at historical rates
 *ExchangeVApi* | [**exchange_amount_historical_v3_async**](docs/ExchangeVApi.md#exchange_amount_historical_v3_async) | **GET** /api/v3/ForexService/Exchange/History | Exchange currency at historical rates (v3)
 *ExchangeVApi* | [**exchange_amount_v3_async**](docs/ExchangeVApi.md#exchange_amount_v3_async) | **GET** /api/v3/ForexService/Exchange/Latest | Exchange currency at latest rates (v3)
-*FenixAllianceABPWebApi* | [**forgot_password_post**](docs/FenixAllianceABPWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
-*FenixAllianceABPWebApi* | [**health_get**](docs/FenixAllianceABPWebApi.md#health_get) | **GET** /health | 
-*FenixAllianceABPWebApi* | [**hello_get**](docs/FenixAllianceABPWebApi.md#hello_get) | **GET** /hello | 
-*FenixAllianceABPWebApi* | [**login_post**](docs/FenixAllianceABPWebApi.md#login_post) | **POST** /login | 
-*FenixAllianceABPWebApi* | [**manage2fa_post**](docs/FenixAllianceABPWebApi.md#manage2fa_post) | **POST** /manage/2fa | 
-*FenixAllianceABPWebApi* | [**manage_info_get**](docs/FenixAllianceABPWebApi.md#manage_info_get) | **GET** /manage/info | 
-*FenixAllianceABPWebApi* | [**manage_info_post**](docs/FenixAllianceABPWebApi.md#manage_info_post) | **POST** /manage/info | 
-*FenixAllianceABPWebApi* | [**map_identity_api_confirm_email**](docs/FenixAllianceABPWebApi.md#map_identity_api_confirm_email) | **GET** /confirmEmail | 
-*FenixAllianceABPWebApi* | [**refresh_post**](docs/FenixAllianceABPWebApi.md#refresh_post) | **POST** /refresh | 
-*FenixAllianceABPWebApi* | [**register_post**](docs/FenixAllianceABPWebApi.md#register_post) | **POST** /register | 
-*FenixAllianceABPWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABPWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
-*FenixAllianceABPWebApi* | [**reset_password_post**](docs/FenixAllianceABPWebApi.md#reset_password_post) | **POST** /resetPassword | 
-*FenixAllianceABPWebApi* | [**version_get**](docs/FenixAllianceABPWebApi.md#version_get) | **GET** /version | 
+*FenixAllianceABSWebApi* | [**account_logout_post**](docs/FenixAllianceABSWebApi.md#account_logout_post) | **POST** /Account/Logout | 
+*FenixAllianceABSWebApi* | [**account_manage_download_personal_data_post**](docs/FenixAllianceABSWebApi.md#account_manage_download_personal_data_post) | **POST** /Account/Manage/DownloadPersonalData | 
+*FenixAllianceABSWebApi* | [**account_manage_link_external_login_post**](docs/FenixAllianceABSWebApi.md#account_manage_link_external_login_post) | **POST** /Account/Manage/LinkExternalLogin | 
+*FenixAllianceABSWebApi* | [**account_perform_external_login_post**](docs/FenixAllianceABSWebApi.md#account_perform_external_login_post) | **POST** /Account/PerformExternalLogin | 
+*FenixAllianceABSWebApi* | [**forgot_password_post**](docs/FenixAllianceABSWebApi.md#forgot_password_post) | **POST** /forgotPassword | 
+*FenixAllianceABSWebApi* | [**health_get**](docs/FenixAllianceABSWebApi.md#health_get) | **GET** /health | 
+*FenixAllianceABSWebApi* | [**hello_get**](docs/FenixAllianceABSWebApi.md#hello_get) | **GET** /hello | 
+*FenixAllianceABSWebApi* | [**login_post**](docs/FenixAllianceABSWebApi.md#login_post) | **POST** /login | 
+*FenixAllianceABSWebApi* | [**manage2fa_post**](docs/FenixAllianceABSWebApi.md#manage2fa_post) | **POST** /manage/2fa | 
+*FenixAllianceABSWebApi* | [**manage_info_get**](docs/FenixAllianceABSWebApi.md#manage_info_get) | **GET** /manage/info | 
+*FenixAllianceABSWebApi* | [**manage_info_post**](docs/FenixAllianceABSWebApi.md#manage_info_post) | **POST** /manage/info | 
+*FenixAllianceABSWebApi* | [**map_identity_api_confirm_email**](docs/FenixAllianceABSWebApi.md#map_identity_api_confirm_email) | **GET** /confirmEmail | 
+*FenixAllianceABSWebApi* | [**refresh_post**](docs/FenixAllianceABSWebApi.md#refresh_post) | **POST** /refresh | 
+*FenixAllianceABSWebApi* | [**register_post**](docs/FenixAllianceABSWebApi.md#register_post) | **POST** /register | 
+*FenixAllianceABSWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABSWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
+*FenixAllianceABSWebApi* | [**reset_password_post**](docs/FenixAllianceABSWebApi.md#reset_password_post) | **POST** /resetPassword | 
+*FenixAllianceABSWebApi* | [**version_get**](docs/FenixAllianceABSWebApi.md#version_get) | **GET** /version | 
 *RatesApi* | [**get_historical_currency_rate_async**](docs/RatesApi.md#get_historical_currency_rate_async) | **GET** /api/v2/ForexService/Rates/History/{currencyId} | Get historical rate for a currency
 *RatesApi* | [**get_historical_currency_rates_async**](docs/RatesApi.md#get_historical_currency_rates_async) | **GET** /api/v2/ForexService/Rates/History | Get historical currency rates
 *RatesApi* | [**get_latest_currency_rate_async**](docs/RatesApi.md#get_latest_currency_rate_async) | **GET** /api/v2/ForexService/Rates/Latest/{currencyId} | Get latest rate for a currency
