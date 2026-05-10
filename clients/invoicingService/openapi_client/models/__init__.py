@@ -23,7 +23,6 @@ from openapi_client.models.envelope import Envelope
 from openapi_client.models.error_envelope import ErrorEnvelope
 from openapi_client.models.extended_invoice_dto import ExtendedInvoiceDto
 from openapi_client.models.extended_invoice_dto_list_envelope import ExtendedInvoiceDtoListEnvelope
-from openapi_client.models.forex_rates import ForexRates
 from openapi_client.models.forgot_password_request import ForgotPasswordRequest
 from openapi_client.models.http_validation_problem_details import HttpValidationProblemDetails
 from openapi_client.models.info_request import InfoRequest

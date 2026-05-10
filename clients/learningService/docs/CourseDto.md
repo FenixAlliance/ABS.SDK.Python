@@ -168,6 +168,20 @@ Name | Type | Description | Notes
 **selected_shipment_policies** | **List[str]** |  | [optional] 
 **selected_attributes_options** | **List[str]** |  | [optional] 
 **selected_selling_margin_policies** | **List[str]** |  | [optional] 
+**code** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
+**course_category_id** | **str** |  | [optional] 
+**course_category_name** | **str** |  | [optional] 
+**instructor_profile_id** | **str** |  | [optional] 
+**instructor_profile_name** | **str** |  | [optional] 
+**max_course_enrollments** | **int** |  | [optional] 
+**total_effort_in_weeks** | **int** |  | [optional] 
+**total_hours_per_week** | **int** |  | [optional] 
+**total_effort_in_hours** | **int** |  | [optional] 
+**start_date_time** | **datetime** |  | [optional] 
+**end_date_time** | **datetime** |  | [optional] 
+**inscriptions_start_date_time** | **datetime** |  | [optional] 
+**inscriptions_end_date_time** | **datetime** |  | [optional] 
 
 ## Example
 

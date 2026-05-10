@@ -55,6 +55,7 @@ class InvoiceDto(BaseModel):
     tax_calculation_method: Optional[StrictStr] = Field(default=None, alias="taxCalculationMethod")
     cost_calculation_method: Optional[StrictStr] = Field(default=None, alias="costCalculationMethod")
     forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
+    forex_rates_snapshot: Optional[StrictStr] = Field(default=None, alias="forexRatesSnapshot")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     total_detail: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDetail")
     total_detail_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDetailCurrencyId")
@@ -107,7 +108,7 @@ class InvoiceDto(BaseModel):
     invoice_type: Optional[StrictStr] = Field(default=None, alias="invoiceType")
     document_type: Optional[StrictStr] = Field(default=None, alias="documentType")
     invoice_status: Optional[StrictStr] = Field(default=None, alias="invoiceStatus")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "closed", "type", "title", "userId", "tenantId", "description", "priceListId", "enrollmentId", "individualId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "customerNotes", "taxCalculationMethod", "costCalculationMethod", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "total", "totalCurrencyId", "totalDetailInUsd", "totalProfitInUsd", "totalDiscountsInUsd", "totalSurchargesInUsd", "totalTaxBaseInUsd", "totalTaxesInUsd", "totalWithheldTaxesInUsd", "totalShippingCostInUsd", "totalShippingTaxesInUsd", "totalGlobalDiscountsInUsd", "totalGlobalSurchargesInUsd", "totalInUsd", "paid", "number", "notes", "orderId", "enumeration", "paymentModeId", "enumerationRangeId", "emisorBillingProfileId", "receiverBillingProfileId", "emisorWalletAccountId", "receiverWalletAccountId", "paymentDue", "invoiceType", "documentType", "invoiceStatus"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "closed", "type", "title", "userId", "tenantId", "description", "priceListId", "enrollmentId", "individualId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "customerNotes", "taxCalculationMethod", "costCalculationMethod", "forexRate", "forexRatesSnapshot", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "total", "totalCurrencyId", "totalDetailInUsd", "totalProfitInUsd", "totalDiscountsInUsd", "totalSurchargesInUsd", "totalTaxBaseInUsd", "totalTaxesInUsd", "totalWithheldTaxesInUsd", "totalShippingCostInUsd", "totalShippingTaxesInUsd", "totalGlobalDiscountsInUsd", "totalGlobalSurchargesInUsd", "totalInUsd", "paid", "number", "notes", "orderId", "enumeration", "paymentModeId", "enumerationRangeId", "emisorBillingProfileId", "receiverBillingProfileId", "emisorWalletAccountId", "receiverWalletAccountId", "paymentDue", "invoiceType", "documentType", "invoiceStatus"]
 
     @field_validator('tax_calculation_method')
     def tax_calculation_method_validate_enum(cls, value):
@@ -313,6 +314,11 @@ class InvoiceDto(BaseModel):
         if self.customer_notes is None and "customer_notes" in self.model_fields_set:
             _dict['customerNotes'] = None
 
+        # set to None if forex_rates_snapshot (nullable) is None
+        # and model_fields_set contains the field
+        if self.forex_rates_snapshot is None and "forex_rates_snapshot" in self.model_fields_set:
+            _dict['forexRatesSnapshot'] = None
+
         # set to None if currency_id (nullable) is None
         # and model_fields_set contains the field
         if self.currency_id is None and "currency_id" in self.model_fields_set:
@@ -467,6 +473,7 @@ class InvoiceDto(BaseModel):
             "taxCalculationMethod": obj.get("taxCalculationMethod"),
             "costCalculationMethod": obj.get("costCalculationMethod"),
             "forexRate": obj.get("forexRate"),
+            "forexRatesSnapshot": obj.get("forexRatesSnapshot"),
             "currencyId": obj.get("currencyId"),
             "totalDetail": obj.get("totalDetail"),
             "totalDetailCurrencyId": obj.get("totalDetailCurrencyId"),

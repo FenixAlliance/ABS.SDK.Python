@@ -16,6 +16,11 @@
 
 # import models into model package
 from openapi_client.models.access_token_response import AccessTokenResponse
+from openapi_client.models.bank_account_create_dto import BankAccountCreateDto
+from openapi_client.models.bank_account_dto import BankAccountDto
+from openapi_client.models.bank_account_dto_envelope import BankAccountDtoEnvelope
+from openapi_client.models.bank_account_dto_list_envelope import BankAccountDtoListEnvelope
+from openapi_client.models.bank_account_update_dto import BankAccountUpdateDto
 from openapi_client.models.contact_dto import ContactDto
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.error_envelope import ErrorEnvelope
@@ -36,8 +41,20 @@ from openapi_client.models.location_update_dto import LocationUpdateDto
 from openapi_client.models.login_request import LoginRequest
 from openapi_client.models.order_dto import OrderDto
 from openapi_client.models.order_dto_list_envelope import OrderDtoListEnvelope
+from openapi_client.models.payment_chargeback_dto import PaymentChargebackDto
+from openapi_client.models.payment_chargeback_dto_list_envelope import PaymentChargebackDtoListEnvelope
+from openapi_client.models.payment_create_dto import PaymentCreateDto
 from openapi_client.models.payment_dto import PaymentDto
 from openapi_client.models.payment_dto_list_envelope import PaymentDtoListEnvelope
+from openapi_client.models.payment_refund_dto import PaymentRefundDto
+from openapi_client.models.payment_refund_dto_list_envelope import PaymentRefundDtoListEnvelope
+from openapi_client.models.payment_token_create_dto import PaymentTokenCreateDto
+from openapi_client.models.payment_token_dto import PaymentTokenDto
+from openapi_client.models.payment_token_dto_envelope import PaymentTokenDtoEnvelope
+from openapi_client.models.payment_token_dto_list_envelope import PaymentTokenDtoListEnvelope
+from openapi_client.models.payment_token_update_dto import PaymentTokenUpdateDto
+from openapi_client.models.quote_dto import QuoteDto
+from openapi_client.models.quote_dto_list_envelope import QuoteDtoListEnvelope
 from openapi_client.models.refresh_request import RefreshRequest
 from openapi_client.models.register_request import RegisterRequest
 from openapi_client.models.resend_confirmation_email_request import ResendConfirmationEmailRequest
@@ -49,3 +66,8 @@ from openapi_client.models.two_factor_response import TwoFactorResponse
 from openapi_client.models.user_dto import UserDto
 from openapi_client.models.wallet_dto import WalletDto
 from openapi_client.models.wallet_dto_envelope import WalletDtoEnvelope
+from openapi_client.models.wallet_withdraw_dto import WalletWithdrawDto
+from openapi_client.models.wallet_withdraw_dto_list_envelope import WalletWithdrawDtoListEnvelope
+from openapi_client.models.wallet_withdraw_request_create_dto import WalletWithdrawRequestCreateDto
+from openapi_client.models.wallet_withdraw_request_dto import WalletWithdrawRequestDto
+from openapi_client.models.wallet_withdraw_request_dto_list_envelope import WalletWithdrawRequestDtoListEnvelope

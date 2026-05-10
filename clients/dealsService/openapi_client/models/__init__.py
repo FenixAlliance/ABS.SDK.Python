@@ -17,7 +17,6 @@
 # import models into model package
 from openapi_client.models.access_token_response import AccessTokenResponse
 from openapi_client.models.contact_dto import ContactDto
-from openapi_client.models.currency_id import CurrencyId
 from openapi_client.models.deal_unit_create_dto import DealUnitCreateDto
 from openapi_client.models.deal_unit_dto import DealUnitDto
 from openapi_client.models.deal_unit_dto_envelope import DealUnitDtoEnvelope
@@ -45,14 +44,12 @@ from openapi_client.models.extended_deal_unit_dto_envelope import ExtendedDealUn
 from openapi_client.models.extended_deal_unit_dto_list_envelope import ExtendedDealUnitDtoListEnvelope
 from openapi_client.models.extended_sales_literature_dto import ExtendedSalesLiteratureDto
 from openapi_client.models.extended_sales_literature_dto_list_envelope import ExtendedSalesLiteratureDtoListEnvelope
-from openapi_client.models.forex_rates import ForexRates
 from openapi_client.models.forgot_password_request import ForgotPasswordRequest
 from openapi_client.models.http_validation_problem_details import HttpValidationProblemDetails
 from openapi_client.models.info_request import InfoRequest
 from openapi_client.models.info_response import InfoResponse
 from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.models.login_request import LoginRequest
-from openapi_client.models.money import Money
 from openapi_client.models.refresh_request import RefreshRequest
 from openapi_client.models.register_request import RegisterRequest
 from openapi_client.models.resend_confirmation_email_request import ResendConfirmationEmailRequest

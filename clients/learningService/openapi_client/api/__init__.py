@@ -2,18 +2,23 @@
 
 # import apis into api package
 from openapi_client.api.course_articles_api import CourseArticlesApi
+from openapi_client.api.course_assignment_components_api import CourseAssignmentComponentsApi
+from openapi_client.api.course_assignment_types_api import CourseAssignmentTypesApi
 from openapi_client.api.course_assignments_api import CourseAssignmentsApi
 from openapi_client.api.course_categories_api import CourseCategoriesApi
 from openapi_client.api.course_certificates_api import CourseCertificatesApi
 from openapi_client.api.course_cohorts_api import CourseCohortsApi
+from openapi_client.api.course_content_groups_api import CourseContentGroupsApi
 from openapi_client.api.course_enrollments_api import CourseEnrollmentsApi
 from openapi_client.api.course_files_api import CourseFilesApi
 from openapi_client.api.course_forums_api import CourseForumsApi
+from openapi_client.api.course_grading_rubrics_api import CourseGradingRubricsApi
 from openapi_client.api.course_handouts_api import CourseHandoutsApi
 from openapi_client.api.course_libraries_api import CourseLibrariesApi
 from openapi_client.api.course_pages_api import CoursePagesApi
 from openapi_client.api.course_problem_sets_api import CourseProblemSetsApi
 from openapi_client.api.course_sections_api import CourseSectionsApi
+from openapi_client.api.course_team_memberships_api import CourseTeamMembershipsApi
 from openapi_client.api.course_unit_components_api import CourseUnitComponentsApi
 from openapi_client.api.course_units_api import CourseUnitsApi
 from openapi_client.api.course_updates_api import CourseUpdatesApi
@@ -21,5 +26,6 @@ from openapi_client.api.course_wikis_api import CourseWikisApi
 from openapi_client.api.courses_api import CoursesApi
 from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.instructor_profiles_api import InstructorProfilesApi
+from openapi_client.api.me_api import MeApi
 from openapi_client.api.student_profiles_api import StudentProfilesApi
 

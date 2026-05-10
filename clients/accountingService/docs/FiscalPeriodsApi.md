@@ -40,7 +40,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalPeriodsApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     fiscal_period_create_dto = openapi_client.FiscalPeriodCreateDto() # FiscalPeriodCreateDto |  (optional)
@@ -61,7 +61,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **fiscal_period_create_dto** | [**FiscalPeriodCreateDto**](FiscalPeriodCreateDto.md)|  | [optional] 
@@ -116,7 +116,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalPeriodsApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_period_id = 'fiscal_period_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -137,7 +137,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_period_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -192,7 +192,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalPeriodsApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     fiscal_year_id = 'fiscal_year_id_example' # str | 
     fiscal_period_id = 'fiscal_period_id_example' # str | 
@@ -215,7 +215,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **fiscal_year_id** | **str**|  | 
  **fiscal_period_id** | **str**|  | 
@@ -272,7 +272,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalPeriodsApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     fiscal_year_id = 'fiscal_year_id_example' # str | 
     authority_id = 'authority_id_example' # str | 
@@ -295,7 +295,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **fiscal_year_id** | **str**|  | 
  **authority_id** | **str**|  | 
@@ -352,7 +352,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalPeriodsApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     fiscal_year_id = 'fiscal_year_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
@@ -374,7 +374,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **fiscal_year_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
@@ -431,7 +431,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalPeriodsApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_period_id = 'fiscal_period_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -453,7 +453,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_period_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 

@@ -36,6 +36,12 @@ docs/MarketingCampaignDto.md
 docs/MarketingCampaignDtoEnvelope.md
 docs/MarketingCampaignUpdateDto.md
 docs/MarketingCampaignsApi.md
+docs/MarketingLeadCreateDto.md
+docs/MarketingLeadDto.md
+docs/MarketingLeadDtoEnvelope.md
+docs/MarketingLeadDtoListEnvelope.md
+docs/MarketingLeadUpdateDto.md
+docs/MarketingLeadsApi.md
 docs/MarketingListCreateDto.md
 docs/MarketingListDto.md
 docs/MarketingListDtoEnvelope.md
@@ -76,6 +82,7 @@ openapi_client/api/email_signatures_api.py
 openapi_client/api/email_templates_api.py
 openapi_client/api/fenix_alliance_abs_web_api.py
 openapi_client/api/marketing_campaigns_api.py
+openapi_client/api/marketing_leads_api.py
 openapi_client/api/marketing_lists_api.py
 openapi_client/api/newsletters_api.py
 openapi_client/api/social_media_posts_api.py
@@ -114,6 +121,11 @@ openapi_client/models/marketing_campaign_create_dto.py
 openapi_client/models/marketing_campaign_dto.py
 openapi_client/models/marketing_campaign_dto_envelope.py
 openapi_client/models/marketing_campaign_update_dto.py
+openapi_client/models/marketing_lead_create_dto.py
+openapi_client/models/marketing_lead_dto.py
+openapi_client/models/marketing_lead_dto_envelope.py
+openapi_client/models/marketing_lead_dto_list_envelope.py
+openapi_client/models/marketing_lead_update_dto.py
 openapi_client/models/marketing_list_create_dto.py
 openapi_client/models/marketing_list_dto.py
 openapi_client/models/marketing_list_dto_envelope.py
@@ -149,5 +161,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_fenix_alliance_abs_web_api.py
+test/test_marketing_lead_create_dto.py
+test/test_marketing_lead_dto.py
+test/test_marketing_lead_dto_envelope.py
+test/test_marketing_lead_dto_list_envelope.py
+test/test_marketing_lead_update_dto.py
+test/test_marketing_leads_api.py
 tox.ini

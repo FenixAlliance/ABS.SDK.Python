@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.fiscal_year_create_dto import FiscalYearCreateDto
 from openapi_client.models.fiscal_year_dto_envelope import FiscalYearDtoEnvelope
@@ -47,7 +47,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def create_fiscal_year(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_year_create_dto: Optional[FiscalYearCreateDto] = None,
@@ -69,7 +69,7 @@ class FiscalAuthorityYearsApi:
         Creates a new fiscal year associated with a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -128,7 +128,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def create_fiscal_year_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_year_create_dto: Optional[FiscalYearCreateDto] = None,
@@ -150,7 +150,7 @@ class FiscalAuthorityYearsApi:
         Creates a new fiscal year associated with a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -209,7 +209,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def create_fiscal_year_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_year_create_dto: Optional[FiscalYearCreateDto] = None,
@@ -231,7 +231,7 @@ class FiscalAuthorityYearsApi:
         Creates a new fiscal year associated with a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -377,7 +377,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def delete_fiscal_year(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -399,7 +399,7 @@ class FiscalAuthorityYearsApi:
         Deletes a fiscal year identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_year_id: (required)
         :type fiscal_year_id: str
         :param api_version:
@@ -458,7 +458,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def delete_fiscal_year_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -480,7 +480,7 @@ class FiscalAuthorityYearsApi:
         Deletes a fiscal year identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_year_id: (required)
         :type fiscal_year_id: str
         :param api_version:
@@ -539,7 +539,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def delete_fiscal_year_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -561,7 +561,7 @@ class FiscalAuthorityYearsApi:
         Deletes a fiscal year identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_year_id: (required)
         :type fiscal_year_id: str
         :param api_version:
@@ -693,7 +693,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_year(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -716,7 +716,7 @@ class FiscalAuthorityYearsApi:
         Retrieves a specific fiscal year by its unique identifier within a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -778,7 +778,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_year_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -801,7 +801,7 @@ class FiscalAuthorityYearsApi:
         Retrieves a specific fiscal year by its unique identifier within a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -863,7 +863,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_year_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -886,7 +886,7 @@ class FiscalAuthorityYearsApi:
         Retrieves a specific fiscal year by its unique identifier within a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1024,7 +1024,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_years(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         authority_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1047,7 +1047,7 @@ class FiscalAuthorityYearsApi:
         Retrieves all fiscal years associated with the specified fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param authority_id: (required)
@@ -1109,7 +1109,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_years_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         authority_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1132,7 +1132,7 @@ class FiscalAuthorityYearsApi:
         Retrieves all fiscal years associated with the specified fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param authority_id: (required)
@@ -1194,7 +1194,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_years_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         authority_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1217,7 +1217,7 @@ class FiscalAuthorityYearsApi:
         Retrieves all fiscal years associated with the specified fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param authority_id: (required)
@@ -1357,7 +1357,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_years_count(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1379,7 +1379,7 @@ class FiscalAuthorityYearsApi:
         Returns the total count of fiscal years for the specified fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param api_version:
@@ -1438,7 +1438,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_years_count_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1460,7 +1460,7 @@ class FiscalAuthorityYearsApi:
         Returns the total count of fiscal years for the specified fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param api_version:
@@ -1519,7 +1519,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def get_fiscal_years_count_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1541,7 +1541,7 @@ class FiscalAuthorityYearsApi:
         Returns the total count of fiscal years for the specified fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param api_version:
@@ -1673,7 +1673,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def update_fiscal_year(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1696,7 +1696,7 @@ class FiscalAuthorityYearsApi:
         Updates an existing fiscal year identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_year_id: (required)
         :type fiscal_year_id: str
         :param api_version:
@@ -1758,7 +1758,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def update_fiscal_year_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1781,7 +1781,7 @@ class FiscalAuthorityYearsApi:
         Updates an existing fiscal year identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_year_id: (required)
         :type fiscal_year_id: str
         :param api_version:
@@ -1843,7 +1843,7 @@ class FiscalAuthorityYearsApi:
     @validate_call
     def update_fiscal_year_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1866,7 +1866,7 @@ class FiscalAuthorityYearsApi:
         Updates an existing fiscal year identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_year_id: (required)
         :type fiscal_year_id: str
         :param api_version:

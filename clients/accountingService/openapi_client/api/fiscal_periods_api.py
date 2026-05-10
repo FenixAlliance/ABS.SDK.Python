@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.fiscal_period_create_dto import FiscalPeriodCreateDto
 from openapi_client.models.fiscal_period_dto_envelope import FiscalPeriodDtoEnvelope
@@ -47,7 +47,7 @@ class FiscalPeriodsApi:
     @validate_call
     def create_fiscal_period(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_period_create_dto: Optional[FiscalPeriodCreateDto] = None,
@@ -69,7 +69,7 @@ class FiscalPeriodsApi:
         Creates a new fiscal period associated with a fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -128,7 +128,7 @@ class FiscalPeriodsApi:
     @validate_call
     def create_fiscal_period_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_period_create_dto: Optional[FiscalPeriodCreateDto] = None,
@@ -150,7 +150,7 @@ class FiscalPeriodsApi:
         Creates a new fiscal period associated with a fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -209,7 +209,7 @@ class FiscalPeriodsApi:
     @validate_call
     def create_fiscal_period_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_period_create_dto: Optional[FiscalPeriodCreateDto] = None,
@@ -231,7 +231,7 @@ class FiscalPeriodsApi:
         Creates a new fiscal period associated with a fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -377,7 +377,7 @@ class FiscalPeriodsApi:
     @validate_call
     def delete_fiscal_period(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_period_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -399,7 +399,7 @@ class FiscalPeriodsApi:
         Deletes a fiscal period identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_period_id: (required)
         :type fiscal_period_id: str
         :param api_version:
@@ -458,7 +458,7 @@ class FiscalPeriodsApi:
     @validate_call
     def delete_fiscal_period_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_period_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -480,7 +480,7 @@ class FiscalPeriodsApi:
         Deletes a fiscal period identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_period_id: (required)
         :type fiscal_period_id: str
         :param api_version:
@@ -539,7 +539,7 @@ class FiscalPeriodsApi:
     @validate_call
     def delete_fiscal_period_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_period_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -561,7 +561,7 @@ class FiscalPeriodsApi:
         Deletes a fiscal period identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_period_id: (required)
         :type fiscal_period_id: str
         :param api_version:
@@ -693,7 +693,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_period(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         fiscal_period_id: StrictStr,
@@ -717,7 +717,7 @@ class FiscalPeriodsApi:
         Retrieves a specific fiscal period by its unique identifier within a fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -782,7 +782,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_period_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         fiscal_period_id: StrictStr,
@@ -806,7 +806,7 @@ class FiscalPeriodsApi:
         Retrieves a specific fiscal period by its unique identifier within a fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -871,7 +871,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_period_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         fiscal_period_id: StrictStr,
@@ -895,7 +895,7 @@ class FiscalPeriodsApi:
         Retrieves a specific fiscal period by its unique identifier within a fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1039,7 +1039,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_periods(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         authority_id: StrictStr,
@@ -1063,7 +1063,7 @@ class FiscalPeriodsApi:
         Retrieves all fiscal periods for the specified fiscal year within a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1128,7 +1128,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_periods_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         authority_id: StrictStr,
@@ -1152,7 +1152,7 @@ class FiscalPeriodsApi:
         Retrieves all fiscal periods for the specified fiscal year within a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1217,7 +1217,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_periods_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         authority_id: StrictStr,
@@ -1241,7 +1241,7 @@ class FiscalPeriodsApi:
         Retrieves all fiscal periods for the specified fiscal year within a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1387,7 +1387,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_periods_count(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1410,7 +1410,7 @@ class FiscalPeriodsApi:
         Returns the total count of fiscal periods for the specified fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1472,7 +1472,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_periods_count_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1495,7 +1495,7 @@ class FiscalPeriodsApi:
         Returns the total count of fiscal periods for the specified fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1557,7 +1557,7 @@ class FiscalPeriodsApi:
     @validate_call
     def get_fiscal_periods_count_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_year_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1580,7 +1580,7 @@ class FiscalPeriodsApi:
         Returns the total count of fiscal periods for the specified fiscal year.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_year_id: (required)
@@ -1718,7 +1718,7 @@ class FiscalPeriodsApi:
     @validate_call
     def update_fiscal_period(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_period_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1741,7 +1741,7 @@ class FiscalPeriodsApi:
         Updates an existing fiscal period identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_period_id: (required)
         :type fiscal_period_id: str
         :param api_version:
@@ -1803,7 +1803,7 @@ class FiscalPeriodsApi:
     @validate_call
     def update_fiscal_period_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_period_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1826,7 +1826,7 @@ class FiscalPeriodsApi:
         Updates an existing fiscal period identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_period_id: (required)
         :type fiscal_period_id: str
         :param api_version:
@@ -1888,7 +1888,7 @@ class FiscalPeriodsApi:
     @validate_call
     def update_fiscal_period_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_period_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1911,7 +1911,7 @@ class FiscalPeriodsApi:
         Updates an existing fiscal period identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_period_id: (required)
         :type fiscal_period_id: str
         :param api_version:

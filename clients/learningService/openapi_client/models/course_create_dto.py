@@ -19,8 +19,9 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,8 +31,25 @@ class CourseCreateDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "title"]
+    title: Annotated[str, Field(min_length=1, strict=True)]
+    description: Annotated[str, Field(min_length=1, strict=True)]
+    sku: Optional[StrictStr] = None
+    summary: Optional[StrictStr] = None
+    code: Optional[StrictStr] = None
+    version: Optional[StrictStr] = None
+    course_category_id: Optional[StrictStr] = Field(default=None, alias="courseCategoryID")
+    instructor_profile_id: Optional[StrictStr] = Field(default=None, alias="instructorProfileID")
+    currency_id: Optional[StrictStr] = Field(default=None, alias="currencyID")
+    regular_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="regularPrice")
+    max_course_enrollments: Optional[StrictInt] = Field(default=None, alias="maxCourseEnrollments")
+    total_effort_in_weeks: Optional[StrictInt] = Field(default=None, alias="totalEffortInWeeks")
+    total_hours_per_week: Optional[StrictInt] = Field(default=None, alias="totalHoursPerWeek")
+    total_effort_in_hours: Optional[StrictInt] = Field(default=None, alias="totalEffortInHours")
+    start_date_time: Optional[datetime] = Field(default=None, alias="startDateTime")
+    end_date_time: Optional[datetime] = Field(default=None, alias="endDateTime")
+    inscriptions_start_date_time: Optional[datetime] = Field(default=None, alias="inscriptionsStartDateTime")
+    inscriptions_end_date_time: Optional[datetime] = Field(default=None, alias="inscriptionsEndDateTime")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "title", "description", "sku", "summary", "code", "version", "courseCategoryID", "instructorProfileID", "currencyID", "regularPrice", "maxCourseEnrollments", "totalEffortInWeeks", "totalHoursPerWeek", "totalEffortInHours", "startDateTime", "endDateTime", "inscriptionsStartDateTime", "inscriptionsEndDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,10 +90,60 @@ class CourseCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if title (nullable) is None
+        # set to None if sku (nullable) is None
         # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
+        if self.sku is None and "sku" in self.model_fields_set:
+            _dict['sku'] = None
+
+        # set to None if summary (nullable) is None
+        # and model_fields_set contains the field
+        if self.summary is None and "summary" in self.model_fields_set:
+            _dict['summary'] = None
+
+        # set to None if code (nullable) is None
+        # and model_fields_set contains the field
+        if self.code is None and "code" in self.model_fields_set:
+            _dict['code'] = None
+
+        # set to None if version (nullable) is None
+        # and model_fields_set contains the field
+        if self.version is None and "version" in self.model_fields_set:
+            _dict['version'] = None
+
+        # set to None if course_category_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.course_category_id is None and "course_category_id" in self.model_fields_set:
+            _dict['courseCategoryID'] = None
+
+        # set to None if instructor_profile_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.instructor_profile_id is None and "instructor_profile_id" in self.model_fields_set:
+            _dict['instructorProfileID'] = None
+
+        # set to None if currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.currency_id is None and "currency_id" in self.model_fields_set:
+            _dict['currencyID'] = None
+
+        # set to None if start_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.start_date_time is None and "start_date_time" in self.model_fields_set:
+            _dict['startDateTime'] = None
+
+        # set to None if end_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.end_date_time is None and "end_date_time" in self.model_fields_set:
+            _dict['endDateTime'] = None
+
+        # set to None if inscriptions_start_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.inscriptions_start_date_time is None and "inscriptions_start_date_time" in self.model_fields_set:
+            _dict['inscriptionsStartDateTime'] = None
+
+        # set to None if inscriptions_end_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.inscriptions_end_date_time is None and "inscriptions_end_date_time" in self.model_fields_set:
+            _dict['inscriptionsEndDateTime'] = None
 
         return _dict
 
@@ -91,7 +159,24 @@ class CourseCreateDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "title": obj.get("title")
+            "title": obj.get("title"),
+            "description": obj.get("description"),
+            "sku": obj.get("sku"),
+            "summary": obj.get("summary"),
+            "code": obj.get("code"),
+            "version": obj.get("version"),
+            "courseCategoryID": obj.get("courseCategoryID"),
+            "instructorProfileID": obj.get("instructorProfileID"),
+            "currencyID": obj.get("currencyID"),
+            "regularPrice": obj.get("regularPrice"),
+            "maxCourseEnrollments": obj.get("maxCourseEnrollments"),
+            "totalEffortInWeeks": obj.get("totalEffortInWeeks"),
+            "totalHoursPerWeek": obj.get("totalHoursPerWeek"),
+            "totalEffortInHours": obj.get("totalEffortInHours"),
+            "startDateTime": obj.get("startDateTime"),
+            "endDateTime": obj.get("endDateTime"),
+            "inscriptionsStartDateTime": obj.get("inscriptionsStartDateTime"),
+            "inscriptionsEndDateTime": obj.get("inscriptionsEndDateTime")
         })
         return _obj
 

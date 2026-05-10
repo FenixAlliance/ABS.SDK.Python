@@ -191,7 +191,21 @@ class CourseDto(BaseModel):
     selected_shipment_policies: Optional[List[StrictStr]] = Field(default=None, alias="selectedShipmentPolicies")
     selected_attributes_options: Optional[List[StrictStr]] = Field(default=None, alias="selectedAttributesOptions")
     selected_selling_margin_policies: Optional[List[StrictStr]] = Field(default=None, alias="selectedSellingMarginPolicies")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "sku", "upc", "ean", "mpn", "skUs", "isbn", "upCs", "eaNs", "asin", "gtin", "mpNs", "part", "name", "isbNs", "asiNs", "gtiNs", "model", "title", "color", "isbN13", "unspsc", "unitId", "series", "barcode", "unspsCs", "pattern", "summary", "brandId", "features", "material", "tenantId", "permalink", "brandName", "languageId", "itemTypeId", "categoryId", "currencyId", "unitGroupId", "description", "ingredients", "releaseDate", "enrollmentId", "supplierCode", "shipsToRules", "purchaseNote", "parentItemId", "itemTypeName", "discriminator", "tariffHeading", "nutritionFacts", "mozaicCoverUrl", "packageContent", "youtubeVideoId", "primaryImageUrl", "longDescription", "measurementUnit", "shortDescription", "googleCategories", "supplierProfileId", "shippingCountryId", "systemRequirements", "customTaxDescription", "officialDescriptionUrl", "energyEfficiencyRating", "pageCoverBackgroundUrl", "primaryGoogleCategoryId", "operatingSystemSupported", "supportedOperatingSystem", "primaryGoogleCategoryName", "hot", "onSale", "auction", "deleted", "digital", "preSale", "taxable", "inStock", "featured", "trending", "lowStock", "published", "byRequest", "onDiscount", "isDailyDeal", "isNewArrival", "isWeeklyDeal", "isBestSeller", "isMonthlyDeal", "hasVariations", "isFixedDiscount", "isDealersChoice", "manageInventory", "isOfficialChoice", "validPrimaryImage", "isDeadlineDiscount", "displayShowcaseTab", "taxIncludedInPrice", "isProductOfTheWeek", "isProductOfTheMonth", "isPercentageDiscount", "displayOnGlobalMozaic", "displayOnBrandsMozaic", "disableDefaultPolicies", "displayOnCategoryMozaic", "displayDescriptionEditor", "displayShortDescriptionEditor", "displayOnBannerMarketingRotation", "auctionEnd", "auctionStart", "publishedDate", "deadlineDiscountFromDate", "deadlineDiscountDueDate", "lastFixedPricesUpdateDateTime", "images", "viewsCount", "reviewsCount", "questionsCount", "packagedQuantity", "reviewsAvg", "recurrency", "currentStock", "width", "weight", "length", "height", "regularPrice", "discountPrice", "customTaxValue", "discountAmount", "inCartQuantity", "customTaxAmount", "discountPercentage", "customTaxPercentage", "estimatedTaxesInUsd", "estimatedProfitInUsd", "estimatedBasePriceInUsd", "estimatedDiscountsInUsd", "estimatedSurchargesInUsd", "estimatedPaymentTaxInUsd", "estimatedTotalPriceInUsd", "estimatedPaymentCostInUsd", "estimatedDealSavingsInUsd", "estimatedRegularPriceInUsd", "estimatedTaxBasePriceInUsd", "estimatedWithholdingTaxesInUsd", "estimatedDefaultShippingTaxInUsd", "estimatedDefaultShippingCostInUsd", "selectedTags", "selectedTypes", "selectedBrands", "selectedCategories", "selectedTaxPolicies", "selectedPricingRules", "selectedRefundPolicies", "selectedReturnPolicies", "selectedPricingPolicies", "selectedGoogleCategories", "selectedWarrantyPolicies", "selectedShipmentPolicies", "selectedAttributesOptions", "selectedSellingMarginPolicies"]
+    code: Optional[StrictStr] = None
+    version: Optional[StrictStr] = None
+    course_category_id: Optional[StrictStr] = Field(default=None, alias="courseCategoryID")
+    course_category_name: Optional[StrictStr] = Field(default=None, alias="courseCategoryName")
+    instructor_profile_id: Optional[StrictStr] = Field(default=None, alias="instructorProfileID")
+    instructor_profile_name: Optional[StrictStr] = Field(default=None, alias="instructorProfileName")
+    max_course_enrollments: Optional[StrictInt] = Field(default=None, alias="maxCourseEnrollments")
+    total_effort_in_weeks: Optional[StrictInt] = Field(default=None, alias="totalEffortInWeeks")
+    total_hours_per_week: Optional[StrictInt] = Field(default=None, alias="totalHoursPerWeek")
+    total_effort_in_hours: Optional[StrictInt] = Field(default=None, alias="totalEffortInHours")
+    start_date_time: Optional[datetime] = Field(default=None, alias="startDateTime")
+    end_date_time: Optional[datetime] = Field(default=None, alias="endDateTime")
+    inscriptions_start_date_time: Optional[datetime] = Field(default=None, alias="inscriptionsStartDateTime")
+    inscriptions_end_date_time: Optional[datetime] = Field(default=None, alias="inscriptionsEndDateTime")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "sku", "upc", "ean", "mpn", "skUs", "isbn", "upCs", "eaNs", "asin", "gtin", "mpNs", "part", "name", "isbNs", "asiNs", "gtiNs", "model", "title", "color", "isbN13", "unspsc", "unitId", "series", "barcode", "unspsCs", "pattern", "summary", "brandId", "features", "material", "tenantId", "permalink", "brandName", "languageId", "itemTypeId", "categoryId", "currencyId", "unitGroupId", "description", "ingredients", "releaseDate", "enrollmentId", "supplierCode", "shipsToRules", "purchaseNote", "parentItemId", "itemTypeName", "discriminator", "tariffHeading", "nutritionFacts", "mozaicCoverUrl", "packageContent", "youtubeVideoId", "primaryImageUrl", "longDescription", "measurementUnit", "shortDescription", "googleCategories", "supplierProfileId", "shippingCountryId", "systemRequirements", "customTaxDescription", "officialDescriptionUrl", "energyEfficiencyRating", "pageCoverBackgroundUrl", "primaryGoogleCategoryId", "operatingSystemSupported", "supportedOperatingSystem", "primaryGoogleCategoryName", "hot", "onSale", "auction", "deleted", "digital", "preSale", "taxable", "inStock", "featured", "trending", "lowStock", "published", "byRequest", "onDiscount", "isDailyDeal", "isNewArrival", "isWeeklyDeal", "isBestSeller", "isMonthlyDeal", "hasVariations", "isFixedDiscount", "isDealersChoice", "manageInventory", "isOfficialChoice", "validPrimaryImage", "isDeadlineDiscount", "displayShowcaseTab", "taxIncludedInPrice", "isProductOfTheWeek", "isProductOfTheMonth", "isPercentageDiscount", "displayOnGlobalMozaic", "displayOnBrandsMozaic", "disableDefaultPolicies", "displayOnCategoryMozaic", "displayDescriptionEditor", "displayShortDescriptionEditor", "displayOnBannerMarketingRotation", "auctionEnd", "auctionStart", "publishedDate", "deadlineDiscountFromDate", "deadlineDiscountDueDate", "lastFixedPricesUpdateDateTime", "images", "viewsCount", "reviewsCount", "questionsCount", "packagedQuantity", "reviewsAvg", "recurrency", "currentStock", "width", "weight", "length", "height", "regularPrice", "discountPrice", "customTaxValue", "discountAmount", "inCartQuantity", "customTaxAmount", "discountPercentage", "customTaxPercentage", "estimatedTaxesInUsd", "estimatedProfitInUsd", "estimatedBasePriceInUsd", "estimatedDiscountsInUsd", "estimatedSurchargesInUsd", "estimatedPaymentTaxInUsd", "estimatedTotalPriceInUsd", "estimatedPaymentCostInUsd", "estimatedDealSavingsInUsd", "estimatedRegularPriceInUsd", "estimatedTaxBasePriceInUsd", "estimatedWithholdingTaxesInUsd", "estimatedDefaultShippingTaxInUsd", "estimatedDefaultShippingCostInUsd", "selectedTags", "selectedTypes", "selectedBrands", "selectedCategories", "selectedTaxPolicies", "selectedPricingRules", "selectedRefundPolicies", "selectedReturnPolicies", "selectedPricingPolicies", "selectedGoogleCategories", "selectedWarrantyPolicies", "selectedShipmentPolicies", "selectedAttributesOptions", "selectedSellingMarginPolicies", "code", "version", "courseCategoryID", "courseCategoryName", "instructorProfileID", "instructorProfileName", "maxCourseEnrollments", "totalEffortInWeeks", "totalHoursPerWeek", "totalEffortInHours", "startDateTime", "endDateTime", "inscriptionsStartDateTime", "inscriptionsEndDateTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -827,6 +841,56 @@ class CourseDto(BaseModel):
         if self.selected_selling_margin_policies is None and "selected_selling_margin_policies" in self.model_fields_set:
             _dict['selectedSellingMarginPolicies'] = None
 
+        # set to None if code (nullable) is None
+        # and model_fields_set contains the field
+        if self.code is None and "code" in self.model_fields_set:
+            _dict['code'] = None
+
+        # set to None if version (nullable) is None
+        # and model_fields_set contains the field
+        if self.version is None and "version" in self.model_fields_set:
+            _dict['version'] = None
+
+        # set to None if course_category_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.course_category_id is None and "course_category_id" in self.model_fields_set:
+            _dict['courseCategoryID'] = None
+
+        # set to None if course_category_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.course_category_name is None and "course_category_name" in self.model_fields_set:
+            _dict['courseCategoryName'] = None
+
+        # set to None if instructor_profile_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.instructor_profile_id is None and "instructor_profile_id" in self.model_fields_set:
+            _dict['instructorProfileID'] = None
+
+        # set to None if instructor_profile_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.instructor_profile_name is None and "instructor_profile_name" in self.model_fields_set:
+            _dict['instructorProfileName'] = None
+
+        # set to None if start_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.start_date_time is None and "start_date_time" in self.model_fields_set:
+            _dict['startDateTime'] = None
+
+        # set to None if end_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.end_date_time is None and "end_date_time" in self.model_fields_set:
+            _dict['endDateTime'] = None
+
+        # set to None if inscriptions_start_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.inscriptions_start_date_time is None and "inscriptions_start_date_time" in self.model_fields_set:
+            _dict['inscriptionsStartDateTime'] = None
+
+        # set to None if inscriptions_end_date_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.inscriptions_end_date_time is None and "inscriptions_end_date_time" in self.model_fields_set:
+            _dict['inscriptionsEndDateTime'] = None
+
         return _dict
 
     @classmethod
@@ -1001,7 +1065,21 @@ class CourseDto(BaseModel):
             "selectedWarrantyPolicies": obj.get("selectedWarrantyPolicies"),
             "selectedShipmentPolicies": obj.get("selectedShipmentPolicies"),
             "selectedAttributesOptions": obj.get("selectedAttributesOptions"),
-            "selectedSellingMarginPolicies": obj.get("selectedSellingMarginPolicies")
+            "selectedSellingMarginPolicies": obj.get("selectedSellingMarginPolicies"),
+            "code": obj.get("code"),
+            "version": obj.get("version"),
+            "courseCategoryID": obj.get("courseCategoryID"),
+            "courseCategoryName": obj.get("courseCategoryName"),
+            "instructorProfileID": obj.get("instructorProfileID"),
+            "instructorProfileName": obj.get("instructorProfileName"),
+            "maxCourseEnrollments": obj.get("maxCourseEnrollments"),
+            "totalEffortInWeeks": obj.get("totalEffortInWeeks"),
+            "totalHoursPerWeek": obj.get("totalHoursPerWeek"),
+            "totalEffortInHours": obj.get("totalEffortInHours"),
+            "startDateTime": obj.get("startDateTime"),
+            "endDateTime": obj.get("endDateTime"),
+            "inscriptionsStartDateTime": obj.get("inscriptionsStartDateTime"),
+            "inscriptionsEndDateTime": obj.get("inscriptionsEndDateTime")
         })
         return _obj
 

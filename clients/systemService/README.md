@@ -87,6 +87,16 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AntiforgeryApi* | [**get_and_store_tokens**](docs/AntiforgeryApi.md#get_and_store_tokens) | **GET** /api/v2/SystemService/Antiforgery/GetAndStoreTokens | Get and store antiforgery tokens
 *AntiforgeryApi* | [**is_request_valid_async**](docs/AntiforgeryApi.md#is_request_valid_async) | **GET** /api/v2/SystemService/Antiforgery/IsRequestValid | Validate antiforgery request
+*CartsApi* | [**delete_system_cart**](docs/CartsApi.md#delete_system_cart) | **DELETE** /api/v2/SystemService/Carts/{cartId} | Delete a system cart
+*CartsApi* | [**get_system_cart_by_id**](docs/CartsApi.md#get_system_cart_by_id) | **GET** /api/v2/SystemService/Carts/{cartId} | Retrieve a single system cart by its ID
+*CartsApi* | [**get_system_carts**](docs/CartsApi.md#get_system_carts) | **GET** /api/v2/SystemService/Carts | Retrieve a list of system carts
+*CartsApi* | [**get_system_carts_count**](docs/CartsApi.md#get_system_carts_count) | **GET** /api/v2/SystemService/Carts/Count | Get the count of system carts
+*ContactOptionsApi* | [**create_system_contact_option**](docs/ContactOptionsApi.md#create_system_contact_option) | **POST** /api/v2/SystemService/Contacts/{contactId}/Options | Create a new contact option (admin)
+*ContactOptionsApi* | [**delete_system_contact_option**](docs/ContactOptionsApi.md#delete_system_contact_option) | **DELETE** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Delete a contact option (admin)
+*ContactOptionsApi* | [**get_system_contact_option_by_id**](docs/ContactOptionsApi.md#get_system_contact_option_by_id) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Retrieve a single contact option by its ID (admin)
+*ContactOptionsApi* | [**get_system_contact_options**](docs/ContactOptionsApi.md#get_system_contact_options) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options | Retrieve a list of contact options (admin)
+*ContactOptionsApi* | [**get_system_contact_options_count**](docs/ContactOptionsApi.md#get_system_contact_options_count) | **GET** /api/v2/SystemService/Contacts/{contactId}/Options/Count | Get the count of contact options (admin)
+*ContactOptionsApi* | [**update_system_contact_option**](docs/ContactOptionsApi.md#update_system_contact_option) | **PUT** /api/v2/SystemService/Contacts/{contactId}/Options/{optionId} | Update a contact option (admin)
 *EmailsApi* | [**admin_preview_basic_email_template**](docs/EmailsApi.md#admin_preview_basic_email_template) | **POST** /api/v2/SystemService/Emails/Preview | Preview a rendered basic email template.
 *EmailsApi* | [**admin_send_basic_email**](docs/EmailsApi.md#admin_send_basic_email) | **POST** /api/v2/SystemService/Emails/SendBasic | Send a basic transactional email to recipients.
 *FenixAllianceABSWebApi* | [**account_logout_post**](docs/FenixAllianceABSWebApi.md#account_logout_post) | **POST** /Account/Logout | 
@@ -106,6 +116,10 @@ Class | Method | HTTP request | Description
 *FenixAllianceABSWebApi* | [**resend_confirmation_email_post**](docs/FenixAllianceABSWebApi.md#resend_confirmation_email_post) | **POST** /resendConfirmationEmail | 
 *FenixAllianceABSWebApi* | [**reset_password_post**](docs/FenixAllianceABSWebApi.md#reset_password_post) | **POST** /resetPassword | 
 *FenixAllianceABSWebApi* | [**version_get**](docs/FenixAllianceABSWebApi.md#version_get) | **GET** /version | 
+*IPLookupsApi* | [**delete_system_ip_lookup**](docs/IPLookupsApi.md#delete_system_ip_lookup) | **DELETE** /api/v2/SystemService/IPLookups/{ipLookupId} | Delete a system IP lookup
+*IPLookupsApi* | [**get_system_ip_lookup_by_id**](docs/IPLookupsApi.md#get_system_ip_lookup_by_id) | **GET** /api/v2/SystemService/IPLookups/{ipLookupId} | Retrieve a single system IP lookup by its ID
+*IPLookupsApi* | [**get_system_ip_lookups**](docs/IPLookupsApi.md#get_system_ip_lookups) | **GET** /api/v2/SystemService/IPLookups | Retrieve a list of system IP lookups
+*IPLookupsApi* | [**get_system_ip_lookups_count**](docs/IPLookupsApi.md#get_system_ip_lookups_count) | **GET** /api/v2/SystemService/IPLookups/Count | Get the count of system IP lookups
 *LicensingApi* | [**get_license_assignments_async**](docs/LicensingApi.md#get_license_assignments_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Assignments | Retrieve license assignments
 *LicensingApi* | [**get_license_attributes_async**](docs/LicensingApi.md#get_license_attributes_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId}/Attributes | Retrieve license attributes
 *LicensingApi* | [**get_license_by_id_async**](docs/LicensingApi.md#get_license_by_id_async) | **GET** /api/v2/SystemService/Licensing/Licenses/{licenseId} | Retrieve a license by ID
@@ -126,6 +140,19 @@ Class | Method | HTTP request | Description
 *OptionsApi* | [**get_system_options_count**](docs/OptionsApi.md#get_system_options_count) | **GET** /api/v2/SystemService/Options/Count | Get the count of system options
 *OptionsApi* | [**update_system_option**](docs/OptionsApi.md#update_system_option) | **PUT** /api/v2/SystemService/Options/{optionId} | Update a system option
 *OptionsApi* | [**upsert_system_option**](docs/OptionsApi.md#upsert_system_option) | **PUT** /api/v2/SystemService/Options/Upsert/{key} | Create or update a system option by key
+*OverviewApi* | [**get_system_overview**](docs/OverviewApi.md#get_system_overview) | **GET** /api/v2/SystemService/Overview | Get system overview information
+*PortalsApi* | [**create_system_portal**](docs/PortalsApi.md#create_system_portal) | **POST** /api/v2/SystemService/Portals | Create a new system portal
+*PortalsApi* | [**delete_system_portal**](docs/PortalsApi.md#delete_system_portal) | **DELETE** /api/v2/SystemService/Portals/{portalId} | Delete a system portal
+*PortalsApi* | [**get_system_portal_by_id**](docs/PortalsApi.md#get_system_portal_by_id) | **GET** /api/v2/SystemService/Portals/{portalId} | Retrieve a single system portal by its ID
+*PortalsApi* | [**get_system_portals**](docs/PortalsApi.md#get_system_portals) | **GET** /api/v2/SystemService/Portals | Retrieve a list of system portals
+*PortalsApi* | [**get_system_portals_count**](docs/PortalsApi.md#get_system_portals_count) | **GET** /api/v2/SystemService/Portals/Count | Get the count of system portals
+*PortalsApi* | [**update_system_portal**](docs/PortalsApi.md#update_system_portal) | **PUT** /api/v2/SystemService/Portals/{portalId} | Update a system portal
+*TenantOptionsApi* | [**create_system_tenant_option**](docs/TenantOptionsApi.md#create_system_tenant_option) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Options | Create a new tenant option (admin)
+*TenantOptionsApi* | [**delete_system_tenant_option**](docs/TenantOptionsApi.md#delete_system_tenant_option) | **DELETE** /api/v2/SystemService/Tenants/{tenantId}/Options/{optionId} | Delete a tenant option (admin)
+*TenantOptionsApi* | [**get_system_tenant_option_by_id**](docs/TenantOptionsApi.md#get_system_tenant_option_by_id) | **GET** /api/v2/SystemService/Tenants/{tenantId}/Options/{optionId} | Retrieve a single tenant option by its ID (admin)
+*TenantOptionsApi* | [**get_system_tenant_options**](docs/TenantOptionsApi.md#get_system_tenant_options) | **GET** /api/v2/SystemService/Tenants/{tenantId}/Options | Retrieve a list of tenant options (admin)
+*TenantOptionsApi* | [**get_system_tenant_options_count**](docs/TenantOptionsApi.md#get_system_tenant_options_count) | **GET** /api/v2/SystemService/Tenants/{tenantId}/Options/Count | Get the count of tenant options (admin)
+*TenantOptionsApi* | [**update_system_tenant_option**](docs/TenantOptionsApi.md#update_system_tenant_option) | **PUT** /api/v2/SystemService/Tenants/{tenantId}/Options/{optionId} | Update a tenant option (admin)
 *TenantsApi* | [**admin_preview_tenant_email**](docs/TenantsApi.md#admin_preview_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Preview | Preview the rendered email for a user.
 *TenantsApi* | [**admin_send_tenant_email**](docs/TenantsApi.md#admin_send_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Send | Send an email to a user.
 *TenantsApi* | [**create_tenant**](docs/TenantsApi.md#create_tenant) | **POST** /api/v2/SystemService/Tenants | Create a new tenant.
@@ -136,6 +163,12 @@ Class | Method | HTTP request | Description
 *TenantsApi* | [**get_tenant**](docs/TenantsApi.md#get_tenant) | **GET** /api/v2/SystemService/Tenants/{tenantId} | Get a specific tenant by ID.
 *TenantsApi* | [**get_tenants_count**](docs/TenantsApi.md#get_tenants_count) | **GET** /api/v2/SystemService/Tenants/Count | Get the total count of tenants available on this suite server instance.
 *TenantsApi* | [**update_tenant**](docs/TenantsApi.md#update_tenant) | **PUT** /api/v2/SystemService/Tenants/{tenantId} | Update a specific tenant by ID.
+*UserOptionsApi* | [**create_system_user_option**](docs/UserOptionsApi.md#create_system_user_option) | **POST** /api/v2/SystemService/Users/{userId}/Options | Create a new user option (admin)
+*UserOptionsApi* | [**delete_system_user_option**](docs/UserOptionsApi.md#delete_system_user_option) | **DELETE** /api/v2/SystemService/Users/{userId}/Options/{optionId} | Delete a user option (admin)
+*UserOptionsApi* | [**get_system_user_option_by_id**](docs/UserOptionsApi.md#get_system_user_option_by_id) | **GET** /api/v2/SystemService/Users/{userId}/Options/{optionId} | Retrieve a single user option by its ID (admin)
+*UserOptionsApi* | [**get_system_user_options**](docs/UserOptionsApi.md#get_system_user_options) | **GET** /api/v2/SystemService/Users/{userId}/Options | Retrieve a list of user options (admin)
+*UserOptionsApi* | [**get_system_user_options_count**](docs/UserOptionsApi.md#get_system_user_options_count) | **GET** /api/v2/SystemService/Users/{userId}/Options/Count | Get the count of user options (admin)
+*UserOptionsApi* | [**update_system_user_option**](docs/UserOptionsApi.md#update_system_user_option) | **PUT** /api/v2/SystemService/Users/{userId}/Options/{optionId} | Update a user option (admin)
 *UsersApi* | [**admin_preview_user_email_template**](docs/UsersApi.md#admin_preview_user_email_template) | **POST** /api/v2/SystemService/Users/{userId}/Emails/Preview | Preview the rendered email for a user.
 *UsersApi* | [**admin_send_user_email**](docs/UsersApi.md#admin_send_user_email) | **POST** /api/v2/SystemService/Users/{userId}/Emails/Send | Send an email to a user.
 *UsersApi* | [**create_account_holder_async**](docs/UsersApi.md#create_account_holder_async) | **POST** /api/v2/SystemService/Users | Create a new user
@@ -154,6 +187,8 @@ Class | Method | HTTP request | Description
  - [AccessTokenResponse](docs/AccessTokenResponse.md)
  - [BooleanEnvelope](docs/BooleanEnvelope.md)
  - [CartDto](docs/CartDto.md)
+ - [CartDtoEnvelope](docs/CartDtoEnvelope.md)
+ - [CartDtoListEnvelope](docs/CartDtoListEnvelope.md)
  - [EmailDispatchRequest](docs/EmailDispatchRequest.md)
  - [EmptyEnvelope](docs/EmptyEnvelope.md)
  - [ErrorEnvelope](docs/ErrorEnvelope.md)
@@ -164,6 +199,9 @@ Class | Method | HTTP request | Description
  - [ExtendedUserDtoListEnvelope](docs/ExtendedUserDtoListEnvelope.md)
  - [ForgotPasswordRequest](docs/ForgotPasswordRequest.md)
  - [HttpValidationProblemDetails](docs/HttpValidationProblemDetails.md)
+ - [IPLookupDto](docs/IPLookupDto.md)
+ - [IPLookupDtoEnvelope](docs/IPLookupDtoEnvelope.md)
+ - [IPLookupDtoListEnvelope](docs/IPLookupDtoListEnvelope.md)
  - [ISwaggerContact](docs/ISwaggerContact.md)
  - [ISwaggerEndpoint](docs/ISwaggerEndpoint.md)
  - [ISwaggerLicense](docs/ISwaggerLicense.md)
@@ -196,6 +234,8 @@ Class | Method | HTTP request | Description
  - [SuiteLicenseDto](docs/SuiteLicenseDto.md)
  - [SuiteLicenseDtoEnvelope](docs/SuiteLicenseDtoEnvelope.md)
  - [SuiteLicenseDtoListEnvelope](docs/SuiteLicenseDtoListEnvelope.md)
+ - [SystemOverviewDto](docs/SystemOverviewDto.md)
+ - [SystemOverviewDtoEnvelope](docs/SystemOverviewDtoEnvelope.md)
  - [TenantCreateDto](docs/TenantCreateDto.md)
  - [TenantDto](docs/TenantDto.md)
  - [TenantDtoEnvelope](docs/TenantDtoEnvelope.md)
@@ -210,6 +250,11 @@ Class | Method | HTTP request | Description
  - [UserSettingsDto](docs/UserSettingsDto.md)
  - [UserUpdateDto](docs/UserUpdateDto.md)
  - [WalletDto](docs/WalletDto.md)
+ - [WebPortalCreateDto](docs/WebPortalCreateDto.md)
+ - [WebPortalDto](docs/WebPortalDto.md)
+ - [WebPortalDtoEnvelope](docs/WebPortalDtoEnvelope.md)
+ - [WebPortalDtoListEnvelope](docs/WebPortalDtoListEnvelope.md)
+ - [WebPortalUpdateDto](docs/WebPortalUpdateDto.md)
 
 
 <a id="documentation-for-authorization"></a>

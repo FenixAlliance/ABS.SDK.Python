@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,13 +29,29 @@ class ShipmentDto(BaseModel):
     ShipmentDto
     """ # noqa: E501
     id: Optional[StrictStr] = None
+    timestamp: Optional[datetime] = None
     tracking_code: Optional[StrictStr] = Field(default=None, alias="trackingCode")
     is_international: Optional[StrictBool] = Field(default=None, alias="isInternational")
+    shipped: Optional[StrictBool] = None
+    delivered: Optional[StrictBool] = None
     shipment_timestamp: Optional[datetime] = Field(default=None, alias="shipmentTimestamp")
     delivery_timestamp: Optional[datetime] = Field(default=None, alias="deliveryTimestamp")
     expected_shipping_date: Optional[datetime] = Field(default=None, alias="expectedShippingDate")
     expected_delivery_date: Optional[datetime] = Field(default=None, alias="expectedDeliveryDate")
-    __properties: ClassVar[List[str]] = ["id", "trackingCode", "isInternational", "shipmentTimestamp", "deliveryTimestamp", "expectedShippingDate", "expectedDeliveryDate"]
+    shipping_terms: Optional[StrictStr] = Field(default=None, alias="shippingTerms")
+    order_id: Optional[StrictStr] = Field(default=None, alias="orderID")
+    business_id: Optional[StrictStr] = Field(default=None, alias="businessID")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "trackingCode", "isInternational", "shipped", "delivered", "shipmentTimestamp", "deliveryTimestamp", "expectedShippingDate", "expectedDeliveryDate", "shippingTerms", "orderID", "businessID"]
+
+    @field_validator('shipping_terms')
+    def shipping_terms_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['NC', 'EXW', 'FCA', 'FOB', 'FAS', 'CFR', 'CIF', 'CPT', 'CIP', 'DDP', 'DAP', 'DPU']):
+            raise ValueError("must be one of enum values ('NC', 'EXW', 'FCA', 'FOB', 'FAS', 'CFR', 'CIF', 'CPT', 'CIP', 'DDP', 'DAP', 'DPU')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,10 +97,25 @@ class ShipmentDto(BaseModel):
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
 
+        # set to None if timestamp (nullable) is None
+        # and model_fields_set contains the field
+        if self.timestamp is None and "timestamp" in self.model_fields_set:
+            _dict['timestamp'] = None
+
         # set to None if tracking_code (nullable) is None
         # and model_fields_set contains the field
         if self.tracking_code is None and "tracking_code" in self.model_fields_set:
             _dict['trackingCode'] = None
+
+        # set to None if order_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.order_id is None and "order_id" in self.model_fields_set:
+            _dict['orderID'] = None
+
+        # set to None if business_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.business_id is None and "business_id" in self.model_fields_set:
+            _dict['businessID'] = None
 
         return _dict
 
@@ -99,12 +130,18 @@ class ShipmentDto(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
+            "timestamp": obj.get("timestamp"),
             "trackingCode": obj.get("trackingCode"),
             "isInternational": obj.get("isInternational"),
+            "shipped": obj.get("shipped"),
+            "delivered": obj.get("delivered"),
             "shipmentTimestamp": obj.get("shipmentTimestamp"),
             "deliveryTimestamp": obj.get("deliveryTimestamp"),
             "expectedShippingDate": obj.get("expectedShippingDate"),
-            "expectedDeliveryDate": obj.get("expectedDeliveryDate")
+            "expectedDeliveryDate": obj.get("expectedDeliveryDate"),
+            "shippingTerms": obj.get("shippingTerms"),
+            "orderID": obj.get("orderID"),
+            "businessID": obj.get("businessID")
         })
         return _obj
 

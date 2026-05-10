@@ -12,7 +12,6 @@ docs/ErrorEnvelope.md
 docs/ExtendedInvoiceDto.md
 docs/ExtendedInvoiceDtoListEnvelope.md
 docs/FenixAllianceABSWebApi.md
-docs/ForexRates.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -77,7 +76,6 @@ openapi_client/models/envelope.py
 openapi_client/models/error_envelope.py
 openapi_client/models/extended_invoice_dto.py
 openapi_client/models/extended_invoice_dto_list_envelope.py
-openapi_client/models/forex_rates.py
 openapi_client/models/forgot_password_request.py
 openapi_client/models/http_validation_problem_details.py
 openapi_client/models/info_request.py

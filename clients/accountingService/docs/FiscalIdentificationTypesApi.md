@@ -40,7 +40,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalIdentificationTypesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     fiscal_identification_type_create_dto = openapi_client.FiscalIdentificationTypeCreateDto() # FiscalIdentificationTypeCreateDto |  (optional)
@@ -61,7 +61,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **fiscal_identification_type_create_dto** | [**FiscalIdentificationTypeCreateDto**](FiscalIdentificationTypeCreateDto.md)|  | [optional] 
@@ -116,7 +116,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalIdentificationTypesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     identification_type_id = 'identification_type_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -137,7 +137,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **identification_type_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -192,7 +192,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalIdentificationTypesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     identification_type_id = 'identification_type_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
@@ -214,7 +214,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **identification_type_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
@@ -419,7 +419,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalIdentificationTypesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     identification_type_id = 'identification_type_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -441,7 +441,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **identification_type_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 

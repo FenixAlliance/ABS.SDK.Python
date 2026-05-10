@@ -40,7 +40,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalRegimesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     fiscal_regime_create_dto = openapi_client.FiscalRegimeCreateDto() # FiscalRegimeCreateDto |  (optional)
@@ -61,7 +61,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **fiscal_regime_create_dto** | [**FiscalRegimeCreateDto**](FiscalRegimeCreateDto.md)|  | [optional] 
@@ -116,7 +116,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalRegimesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     regime_id = 'regime_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -137,7 +137,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **regime_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -192,7 +192,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalRegimesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     regime_id = 'regime_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
@@ -214,7 +214,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **regime_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
@@ -421,7 +421,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalRegimesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     regime_id = 'regime_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -443,7 +443,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **regime_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 

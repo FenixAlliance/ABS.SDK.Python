@@ -19,9 +19,8 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from openapi_client.models.money import Money
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,27 +30,7 @@ class BankAccountDto(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
-    group: Optional[StrictBool] = None
-    frozen: Optional[StrictBool] = None
     name: Optional[StrictStr] = None
-    code: Optional[StrictStr] = None
-    path: Optional[StrictStr] = None
-    title: Optional[StrictStr] = None
-    prefix: Optional[StrictStr] = None
-    balance: Optional[Union[StrictFloat, StrictInt]] = None
-    currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    account_type: Optional[StrictStr] = Field(default=None, alias="accountType")
-    account_type_id: Optional[StrictStr] = Field(default=None, alias="accountTypeId")
-    debits_balance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="debitsBalance")
-    credits_balance: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="creditsBalance")
-    parent_account_id: Optional[StrictStr] = Field(default=None, alias="parentAccountId")
-    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
-    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
-    children_accounts_count: Optional[StrictInt] = Field(default=None, alias="childrenAccountsCount")
-    account_category: Optional[StrictStr] = Field(default=None, alias="accountCategory")
-    balance_amount: Optional[Money] = Field(default=None, alias="balanceAmount")
-    credits_balance_amount: Optional[Money] = Field(default=None, alias="creditsBalanceAmount")
-    debits_balance_amount: Optional[Money] = Field(default=None, alias="debitsBalanceAmount")
     iban: Optional[StrictStr] = None
     swift: Optional[StrictStr] = None
     branch_code: Optional[StrictStr] = Field(default=None, alias="branchCode")
@@ -59,17 +38,10 @@ class BankAccountDto(BaseModel):
     qualified_name: Optional[StrictStr] = Field(default=None, alias="qualifiedName")
     bank_id: Optional[StrictStr] = Field(default=None, alias="bankId")
     bank_profile_id: Optional[StrictStr] = Field(default=None, alias="bankProfileId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "group", "frozen", "name", "code", "path", "title", "prefix", "balance", "currencyId", "accountType", "accountTypeId", "debitsBalance", "creditsBalance", "parentAccountId", "tenantId", "enrollmentId", "childrenAccountsCount", "accountCategory", "balanceAmount", "creditsBalanceAmount", "debitsBalanceAmount", "iban", "swift", "branchCode", "bankAccountNumber", "qualifiedName", "bankId", "bankProfileId"]
-
-    @field_validator('account_category')
-    def account_category_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Assets', 'Equity', 'Revenue', 'Expense', 'Liabilities']):
-            raise ValueError("must be one of enum values ('Assets', 'Equity', 'Revenue', 'Expense', 'Liabilities')")
-        return value
+    wallet_id: Optional[StrictStr] = Field(default=None, alias="walletId")
+    tenant_id: Optional[StrictStr] = Field(default=None, alias="tenantId")
+    enrollment_id: Optional[StrictStr] = Field(default=None, alias="enrollmentId")
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "name", "iban", "swift", "branchCode", "bankAccountNumber", "qualifiedName", "bankId", "bankProfileId", "walletId", "tenantId", "enrollmentId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,15 +82,6 @@ class BankAccountDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of balance_amount
-        if self.balance_amount:
-            _dict['balanceAmount'] = self.balance_amount.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of credits_balance_amount
-        if self.credits_balance_amount:
-            _dict['creditsBalanceAmount'] = self.credits_balance_amount.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of debits_balance_amount
-        if self.debits_balance_amount:
-            _dict['debitsBalanceAmount'] = self.debits_balance_amount.to_dict()
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
@@ -133,56 +96,6 @@ class BankAccountDto(BaseModel):
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
             _dict['name'] = None
-
-        # set to None if code (nullable) is None
-        # and model_fields_set contains the field
-        if self.code is None and "code" in self.model_fields_set:
-            _dict['code'] = None
-
-        # set to None if path (nullable) is None
-        # and model_fields_set contains the field
-        if self.path is None and "path" in self.model_fields_set:
-            _dict['path'] = None
-
-        # set to None if title (nullable) is None
-        # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
-
-        # set to None if prefix (nullable) is None
-        # and model_fields_set contains the field
-        if self.prefix is None and "prefix" in self.model_fields_set:
-            _dict['prefix'] = None
-
-        # set to None if currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.currency_id is None and "currency_id" in self.model_fields_set:
-            _dict['currencyId'] = None
-
-        # set to None if account_type (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_type is None and "account_type" in self.model_fields_set:
-            _dict['accountType'] = None
-
-        # set to None if account_type_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_type_id is None and "account_type_id" in self.model_fields_set:
-            _dict['accountTypeId'] = None
-
-        # set to None if parent_account_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.parent_account_id is None and "parent_account_id" in self.model_fields_set:
-            _dict['parentAccountId'] = None
-
-        # set to None if tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
-            _dict['tenantId'] = None
-
-        # set to None if enrollment_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
-            _dict['enrollmentId'] = None
 
         # set to None if iban (nullable) is None
         # and model_fields_set contains the field
@@ -219,6 +132,21 @@ class BankAccountDto(BaseModel):
         if self.bank_profile_id is None and "bank_profile_id" in self.model_fields_set:
             _dict['bankProfileId'] = None
 
+        # set to None if wallet_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.wallet_id is None and "wallet_id" in self.model_fields_set:
+            _dict['walletId'] = None
+
+        # set to None if tenant_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.tenant_id is None and "tenant_id" in self.model_fields_set:
+            _dict['tenantId'] = None
+
+        # set to None if enrollment_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.enrollment_id is None and "enrollment_id" in self.model_fields_set:
+            _dict['enrollmentId'] = None
+
         return _dict
 
     @classmethod
@@ -233,34 +161,17 @@ class BankAccountDto(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
-            "group": obj.get("group"),
-            "frozen": obj.get("frozen"),
             "name": obj.get("name"),
-            "code": obj.get("code"),
-            "path": obj.get("path"),
-            "title": obj.get("title"),
-            "prefix": obj.get("prefix"),
-            "balance": obj.get("balance"),
-            "currencyId": obj.get("currencyId"),
-            "accountType": obj.get("accountType"),
-            "accountTypeId": obj.get("accountTypeId"),
-            "debitsBalance": obj.get("debitsBalance"),
-            "creditsBalance": obj.get("creditsBalance"),
-            "parentAccountId": obj.get("parentAccountId"),
-            "tenantId": obj.get("tenantId"),
-            "enrollmentId": obj.get("enrollmentId"),
-            "childrenAccountsCount": obj.get("childrenAccountsCount"),
-            "accountCategory": obj.get("accountCategory"),
-            "balanceAmount": Money.from_dict(obj["balanceAmount"]) if obj.get("balanceAmount") is not None else None,
-            "creditsBalanceAmount": Money.from_dict(obj["creditsBalanceAmount"]) if obj.get("creditsBalanceAmount") is not None else None,
-            "debitsBalanceAmount": Money.from_dict(obj["debitsBalanceAmount"]) if obj.get("debitsBalanceAmount") is not None else None,
             "iban": obj.get("iban"),
             "swift": obj.get("swift"),
             "branchCode": obj.get("branchCode"),
             "bankAccountNumber": obj.get("bankAccountNumber"),
             "qualifiedName": obj.get("qualifiedName"),
             "bankId": obj.get("bankId"),
-            "bankProfileId": obj.get("bankProfileId")
+            "bankProfileId": obj.get("bankProfileId"),
+            "walletId": obj.get("walletId"),
+            "tenantId": obj.get("tenantId"),
+            "enrollmentId": obj.get("enrollmentId")
         })
         return _obj
 

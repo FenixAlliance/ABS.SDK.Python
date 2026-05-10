@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.fiscal_identification_type_create_dto import FiscalIdentificationTypeCreateDto
 from openapi_client.models.fiscal_identification_type_dto_envelope import FiscalIdentificationTypeDtoEnvelope
@@ -47,7 +47,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def create_fiscal_identification_type(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_identification_type_create_dto: Optional[FiscalIdentificationTypeCreateDto] = None,
@@ -69,7 +69,7 @@ class FiscalIdentificationTypesApi:
         Creates a new fiscal identification type for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -128,7 +128,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def create_fiscal_identification_type_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_identification_type_create_dto: Optional[FiscalIdentificationTypeCreateDto] = None,
@@ -150,7 +150,7 @@ class FiscalIdentificationTypesApi:
         Creates a new fiscal identification type for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -209,7 +209,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def create_fiscal_identification_type_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_identification_type_create_dto: Optional[FiscalIdentificationTypeCreateDto] = None,
@@ -231,7 +231,7 @@ class FiscalIdentificationTypesApi:
         Creates a new fiscal identification type for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -377,7 +377,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def delete_fiscal_identification_type(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -399,7 +399,7 @@ class FiscalIdentificationTypesApi:
         Deletes a fiscal identification type identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param identification_type_id: (required)
         :type identification_type_id: str
         :param api_version:
@@ -458,7 +458,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def delete_fiscal_identification_type_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -480,7 +480,7 @@ class FiscalIdentificationTypesApi:
         Deletes a fiscal identification type identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param identification_type_id: (required)
         :type identification_type_id: str
         :param api_version:
@@ -539,7 +539,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def delete_fiscal_identification_type_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -561,7 +561,7 @@ class FiscalIdentificationTypesApi:
         Deletes a fiscal identification type identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param identification_type_id: (required)
         :type identification_type_id: str
         :param api_version:
@@ -693,7 +693,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def get_fiscal_identification_type(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -716,7 +716,7 @@ class FiscalIdentificationTypesApi:
         Retrieves a specific fiscal identification type by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param identification_type_id: (required)
@@ -778,7 +778,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def get_fiscal_identification_type_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -801,7 +801,7 @@ class FiscalIdentificationTypesApi:
         Retrieves a specific fiscal identification type by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param identification_type_id: (required)
@@ -863,7 +863,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def get_fiscal_identification_type_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -886,7 +886,7 @@ class FiscalIdentificationTypesApi:
         Retrieves a specific fiscal identification type by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param identification_type_id: (required)
@@ -1622,7 +1622,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def update_fiscal_identification_type(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1645,7 +1645,7 @@ class FiscalIdentificationTypesApi:
         Updates an existing fiscal identification type identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param identification_type_id: (required)
         :type identification_type_id: str
         :param api_version:
@@ -1707,7 +1707,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def update_fiscal_identification_type_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1730,7 +1730,7 @@ class FiscalIdentificationTypesApi:
         Updates an existing fiscal identification type identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param identification_type_id: (required)
         :type identification_type_id: str
         :param api_version:
@@ -1792,7 +1792,7 @@ class FiscalIdentificationTypesApi:
     @validate_call
     def update_fiscal_identification_type_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         identification_type_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1815,7 +1815,7 @@ class FiscalIdentificationTypesApi:
         Updates an existing fiscal identification type identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param identification_type_id: (required)
         :type identification_type_id: str
         :param api_version:

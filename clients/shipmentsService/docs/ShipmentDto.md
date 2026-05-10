@@ -6,12 +6,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **tracking_code** | **str** |  | [optional] 
 **is_international** | **bool** |  | [optional] 
+**shipped** | **bool** |  | [optional] 
+**delivered** | **bool** |  | [optional] 
 **shipment_timestamp** | **datetime** |  | [optional] 
 **delivery_timestamp** | **datetime** |  | [optional] 
 **expected_shipping_date** | **datetime** |  | [optional] 
 **expected_delivery_date** | **datetime** |  | [optional] 
+**shipping_terms** | **str** |  | [optional] 
+**order_id** | **str** |  | [optional] 
+**business_id** | **str** |  | [optional] 
 
 ## Example
 

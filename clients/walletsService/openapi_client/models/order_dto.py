@@ -54,6 +54,7 @@ class OrderDto(BaseModel):
     customer_notes: Optional[StrictStr] = Field(default=None, alias="customerNotes")
     tax_calculation_method: Optional[StrictStr] = Field(default=None, alias="taxCalculationMethod")
     forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
+    forex_rates_snapshot: Optional[StrictStr] = Field(default=None, alias="forexRatesSnapshot")
     currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     total_detail: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDetail")
     total_detail_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDetailCurrencyId")
@@ -113,7 +114,7 @@ class OrderDto(BaseModel):
     custom_shipping_tax_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customShippingTaxAmount")
     custom_shipping_cost_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customShippingCostAmount")
     custom_withholding_tax_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customWithholdingTaxAmount")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "closed", "type", "title", "userId", "tenantId", "description", "priceListId", "enrollmentId", "individualId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "customerNotes", "taxCalculationMethod", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "total", "totalCurrencyId", "totalDetailInUsd", "totalProfitInUsd", "totalDiscountsInUsd", "totalSurchargesInUsd", "totalTaxBaseInUsd", "totalTaxesInUsd", "totalWithheldTaxesInUsd", "totalShippingCostInUsd", "totalShippingTaxesInUsd", "totalGlobalDiscountsInUsd", "totalGlobalSurchargesInUsd", "totalInUsd", "orderLinesCount", "quoteId", "walletId", "paymentTermId", "parentOrderId", "shippingMethodId", "billingLocationId", "shippingLocationId", "qualifiedIdentifier", "costCalculationMethod", "freightTerms", "orderStatus", "requestedDeliveryDate", "customTaxAmount", "customTotalAmount", "customDetailAmount", "customProfitAmount", "customDiscountsAmount", "customSurchargesAmount", "customShippingTaxAmount", "customShippingCostAmount", "customWithholdingTaxAmount"]
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "closed", "type", "title", "userId", "tenantId", "description", "priceListId", "enrollmentId", "individualId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "customerNotes", "taxCalculationMethod", "forexRate", "forexRatesSnapshot", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "total", "totalCurrencyId", "totalDetailInUsd", "totalProfitInUsd", "totalDiscountsInUsd", "totalSurchargesInUsd", "totalTaxBaseInUsd", "totalTaxesInUsd", "totalWithheldTaxesInUsd", "totalShippingCostInUsd", "totalShippingTaxesInUsd", "totalGlobalDiscountsInUsd", "totalGlobalSurchargesInUsd", "totalInUsd", "orderLinesCount", "quoteId", "walletId", "paymentTermId", "parentOrderId", "shippingMethodId", "billingLocationId", "shippingLocationId", "qualifiedIdentifier", "costCalculationMethod", "freightTerms", "orderStatus", "requestedDeliveryDate", "customTaxAmount", "customTotalAmount", "customDetailAmount", "customProfitAmount", "customDiscountsAmount", "customSurchargesAmount", "customShippingTaxAmount", "customShippingCostAmount", "customWithholdingTaxAmount"]
 
     @field_validator('tax_calculation_method')
     def tax_calculation_method_validate_enum(cls, value):
@@ -309,6 +310,11 @@ class OrderDto(BaseModel):
         if self.customer_notes is None and "customer_notes" in self.model_fields_set:
             _dict['customerNotes'] = None
 
+        # set to None if forex_rates_snapshot (nullable) is None
+        # and model_fields_set contains the field
+        if self.forex_rates_snapshot is None and "forex_rates_snapshot" in self.model_fields_set:
+            _dict['forexRatesSnapshot'] = None
+
         # set to None if currency_id (nullable) is None
         # and model_fields_set contains the field
         if self.currency_id is None and "currency_id" in self.model_fields_set:
@@ -452,6 +458,7 @@ class OrderDto(BaseModel):
             "customerNotes": obj.get("customerNotes"),
             "taxCalculationMethod": obj.get("taxCalculationMethod"),
             "forexRate": obj.get("forexRate"),
+            "forexRatesSnapshot": obj.get("forexRatesSnapshot"),
             "currencyId": obj.get("currencyId"),
             "totalDetail": obj.get("totalDetail"),
             "totalDetailCurrencyId": obj.get("totalDetailCurrencyId"),

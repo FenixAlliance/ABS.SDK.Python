@@ -5,6 +5,7 @@ from openapi_client.api.account_groups_api import AccountGroupsApi
 from openapi_client.api.accounting_periods_api import AccountingPeriodsApi
 from openapi_client.api.accounts_api import AccountsApi
 from openapi_client.api.banking_api import BankingApi
+from openapi_client.api.billable_line_taxes_api import BillableLineTaxesApi
 from openapi_client.api.billing_profiles_api import BillingProfilesApi
 from openapi_client.api.budgets_api import BudgetsApi
 from openapi_client.api.commissions_api import CommissionsApi

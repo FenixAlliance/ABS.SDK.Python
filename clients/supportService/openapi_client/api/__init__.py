@@ -2,6 +2,8 @@
 
 # import apis into api package
 from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.helpdesk_api import HelpdeskApi
+from openapi_client.api.policies_api import PoliciesApi
 from openapi_client.api.support_entitlements_api import SupportEntitlementsApi
 from openapi_client.api.support_request_attachments_api import SupportRequestAttachmentsApi
 from openapi_client.api.support_requests_api import SupportRequestsApi

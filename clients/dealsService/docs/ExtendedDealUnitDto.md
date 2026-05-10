@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **tax_calculation_method** | **str** |  | [optional] 
 **cost_calculation_method** | **str** |  | [optional] 
 **forex_rate** | **float** |  | [optional] 
+**forex_rates_snapshot** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **total_detail** | **float** |  | [optional] 
 **total_detail_currency_id** | **str** |  | [optional] 

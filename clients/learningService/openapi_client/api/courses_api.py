@@ -1916,8 +1916,8 @@ class CoursesApi:
     @validate_call
     def get_course_by_id_async(
         self,
-        tenant_id: StrictStr,
         course_id: StrictStr,
+        tenant_id: Optional[StrictStr] = None,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -1937,10 +1937,10 @@ class CoursesApi:
 
         Retrieves a specific course by its ID.
 
-        :param tenant_id: (required)
-        :type tenant_id: str
         :param course_id: (required)
         :type course_id: str
+        :param tenant_id:
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -1968,8 +1968,8 @@ class CoursesApi:
         """ # noqa: E501
 
         _param = self._get_course_by_id_async_serialize(
-            tenant_id=tenant_id,
             course_id=course_id,
+            tenant_id=tenant_id,
             api_version=api_version,
             x_api_version=x_api_version,
             _request_auth=_request_auth,
@@ -1996,8 +1996,8 @@ class CoursesApi:
     @validate_call
     def get_course_by_id_async_with_http_info(
         self,
-        tenant_id: StrictStr,
         course_id: StrictStr,
+        tenant_id: Optional[StrictStr] = None,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -2017,10 +2017,10 @@ class CoursesApi:
 
         Retrieves a specific course by its ID.
 
-        :param tenant_id: (required)
-        :type tenant_id: str
         :param course_id: (required)
         :type course_id: str
+        :param tenant_id:
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -2048,8 +2048,8 @@ class CoursesApi:
         """ # noqa: E501
 
         _param = self._get_course_by_id_async_serialize(
-            tenant_id=tenant_id,
             course_id=course_id,
+            tenant_id=tenant_id,
             api_version=api_version,
             x_api_version=x_api_version,
             _request_auth=_request_auth,
@@ -2076,8 +2076,8 @@ class CoursesApi:
     @validate_call
     def get_course_by_id_async_without_preload_content(
         self,
-        tenant_id: StrictStr,
         course_id: StrictStr,
+        tenant_id: Optional[StrictStr] = None,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -2097,10 +2097,10 @@ class CoursesApi:
 
         Retrieves a specific course by its ID.
 
-        :param tenant_id: (required)
-        :type tenant_id: str
         :param course_id: (required)
         :type course_id: str
+        :param tenant_id:
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -2128,8 +2128,8 @@ class CoursesApi:
         """ # noqa: E501
 
         _param = self._get_course_by_id_async_serialize(
-            tenant_id=tenant_id,
             course_id=course_id,
+            tenant_id=tenant_id,
             api_version=api_version,
             x_api_version=x_api_version,
             _request_auth=_request_auth,
@@ -2151,8 +2151,8 @@ class CoursesApi:
 
     def _get_course_by_id_async_serialize(
         self,
-        tenant_id,
         course_id,
+        tenant_id,
         api_version,
         x_api_version,
         _request_auth,

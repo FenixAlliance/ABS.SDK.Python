@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.models.invoice_enumeration_range_create_dto import InvoiceEnumerationRangeCreateDto
@@ -47,7 +47,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def create_invoice_enumeration_range(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         invoice_enumeration_range_create_dto: Optional[InvoiceEnumerationRangeCreateDto] = None,
@@ -69,7 +69,7 @@ class FiscalEnumerationRangesApi:
         Creates a new invoice enumeration range for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -128,7 +128,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def create_invoice_enumeration_range_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         invoice_enumeration_range_create_dto: Optional[InvoiceEnumerationRangeCreateDto] = None,
@@ -150,7 +150,7 @@ class FiscalEnumerationRangesApi:
         Creates a new invoice enumeration range for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -209,7 +209,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def create_invoice_enumeration_range_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         invoice_enumeration_range_create_dto: Optional[InvoiceEnumerationRangeCreateDto] = None,
@@ -231,7 +231,7 @@ class FiscalEnumerationRangesApi:
         Creates a new invoice enumeration range for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -377,7 +377,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def delete_invoice_enumeration_range(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -399,7 +399,7 @@ class FiscalEnumerationRangesApi:
         Deletes an invoice enumeration range identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param enumeration_range_id: (required)
         :type enumeration_range_id: str
         :param api_version:
@@ -458,7 +458,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def delete_invoice_enumeration_range_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -480,7 +480,7 @@ class FiscalEnumerationRangesApi:
         Deletes an invoice enumeration range identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param enumeration_range_id: (required)
         :type enumeration_range_id: str
         :param api_version:
@@ -539,7 +539,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def delete_invoice_enumeration_range_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -561,7 +561,7 @@ class FiscalEnumerationRangesApi:
         Deletes an invoice enumeration range identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param enumeration_range_id: (required)
         :type enumeration_range_id: str
         :param api_version:
@@ -693,7 +693,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def get_invoice_enumeration_range(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -716,7 +716,7 @@ class FiscalEnumerationRangesApi:
         Retrieves a specific invoice enumeration range by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param enumeration_range_id: (required)
@@ -778,7 +778,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def get_invoice_enumeration_range_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -801,7 +801,7 @@ class FiscalEnumerationRangesApi:
         Retrieves a specific invoice enumeration range by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param enumeration_range_id: (required)
@@ -863,7 +863,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def get_invoice_enumeration_range_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -886,7 +886,7 @@ class FiscalEnumerationRangesApi:
         Retrieves a specific invoice enumeration range by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param enumeration_range_id: (required)
@@ -1639,7 +1639,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def update_invoice_enumeration_range(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1662,7 +1662,7 @@ class FiscalEnumerationRangesApi:
         Updates an existing invoice enumeration range identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param enumeration_range_id: (required)
         :type enumeration_range_id: str
         :param api_version:
@@ -1724,7 +1724,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def update_invoice_enumeration_range_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1747,7 +1747,7 @@ class FiscalEnumerationRangesApi:
         Updates an existing invoice enumeration range identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param enumeration_range_id: (required)
         :type enumeration_range_id: str
         :param api_version:
@@ -1809,7 +1809,7 @@ class FiscalEnumerationRangesApi:
     @validate_call
     def update_invoice_enumeration_range_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         enumeration_range_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1832,7 +1832,7 @@ class FiscalEnumerationRangesApi:
         Updates an existing invoice enumeration range identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param enumeration_range_id: (required)
         :type enumeration_range_id: str
         :param api_version:

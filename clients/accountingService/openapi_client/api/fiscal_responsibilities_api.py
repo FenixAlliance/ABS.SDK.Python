@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.fiscal_responsibility_create_dto import FiscalResponsibilityCreateDto
 from openapi_client.models.fiscal_responsibility_dto_envelope import FiscalResponsibilityDtoEnvelope
@@ -47,7 +47,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def create_fiscal_responsibility(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_responsibility_create_dto: Optional[FiscalResponsibilityCreateDto] = None,
@@ -69,7 +69,7 @@ class FiscalResponsibilitiesApi:
         Creates a new fiscal responsibility for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -128,7 +128,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def create_fiscal_responsibility_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_responsibility_create_dto: Optional[FiscalResponsibilityCreateDto] = None,
@@ -150,7 +150,7 @@ class FiscalResponsibilitiesApi:
         Creates a new fiscal responsibility for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -209,7 +209,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def create_fiscal_responsibility_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_responsibility_create_dto: Optional[FiscalResponsibilityCreateDto] = None,
@@ -231,7 +231,7 @@ class FiscalResponsibilitiesApi:
         Creates a new fiscal responsibility for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -377,7 +377,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def delete_fiscal_responsibility(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -399,7 +399,7 @@ class FiscalResponsibilitiesApi:
         Deletes a fiscal responsibility identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_responsibility_id: (required)
         :type fiscal_responsibility_id: str
         :param api_version:
@@ -458,7 +458,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def delete_fiscal_responsibility_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -480,7 +480,7 @@ class FiscalResponsibilitiesApi:
         Deletes a fiscal responsibility identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_responsibility_id: (required)
         :type fiscal_responsibility_id: str
         :param api_version:
@@ -539,7 +539,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def delete_fiscal_responsibility_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -561,7 +561,7 @@ class FiscalResponsibilitiesApi:
         Deletes a fiscal responsibility identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_responsibility_id: (required)
         :type fiscal_responsibility_id: str
         :param api_version:
@@ -1308,7 +1308,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def get_fiscal_responsibility(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1331,7 +1331,7 @@ class FiscalResponsibilitiesApi:
         Retrieves a specific fiscal responsibility by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_responsibility_id: (required)
@@ -1393,7 +1393,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def get_fiscal_responsibility_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1416,7 +1416,7 @@ class FiscalResponsibilitiesApi:
         Retrieves a specific fiscal responsibility by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_responsibility_id: (required)
@@ -1478,7 +1478,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def get_fiscal_responsibility_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -1501,7 +1501,7 @@ class FiscalResponsibilitiesApi:
         Retrieves a specific fiscal responsibility by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param fiscal_responsibility_id: (required)
@@ -1639,7 +1639,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def update_fiscal_responsibility(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1662,7 +1662,7 @@ class FiscalResponsibilitiesApi:
         Updates an existing fiscal responsibility identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_responsibility_id: (required)
         :type fiscal_responsibility_id: str
         :param api_version:
@@ -1724,7 +1724,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def update_fiscal_responsibility_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1747,7 +1747,7 @@ class FiscalResponsibilitiesApi:
         Updates an existing fiscal responsibility identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_responsibility_id: (required)
         :type fiscal_responsibility_id: str
         :param api_version:
@@ -1809,7 +1809,7 @@ class FiscalResponsibilitiesApi:
     @validate_call
     def update_fiscal_responsibility_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_responsibility_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1832,7 +1832,7 @@ class FiscalResponsibilitiesApi:
         Updates an existing fiscal responsibility identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_responsibility_id: (required)
         :type fiscal_responsibility_id: str
         :param api_version:

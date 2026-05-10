@@ -3,4 +3,5 @@
 # import apis into api package
 from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.stock_api import StockApi
+from openapi_client.api.warehousing_api import WarehousingApi
 

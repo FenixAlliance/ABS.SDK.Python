@@ -7,7 +7,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**title** | **str** |  | [optional] 
+**title** | **str** |  | 
+**description** | **str** |  | 
+**sku** | **str** |  | [optional] 
+**summary** | **str** |  | [optional] 
+**code** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
+**course_category_id** | **str** |  | [optional] 
+**instructor_profile_id** | **str** |  | [optional] 
+**currency_id** | **str** |  | [optional] 
+**regular_price** | **float** |  | [optional] 
+**max_course_enrollments** | **int** |  | [optional] 
+**total_effort_in_weeks** | **int** |  | [optional] 
+**total_hours_per_week** | **int** |  | [optional] 
+**total_effort_in_hours** | **int** |  | [optional] 
+**start_date_time** | **datetime** |  | [optional] 
+**end_date_time** | **datetime** |  | [optional] 
+**inscriptions_start_date_time** | **datetime** |  | [optional] 
+**inscriptions_end_date_time** | **datetime** |  | [optional] 
 
 ## Example
 

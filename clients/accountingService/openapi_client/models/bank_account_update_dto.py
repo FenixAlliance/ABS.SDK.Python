@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -28,16 +28,7 @@ class BankAccountUpdateDto(BaseModel):
     """
     BankAccountUpdateDto
     """ # noqa: E501
-    group: Optional[StrictBool] = None
-    frozen: Optional[StrictBool] = None
-    name: Annotated[str, Field(min_length=1, strict=True)]
-    code: Optional[StrictStr] = None
-    path: Optional[StrictStr] = None
-    prefix: Optional[StrictStr] = None
-    currency_id: Annotated[str, Field(min_length=1, strict=True)] = Field(alias="currencyId")
-    account_type_id: Optional[StrictStr] = Field(default=None, alias="accountTypeId")
-    parent_account_id: Optional[StrictStr] = Field(default=None, alias="parentAccountId")
-    account_category: Optional[StrictStr] = Field(default=None, alias="accountCategory")
+    name: Optional[StrictStr] = None
     iban: Optional[StrictStr] = None
     swift: Optional[StrictStr] = None
     branch_code: Optional[StrictStr] = Field(default=None, alias="branchCode")
@@ -45,17 +36,7 @@ class BankAccountUpdateDto(BaseModel):
     qualified_name: Optional[StrictStr] = Field(default=None, alias="qualifiedName")
     bank_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="bankId")
     bank_profile_id: Optional[Annotated[str, Field(min_length=0, strict=True, max_length=36)]] = Field(default=None, alias="bankProfileId")
-    __properties: ClassVar[List[str]] = ["group", "frozen", "name", "code", "path", "prefix", "currencyId", "accountTypeId", "parentAccountId", "accountCategory", "iban", "swift", "branchCode", "bankAccountNumber", "qualifiedName", "bankId", "bankProfileId"]
-
-    @field_validator('account_category')
-    def account_category_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Assets', 'Equity', 'Revenue', 'Expense', 'Liabilities']):
-            raise ValueError("must be one of enum values ('Assets', 'Equity', 'Revenue', 'Expense', 'Liabilities')")
-        return value
+    __properties: ClassVar[List[str]] = ["name", "iban", "swift", "branchCode", "bankAccountNumber", "qualifiedName", "bankId", "bankProfileId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,30 +77,10 @@ class BankAccountUpdateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if code (nullable) is None
+        # set to None if name (nullable) is None
         # and model_fields_set contains the field
-        if self.code is None and "code" in self.model_fields_set:
-            _dict['code'] = None
-
-        # set to None if path (nullable) is None
-        # and model_fields_set contains the field
-        if self.path is None and "path" in self.model_fields_set:
-            _dict['path'] = None
-
-        # set to None if prefix (nullable) is None
-        # and model_fields_set contains the field
-        if self.prefix is None and "prefix" in self.model_fields_set:
-            _dict['prefix'] = None
-
-        # set to None if account_type_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.account_type_id is None and "account_type_id" in self.model_fields_set:
-            _dict['accountTypeId'] = None
-
-        # set to None if parent_account_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.parent_account_id is None and "parent_account_id" in self.model_fields_set:
-            _dict['parentAccountId'] = None
+        if self.name is None and "name" in self.model_fields_set:
+            _dict['name'] = None
 
         # set to None if iban (nullable) is None
         # and model_fields_set contains the field
@@ -168,16 +129,7 @@ class BankAccountUpdateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "group": obj.get("group"),
-            "frozen": obj.get("frozen"),
             "name": obj.get("name"),
-            "code": obj.get("code"),
-            "path": obj.get("path"),
-            "prefix": obj.get("prefix"),
-            "currencyId": obj.get("currencyId"),
-            "accountTypeId": obj.get("accountTypeId"),
-            "parentAccountId": obj.get("parentAccountId"),
-            "accountCategory": obj.get("accountCategory"),
             "iban": obj.get("iban"),
             "swift": obj.get("swift"),
             "branchCode": obj.get("branchCode"),

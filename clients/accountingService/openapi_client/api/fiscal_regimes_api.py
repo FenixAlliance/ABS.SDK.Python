@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from typing import Any, Dict, Optional
+from typing import Optional
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.fiscal_regime_create_dto import FiscalRegimeCreateDto
 from openapi_client.models.fiscal_regime_dto_envelope import FiscalRegimeDtoEnvelope
@@ -47,7 +47,7 @@ class FiscalRegimesApi:
     @validate_call
     def create_fiscal_regime(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_regime_create_dto: Optional[FiscalRegimeCreateDto] = None,
@@ -69,7 +69,7 @@ class FiscalRegimesApi:
         Creates a new fiscal regime for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -128,7 +128,7 @@ class FiscalRegimesApi:
     @validate_call
     def create_fiscal_regime_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_regime_create_dto: Optional[FiscalRegimeCreateDto] = None,
@@ -150,7 +150,7 @@ class FiscalRegimesApi:
         Creates a new fiscal regime for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -209,7 +209,7 @@ class FiscalRegimesApi:
     @validate_call
     def create_fiscal_regime_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
         fiscal_regime_create_dto: Optional[FiscalRegimeCreateDto] = None,
@@ -231,7 +231,7 @@ class FiscalRegimesApi:
         Creates a new fiscal regime for a fiscal authority.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param api_version:
         :type api_version: str
         :param x_api_version:
@@ -377,7 +377,7 @@ class FiscalRegimesApi:
     @validate_call
     def delete_fiscal_regime(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -399,7 +399,7 @@ class FiscalRegimesApi:
         Deletes a fiscal regime identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param regime_id: (required)
         :type regime_id: str
         :param api_version:
@@ -458,7 +458,7 @@ class FiscalRegimesApi:
     @validate_call
     def delete_fiscal_regime_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -480,7 +480,7 @@ class FiscalRegimesApi:
         Deletes a fiscal regime identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param regime_id: (required)
         :type regime_id: str
         :param api_version:
@@ -539,7 +539,7 @@ class FiscalRegimesApi:
     @validate_call
     def delete_fiscal_regime_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -561,7 +561,7 @@ class FiscalRegimesApi:
         Deletes a fiscal regime identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param regime_id: (required)
         :type regime_id: str
         :param api_version:
@@ -693,7 +693,7 @@ class FiscalRegimesApi:
     @validate_call
     def get_fiscal_regime(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -716,7 +716,7 @@ class FiscalRegimesApi:
         Retrieves a specific fiscal regime by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param regime_id: (required)
@@ -778,7 +778,7 @@ class FiscalRegimesApi:
     @validate_call
     def get_fiscal_regime_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -801,7 +801,7 @@ class FiscalRegimesApi:
         Retrieves a specific fiscal regime by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param regime_id: (required)
@@ -863,7 +863,7 @@ class FiscalRegimesApi:
     @validate_call
     def get_fiscal_regime_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         fiscal_authority_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
@@ -886,7 +886,7 @@ class FiscalRegimesApi:
         Retrieves a specific fiscal regime by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param fiscal_authority_id: (required)
         :type fiscal_authority_id: str
         :param regime_id: (required)
@@ -1639,7 +1639,7 @@ class FiscalRegimesApi:
     @validate_call
     def update_fiscal_regime(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1662,7 +1662,7 @@ class FiscalRegimesApi:
         Updates an existing fiscal regime identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param regime_id: (required)
         :type regime_id: str
         :param api_version:
@@ -1724,7 +1724,7 @@ class FiscalRegimesApi:
     @validate_call
     def update_fiscal_regime_with_http_info(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1747,7 +1747,7 @@ class FiscalRegimesApi:
         Updates an existing fiscal regime identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param regime_id: (required)
         :type regime_id: str
         :param api_version:
@@ -1809,7 +1809,7 @@ class FiscalRegimesApi:
     @validate_call
     def update_fiscal_regime_without_preload_content(
         self,
-        tenant_id: Dict[str, Any],
+        tenant_id: StrictStr,
         regime_id: StrictStr,
         api_version: Optional[StrictStr] = None,
         x_api_version: Optional[StrictStr] = None,
@@ -1832,7 +1832,7 @@ class FiscalRegimesApi:
         Updates an existing fiscal regime identified by its unique identifier.
 
         :param tenant_id: (required)
-        :type tenant_id: object
+        :type tenant_id: str
         :param regime_id: (required)
         :type regime_id: str
         :param api_version:

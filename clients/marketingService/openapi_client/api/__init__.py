@@ -6,6 +6,7 @@ from openapi_client.api.email_signatures_api import EmailSignaturesApi
 from openapi_client.api.email_templates_api import EmailTemplatesApi
 from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
 from openapi_client.api.marketing_campaigns_api import MarketingCampaignsApi
+from openapi_client.api.marketing_leads_api import MarketingLeadsApi
 from openapi_client.api.marketing_lists_api import MarketingListsApi
 from openapi_client.api.newsletters_api import NewslettersApi
 from openapi_client.api.social_media_posts_api import SocialMediaPostsApi

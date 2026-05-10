@@ -28,6 +28,15 @@ class OrderUpdateDto(BaseModel):
     """
     OrderUpdateDto
     """ # noqa: E501
+    closed: Optional[StrictBool] = None
+    title: Optional[StrictStr] = None
+    user_id: Optional[StrictStr] = Field(default=None, alias="userId")
+    price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
+    description: Optional[StrictStr] = None
+    individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
+    payment_term_id: Optional[StrictStr] = Field(default=None, alias="paymentTermId")
+    organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
+    receiver_tenant_id: Optional[StrictStr] = Field(default=None, alias="receiverTenantId")
     first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
     last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
     company_name: Optional[StrictStr] = Field(default=None, alias="companyName")
@@ -41,6 +50,8 @@ class OrderUpdateDto(BaseModel):
     billing_location_id: Optional[StrictStr] = Field(default=None, alias="billingLocationId")
     shipping_location_id: Optional[StrictStr] = Field(default=None, alias="shippingLocationId")
     shipping_method_id: Optional[StrictStr] = Field(default=None, alias="shippingMethodId")
+    forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
+    currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
     total_detail: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDetail")
     total_detail_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDetailCurrencyId")
     total_profit: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalProfit")
@@ -68,23 +79,12 @@ class OrderUpdateDto(BaseModel):
     cost_calculation_method: Optional[StrictStr] = Field(default=None, alias="costCalculationMethod")
     tax_calculation_method: Optional[StrictStr] = Field(default=None, alias="taxCalculationMethod")
     cart_id: Optional[StrictStr] = Field(default=None, alias="cartId")
-    user_id: Optional[StrictStr] = Field(default=None, alias="userId")
-    forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
-    currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
-    organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
     total_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalAmountInUsd")
     total_taxes_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalTaxesInUsd")
-    receiver_tenant_id: Optional[StrictStr] = Field(default=None, alias="receiverTenantId")
-    closed: Optional[StrictBool] = None
-    price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
-    payment_term_id: Optional[StrictStr] = Field(default=None, alias="paymentTermId")
     quote_status: Optional[StrictStr] = Field(default=None, alias="quoteStatus")
     effective_to: Optional[datetime] = Field(default=None, alias="effectiveTo")
     effective_from: Optional[datetime] = Field(default=None, alias="effectiveFrom")
-    description: Optional[StrictStr] = None
-    title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "cartId", "userId", "forexRate", "currencyId", "individualId", "organizationId", "totalAmountInUsd", "totalTaxesInUsd", "receiverTenantId", "closed", "priceListId", "paymentTermId", "quoteStatus", "effectiveTo", "effectiveFrom", "description", "title"]
+    __properties: ClassVar[List[str]] = ["closed", "title", "userId", "priceListId", "description", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "billingLocationId", "shippingLocationId", "shippingMethodId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "cartId", "totalAmountInUsd", "totalTaxesInUsd", "quoteStatus", "effectiveTo", "effectiveFrom"]
 
     @field_validator('cost_calculation_method')
     def cost_calculation_method_validate_enum(cls, value):
@@ -145,6 +145,46 @@ class OrderUpdateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
+        # set to None if user_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.user_id is None and "user_id" in self.model_fields_set:
+            _dict['userId'] = None
+
+        # set to None if price_list_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.price_list_id is None and "price_list_id" in self.model_fields_set:
+            _dict['priceListId'] = None
+
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
+        # set to None if individual_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.individual_id is None and "individual_id" in self.model_fields_set:
+            _dict['individualId'] = None
+
+        # set to None if payment_term_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.payment_term_id is None and "payment_term_id" in self.model_fields_set:
+            _dict['paymentTermId'] = None
+
+        # set to None if organization_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.organization_id is None and "organization_id" in self.model_fields_set:
+            _dict['organizationId'] = None
+
+        # set to None if receiver_tenant_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.receiver_tenant_id is None and "receiver_tenant_id" in self.model_fields_set:
+            _dict['receiverTenantId'] = None
+
         # set to None if first_name (nullable) is None
         # and model_fields_set contains the field
         if self.first_name is None and "first_name" in self.model_fields_set:
@@ -209,6 +249,11 @@ class OrderUpdateDto(BaseModel):
         # and model_fields_set contains the field
         if self.shipping_method_id is None and "shipping_method_id" in self.model_fields_set:
             _dict['shippingMethodId'] = None
+
+        # set to None if currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.currency_id is None and "currency_id" in self.model_fields_set:
+            _dict['currencyId'] = None
 
         # set to None if total_detail_currency_id (nullable) is None
         # and model_fields_set contains the field
@@ -275,41 +320,6 @@ class OrderUpdateDto(BaseModel):
         if self.cart_id is None and "cart_id" in self.model_fields_set:
             _dict['cartId'] = None
 
-        # set to None if user_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict['userId'] = None
-
-        # set to None if currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.currency_id is None and "currency_id" in self.model_fields_set:
-            _dict['currencyId'] = None
-
-        # set to None if individual_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.individual_id is None and "individual_id" in self.model_fields_set:
-            _dict['individualId'] = None
-
-        # set to None if organization_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.organization_id is None and "organization_id" in self.model_fields_set:
-            _dict['organizationId'] = None
-
-        # set to None if receiver_tenant_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.receiver_tenant_id is None and "receiver_tenant_id" in self.model_fields_set:
-            _dict['receiverTenantId'] = None
-
-        # set to None if price_list_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.price_list_id is None and "price_list_id" in self.model_fields_set:
-            _dict['priceListId'] = None
-
-        # set to None if payment_term_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.payment_term_id is None and "payment_term_id" in self.model_fields_set:
-            _dict['paymentTermId'] = None
-
         # set to None if quote_status (nullable) is None
         # and model_fields_set contains the field
         if self.quote_status is None and "quote_status" in self.model_fields_set:
@@ -325,16 +335,6 @@ class OrderUpdateDto(BaseModel):
         if self.effective_from is None and "effective_from" in self.model_fields_set:
             _dict['effectiveFrom'] = None
 
-        # set to None if description (nullable) is None
-        # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
-
-        # set to None if title (nullable) is None
-        # and model_fields_set contains the field
-        if self.title is None and "title" in self.model_fields_set:
-            _dict['title'] = None
-
         return _dict
 
     @classmethod
@@ -347,6 +347,15 @@ class OrderUpdateDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "closed": obj.get("closed"),
+            "title": obj.get("title"),
+            "userId": obj.get("userId"),
+            "priceListId": obj.get("priceListId"),
+            "description": obj.get("description"),
+            "individualId": obj.get("individualId"),
+            "paymentTermId": obj.get("paymentTermId"),
+            "organizationId": obj.get("organizationId"),
+            "receiverTenantId": obj.get("receiverTenantId"),
             "firstName": obj.get("firstName"),
             "lastName": obj.get("lastName"),
             "companyName": obj.get("companyName"),
@@ -360,6 +369,8 @@ class OrderUpdateDto(BaseModel):
             "billingLocationId": obj.get("billingLocationId"),
             "shippingLocationId": obj.get("shippingLocationId"),
             "shippingMethodId": obj.get("shippingMethodId"),
+            "forexRate": obj.get("forexRate"),
+            "currencyId": obj.get("currencyId"),
             "totalDetail": obj.get("totalDetail"),
             "totalDetailCurrencyId": obj.get("totalDetailCurrencyId"),
             "totalProfit": obj.get("totalProfit"),
@@ -387,22 +398,11 @@ class OrderUpdateDto(BaseModel):
             "costCalculationMethod": obj.get("costCalculationMethod"),
             "taxCalculationMethod": obj.get("taxCalculationMethod"),
             "cartId": obj.get("cartId"),
-            "userId": obj.get("userId"),
-            "forexRate": obj.get("forexRate"),
-            "currencyId": obj.get("currencyId"),
-            "individualId": obj.get("individualId"),
-            "organizationId": obj.get("organizationId"),
             "totalAmountInUsd": obj.get("totalAmountInUsd"),
             "totalTaxesInUsd": obj.get("totalTaxesInUsd"),
-            "receiverTenantId": obj.get("receiverTenantId"),
-            "closed": obj.get("closed"),
-            "priceListId": obj.get("priceListId"),
-            "paymentTermId": obj.get("paymentTermId"),
             "quoteStatus": obj.get("quoteStatus"),
             "effectiveTo": obj.get("effectiveTo"),
-            "effectiveFrom": obj.get("effectiveFrom"),
-            "description": obj.get("description"),
-            "title": obj.get("title")
+            "effectiveFrom": obj.get("effectiveFrom")
         })
         return _obj
 

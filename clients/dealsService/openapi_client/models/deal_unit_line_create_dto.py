@@ -31,13 +31,56 @@ class DealUnitLineCreateDto(BaseModel):
     id: Optional[StrictStr] = None
     timestamp: Optional[datetime] = None
     closed: Optional[StrictBool] = None
+    title: Optional[StrictStr] = None
+    price_list_id: Optional[StrictStr] = Field(default=None, alias="priceListId")
+    description: Optional[StrictStr] = None
+    individual_id: Optional[StrictStr] = Field(default=None, alias="individualId")
+    payment_term_id: Optional[StrictStr] = Field(default=None, alias="paymentTermId")
+    organization_id: Optional[StrictStr] = Field(default=None, alias="organizationId")
+    receiver_tenant_id: Optional[StrictStr] = Field(default=None, alias="receiverTenantId")
+    first_name: Optional[StrictStr] = Field(default=None, alias="firstName")
+    last_name: Optional[StrictStr] = Field(default=None, alias="lastName")
+    company_name: Optional[StrictStr] = Field(default=None, alias="companyName")
+    billing_email: Optional[StrictStr] = Field(default=None, alias="billingEmail")
+    address_line1: Optional[StrictStr] = Field(default=None, alias="addressLine1")
+    address_line2: Optional[StrictStr] = Field(default=None, alias="addressLine2")
+    postal_code: Optional[StrictStr] = Field(default=None, alias="postalCode")
+    country_id: Optional[StrictStr] = Field(default=None, alias="countryId")
+    state_id: Optional[StrictStr] = Field(default=None, alias="stateId")
+    city_id: Optional[StrictStr] = Field(default=None, alias="cityId")
+    forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
+    currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
+    total_detail: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDetail")
+    total_detail_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDetailCurrencyId")
+    total_profit: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalProfit")
+    total_profit_currency_id: Optional[StrictStr] = Field(default=None, alias="totalProfitCurrencyId")
+    total_discounts: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDiscounts")
+    total_discounts_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDiscountsCurrencyId")
+    total_surcharges: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalSurcharges")
+    total_surcharges_currency_id: Optional[StrictStr] = Field(default=None, alias="totalSurchargesCurrencyId")
+    total_shipping_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalShippingCost")
+    total_shipping_cost_currency_id: Optional[StrictStr] = Field(default=None, alias="totalShippingCostCurrencyId")
+    total_shipping_tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalShippingTax")
+    total_shipping_tax_currency_id: Optional[StrictStr] = Field(default=None, alias="totalShippingTaxCurrencyId")
+    total_withheld_tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalWithheldTax")
+    total_withheld_tax_currency_id: Optional[StrictStr] = Field(default=None, alias="totalWithheldTaxCurrencyId")
+    total_tax_base: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalTaxBase")
+    total_tax_base_currency_id: Optional[StrictStr] = Field(default=None, alias="totalTaxBaseCurrencyId")
+    total_taxes: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalTaxes")
+    total_taxes_currency_id: Optional[StrictStr] = Field(default=None, alias="totalTaxesCurrencyId")
+    total_global_surcharges: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalGlobalSurcharges")
+    total_global_surcharges_currency_id: Optional[StrictStr] = Field(default=None, alias="totalGlobalSurchargesCurrencyId")
+    total_global_discounts: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalGlobalDiscounts")
+    total_global_discounts_currency_id: Optional[StrictStr] = Field(default=None, alias="totalGlobalDiscountsCurrencyId")
+    total: Optional[Union[StrictFloat, StrictInt]] = None
+    total_currency_id: Optional[StrictStr] = Field(default=None, alias="totalCurrencyId")
+    cost_calculation_method: Optional[StrictStr] = Field(default=None, alias="costCalculationMethod")
+    tax_calculation_method: Optional[StrictStr] = Field(default=None, alias="taxCalculationMethod")
     item_id: Optional[StrictStr] = Field(default=None, alias="itemId")
     item_title: Optional[StrictStr] = Field(default=None, alias="itemTitle")
     item_short_description: Optional[StrictStr] = Field(default=None, alias="itemShortDescription")
     item_primary_image_url: Optional[StrictStr] = Field(default=None, alias="itemPrimaryImageUrl")
     shipping_policy_id: Optional[StrictStr] = Field(default=None, alias="shippingPolicyId")
-    currency_id: Optional[StrictStr] = Field(default=None, alias="currencyId")
-    description: Optional[StrictStr] = None
     quantity: Optional[Union[StrictFloat, StrictInt]] = None
     free: Optional[StrictBool] = None
     free_reason: Optional[StrictStr] = Field(default=None, alias="freeReason")
@@ -66,10 +109,7 @@ class DealUnitLineCreateDto(BaseModel):
     price_list_item_id: Optional[StrictStr] = Field(default=None, alias="priceListItemId")
     unit_id: Optional[StrictStr] = Field(default=None, alias="unitId")
     unit_group_id: Optional[StrictStr] = Field(default=None, alias="unitGroupId")
-    tax_calculation_method: Optional[StrictStr] = Field(default=None, alias="taxCalculationMethod")
-    cost_calculation_method: Optional[StrictStr] = Field(default=None, alias="costCalculationMethod")
     forex_rates_snapshot: Optional[StrictStr] = Field(default=None, alias="forexRatesSnapshot")
-    forex_rate: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="forexRate")
     total_base_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalBaseAmountInUsd")
     total_profit_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalProfitInUsd")
     total_detail_amount_in_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDetailAmountInUsd")
@@ -90,30 +130,6 @@ class DealUnitLineCreateDto(BaseModel):
     custom_global_surcharges_amount_currency_id: Optional[StrictStr] = Field(default=None, alias="customGlobalSurchargesAmountCurrencyId")
     custom_global_discounts_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="customGlobalDiscountsAmount")
     custom_global_discounts_amount_currency_id: Optional[StrictStr] = Field(default=None, alias="customGlobalDiscountsAmountCurrencyId")
-    total_detail: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDetail")
-    total_detail_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDetailCurrencyId")
-    total_discounts: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalDiscounts")
-    total_discounts_currency_id: Optional[StrictStr] = Field(default=None, alias="totalDiscountsCurrencyId")
-    total_tax_base: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalTaxBase")
-    total_tax_base_currency_id: Optional[StrictStr] = Field(default=None, alias="totalTaxBaseCurrencyId")
-    total_surcharges: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalSurcharges")
-    total_surcharges_currency_id: Optional[StrictStr] = Field(default=None, alias="totalSurchargesCurrencyId")
-    total_profit: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalProfit")
-    total_profit_currency_id: Optional[StrictStr] = Field(default=None, alias="totalProfitCurrencyId")
-    total_shipping_cost: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalShippingCost")
-    total_shipping_cost_currency_id: Optional[StrictStr] = Field(default=None, alias="totalShippingCostCurrencyId")
-    total_shipping_tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalShippingTax")
-    total_shipping_tax_currency_id: Optional[StrictStr] = Field(default=None, alias="totalShippingTaxCurrencyId")
-    total_taxes: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalTaxes")
-    total_taxes_currency_id: Optional[StrictStr] = Field(default=None, alias="totalTaxesCurrencyId")
-    total_withheld_tax: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalWithheldTax")
-    total_withheld_tax_currency_id: Optional[StrictStr] = Field(default=None, alias="totalWithheldTaxCurrencyId")
-    total_global_discounts: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalGlobalDiscounts")
-    total_global_discounts_currency_id: Optional[StrictStr] = Field(default=None, alias="totalGlobalDiscountsCurrencyId")
-    total_global_surcharges: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="totalGlobalSurcharges")
-    total_global_surcharges_currency_id: Optional[StrictStr] = Field(default=None, alias="totalGlobalSurchargesCurrencyId")
-    total: Optional[Union[StrictFloat, StrictInt]] = None
-    total_currency_id: Optional[StrictStr] = Field(default=None, alias="totalCurrencyId")
     return_policy_id: Optional[StrictStr] = Field(default=None, alias="returnPolicyId")
     refund_policy_id: Optional[StrictStr] = Field(default=None, alias="refundPolicyId")
     warranty_policy_id: Optional[StrictStr] = Field(default=None, alias="warrantyPolicyId")
@@ -123,17 +139,7 @@ class DealUnitLineCreateDto(BaseModel):
     quote_item_record_id: Optional[StrictStr] = Field(default=None, alias="quoteItemRecordId")
     parent_billing_item_record_id: Optional[StrictStr] = Field(default=None, alias="parentBillingItemRecordId")
     deal_unit_id: Optional[StrictStr] = Field(default=None, alias="dealUnitId")
-    __properties: ClassVar[List[str]] = ["id", "timestamp", "closed", "itemId", "itemTitle", "itemShortDescription", "itemPrimaryImageUrl", "shippingPolicyId", "currencyId", "description", "quantity", "free", "freeReason", "freeReasonCode", "data", "dataLabel", "data1", "data1Label", "data2", "data2Label", "data3", "data3Label", "data4", "data4Label", "data5", "data5Label", "data6", "data6Label", "data7", "data7Label", "data8", "data8Label", "data9", "data9Label", "itemPriceId", "priceListItemId", "unitId", "unitGroupId", "taxCalculationMethod", "costCalculationMethod", "forexRatesSnapshot", "forexRate", "totalBaseAmountInUsd", "totalProfitInUsd", "totalDetailAmountInUsd", "totalTaxBaseInUsd", "totalDiscountsInUsd", "totalTaxesInUsd", "totalWithheldTaxesInUsd", "totalShippingCostInUsd", "totalShippingTaxesInUsd", "totalWarrantyCostInUsd", "totalReturnCostInUsd", "totalRefundCostInUsd", "totalSurchargesInUsd", "totalAmountInUsd", "totalGlobalDiscountsInUsd", "totalGlobalSurchargesInUsd", "customGlobalSurchargesAmount", "customGlobalSurchargesAmountCurrencyId", "customGlobalDiscountsAmount", "customGlobalDiscountsAmountCurrencyId", "totalDetail", "totalDetailCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "total", "totalCurrencyId", "returnPolicyId", "refundPolicyId", "warrantyPolicyId", "shipmentPolicyId", "shippingLocationId", "locationId", "quoteItemRecordId", "parentBillingItemRecordId", "dealUnitId"]
-
-    @field_validator('tax_calculation_method')
-    def tax_calculation_method_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['Included', 'Excluded']):
-            raise ValueError("must be one of enum values ('Included', 'Excluded')")
-        return value
+    __properties: ClassVar[List[str]] = ["id", "timestamp", "closed", "title", "priceListId", "description", "individualId", "paymentTermId", "organizationId", "receiverTenantId", "firstName", "lastName", "companyName", "billingEmail", "addressLine1", "addressLine2", "postalCode", "countryId", "stateId", "cityId", "forexRate", "currencyId", "totalDetail", "totalDetailCurrencyId", "totalProfit", "totalProfitCurrencyId", "totalDiscounts", "totalDiscountsCurrencyId", "totalSurcharges", "totalSurchargesCurrencyId", "totalShippingCost", "totalShippingCostCurrencyId", "totalShippingTax", "totalShippingTaxCurrencyId", "totalWithheldTax", "totalWithheldTaxCurrencyId", "totalTaxBase", "totalTaxBaseCurrencyId", "totalTaxes", "totalTaxesCurrencyId", "totalGlobalSurcharges", "totalGlobalSurchargesCurrencyId", "totalGlobalDiscounts", "totalGlobalDiscountsCurrencyId", "total", "totalCurrencyId", "costCalculationMethod", "taxCalculationMethod", "itemId", "itemTitle", "itemShortDescription", "itemPrimaryImageUrl", "shippingPolicyId", "quantity", "free", "freeReason", "freeReasonCode", "data", "dataLabel", "data1", "data1Label", "data2", "data2Label", "data3", "data3Label", "data4", "data4Label", "data5", "data5Label", "data6", "data6Label", "data7", "data7Label", "data8", "data8Label", "data9", "data9Label", "itemPriceId", "priceListItemId", "unitId", "unitGroupId", "forexRatesSnapshot", "totalBaseAmountInUsd", "totalProfitInUsd", "totalDetailAmountInUsd", "totalTaxBaseInUsd", "totalDiscountsInUsd", "totalTaxesInUsd", "totalWithheldTaxesInUsd", "totalShippingCostInUsd", "totalShippingTaxesInUsd", "totalWarrantyCostInUsd", "totalReturnCostInUsd", "totalRefundCostInUsd", "totalSurchargesInUsd", "totalAmountInUsd", "totalGlobalDiscountsInUsd", "totalGlobalSurchargesInUsd", "customGlobalSurchargesAmount", "customGlobalSurchargesAmountCurrencyId", "customGlobalDiscountsAmount", "customGlobalDiscountsAmountCurrencyId", "returnPolicyId", "refundPolicyId", "warrantyPolicyId", "shipmentPolicyId", "shippingLocationId", "locationId", "quoteItemRecordId", "parentBillingItemRecordId", "dealUnitId"]
 
     @field_validator('cost_calculation_method')
     def cost_calculation_method_validate_enum(cls, value):
@@ -143,6 +149,16 @@ class DealUnitLineCreateDto(BaseModel):
 
         if value not in set(['Automatic', 'Custom']):
             raise ValueError("must be one of enum values ('Automatic', 'Custom')")
+        return value
+
+    @field_validator('tax_calculation_method')
+    def tax_calculation_method_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['Included', 'Excluded']):
+            raise ValueError("must be one of enum values ('Included', 'Excluded')")
         return value
 
     model_config = ConfigDict(
@@ -184,6 +200,156 @@ class DealUnitLineCreateDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if title (nullable) is None
+        # and model_fields_set contains the field
+        if self.title is None and "title" in self.model_fields_set:
+            _dict['title'] = None
+
+        # set to None if price_list_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.price_list_id is None and "price_list_id" in self.model_fields_set:
+            _dict['priceListId'] = None
+
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
+        # set to None if individual_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.individual_id is None and "individual_id" in self.model_fields_set:
+            _dict['individualId'] = None
+
+        # set to None if payment_term_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.payment_term_id is None and "payment_term_id" in self.model_fields_set:
+            _dict['paymentTermId'] = None
+
+        # set to None if organization_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.organization_id is None and "organization_id" in self.model_fields_set:
+            _dict['organizationId'] = None
+
+        # set to None if receiver_tenant_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.receiver_tenant_id is None and "receiver_tenant_id" in self.model_fields_set:
+            _dict['receiverTenantId'] = None
+
+        # set to None if first_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.first_name is None and "first_name" in self.model_fields_set:
+            _dict['firstName'] = None
+
+        # set to None if last_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.last_name is None and "last_name" in self.model_fields_set:
+            _dict['lastName'] = None
+
+        # set to None if company_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.company_name is None and "company_name" in self.model_fields_set:
+            _dict['companyName'] = None
+
+        # set to None if billing_email (nullable) is None
+        # and model_fields_set contains the field
+        if self.billing_email is None and "billing_email" in self.model_fields_set:
+            _dict['billingEmail'] = None
+
+        # set to None if address_line1 (nullable) is None
+        # and model_fields_set contains the field
+        if self.address_line1 is None and "address_line1" in self.model_fields_set:
+            _dict['addressLine1'] = None
+
+        # set to None if address_line2 (nullable) is None
+        # and model_fields_set contains the field
+        if self.address_line2 is None and "address_line2" in self.model_fields_set:
+            _dict['addressLine2'] = None
+
+        # set to None if postal_code (nullable) is None
+        # and model_fields_set contains the field
+        if self.postal_code is None and "postal_code" in self.model_fields_set:
+            _dict['postalCode'] = None
+
+        # set to None if country_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.country_id is None and "country_id" in self.model_fields_set:
+            _dict['countryId'] = None
+
+        # set to None if state_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.state_id is None and "state_id" in self.model_fields_set:
+            _dict['stateId'] = None
+
+        # set to None if city_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.city_id is None and "city_id" in self.model_fields_set:
+            _dict['cityId'] = None
+
+        # set to None if currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.currency_id is None and "currency_id" in self.model_fields_set:
+            _dict['currencyId'] = None
+
+        # set to None if total_detail_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_detail_currency_id is None and "total_detail_currency_id" in self.model_fields_set:
+            _dict['totalDetailCurrencyId'] = None
+
+        # set to None if total_profit_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_profit_currency_id is None and "total_profit_currency_id" in self.model_fields_set:
+            _dict['totalProfitCurrencyId'] = None
+
+        # set to None if total_discounts_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_discounts_currency_id is None and "total_discounts_currency_id" in self.model_fields_set:
+            _dict['totalDiscountsCurrencyId'] = None
+
+        # set to None if total_surcharges_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_surcharges_currency_id is None and "total_surcharges_currency_id" in self.model_fields_set:
+            _dict['totalSurchargesCurrencyId'] = None
+
+        # set to None if total_shipping_cost_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_shipping_cost_currency_id is None and "total_shipping_cost_currency_id" in self.model_fields_set:
+            _dict['totalShippingCostCurrencyId'] = None
+
+        # set to None if total_shipping_tax_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_shipping_tax_currency_id is None and "total_shipping_tax_currency_id" in self.model_fields_set:
+            _dict['totalShippingTaxCurrencyId'] = None
+
+        # set to None if total_withheld_tax_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_withheld_tax_currency_id is None and "total_withheld_tax_currency_id" in self.model_fields_set:
+            _dict['totalWithheldTaxCurrencyId'] = None
+
+        # set to None if total_tax_base_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_tax_base_currency_id is None and "total_tax_base_currency_id" in self.model_fields_set:
+            _dict['totalTaxBaseCurrencyId'] = None
+
+        # set to None if total_taxes_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_taxes_currency_id is None and "total_taxes_currency_id" in self.model_fields_set:
+            _dict['totalTaxesCurrencyId'] = None
+
+        # set to None if total_global_surcharges_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_global_surcharges_currency_id is None and "total_global_surcharges_currency_id" in self.model_fields_set:
+            _dict['totalGlobalSurchargesCurrencyId'] = None
+
+        # set to None if total_global_discounts_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_global_discounts_currency_id is None and "total_global_discounts_currency_id" in self.model_fields_set:
+            _dict['totalGlobalDiscountsCurrencyId'] = None
+
+        # set to None if total_currency_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_currency_id is None and "total_currency_id" in self.model_fields_set:
+            _dict['totalCurrencyId'] = None
+
         # set to None if item_id (nullable) is None
         # and model_fields_set contains the field
         if self.item_id is None and "item_id" in self.model_fields_set:
@@ -208,16 +374,6 @@ class DealUnitLineCreateDto(BaseModel):
         # and model_fields_set contains the field
         if self.shipping_policy_id is None and "shipping_policy_id" in self.model_fields_set:
             _dict['shippingPolicyId'] = None
-
-        # set to None if currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.currency_id is None and "currency_id" in self.model_fields_set:
-            _dict['currencyId'] = None
-
-        # set to None if description (nullable) is None
-        # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
 
         # set to None if free_reason (nullable) is None
         # and model_fields_set contains the field
@@ -364,66 +520,6 @@ class DealUnitLineCreateDto(BaseModel):
         if self.custom_global_discounts_amount_currency_id is None and "custom_global_discounts_amount_currency_id" in self.model_fields_set:
             _dict['customGlobalDiscountsAmountCurrencyId'] = None
 
-        # set to None if total_detail_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_detail_currency_id is None and "total_detail_currency_id" in self.model_fields_set:
-            _dict['totalDetailCurrencyId'] = None
-
-        # set to None if total_discounts_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_discounts_currency_id is None and "total_discounts_currency_id" in self.model_fields_set:
-            _dict['totalDiscountsCurrencyId'] = None
-
-        # set to None if total_tax_base_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_tax_base_currency_id is None and "total_tax_base_currency_id" in self.model_fields_set:
-            _dict['totalTaxBaseCurrencyId'] = None
-
-        # set to None if total_surcharges_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_surcharges_currency_id is None and "total_surcharges_currency_id" in self.model_fields_set:
-            _dict['totalSurchargesCurrencyId'] = None
-
-        # set to None if total_profit_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_profit_currency_id is None and "total_profit_currency_id" in self.model_fields_set:
-            _dict['totalProfitCurrencyId'] = None
-
-        # set to None if total_shipping_cost_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_shipping_cost_currency_id is None and "total_shipping_cost_currency_id" in self.model_fields_set:
-            _dict['totalShippingCostCurrencyId'] = None
-
-        # set to None if total_shipping_tax_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_shipping_tax_currency_id is None and "total_shipping_tax_currency_id" in self.model_fields_set:
-            _dict['totalShippingTaxCurrencyId'] = None
-
-        # set to None if total_taxes_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_taxes_currency_id is None and "total_taxes_currency_id" in self.model_fields_set:
-            _dict['totalTaxesCurrencyId'] = None
-
-        # set to None if total_withheld_tax_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_withheld_tax_currency_id is None and "total_withheld_tax_currency_id" in self.model_fields_set:
-            _dict['totalWithheldTaxCurrencyId'] = None
-
-        # set to None if total_global_discounts_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_global_discounts_currency_id is None and "total_global_discounts_currency_id" in self.model_fields_set:
-            _dict['totalGlobalDiscountsCurrencyId'] = None
-
-        # set to None if total_global_surcharges_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_global_surcharges_currency_id is None and "total_global_surcharges_currency_id" in self.model_fields_set:
-            _dict['totalGlobalSurchargesCurrencyId'] = None
-
-        # set to None if total_currency_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_currency_id is None and "total_currency_id" in self.model_fields_set:
-            _dict['totalCurrencyId'] = None
-
         # set to None if return_policy_id (nullable) is None
         # and model_fields_set contains the field
         if self.return_policy_id is None and "return_policy_id" in self.model_fields_set:
@@ -484,13 +580,56 @@ class DealUnitLineCreateDto(BaseModel):
             "id": obj.get("id"),
             "timestamp": obj.get("timestamp"),
             "closed": obj.get("closed"),
+            "title": obj.get("title"),
+            "priceListId": obj.get("priceListId"),
+            "description": obj.get("description"),
+            "individualId": obj.get("individualId"),
+            "paymentTermId": obj.get("paymentTermId"),
+            "organizationId": obj.get("organizationId"),
+            "receiverTenantId": obj.get("receiverTenantId"),
+            "firstName": obj.get("firstName"),
+            "lastName": obj.get("lastName"),
+            "companyName": obj.get("companyName"),
+            "billingEmail": obj.get("billingEmail"),
+            "addressLine1": obj.get("addressLine1"),
+            "addressLine2": obj.get("addressLine2"),
+            "postalCode": obj.get("postalCode"),
+            "countryId": obj.get("countryId"),
+            "stateId": obj.get("stateId"),
+            "cityId": obj.get("cityId"),
+            "forexRate": obj.get("forexRate"),
+            "currencyId": obj.get("currencyId"),
+            "totalDetail": obj.get("totalDetail"),
+            "totalDetailCurrencyId": obj.get("totalDetailCurrencyId"),
+            "totalProfit": obj.get("totalProfit"),
+            "totalProfitCurrencyId": obj.get("totalProfitCurrencyId"),
+            "totalDiscounts": obj.get("totalDiscounts"),
+            "totalDiscountsCurrencyId": obj.get("totalDiscountsCurrencyId"),
+            "totalSurcharges": obj.get("totalSurcharges"),
+            "totalSurchargesCurrencyId": obj.get("totalSurchargesCurrencyId"),
+            "totalShippingCost": obj.get("totalShippingCost"),
+            "totalShippingCostCurrencyId": obj.get("totalShippingCostCurrencyId"),
+            "totalShippingTax": obj.get("totalShippingTax"),
+            "totalShippingTaxCurrencyId": obj.get("totalShippingTaxCurrencyId"),
+            "totalWithheldTax": obj.get("totalWithheldTax"),
+            "totalWithheldTaxCurrencyId": obj.get("totalWithheldTaxCurrencyId"),
+            "totalTaxBase": obj.get("totalTaxBase"),
+            "totalTaxBaseCurrencyId": obj.get("totalTaxBaseCurrencyId"),
+            "totalTaxes": obj.get("totalTaxes"),
+            "totalTaxesCurrencyId": obj.get("totalTaxesCurrencyId"),
+            "totalGlobalSurcharges": obj.get("totalGlobalSurcharges"),
+            "totalGlobalSurchargesCurrencyId": obj.get("totalGlobalSurchargesCurrencyId"),
+            "totalGlobalDiscounts": obj.get("totalGlobalDiscounts"),
+            "totalGlobalDiscountsCurrencyId": obj.get("totalGlobalDiscountsCurrencyId"),
+            "total": obj.get("total"),
+            "totalCurrencyId": obj.get("totalCurrencyId"),
+            "costCalculationMethod": obj.get("costCalculationMethod"),
+            "taxCalculationMethod": obj.get("taxCalculationMethod"),
             "itemId": obj.get("itemId"),
             "itemTitle": obj.get("itemTitle"),
             "itemShortDescription": obj.get("itemShortDescription"),
             "itemPrimaryImageUrl": obj.get("itemPrimaryImageUrl"),
             "shippingPolicyId": obj.get("shippingPolicyId"),
-            "currencyId": obj.get("currencyId"),
-            "description": obj.get("description"),
             "quantity": obj.get("quantity"),
             "free": obj.get("free"),
             "freeReason": obj.get("freeReason"),
@@ -519,10 +658,7 @@ class DealUnitLineCreateDto(BaseModel):
             "priceListItemId": obj.get("priceListItemId"),
             "unitId": obj.get("unitId"),
             "unitGroupId": obj.get("unitGroupId"),
-            "taxCalculationMethod": obj.get("taxCalculationMethod"),
-            "costCalculationMethod": obj.get("costCalculationMethod"),
             "forexRatesSnapshot": obj.get("forexRatesSnapshot"),
-            "forexRate": obj.get("forexRate"),
             "totalBaseAmountInUsd": obj.get("totalBaseAmountInUsd"),
             "totalProfitInUsd": obj.get("totalProfitInUsd"),
             "totalDetailAmountInUsd": obj.get("totalDetailAmountInUsd"),
@@ -543,30 +679,6 @@ class DealUnitLineCreateDto(BaseModel):
             "customGlobalSurchargesAmountCurrencyId": obj.get("customGlobalSurchargesAmountCurrencyId"),
             "customGlobalDiscountsAmount": obj.get("customGlobalDiscountsAmount"),
             "customGlobalDiscountsAmountCurrencyId": obj.get("customGlobalDiscountsAmountCurrencyId"),
-            "totalDetail": obj.get("totalDetail"),
-            "totalDetailCurrencyId": obj.get("totalDetailCurrencyId"),
-            "totalDiscounts": obj.get("totalDiscounts"),
-            "totalDiscountsCurrencyId": obj.get("totalDiscountsCurrencyId"),
-            "totalTaxBase": obj.get("totalTaxBase"),
-            "totalTaxBaseCurrencyId": obj.get("totalTaxBaseCurrencyId"),
-            "totalSurcharges": obj.get("totalSurcharges"),
-            "totalSurchargesCurrencyId": obj.get("totalSurchargesCurrencyId"),
-            "totalProfit": obj.get("totalProfit"),
-            "totalProfitCurrencyId": obj.get("totalProfitCurrencyId"),
-            "totalShippingCost": obj.get("totalShippingCost"),
-            "totalShippingCostCurrencyId": obj.get("totalShippingCostCurrencyId"),
-            "totalShippingTax": obj.get("totalShippingTax"),
-            "totalShippingTaxCurrencyId": obj.get("totalShippingTaxCurrencyId"),
-            "totalTaxes": obj.get("totalTaxes"),
-            "totalTaxesCurrencyId": obj.get("totalTaxesCurrencyId"),
-            "totalWithheldTax": obj.get("totalWithheldTax"),
-            "totalWithheldTaxCurrencyId": obj.get("totalWithheldTaxCurrencyId"),
-            "totalGlobalDiscounts": obj.get("totalGlobalDiscounts"),
-            "totalGlobalDiscountsCurrencyId": obj.get("totalGlobalDiscountsCurrencyId"),
-            "totalGlobalSurcharges": obj.get("totalGlobalSurcharges"),
-            "totalGlobalSurchargesCurrencyId": obj.get("totalGlobalSurchargesCurrencyId"),
-            "total": obj.get("total"),
-            "totalCurrencyId": obj.get("totalCurrencyId"),
             "returnPolicyId": obj.get("returnPolicyId"),
             "refundPolicyId": obj.get("refundPolicyId"),
             "warrantyPolicyId": obj.get("warrantyPolicyId"),

@@ -26,11 +26,9 @@ from openapi_client.models.country_dto_envelope import CountryDtoEnvelope
 from openapi_client.models.country_switch_request import CountrySwitchRequest
 from openapi_client.models.currency_dto import CurrencyDto
 from openapi_client.models.currency_dto_envelope import CurrencyDtoEnvelope
-from openapi_client.models.currency_id import CurrencyId
 from openapi_client.models.currency_switch_request import CurrencySwitchRequest
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.models.error_envelope import ErrorEnvelope
-from openapi_client.models.forex_rates import ForexRates
 from openapi_client.models.forgot_password_request import ForgotPasswordRequest
 from openapi_client.models.http_validation_problem_details import HttpValidationProblemDetails
 from openapi_client.models.info_request import InfoRequest
@@ -44,7 +42,6 @@ from openapi_client.models.item_to_compare_cart_record_dto import ItemToCompareC
 from openapi_client.models.item_to_compare_cart_record_dto_envelope import ItemToCompareCartRecordDtoEnvelope
 from openapi_client.models.item_to_compare_cart_record_dto_list_envelope import ItemToCompareCartRecordDtoListEnvelope
 from openapi_client.models.login_request import LoginRequest
-from openapi_client.models.money import Money
 from openapi_client.models.new_wish_list_request import NewWishListRequest
 from openapi_client.models.product_to_wish_list_request import ProductToWishListRequest
 from openapi_client.models.refresh_request import RefreshRequest

@@ -487,7 +487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_course_by_id_async**
-> CourseDto get_course_by_id_async(tenant_id, course_id, api_version=api_version, x_api_version=x_api_version)
+> CourseDto get_course_by_id_async(course_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
 
 Get course by ID
 
@@ -513,14 +513,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.CoursesApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
     course_id = 'course_id_example' # str | 
+    tenant_id = 'tenant_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get course by ID
-        api_response = api_instance.get_course_by_id_async(tenant_id, course_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_course_by_id_async(course_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of CoursesApi->get_course_by_id_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -534,8 +534,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**|  | 
  **course_id** | **str**|  | 
+ **tenant_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 

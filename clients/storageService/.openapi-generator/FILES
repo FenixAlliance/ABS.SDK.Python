@@ -67,5 +67,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_fenix_alliance_abs_web_api.py
 tox.ini

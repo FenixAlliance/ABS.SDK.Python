@@ -2,5 +2,12 @@
 
 # import apis into api package
 from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.item_shipping_policies_api import ItemShippingPoliciesApi
 from openapi_client.api.shipments_api import ShipmentsApi
+from openapi_client.api.shipping_classes_api import ShippingClassesApi
+from openapi_client.api.shipping_couriers_api import ShippingCouriersApi
+from openapi_client.api.shipping_labels_api import ShippingLabelsApi
+from openapi_client.api.shipping_methods_api import ShippingMethodsApi
+from openapi_client.api.shipping_regions_api import ShippingRegionsApi
+from openapi_client.api.shipping_zones_api import ShippingZonesApi
 

@@ -5,6 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**closed** | **bool** |  | [optional] 
+**title** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
+**price_list_id** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**individual_id** | **str** |  | [optional] 
+**payment_term_id** | **str** |  | [optional] 
+**organization_id** | **str** |  | [optional] 
+**receiver_tenant_id** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **company_name** | **str** |  | [optional] 
@@ -18,6 +27,8 @@ Name | Type | Description | Notes
 **billing_location_id** | **str** |  | [optional] 
 **shipping_location_id** | **str** |  | [optional] 
 **shipping_method_id** | **str** |  | [optional] 
+**forex_rate** | **float** |  | [optional] 
+**currency_id** | **str** |  | [optional] 
 **total_detail** | **float** |  | [optional] 
 **total_detail_currency_id** | **str** |  | [optional] 
 **total_profit** | **float** |  | [optional] 
@@ -45,22 +56,11 @@ Name | Type | Description | Notes
 **cost_calculation_method** | **str** |  | [optional] 
 **tax_calculation_method** | **str** |  | [optional] 
 **cart_id** | **str** |  | [optional] 
-**user_id** | **str** |  | [optional] 
-**forex_rate** | **float** |  | [optional] 
-**currency_id** | **str** |  | [optional] 
-**individual_id** | **str** |  | [optional] 
-**organization_id** | **str** |  | [optional] 
 **total_amount_in_usd** | **float** |  | [optional] 
 **total_taxes_in_usd** | **float** |  | [optional] 
-**receiver_tenant_id** | **str** |  | [optional] 
-**closed** | **bool** |  | [optional] 
-**price_list_id** | **str** |  | [optional] 
-**payment_term_id** | **str** |  | [optional] 
 **quote_status** | **str** |  | [optional] 
 **effective_to** | **datetime** |  | [optional] 
 **effective_from** | **datetime** |  | [optional] 
-**description** | **str** |  | [optional] 
-**title** | **str** |  | [optional] 
 
 ## Example
 

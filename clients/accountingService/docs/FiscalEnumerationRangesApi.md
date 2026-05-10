@@ -40,7 +40,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalEnumerationRangesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     invoice_enumeration_range_create_dto = openapi_client.InvoiceEnumerationRangeCreateDto() # InvoiceEnumerationRangeCreateDto |  (optional)
@@ -61,7 +61,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **invoice_enumeration_range_create_dto** | [**InvoiceEnumerationRangeCreateDto**](InvoiceEnumerationRangeCreateDto.md)|  | [optional] 
@@ -116,7 +116,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalEnumerationRangesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     enumeration_range_id = 'enumeration_range_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -137,7 +137,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **enumeration_range_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -192,7 +192,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalEnumerationRangesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     enumeration_range_id = 'enumeration_range_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
@@ -214,7 +214,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **enumeration_range_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
@@ -421,7 +421,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalEnumerationRangesApi(api_client)
-    tenant_id = None # object | 
+    tenant_id = 'tenant_id_example' # str | 
     enumeration_range_id = 'enumeration_range_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -443,7 +443,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | [**object**](.md)|  | 
+ **tenant_id** | **str**|  | 
  **enumeration_range_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
