@@ -15,10 +15,10 @@
 
 import unittest
 
-from openapi_client.models.authorization_result import AuthorizationResult
+from openapi_client.models.authorization_result import AuthResult
 
 class TestAuthorizationResult(unittest.TestCase):
-    """AuthorizationResult unit test stubs"""
+    """AuthResult unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,16 +26,16 @@ class TestAuthorizationResult(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AuthorizationResult:
-        """Test AuthorizationResult
+    def make_instance(self, include_optional) -> AuthResult:
+        """Test AuthResult
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AuthorizationResult`
+        # uncomment below to create an instance of `AuthResult`
         """
-        model = AuthorizationResult()
+        model = AuthResult()
         if include_optional:
-            return AuthorizationResult(
+            return AuthResult(
                 user_id = None,
                 tenant_id = None,
                 portal_id = None,
@@ -48,12 +48,12 @@ class TestAuthorizationResult(unittest.TestCase):
                 error = ''
             )
         else:
-            return AuthorizationResult(
+            return AuthResult(
         )
         """
 
     def testAuthorizationResult(self):
-        """Test AuthorizationResult"""
+        """Test AuthResult"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

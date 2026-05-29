@@ -41,7 +41,7 @@ class TestAuthorizationResultEnvelope(unittest.TestCase):
                 correlation_id = '',
                 timestamp = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 activity_id = '',
-                result = openapi_client.models.authorization_result.AuthorizationResult(
+                result = openapi_client.models.authorization_result.AuthResult(
                     user_id = openapi_client.models.user_id.userId(), 
                     tenant_id = openapi_client.models.tenant_id.tenantId(), 
                     portal_id = openapi_client.models.portal_id.portalId(), 

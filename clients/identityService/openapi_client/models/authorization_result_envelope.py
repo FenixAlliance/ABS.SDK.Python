@@ -21,7 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.authorization_result import AuthorizationResult
+from openapi_client.models.authorization_result import AuthResult
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +34,7 @@ class AuthorizationResultEnvelope(BaseModel):
     correlation_id: Optional[StrictStr] = Field(default=None, alias="correlationId")
     timestamp: Optional[datetime] = None
     activity_id: Optional[StrictStr] = Field(default=None, alias="activityId")
-    result: Optional[AuthorizationResult] = None
+    result: Optional[AuthResult] = None
     __properties: ClassVar[List[str]] = ["isSuccess", "errorMessage", "correlationId", "timestamp", "activityId", "result"]
 
     model_config = ConfigDict(
@@ -117,7 +117,7 @@ class AuthorizationResultEnvelope(BaseModel):
             "correlationId": obj.get("correlationId"),
             "timestamp": obj.get("timestamp"),
             "activityId": obj.get("activityId"),
-            "result": AuthorizationResult.from_dict(obj["result"]) if obj.get("result") is not None else None
+            "result": AuthResult.from_dict(obj["result"]) if obj.get("result") is not None else None
         })
         return _obj
 

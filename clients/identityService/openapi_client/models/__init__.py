@@ -16,7 +16,7 @@
 
 # import models into model package
 from openapi_client.models.access_token_response import AccessTokenResponse
-from openapi_client.models.authorization_result import AuthorizationResult
+from openapi_client.models.authorization_result import AuthResult
 from openapi_client.models.authorization_result_envelope import AuthorizationResultEnvelope
 from openapi_client.models.error_envelope import ErrorEnvelope
 from openapi_client.models.forgot_password_request import ForgotPasswordRequest

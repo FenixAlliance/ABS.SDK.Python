@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **correlation_id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] [readonly] 
 **activity_id** | **str** |  | [optional] [readonly] 
-**result** | [**AuthorizationResult**](AuthorizationResult.md) |  | [optional] 
+**result** | [**AuthResult**](AuthResult.md) |  | [optional] 
 
 ## Example
 

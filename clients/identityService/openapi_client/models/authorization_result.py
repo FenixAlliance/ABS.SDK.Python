@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AuthorizationResult(BaseModel):
+class AuthResult(BaseModel):
     """
-    AuthorizationResult
+    AuthResult
     """ # noqa: E501
     user_id: Optional[Dict[str, Any]] = Field(default=None, alias="userId")
     tenant_id: Optional[Dict[str, Any]] = Field(default=None, alias="tenantId")
@@ -55,7 +55,7 @@ class AuthorizationResult(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AuthorizationResult from a JSON string"""
+        """Create an instance of AuthResult from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -95,7 +95,7 @@ class AuthorizationResult(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AuthorizationResult from a dict"""
+        """Create an instance of AuthResult from a dict"""
         if obj is None:
             return None
 
