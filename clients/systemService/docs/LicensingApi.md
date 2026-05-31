@@ -1,6 +1,6 @@
 # openapi_client.LicensingApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **get_license_assignments_async**
-> SuiteLicenseAssignmentDtoListEnvelope get_license_assignments_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+> SuiteLicenseAssignmentDtoListEnvelope get_license_assignments_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
 
 Retrieve license assignments
 
@@ -30,10 +30,10 @@ from openapi_client.models.suite_license_assignment_dto_list_envelope import Sui
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -41,14 +41,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.LicensingApi(api_client)
-    license_id = 'license_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
+    license_id = 'license_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Retrieve license assignments
-        api_response = api_instance.get_license_assignments_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_license_assignments_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of LicensingApi->get_license_assignments_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -62,8 +62,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_id** | **str**|  | 
  **tenant_id** | **str**|  | 
+ **license_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -90,7 +90,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_license_attributes_async**
-> SuiteLicenseAssignmentDtoListEnvelope get_license_attributes_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+> SuiteLicenseAssignmentDtoListEnvelope get_license_attributes_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
 
 Retrieve license attributes
 
@@ -105,10 +105,10 @@ from openapi_client.models.suite_license_assignment_dto_list_envelope import Sui
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -116,14 +116,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.LicensingApi(api_client)
-    license_id = 'license_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
+    license_id = 'license_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Retrieve license attributes
-        api_response = api_instance.get_license_attributes_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_license_attributes_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of LicensingApi->get_license_attributes_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -137,8 +137,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_id** | **str**|  | 
  **tenant_id** | **str**|  | 
+ **license_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -165,7 +165,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_license_by_id_async**
-> SuiteLicenseDtoEnvelope get_license_by_id_async(license_id, api_version=api_version, x_api_version=x_api_version)
+> SuiteLicenseDtoEnvelope get_license_by_id_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
 
 Retrieve a license by ID
 
@@ -180,10 +180,10 @@ from openapi_client.models.suite_license_dto_envelope import SuiteLicenseDtoEnve
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -191,13 +191,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.LicensingApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     license_id = 'license_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Retrieve a license by ID
-        api_response = api_instance.get_license_by_id_async(license_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_license_by_id_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of LicensingApi->get_license_by_id_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -211,6 +212,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **license_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -238,7 +240,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_license_features_async**
-> SuiteLicenseAssignmentDtoListEnvelope get_license_features_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+> SuiteLicenseAssignmentDtoListEnvelope get_license_features_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
 
 Retrieve license features
 
@@ -253,10 +255,10 @@ from openapi_client.models.suite_license_assignment_dto_list_envelope import Sui
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -264,14 +266,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.LicensingApi(api_client)
-    license_id = 'license_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
+    license_id = 'license_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Retrieve license features
-        api_response = api_instance.get_license_features_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_license_features_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of LicensingApi->get_license_features_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -285,8 +287,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_id** | **str**|  | 
  **tenant_id** | **str**|  | 
+ **license_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -313,7 +315,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_license_records_quota_async**
-> SuiteLicenseAssignmentDtoListEnvelope get_license_records_quota_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+> SuiteLicenseAssignmentDtoListEnvelope get_license_records_quota_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
 
 Retrieve license record quota
 
@@ -328,10 +330,10 @@ from openapi_client.models.suite_license_assignment_dto_list_envelope import Sui
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -339,14 +341,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.LicensingApi(api_client)
-    license_id = 'license_id_example' # str | 
     tenant_id = 'tenant_id_example' # str | 
+    license_id = 'license_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Retrieve license record quota
-        api_response = api_instance.get_license_records_quota_async(license_id, tenant_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_license_records_quota_async(tenant_id, license_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of LicensingApi->get_license_records_quota_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -360,8 +362,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **license_id** | **str**|  | 
  **tenant_id** | **str**|  | 
+ **license_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -403,10 +405,10 @@ from openapi_client.models.suite_license_dto_list_envelope import SuiteLicenseDt
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -477,10 +479,10 @@ from openapi_client.models.license_validation_request import LicenseValidationRe
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -553,10 +555,10 @@ from openapi_client.models.license_validation_request import LicenseValidationRe
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

@@ -1,6 +1,6 @@
 # openapi_client.EmployersApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -106,10 +106,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -183,10 +183,10 @@ from openapi_client.models.employer_profile_dto_envelope import EmployerProfileD
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -259,10 +259,10 @@ from openapi_client.models.employer_profile_dto_list_envelope import EmployerPro
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -333,10 +333,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -392,7 +392,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_employer_async**
-> EmptyEnvelope update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+> EmptyEnvelope update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, employer_profile_update_dto=employer_profile_update_dto)
 
 Update an employer
 
@@ -403,14 +403,15 @@ Updates an existing employer for the specified tenant.
 
 ```python
 import openapi_client
+from openapi_client.models.employer_profile_update_dto import EmployerProfileUpdateDto
 from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -422,11 +423,11 @@ with openapi_client.ApiClient(configuration) as api_client:
     employer_id = 'employer_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
-    body = None # object |  (optional)
+    employer_profile_update_dto = openapi_client.EmployerProfileUpdateDto() # EmployerProfileUpdateDto |  (optional)
 
     try:
         # Update an employer
-        api_response = api_instance.update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        api_response = api_instance.update_employer_async(tenant_id, employer_id, api_version=api_version, x_api_version=x_api_version, employer_profile_update_dto=employer_profile_update_dto)
         print("The response of EmployersApi->update_employer_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -444,7 +445,7 @@ Name | Type | Description  | Notes
  **employer_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
- **body** | **object**|  | [optional] 
+ **employer_profile_update_dto** | [**EmployerProfileUpdateDto**](EmployerProfileUpdateDto.md)|  | [optional] 
 
 ### Return type
 

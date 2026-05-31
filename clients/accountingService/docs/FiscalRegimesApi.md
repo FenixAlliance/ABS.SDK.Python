@@ -1,6 +1,6 @@
 # openapi_client.FiscalRegimesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from openapi_client.models.fiscal_regime_create_dto import FiscalRegimeCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -105,10 +105,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -181,10 +181,10 @@ from openapi_client.models.fiscal_regime_dto_envelope import FiscalRegimeDtoEnve
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -244,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fiscal_regimes**
-> FiscalRegimeDtoListEnvelope get_fiscal_regimes(fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
+> FiscalRegimeDtoListEnvelope get_fiscal_regimes(tenant_id, fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
 
 Get fiscal regimes for an authority
 
@@ -259,10 +259,10 @@ from openapi_client.models.fiscal_regime_dto_list_envelope import FiscalRegimeDt
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -270,6 +270,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalRegimesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     authority_id = 'authority_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
@@ -277,7 +278,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # Get fiscal regimes for an authority
-        api_response = api_instance.get_fiscal_regimes(fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_fiscal_regimes(tenant_id, fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of FiscalRegimesApi->get_fiscal_regimes:\n")
         pprint(api_response)
     except Exception as e:
@@ -291,6 +292,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **authority_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
@@ -320,7 +322,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fiscal_regimes_count**
-> Int32Envelope get_fiscal_regimes_count(fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
+> Int32Envelope get_fiscal_regimes_count(tenant_id, fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
 
 Get fiscal regimes count
 
@@ -335,10 +337,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -346,13 +348,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalRegimesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get fiscal regimes count
-        api_response = api_instance.get_fiscal_regimes_count(fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_fiscal_regimes_count(tenant_id, fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of FiscalRegimesApi->get_fiscal_regimes_count:\n")
         pprint(api_response)
     except Exception as e:
@@ -366,6 +369,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -410,10 +414,10 @@ from openapi_client.models.fiscal_regime_update_dto import FiscalRegimeUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

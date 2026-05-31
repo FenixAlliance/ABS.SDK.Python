@@ -1,9 +1,10 @@
 # openapi_client.AccountsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**aggregate_accounts_balance_async**](AccountsApi.md#aggregate_accounts_balance_async) | **GET** /api/v2/AccountingService/Accounts/Aggregate/Balance | Aggregate accounts balance
 [**balance_account_async**](AccountsApi.md#balance_account_async) | **POST** /api/v2/AccountingService/Accounts/{accountId}/Balance | Balance account
 [**balance_root_account_async**](AccountsApi.md#balance_root_account_async) | **POST** /api/v2/AccountingService/Accounts/Root/Balance | Balance root account
 [**create_account_async**](AccountsApi.md#create_account_async) | **POST** /api/v2/AccountingService/Accounts | Get root accounts
@@ -26,20 +27,99 @@ Method | HTTP request | Description
 [**get_account_entry_async**](AccountsApi.md#get_account_entry_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/{entryId} | Get account entry
 [**get_account_relations_async**](AccountsApi.md#get_account_relations_async) | **GET** /api/v2/AccountingService/Accounts/Relations | Get account relations
 [**get_account_relations_count_async**](AccountsApi.md#get_account_relations_count_async) | **GET** /api/v2/AccountingService/Accounts/Relations/Count | Get account relations count
+[**get_account_type_by_id_async**](AccountsApi.md#get_account_type_by_id_async) | **GET** /api/v2/AccountingService/Accounts/Types/{accountTypeId} | Get account type by ID
 [**get_account_types_async**](AccountsApi.md#get_account_types_async) | **GET** /api/v2/AccountingService/Accounts/Types | Get account types
 [**get_account_types_count_async**](AccountsApi.md#get_account_types_count_async) | **GET** /api/v2/AccountingService/Accounts/Types/Count | Get account types count
 [**get_accounts_async**](AccountsApi.md#get_accounts_async) | **GET** /api/v2/AccountingService/Accounts | Creates a new account
 [**get_accounts_count_async**](AccountsApi.md#get_accounts_count_async) | **GET** /api/v2/AccountingService/Accounts/Count | Get the number of accounts
+[**get_charts_of_accounts_async**](AccountsApi.md#get_charts_of_accounts_async) | **GET** /api/v2/AccountingService/Accounts/ChartsOfAccounts | Get charts of accounts
 [**get_child_accounts_async**](AccountsApi.md#get_child_accounts_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Children | Get child accounts
 [**get_credit_account_entries_async**](AccountsApi.md#get_credit_account_entries_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/Credit | Get credit account entries
 [**get_debit_account_entries_async**](AccountsApi.md#get_debit_account_entries_async) | **GET** /api/v2/AccountingService/Accounts/{accountId}/Entries/Debit | Get debit account entries
 [**get_root_accounts_async**](AccountsApi.md#get_root_accounts_async) | **GET** /api/v2/AccountingService/Accounts/Root | Get root accounts
 [**patch_account_async**](AccountsApi.md#patch_account_async) | **PATCH** /api/v2/AccountingService/Accounts/{accountId} | Patch an account
+[**seed_chart_of_accounts_async**](AccountsApi.md#seed_chart_of_accounts_async) | **POST** /api/v2/AccountingService/Accounts/ChartsOfAccounts/Seed | Seed chart of accounts
 [**update_account_async**](AccountsApi.md#update_account_async) | **PUT** /api/v2/AccountingService/Accounts/{accountId} | Update an account
 [**update_account_entry_async**](AccountsApi.md#update_account_entry_async) | **PUT** /api/v2/AccountingService/Accounts/{accountId}/Entries/{entryId} | Update account entry
 [**update_account_relation_async**](AccountsApi.md#update_account_relation_async) | **PUT** /api/v2/AccountingService/Accounts/Relations/{accountRelationId} | Update account relation
 [**update_account_type_async**](AccountsApi.md#update_account_type_async) | **PUT** /api/v2/AccountingService/Accounts/Types/{accountTypeId} | Update account type
 
+
+# **aggregate_accounts_balance_async**
+> MoneyEnvelope aggregate_accounts_balance_async(tenant_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+
+Aggregate accounts balance
+
+Returns the sum of all account balances matching OData filters, normalized to the target currency using stored USD values.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.money_envelope import MoneyEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AccountsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    currency_id = 'currency_id_example' # str |  (optional)
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Aggregate accounts balance
+        api_response = api_instance.aggregate_accounts_balance_async(tenant_id, currency_id=currency_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of AccountsApi->aggregate_accounts_balance_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AccountsApi->aggregate_accounts_balance_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **currency_id** | **str**|  | [optional] 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**MoneyEnvelope**](MoneyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **balance_account_async**
 > AccountDtoEnvelope balance_account_async(tenant_id, account_id, api_version=api_version, x_api_version=x_api_version)
@@ -57,10 +137,10 @@ from openapi_client.models.account_dto_envelope import AccountDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -133,10 +213,10 @@ from openapi_client.models.account_dto_list_envelope import AccountDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -208,10 +288,10 @@ from openapi_client.models.account_dto_list_envelope import AccountDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -285,10 +365,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -364,10 +444,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -443,10 +523,10 @@ from openapi_client.models.accounting_entry_dto_envelope import AccountingEntryD
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -523,10 +603,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -586,7 +666,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_account_type_async**
-> EmptyEnvelope create_account_type_async(tenant_id, account_id, api_version=api_version, x_api_version=x_api_version, account_type_create_dto=account_type_create_dto)
+> EmptyEnvelope create_account_type_async(tenant_id, api_version=api_version, x_api_version=x_api_version, account_type_create_dto=account_type_create_dto)
 
 Create account type
 
@@ -602,10 +682,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -614,14 +694,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.AccountsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    account_id = 'account_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     account_type_create_dto = openapi_client.AccountTypeCreateDto() # AccountTypeCreateDto |  (optional)
 
     try:
         # Create account type
-        api_response = api_instance.create_account_type_async(tenant_id, account_id, api_version=api_version, x_api_version=x_api_version, account_type_create_dto=account_type_create_dto)
+        api_response = api_instance.create_account_type_async(tenant_id, api_version=api_version, x_api_version=x_api_version, account_type_create_dto=account_type_create_dto)
         print("The response of AccountsApi->create_account_type_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -636,7 +715,6 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
- **account_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **account_type_create_dto** | [**AccountTypeCreateDto**](AccountTypeCreateDto.md)|  | [optional] 
@@ -680,10 +758,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -756,10 +834,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -835,10 +913,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -898,7 +976,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_account_type_async**
-> EmptyEnvelope delete_account_type_async(tenant_id, account_type_id, account_id, api_version=api_version, x_api_version=x_api_version)
+> EmptyEnvelope delete_account_type_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
 
 Delete account type
 
@@ -913,10 +991,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -926,13 +1004,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.AccountsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     account_type_id = 'account_type_id_example' # str | 
-    account_id = 'account_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Delete account type
-        api_response = api_instance.delete_account_type_async(tenant_id, account_type_id, account_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.delete_account_type_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of AccountsApi->delete_account_type_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -948,7 +1025,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
  **account_type_id** | **str**|  | 
- **account_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -992,10 +1068,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1070,10 +1146,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1146,10 +1222,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1222,10 +1298,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1298,10 +1374,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1374,10 +1450,10 @@ from openapi_client.models.account_dto_envelope import AccountDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1450,10 +1526,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1526,10 +1602,10 @@ from openapi_client.models.accounting_entry_dto_envelope import AccountingEntryD
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1604,10 +1680,10 @@ from openapi_client.models.account_relation_dto_list_envelope import AccountRela
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1680,10 +1756,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1740,8 +1816,84 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_account_type_by_id_async**
+> AccountTypeDtoEnvelope get_account_type_by_id_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
+
+Get account type by ID
+
+Get account type by ID.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.account_type_dto_envelope import AccountTypeDtoEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AccountsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    account_type_id = 'account_type_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get account type by ID
+        api_response = api_instance.get_account_type_by_id_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of AccountsApi->get_account_type_by_id_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AccountsApi->get_account_type_by_id_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **account_type_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**AccountTypeDtoEnvelope**](AccountTypeDtoEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_account_types_async**
-> AccountTypeDtoListEnvelope get_account_types_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
+> AccountTypeDtoListEnvelope get_account_types_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
 Get account types
 
@@ -1756,10 +1908,10 @@ from openapi_client.models.account_type_dto_list_envelope import AccountTypeDtoL
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1768,13 +1920,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.AccountsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    account_type_id = 'account_type_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get account types
-        api_response = api_instance.get_account_types_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_account_types_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of AccountsApi->get_account_types_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -1789,7 +1940,6 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
- **account_type_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -1817,7 +1967,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_types_count_async**
-> Int32Envelope get_account_types_count_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
+> Int32Envelope get_account_types_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
 
 Get account types count
 
@@ -1832,10 +1982,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1844,13 +1994,12 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.AccountsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    account_type_id = 'account_type_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get account types count
-        api_response = api_instance.get_account_types_count_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_account_types_count_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of AccountsApi->get_account_types_count_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -1865,7 +2014,6 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
- **account_type_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -1908,10 +2056,10 @@ from openapi_client.models.account_dto_list_envelope import AccountDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -1982,10 +2130,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2040,6 +2188,78 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_charts_of_accounts_async**
+> ChartOfAccountsListEnvelope get_charts_of_accounts_async(api_version=api_version, x_api_version=x_api_version)
+
+Get charts of accounts
+
+Get available charts of accounts.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.chart_of_accounts_list_envelope import ChartOfAccountsListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AccountsApi(api_client)
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get charts of accounts
+        api_response = api_instance.get_charts_of_accounts_async(api_version=api_version, x_api_version=x_api_version)
+        print("The response of AccountsApi->get_charts_of_accounts_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AccountsApi->get_charts_of_accounts_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**ChartOfAccountsListEnvelope**](ChartOfAccountsListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_child_accounts_async**
 > AccountDtoListEnvelope get_child_accounts_async(tenant_id, account_id, api_version=api_version, x_api_version=x_api_version)
 
@@ -2056,10 +2276,10 @@ from openapi_client.models.account_dto_list_envelope import AccountDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2132,10 +2352,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2208,10 +2428,10 @@ from openapi_client.models.accounting_entry_dto_list_envelope import AccountingE
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2284,10 +2504,10 @@ from openapi_client.models.account_dto_list_envelope import AccountDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2359,10 +2579,10 @@ from openapi_client.models.operation import Operation
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2421,6 +2641,83 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **seed_chart_of_accounts_async**
+> EmptyEnvelope seed_chart_of_accounts_async(tenant_id, api_version=api_version, x_api_version=x_api_version, seed_chart_of_accounts_request=seed_chart_of_accounts_request)
+
+Seed chart of accounts
+
+Seed a chart of accounts from a file URL.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.seed_chart_of_accounts_request import SeedChartOfAccountsRequest
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AccountsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    seed_chart_of_accounts_request = openapi_client.SeedChartOfAccountsRequest() # SeedChartOfAccountsRequest |  (optional)
+
+    try:
+        # Seed chart of accounts
+        api_response = api_instance.seed_chart_of_accounts_async(tenant_id, api_version=api_version, x_api_version=x_api_version, seed_chart_of_accounts_request=seed_chart_of_accounts_request)
+        print("The response of AccountsApi->seed_chart_of_accounts_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AccountsApi->seed_chart_of_accounts_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **seed_chart_of_accounts_request** | [**SeedChartOfAccountsRequest**](SeedChartOfAccountsRequest.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_account_async**
 > AccountDtoEnvelope update_account_async(tenant_id, account_id, api_version=api_version, x_api_version=x_api_version, account_update_dto=account_update_dto)
 
@@ -2438,10 +2735,10 @@ from openapi_client.models.account_update_dto import AccountUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2517,10 +2814,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2599,10 +2896,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2664,7 +2961,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_account_type_async**
-> EmptyEnvelope update_account_type_async(tenant_id, account_type_id, account_id, api_version=api_version, x_api_version=x_api_version, account_type_update_dto=account_type_update_dto)
+> EmptyEnvelope update_account_type_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version, account_type_update_dto=account_type_update_dto)
 
 Update account type
 
@@ -2680,10 +2977,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -2693,14 +2990,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.AccountsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     account_type_id = 'account_type_id_example' # str | 
-    account_id = 'account_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     account_type_update_dto = openapi_client.AccountTypeUpdateDto() # AccountTypeUpdateDto |  (optional)
 
     try:
         # Update account type
-        api_response = api_instance.update_account_type_async(tenant_id, account_type_id, account_id, api_version=api_version, x_api_version=x_api_version, account_type_update_dto=account_type_update_dto)
+        api_response = api_instance.update_account_type_async(tenant_id, account_type_id, api_version=api_version, x_api_version=x_api_version, account_type_update_dto=account_type_update_dto)
         print("The response of AccountsApi->update_account_type_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -2716,7 +3012,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
  **account_type_id** | **str**|  | 
- **account_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **account_type_update_dto** | [**AccountTypeUpdateDto**](AccountTypeUpdateDto.md)|  | [optional] 

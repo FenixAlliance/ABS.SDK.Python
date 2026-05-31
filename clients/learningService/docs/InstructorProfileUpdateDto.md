@@ -5,15 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**timestamp** | **datetime** |  | [optional] 
-**authorized** | **bool** |  | [optional] 
+**type** | **str** |  | [optional] 
+**contact_id** | **str** |  | [optional] 
 **about** | **str** |  | [optional] 
-**verified** | **bool** |  | [optional] 
-**submitted** | **bool** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**qualified_name** | **str** |  | [optional] 
-**verification_timestamp** | **datetime** |  | [optional] 
 **data** | **str** |  | [optional] 
 **data_label** | **str** |  | [optional] 
 **data1** | **str** |  | [optional] 
@@ -34,6 +29,7 @@ Name | Type | Description | Notes
 **data8_label** | **str** |  | [optional] 
 **data9** | **str** |  | [optional] 
 **data9_label** | **str** |  | [optional] 
+**authorized** | **bool** |  | [optional] 
 
 ## Example
 

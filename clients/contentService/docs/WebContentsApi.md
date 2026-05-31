@@ -1,6 +1,6 @@
 # openapi_client.WebContentsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -103,10 +103,10 @@ from openapi_client.models.web_content_create_dto import WebContentCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -179,10 +179,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -255,10 +255,10 @@ from openapi_client.models.web_content_dto_envelope import WebContentDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -331,10 +331,10 @@ from openapi_client.models.web_content_dto_list_envelope import WebContentDtoLis
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -406,10 +406,10 @@ from openapi_client.models.web_content_update_dto import WebContentUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

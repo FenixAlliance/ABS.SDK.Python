@@ -1,6 +1,6 @@
 # openapi_client.PaymentsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from openapi_client.models.payment_create_dto import PaymentCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -102,10 +102,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -160,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payment_async**
-> PaymentDtoListEnvelope get_payment_async(payment_id)
+> PaymentDtoListEnvelope get_payment_async(tenant_id, payment_id)
 
 Gets a payment by ID (deprecated)
 
@@ -175,10 +175,10 @@ from openapi_client.models.payment_dto_list_envelope import PaymentDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -186,11 +186,12 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.PaymentsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     payment_id = 'payment_id_example' # str | 
 
     try:
         # Gets a payment by ID (deprecated)
-        api_response = api_instance.get_payment_async(payment_id)
+        api_response = api_instance.get_payment_async(tenant_id, payment_id)
         print("The response of PaymentsApi->get_payment_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -204,6 +205,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **payment_id** | **str**|  | 
 
 ### Return type
@@ -230,7 +232,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payment_async_v2**
-> PaymentDtoListEnvelope get_payment_async_v2(payment_id)
+> PaymentDtoListEnvelope get_payment_async_v2(tenant_id, payment_id)
 
 Gets a payment by ID
 
@@ -245,10 +247,10 @@ from openapi_client.models.payment_dto_list_envelope import PaymentDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -256,11 +258,12 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.PaymentsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     payment_id = 'payment_id_example' # str | 
 
     try:
         # Gets a payment by ID
-        api_response = api_instance.get_payment_async_v2(payment_id)
+        api_response = api_instance.get_payment_async_v2(tenant_id, payment_id)
         print("The response of PaymentsApi->get_payment_async_v2:\n")
         pprint(api_response)
     except Exception as e:
@@ -274,6 +277,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **payment_id** | **str**|  | 
 
 ### Return type
@@ -315,10 +319,10 @@ from openapi_client.models.payment_dto_list_envelope import PaymentDtoListEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -387,10 +391,10 @@ from openapi_client.models.payment_update_dto import PaymentUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

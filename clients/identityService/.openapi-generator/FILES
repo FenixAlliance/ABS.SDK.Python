@@ -6,10 +6,11 @@ README.md
 docs/AccessTokenResponse.md
 docs/ApplicationsApi.md
 docs/AuthResult.md
-docs/AuthorizationResultEnvelope.md
+docs/AuthResultEnvelope.md
 docs/CheckerApi.md
+docs/CompletionsApi.md
 docs/ErrorEnvelope.md
-docs/FenixAllianceABSWebApi.md
+docs/FenixAlliancePortalsWebsiteApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -43,7 +44,8 @@ openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/applications_api.py
 openapi_client/api/checker_api.py
-openapi_client/api/fenix_alliance_abs_web_api.py
+openapi_client/api/completions_api.py
+openapi_client/api/fenix_alliance_portals_website_api.py
 openapi_client/api/o_auth_api.py
 openapi_client/api/resource_api.py
 openapi_client/api/user_info_api.py
@@ -53,8 +55,8 @@ openapi_client/configuration.py
 openapi_client/exceptions.py
 openapi_client/models/__init__.py
 openapi_client/models/access_token_response.py
-openapi_client/models/authorization_result.py
-openapi_client/models/authorization_result_envelope.py
+openapi_client/models/auth_result.py
+openapi_client/models/auth_result_envelope.py
 openapi_client/models/error_envelope.py
 openapi_client/models/forgot_password_request.py
 openapi_client/models/http_validation_problem_details.py
@@ -89,4 +91,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_auth_result.py
+test/test_auth_result_envelope.py
+test/test_completions_api.py
+test/test_fenix_alliance_portals_website_api.py
 tox.ini

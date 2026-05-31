@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **code** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **symbol** | **str** |  | [optional] 

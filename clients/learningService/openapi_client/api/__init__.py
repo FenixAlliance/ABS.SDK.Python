@@ -1,6 +1,7 @@
 # flake8: noqa
 
 # import apis into api package
+from openapi_client.api.completions_api import CompletionsApi
 from openapi_client.api.course_articles_api import CourseArticlesApi
 from openapi_client.api.course_assignment_components_api import CourseAssignmentComponentsApi
 from openapi_client.api.course_assignment_types_api import CourseAssignmentTypesApi
@@ -24,7 +25,7 @@ from openapi_client.api.course_units_api import CourseUnitsApi
 from openapi_client.api.course_updates_api import CourseUpdatesApi
 from openapi_client.api.course_wikis_api import CourseWikisApi
 from openapi_client.api.courses_api import CoursesApi
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
 from openapi_client.api.instructor_profiles_api import InstructorProfilesApi
 from openapi_client.api.me_api import MeApi
 from openapi_client.api.student_profiles_api import StudentProfilesApi

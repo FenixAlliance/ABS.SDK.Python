@@ -1,6 +1,6 @@
 # openapi_client.ItemReviewsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,10 @@ from openapi_client.models.item_review_dto_envelope import ItemReviewDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -103,10 +103,10 @@ import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -162,7 +162,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_item_review_by_id_async**
-> ItemReviewDtoEnvelope get_item_review_by_id_async(item_review_id, api_version=api_version, x_api_version=x_api_version)
+> ItemReviewDtoEnvelope get_item_review_by_id_async(item_review_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
 
 Get item review by ID
 
@@ -177,10 +177,10 @@ from openapi_client.models.item_review_dto_envelope import ItemReviewDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -189,12 +189,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.ItemReviewsApi(api_client)
     item_review_id = 'item_review_id_example' # str | 
+    tenant_id = 'tenant_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get item review by ID
-        api_response = api_instance.get_item_review_by_id_async(item_review_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_item_review_by_id_async(item_review_id, tenant_id=tenant_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of ItemReviewsApi->get_item_review_by_id_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -209,6 +210,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **item_review_id** | **str**|  | 
+ **tenant_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
 
@@ -251,10 +253,10 @@ from openapi_client.models.item_review_dto_list_envelope import ItemReviewDtoLis
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -325,10 +327,10 @@ from openapi_client.models.item_review_update_dto import ItemReviewUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

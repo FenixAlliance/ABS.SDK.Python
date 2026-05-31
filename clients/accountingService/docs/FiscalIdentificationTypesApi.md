@@ -1,6 +1,6 @@
 # openapi_client.FiscalIdentificationTypesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from openapi_client.models.fiscal_identification_type_create_dto import FiscalId
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -105,10 +105,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -181,10 +181,10 @@ from openapi_client.models.fiscal_identification_type_dto_envelope import Fiscal
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -244,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fiscal_identification_types**
-> FiscalIdentificationTypeDtoListEnvelope get_fiscal_identification_types(authority_id, api_version=api_version, x_api_version=x_api_version)
+> FiscalIdentificationTypeDtoListEnvelope get_fiscal_identification_types(tenant_id, authority_id, api_version=api_version, x_api_version=x_api_version)
 
 Get fiscal identification types for an authority
 
@@ -259,10 +259,10 @@ from openapi_client.models.fiscal_identification_type_dto_list_envelope import F
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -270,13 +270,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalIdentificationTypesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     authority_id = 'authority_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get fiscal identification types for an authority
-        api_response = api_instance.get_fiscal_identification_types(authority_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_fiscal_identification_types(tenant_id, authority_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of FiscalIdentificationTypesApi->get_fiscal_identification_types:\n")
         pprint(api_response)
     except Exception as e:
@@ -290,6 +291,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **authority_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -318,7 +320,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_fiscal_identification_types_count**
-> Int32Envelope get_fiscal_identification_types_count(authority_id, api_version=api_version, x_api_version=x_api_version)
+> Int32Envelope get_fiscal_identification_types_count(tenant_id, authority_id, api_version=api_version, x_api_version=x_api_version)
 
 Get fiscal identification types count
 
@@ -333,10 +335,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -344,13 +346,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalIdentificationTypesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     authority_id = 'authority_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get fiscal identification types count
-        api_response = api_instance.get_fiscal_identification_types_count(authority_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_fiscal_identification_types_count(tenant_id, authority_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of FiscalIdentificationTypesApi->get_fiscal_identification_types_count:\n")
         pprint(api_response)
     except Exception as e:
@@ -364,6 +367,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **authority_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -408,10 +412,10 @@ from openapi_client.models.fiscal_identification_type_update_dto import FiscalId
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

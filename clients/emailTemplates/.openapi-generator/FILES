@@ -4,7 +4,9 @@
 .travis.yml
 README.md
 docs/AccessTokenResponse.md
-docs/FenixAllianceABSWebApi.md
+docs/CompletionsApi.md
+docs/ErrorEnvelope.md
+docs/FenixAlliancePortalsWebsiteApi.md
 docs/ForgotPasswordRequest.md
 docs/HttpValidationProblemDetails.md
 docs/InfoRequest.md
@@ -19,13 +21,15 @@ docs/TwoFactorResponse.md
 git_push.sh
 openapi_client/__init__.py
 openapi_client/api/__init__.py
-openapi_client/api/fenix_alliance_abs_web_api.py
+openapi_client/api/completions_api.py
+openapi_client/api/fenix_alliance_portals_website_api.py
 openapi_client/api_client.py
 openapi_client/api_response.py
 openapi_client/configuration.py
 openapi_client/exceptions.py
 openapi_client/models/__init__.py
 openapi_client/models/access_token_response.py
+openapi_client/models/error_envelope.py
 openapi_client/models/forgot_password_request.py
 openapi_client/models/http_validation_problem_details.py
 openapi_client/models/info_request.py
@@ -45,4 +49,7 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_completions_api.py
+test/test_error_envelope.py
+test/test_fenix_alliance_portals_website_api.py
 tox.ini

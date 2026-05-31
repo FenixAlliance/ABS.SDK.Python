@@ -1,13 +1,21 @@
 # flake8: noqa
 
 # import apis into api package
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
-from openapi_client.api.helpdesk_api import HelpdeskApi
-from openapi_client.api.policies_api import PoliciesApi
+from openapi_client.api.completions_api import CompletionsApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
+from openapi_client.api.inquiry_requests_api import InquiryRequestsApi
+from openapi_client.api.knowledge_articles_api import KnowledgeArticlesApi
+from openapi_client.api.maintenance_visits_api import MaintenanceVisitsApi
+from openapi_client.api.refund_policies_api import RefundPoliciesApi
+from openapi_client.api.refund_requests_api import RefundRequestsApi
+from openapi_client.api.return_policies_api import ReturnPoliciesApi
+from openapi_client.api.return_requests_api import ReturnRequestsApi
 from openapi_client.api.support_entitlements_api import SupportEntitlementsApi
 from openapi_client.api.support_request_attachments_api import SupportRequestAttachmentsApi
 from openapi_client.api.support_requests_api import SupportRequestsApi
 from openapi_client.api.support_ticket_priorities_api import SupportTicketPrioritiesApi
 from openapi_client.api.support_ticket_types_api import SupportTicketTypesApi
 from openapi_client.api.support_tickets_api import SupportTicketsApi
+from openapi_client.api.warranty_policies_api import WarrantyPoliciesApi
+from openapi_client.api.warranty_requests_api import WarrantyRequestsApi
 

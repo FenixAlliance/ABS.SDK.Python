@@ -1,6 +1,6 @@
 # openapi_client.FiscalEnumerationRangesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ from openapi_client.models.invoice_enumeration_range_create_dto import InvoiceEn
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -105,10 +105,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -181,10 +181,10 @@ from openapi_client.models.invoice_enumeration_range_dto_envelope import Invoice
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -244,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoice_enumeration_ranges**
-> InvoiceEnumerationRangeDtoListEnvelope get_invoice_enumeration_ranges(fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
+> InvoiceEnumerationRangeDtoListEnvelope get_invoice_enumeration_ranges(tenant_id, fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
 
 Get invoice enumeration ranges for an authority
 
@@ -259,10 +259,10 @@ from openapi_client.models.invoice_enumeration_range_dto_list_envelope import In
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -270,6 +270,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalEnumerationRangesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     authority_id = 'authority_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
@@ -277,7 +278,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # Get invoice enumeration ranges for an authority
-        api_response = api_instance.get_invoice_enumeration_ranges(fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_invoice_enumeration_ranges(tenant_id, fiscal_authority_id, authority_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of FiscalEnumerationRangesApi->get_invoice_enumeration_ranges:\n")
         pprint(api_response)
     except Exception as e:
@@ -291,6 +292,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **authority_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
@@ -320,7 +322,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoice_enumeration_ranges_count**
-> Int32Envelope get_invoice_enumeration_ranges_count(fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
+> Int32Envelope get_invoice_enumeration_ranges_count(tenant_id, fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
 
 Get invoice enumeration ranges count
 
@@ -335,10 +337,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -346,13 +348,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FiscalEnumerationRangesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
     fiscal_authority_id = 'fiscal_authority_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get invoice enumeration ranges count
-        api_response = api_instance.get_invoice_enumeration_ranges_count(fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_invoice_enumeration_ranges_count(tenant_id, fiscal_authority_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of FiscalEnumerationRangesApi->get_invoice_enumeration_ranges_count:\n")
         pprint(api_response)
     except Exception as e:
@@ -366,6 +369,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
  **fiscal_authority_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -410,10 +414,10 @@ from openapi_client.models.invoice_enumeration_range_update_dto import InvoiceEn
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **standard_rates** | **List[str]** |  | [optional] 
 **zero_rate_rates** | **List[str]** |  | [optional] 
 **reduced_rate_rates** | **List[str]** |  | [optional] 
-**additional_tax_classes** | **Dict[str, Optional[List[str]]]** |  | [optional] 
+**additional_tax_classes** | **Dict[str, List[str]]** |  | [optional] 
 
 ## Example
 

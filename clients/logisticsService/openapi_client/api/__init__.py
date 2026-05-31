@@ -1,7 +1,23 @@
 # flake8: noqa
 
 # import apis into api package
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
-from openapi_client.api.stock_api import StockApi
-from openapi_client.api.warehousing_api import WarehousingApi
+from openapi_client.api.airway_bills_api import AirwayBillsApi
+from openapi_client.api.completions_api import CompletionsApi
+from openapi_client.api.delivery_notes_api import DeliveryNotesApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
+from openapi_client.api.item_packing_slips_api import ItemPackingSlipsApi
+from openapi_client.api.item_pick_lists_api import ItemPickListsApi
+from openapi_client.api.item_restocks_api import ItemRestocksApi
+from openapi_client.api.item_retain_samples_api import ItemRetainSamplesApi
+from openapi_client.api.ports_api import PortsApi
+from openapi_client.api.proofs_of_delivery_api import ProofsOfDeliveryApi
+from openapi_client.api.rail_waybills_api import RailWaybillsApi
+from openapi_client.api.road_waybills_api import RoadWaybillsApi
+from openapi_client.api.seaway_bills_api import SeawayBillsApi
+from openapi_client.api.supplier_profiles_api import SupplierProfilesApi
+from openapi_client.api.truck_drivers_api import TruckDriversApi
+from openapi_client.api.trucks_api import TrucksApi
+from openapi_client.api.vessels_api import VesselsApi
+from openapi_client.api.voyages_api import VoyagesApi
+from openapi_client.api.warehouses_api import WarehousesApi
 

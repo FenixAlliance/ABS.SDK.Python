@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **concurrency_token** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **properties** | **str** |  | [optional] 

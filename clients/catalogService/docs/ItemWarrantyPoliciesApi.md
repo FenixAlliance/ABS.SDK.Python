@@ -1,6 +1,6 @@
 # openapi_client.ItemWarrantyPoliciesApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **count_item_warranty_policies_async**
-> Int32Envelope count_item_warranty_policies_async(item_id=item_id, api_version=api_version, x_api_version=x_api_version)
+> Int32Envelope count_item_warranty_policies_async(tenant_id=tenant_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
 
 Count item warranty policies
 
@@ -27,10 +27,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -38,13 +38,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.ItemWarrantyPoliciesApi(api_client)
+    tenant_id = 'tenant_id_example' # str |  (optional)
     item_id = 'item_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Count item warranty policies
-        api_response = api_instance.count_item_warranty_policies_async(item_id=item_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.count_item_warranty_policies_async(tenant_id=tenant_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of ItemWarrantyPoliciesApi->count_item_warranty_policies_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -58,6 +59,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | [optional] 
  **item_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -86,7 +88,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_item_warranty_policies_async**
-> ItemWarrantyPolicyDtoListEnvelope get_item_warranty_policies_async(item_id=item_id, api_version=api_version, x_api_version=x_api_version)
+> ItemWarrantyPolicyDtoListEnvelope get_item_warranty_policies_async(tenant_id=tenant_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
 
 Get item warranty policies
 
@@ -101,10 +103,10 @@ from openapi_client.models.item_warranty_policy_dto_list_envelope import ItemWar
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -112,13 +114,14 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.ItemWarrantyPoliciesApi(api_client)
+    tenant_id = 'tenant_id_example' # str |  (optional)
     item_id = 'item_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get item warranty policies
-        api_response = api_instance.get_item_warranty_policies_async(item_id=item_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_item_warranty_policies_async(tenant_id=tenant_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of ItemWarrantyPoliciesApi->get_item_warranty_policies_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -132,6 +135,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | [optional] 
  **item_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -160,7 +164,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_item_warranty_policy_by_id_async**
-> ItemWarrantyPolicyDtoEnvelope get_item_warranty_policy_by_id_async(item_warranty_policy_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
+> ItemWarrantyPolicyDtoEnvelope get_item_warranty_policy_by_id_async(item_warranty_policy_id, tenant_id=tenant_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
 
 Get item warranty policy by ID
 
@@ -175,10 +179,10 @@ from openapi_client.models.item_warranty_policy_dto_envelope import ItemWarranty
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -187,13 +191,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.ItemWarrantyPoliciesApi(api_client)
     item_warranty_policy_id = 'item_warranty_policy_id_example' # str | 
+    tenant_id = 'tenant_id_example' # str |  (optional)
     item_id = 'item_id_example' # str |  (optional)
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Get item warranty policy by ID
-        api_response = api_instance.get_item_warranty_policy_by_id_async(item_warranty_policy_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.get_item_warranty_policy_by_id_async(item_warranty_policy_id, tenant_id=tenant_id, item_id=item_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of ItemWarrantyPoliciesApi->get_item_warranty_policy_by_id_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -208,6 +213,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **item_warranty_policy_id** | **str**|  | 
+ **tenant_id** | **str**|  | [optional] 
  **item_id** | **str**|  | [optional] 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -250,10 +256,10 @@ import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -325,10 +331,10 @@ import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

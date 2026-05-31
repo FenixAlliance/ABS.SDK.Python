@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **domain** | **str** |  | [optional] 
 **country_id** | **str** |  | [optional] 
 

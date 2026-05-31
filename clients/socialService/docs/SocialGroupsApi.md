@@ -1,6 +1,6 @@
 # openapi_client.SocialGroupsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -87,7 +87,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_social_group_async**
-> EmptyEnvelope create_social_group_async(tenant_id, api_version=api_version, x_api_version=x_api_version, social_group_create_dto=social_group_create_dto)
+> EmptyEnvelope create_social_group_async(tenant_id, social_profile_id, api_version=api_version, x_api_version=x_api_version, social_group_create_dto=social_group_create_dto)
 
 Create a social group
 
@@ -103,10 +103,10 @@ from openapi_client.models.social_group_create_dto import SocialGroupCreateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -115,13 +115,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SocialGroupsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
+    social_profile_id = 'social_profile_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
     social_group_create_dto = openapi_client.SocialGroupCreateDto() # SocialGroupCreateDto |  (optional)
 
     try:
         # Create a social group
-        api_response = api_instance.create_social_group_async(tenant_id, api_version=api_version, x_api_version=x_api_version, social_group_create_dto=social_group_create_dto)
+        api_response = api_instance.create_social_group_async(tenant_id, social_profile_id, api_version=api_version, x_api_version=x_api_version, social_group_create_dto=social_group_create_dto)
         print("The response of SocialGroupsApi->create_social_group_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -136,6 +137,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
+ **social_profile_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **social_group_create_dto** | [**SocialGroupCreateDto**](SocialGroupCreateDto.md)|  | [optional] 
@@ -164,7 +166,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_social_group_async**
-> EmptyEnvelope delete_social_group_async(tenant_id, social_group_id, api_version=api_version, x_api_version=x_api_version)
+> EmptyEnvelope delete_social_group_async(tenant_id, social_profile_id, social_group_id, api_version=api_version, x_api_version=x_api_version)
 
 Delete a social group
 
@@ -179,10 +181,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -191,13 +193,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SocialGroupsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
+    social_profile_id = 'social_profile_id_example' # str | 
     social_group_id = 'social_group_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
 
     try:
         # Delete a social group
-        api_response = api_instance.delete_social_group_async(tenant_id, social_group_id, api_version=api_version, x_api_version=x_api_version)
+        api_response = api_instance.delete_social_group_async(tenant_id, social_profile_id, social_group_id, api_version=api_version, x_api_version=x_api_version)
         print("The response of SocialGroupsApi->delete_social_group_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -212,6 +215,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
+ **social_profile_id** | **str**|  | 
  **social_group_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
@@ -255,10 +259,10 @@ from openapi_client.models.social_group_dto_envelope import SocialGroupDtoEnvelo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -331,10 +335,10 @@ from openapi_client.models.social_group_dto_list_envelope import SocialGroupDtoL
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -390,7 +394,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_social_group_async**
-> EmptyEnvelope update_social_group_async(tenant_id, social_group_id, api_version=api_version, x_api_version=x_api_version, social_group_update_dto=social_group_update_dto)
+> EmptyEnvelope update_social_group_async(tenant_id, social_profile_id, social_group_id, api_version=api_version, x_api_version=x_api_version, social_group_update_dto=social_group_update_dto)
 
 Update a social group
 
@@ -406,10 +410,10 @@ from openapi_client.models.social_group_update_dto import SocialGroupUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -418,6 +422,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SocialGroupsApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
+    social_profile_id = 'social_profile_id_example' # str | 
     social_group_id = 'social_group_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
@@ -425,7 +430,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # Update a social group
-        api_response = api_instance.update_social_group_async(tenant_id, social_group_id, api_version=api_version, x_api_version=x_api_version, social_group_update_dto=social_group_update_dto)
+        api_response = api_instance.update_social_group_async(tenant_id, social_profile_id, social_group_id, api_version=api_version, x_api_version=x_api_version, social_group_update_dto=social_group_update_dto)
         print("The response of SocialGroupsApi->update_social_group_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -440,6 +445,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenant_id** | **str**|  | 
+ **social_profile_id** | **str**|  | 
  **social_group_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 

@@ -21,6 +21,10 @@ Name | Type | Description | Notes
 **account_type_id** | **str** |  | [optional] 
 **debits_balance** | **float** |  | [optional] 
 **credits_balance** | **float** |  | [optional] 
+**balance_in_usd** | **float** |  | [optional] 
+**debits_balance_in_usd** | **float** |  | [optional] 
+**credits_balance_in_usd** | **float** |  | [optional] 
+**forex_rate** | **float** |  | [optional] 
 **parent_account_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **enrollment_id** | **str** |  | [optional] 
@@ -29,6 +33,9 @@ Name | Type | Description | Notes
 **balance_amount** | [**Money**](Money.md) |  | [optional] 
 **credits_balance_amount** | [**Money**](Money.md) |  | [optional] 
 **debits_balance_amount** | [**Money**](Money.md) |  | [optional] 
+**balance_amount_in_usd** | [**Money**](Money.md) |  | [optional] 
+**debits_balance_amount_in_usd** | [**Money**](Money.md) |  | [optional] 
+**credits_balance_amount_in_usd** | [**Money**](Money.md) |  | [optional] 
 
 ## Example
 

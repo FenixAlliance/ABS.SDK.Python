@@ -1,7 +1,9 @@
 # flake8: noqa
 
 # import apis into api package
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.bills_of_lading_api import BillsOfLadingApi
+from openapi_client.api.completions_api import CompletionsApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
 from openapi_client.api.item_shipping_policies_api import ItemShippingPoliciesApi
 from openapi_client.api.shipments_api import ShipmentsApi
 from openapi_client.api.shipping_classes_api import ShippingClassesApi

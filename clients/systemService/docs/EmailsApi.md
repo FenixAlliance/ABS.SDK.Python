@@ -1,6 +1,6 @@
 # openapi_client.EmailsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,10 +24,10 @@ from openapi_client.models.object_email_dispatch_request import ObjectEmailDispa
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -79,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_send_basic_email**
-> TenantDtoListEnvelope admin_send_basic_email(api_version=api_version, x_api_version=x_api_version, object_email_dispatch_request=object_email_dispatch_request)
+> Envelope admin_send_basic_email(api_version=api_version, x_api_version=x_api_version, object_email_dispatch_request=object_email_dispatch_request)
 
 Send a basic transactional email to recipients.
 
@@ -90,15 +90,15 @@ This action is only available for global administrators (business_owner role).
 
 ```python
 import openapi_client
+from openapi_client.models.envelope import Envelope
 from openapi_client.models.object_email_dispatch_request import ObjectEmailDispatchRequest
-from openapi_client.models.tenant_dto_list_envelope import TenantDtoListEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TenantDtoListEnvelope**](TenantDtoListEnvelope.md)
+[**Envelope**](Envelope.md)
 
 ### Authorization
 

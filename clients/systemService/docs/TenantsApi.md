@@ -1,11 +1,11 @@
 # openapi_client.TenantsApi
 
-All URIs are relative to *https://absuite.net*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**admin_preview_tenant_email**](TenantsApi.md#admin_preview_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Preview | Preview the rendered email for a user.
-[**admin_send_tenant_email**](TenantsApi.md#admin_send_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Send | Send an email to a user.
+[**admin_preview_tenant_email**](TenantsApi.md#admin_preview_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Preview | Preview the rendered email for a tenant.
+[**admin_send_tenant_email**](TenantsApi.md#admin_send_tenant_email) | **POST** /api/v2/SystemService/Tenants/{tenantId}/Emails/Send | Send an email to a tenant.
 [**create_tenant**](TenantsApi.md#create_tenant) | **POST** /api/v2/SystemService/Tenants | Create a new tenant.
 [**delete_tenant**](TenantsApi.md#delete_tenant) | **DELETE** /api/v2/SystemService/Tenants/{tenantId} | Delete a specific tenant by ID.
 [**get_all_extended_tenants**](TenantsApi.md#get_all_extended_tenants) | **GET** /api/v2/SystemService/Tenants/Extended | Get all extended tenants available on this suite server instance.
@@ -19,9 +19,9 @@ Method | HTTP request | Description
 # **admin_preview_tenant_email**
 > admin_preview_tenant_email(tenant_id, api_version=api_version, x_api_version=x_api_version, email_dispatch_request=email_dispatch_request)
 
-Preview the rendered email for a user.
+Preview the rendered email for a tenant.
 
-This action is only available for users with the 'business_owner' role (global administrators).
+This action is only available for global administrators.
 
 ### Example
 
@@ -32,10 +32,10 @@ from openapi_client.models.email_dispatch_request import EmailDispatchRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -49,7 +49,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     email_dispatch_request = openapi_client.EmailDispatchRequest() # EmailDispatchRequest |  (optional)
 
     try:
-        # Preview the rendered email for a user.
+        # Preview the rendered email for a tenant.
         api_instance.admin_preview_tenant_email(tenant_id, api_version=api_version, x_api_version=x_api_version, email_dispatch_request=email_dispatch_request)
     except Exception as e:
         print("Exception when calling TenantsApi->admin_preview_tenant_email: %s\n" % e)
@@ -91,9 +91,9 @@ No authorization required
 # **admin_send_tenant_email**
 > admin_send_tenant_email(tenant_id, api_version=api_version, x_api_version=x_api_version, email_dispatch_request=email_dispatch_request)
 
-Send an email to a user.
+Send an email to a tenant.
 
-This action is only available for users with the 'business_owner' role (global administrators).
+This action is only available for global administrators.
 
 ### Example
 
@@ -104,10 +104,10 @@ from openapi_client.models.email_dispatch_request import EmailDispatchRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -121,7 +121,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     email_dispatch_request = openapi_client.EmailDispatchRequest() # EmailDispatchRequest |  (optional)
 
     try:
-        # Send an email to a user.
+        # Send an email to a tenant.
         api_instance.admin_send_tenant_email(tenant_id, api_version=api_version, x_api_version=x_api_version, email_dispatch_request=email_dispatch_request)
     except Exception as e:
         print("Exception when calling TenantsApi->admin_send_tenant_email: %s\n" % e)
@@ -177,10 +177,10 @@ from openapi_client.models.tenant_dto_envelope import TenantDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -251,10 +251,10 @@ from openapi_client.models.empty_envelope import EmptyEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -325,10 +325,10 @@ from openapi_client.models.extended_tenant_dto_list_envelope import ExtendedTena
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -397,10 +397,10 @@ from openapi_client.models.tenant_dto_list_envelope import TenantDtoListEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -469,10 +469,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -541,10 +541,10 @@ from openapi_client.models.tenant_dto_envelope import TenantDtoEnvelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -615,10 +615,10 @@ from openapi_client.models.int32_envelope import Int32Envelope
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 
@@ -688,10 +688,10 @@ from openapi_client.models.tenant_update_dto import TenantUpdateDto
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://absuite.net
+# Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://absuite.net"
+    host = "http://localhost"
 )
 
 

@@ -1,9 +1,26 @@
 # flake8: noqa
 
 # import apis into api package
+from openapi_client.api.appraisal_stages_api import AppraisalStagesApi
+from openapi_client.api.appraisal_workflows_api import AppraisalWorkflowsApi
+from openapi_client.api.completions_api import CompletionsApi
+from openapi_client.api.employee_appraisal_sessions_api import EmployeeAppraisalSessionsApi
+from openapi_client.api.employee_types_api import EmployeeTypesApi
 from openapi_client.api.employees_api import EmployeesApi
 from openapi_client.api.employers_api import EmployersApi
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
 from openapi_client.api.gigs_api import GigsApi
 from openapi_client.api.job_offers_api import JobOffersApi
+from openapi_client.api.job_titles_api import JobTitlesApi
+from openapi_client.api.leave_applications_api import LeaveApplicationsApi
+from openapi_client.api.leave_types_api import LeaveTypesApi
+from openapi_client.api.payroll_periods_api import PayrollPeriodsApi
+from openapi_client.api.payrolls_api import PayrollsApi
+from openapi_client.api.salaries_api import SalariesApi
+from openapi_client.api.schedules_api import SchedulesApi
+from openapi_client.api.shifts_api import ShiftsApi
+from openapi_client.api.time_intervals_api import TimeIntervalsApi
+from openapi_client.api.training_program_courses_api import TrainingProgramCoursesApi
+from openapi_client.api.training_program_events_api import TrainingProgramEventsApi
+from openapi_client.api.training_programs_api import TrainingProgramsApi
 

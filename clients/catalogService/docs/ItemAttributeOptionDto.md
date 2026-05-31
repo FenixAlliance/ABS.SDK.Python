@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**item_attribute_id** | **str** |  | [optional] 
 **business_id** | **str** |  | [optional] 
 
 ## Example

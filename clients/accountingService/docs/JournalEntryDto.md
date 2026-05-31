@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **forex_rate** | **float** |  | [optional] 
 **credit** | **float** |  | [optional] 
 **debit** | **float** |  | [optional] 
+**credit_in_usd** | **float** |  | [optional] 
+**debit_in_usd** | **float** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **enrollment_id** | **str** |  | [optional] 
@@ -29,6 +31,8 @@ Name | Type | Description | Notes
 **parent_journal_entry_id** | **str** |  | [optional] 
 **credit_amount** | [**Money**](Money.md) |  | [optional] 
 **debit_amount** | [**Money**](Money.md) |  | [optional] 
+**credit_amount_in_usd** | [**Money**](Money.md) |  | [optional] 
+**debit_amount_in_usd** | [**Money**](Money.md) |  | [optional] 
 
 ## Example
 

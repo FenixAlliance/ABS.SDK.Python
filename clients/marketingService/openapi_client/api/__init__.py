@@ -1,10 +1,12 @@
 # flake8: noqa
 
 # import apis into api package
+from openapi_client.api.completions_api import CompletionsApi
 from openapi_client.api.email_groups_api import EmailGroupsApi
 from openapi_client.api.email_signatures_api import EmailSignaturesApi
 from openapi_client.api.email_templates_api import EmailTemplatesApi
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
+from openapi_client.api.marketing_areas_api import MarketingAreasApi
 from openapi_client.api.marketing_campaigns_api import MarketingCampaignsApi
 from openapi_client.api.marketing_leads_api import MarketingLeadsApi
 from openapi_client.api.marketing_lists_api import MarketingListsApi

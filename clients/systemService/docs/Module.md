@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **swagger_specs** | [**List[ISwaggerSpec]**](ISwaggerSpec.md) |  | [optional] 
 **url** | **str** |  | [optional] 
 **assembly_paths** | **List[str]** |  | [optional] 
+**required_permissions** | **List[str]** |  | [optional] [readonly] 
 **marked_for_deletion** | **bool** |  | [optional] 
 **version** | **str** |  | [optional] 
 

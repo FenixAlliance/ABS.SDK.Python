@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **application_type** | **str** |  | [optional] 
 **client_id** | **str** |  | [optional] 
 **concurrency_token** | **str** |  | [optional] 

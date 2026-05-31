@@ -1,11 +1,15 @@
 # flake8: noqa
 
 # import apis into api package
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.completions_api import CompletionsApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
 from openapi_client.api.item_attachments_api import ItemAttachmentsApi
+from openapi_client.api.item_attribute_options_api import ItemAttributeOptionsApi
 from openapi_client.api.item_attributes_api import ItemAttributesApi
 from openapi_client.api.item_brands_api import ItemBrandsApi
+from openapi_client.api.item_bundles_api import ItemBundlesApi
 from openapi_client.api.item_categories_api import ItemCategoriesApi
+from openapi_client.api.item_families_api import ItemFamiliesApi
 from openapi_client.api.item_google_categories_api import ItemGoogleCategoriesApi
 from openapi_client.api.item_images_api import ItemImagesApi
 from openapi_client.api.item_questions_api import ItemQuestionsApi
@@ -19,5 +23,4 @@ from openapi_client.api.item_types_api import ItemTypesApi
 from openapi_client.api.item_warranty_policies_api import ItemWarrantyPoliciesApi
 from openapi_client.api.items_api import ItemsApi
 from openapi_client.api.merchants_api import MerchantsApi
-from openapi_client.api.pricing_rules_api import PricingRulesApi
 

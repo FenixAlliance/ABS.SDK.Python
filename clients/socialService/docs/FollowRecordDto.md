@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**timestamp** | **datetime** |  | [optional] 
 **type** | **str** |  | [optional] 
 **follower_id** | **str** |  | [optional] 
 **followed_id** | **str** |  | [optional] 

@@ -3,10 +3,12 @@
 # import apis into api package
 from openapi_client.api.antiforgery_api import AntiforgeryApi
 from openapi_client.api.carts_api import CartsApi
+from openapi_client.api.completions_api import CompletionsApi
 from openapi_client.api.contact_options_api import ContactOptionsApi
 from openapi_client.api.emails_api import EmailsApi
-from openapi_client.api.fenix_alliance_abs_web_api import FenixAllianceABSWebApi
+from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
 from openapi_client.api.ip_lookups_api import IPLookupsApi
+from openapi_client.api.licenses_api import LicensesApi
 from openapi_client.api.licensing_api import LicensingApi
 from openapi_client.api.migrations_api import MigrationsApi
 from openapi_client.api.modules_api import ModulesApi
