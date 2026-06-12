@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **course_id** | **str** |  | [optional] 
 **course_unit_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

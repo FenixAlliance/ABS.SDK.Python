@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **code** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

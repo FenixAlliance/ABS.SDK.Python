@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**delete_store_async**](StoresApi.md#delete_store_async) | **DELETE** /api/v2/SalesService/Stores/{storeId} | Delete a store
 [**get_store_async**](StoresApi.md#get_store_async) | **GET** /api/v2/SalesService/Stores/{storeId} | Get store by ID
 [**get_stores_async**](StoresApi.md#get_stores_async) | **GET** /api/v2/SalesService/Stores | Get stores
+[**patch_store_async**](StoresApi.md#patch_store_async) | **PATCH** /api/v2/SalesService/Stores/{storeId} | Patch a store
 [**update_store_async**](StoresApi.md#update_store_async) | **PUT** /api/v2/SalesService/Stores/{storeId} | Update a store
 
 
@@ -353,6 +354,80 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_store_async**
+> EmptyEnvelope patch_store_async(tenant_id, store_id, operation=operation)
+
+Patch a store
+
+Partially updates an existing store using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.StoresApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    store_id = 'store_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a store
+        api_response = api_instance.patch_store_async(tenant_id, store_id, operation=operation)
+        print("The response of StoresApi->patch_store_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StoresApi->patch_store_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **store_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

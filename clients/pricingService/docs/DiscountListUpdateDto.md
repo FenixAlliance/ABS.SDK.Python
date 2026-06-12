@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
+**discount_list_type** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 
 ## Example

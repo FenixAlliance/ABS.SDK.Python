@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **item_id** | **str** |  | [optional] 
 **is_item_mozaic_bg** | **bool** |  | [optional] 
 **m_d5_hash** | **str** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **valid_response** | **bool** |  | [optional] 
 **social_profile_id** | **str** |  | [optional] 
 **parent_file_upload_id** | **str** |  | [optional] 
-**account_holder_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 
 ## Example
 

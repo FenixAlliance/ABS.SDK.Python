@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **logo_url** | **str** |  | [optional] 
 **country_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 **revenue** | **str** |  | [optional] 
 **min_employees** | **float** |  | [optional] 
 **max_employees** | **float** |  | [optional] 

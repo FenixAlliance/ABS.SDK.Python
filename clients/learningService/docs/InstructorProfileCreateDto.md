@@ -32,7 +32,6 @@ Name | Type | Description | Notes
 **data9** | **str** |  | [optional] 
 **data9_label** | **str** |  | [optional] 
 **authorized** | **bool** |  | [optional] 
-**contact_id** | **str** |  | [optional] 
 
 ## Example
 

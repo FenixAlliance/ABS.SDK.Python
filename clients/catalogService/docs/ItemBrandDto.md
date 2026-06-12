@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **logo_url** | **str** |  | [optional] 
 **featured** | **bool** |  | [optional] 
 **trending** | **bool** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_job_offer_by_id_async**](JobOffersApi.md#get_job_offer_by_id_async) | **GET** /api/v2/HrmsService/JobOffers/{jobOfferId} | Get job offer by ID
 [**get_job_offers_async**](JobOffersApi.md#get_job_offers_async) | **GET** /api/v2/HrmsService/JobOffers | Get job offers
 [**get_job_offers_count_async**](JobOffersApi.md#get_job_offers_count_async) | **GET** /api/v2/HrmsService/JobOffers/Count | Count job offers
+[**patch_job_offer_async**](JobOffersApi.md#patch_job_offer_async) | **PATCH** /api/v2/HrmsService/JobOffers/{jobOfferId} | Patch a job offer
 [**update_job_offer_async**](JobOffersApi.md#update_job_offer_async) | **PUT** /api/v2/HrmsService/JobOffers/{jobOfferId} | Update a job offer
 
 
@@ -391,12 +392,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_job_offer_async**
-> EmptyEnvelope update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+# **patch_job_offer_async**
+> EmptyEnvelope patch_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
 
-Update a job offer
+Patch a job offer
 
-Updates an existing job offer for the specified tenant.
+Partially updates an existing job offer for the specified tenant.
 
 ### Example
 
@@ -404,6 +405,7 @@ Updates an existing job offer for the specified tenant.
 ```python
 import openapi_client
 from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -422,11 +424,91 @@ with openapi_client.ApiClient(configuration) as api_client:
     job_offer_id = 'job_offer_id_example' # str | 
     api_version = 'api_version_example' # str |  (optional)
     x_api_version = 'x_api_version_example' # str |  (optional)
-    body = None # object |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a job offer
+        api_response = api_instance.patch_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of JobOffersApi->patch_job_offer_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling JobOffersApi->patch_job_offer_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **job_offer_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_job_offer_async**
+> EmptyEnvelope update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, job_offer_update_dto=job_offer_update_dto)
+
+Update a job offer
+
+Updates an existing job offer for the specified tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.job_offer_update_dto import JobOfferUpdateDto
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.JobOffersApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    job_offer_id = 'job_offer_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    job_offer_update_dto = openapi_client.JobOfferUpdateDto() # JobOfferUpdateDto |  (optional)
 
     try:
         # Update a job offer
-        api_response = api_instance.update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, body=body)
+        api_response = api_instance.update_job_offer_async(tenant_id, job_offer_id, api_version=api_version, x_api_version=x_api_version, job_offer_update_dto=job_offer_update_dto)
         print("The response of JobOffersApi->update_job_offer_async:\n")
         pprint(api_response)
     except Exception as e:
@@ -444,7 +526,7 @@ Name | Type | Description  | Notes
  **job_offer_id** | **str**|  | 
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
- **body** | **object**|  | [optional] 
+ **job_offer_update_dto** | [**JobOfferUpdateDto**](JobOfferUpdateDto.md)|  | [optional] 
 
 ### Return type
 

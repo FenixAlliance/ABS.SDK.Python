@@ -5,19 +5,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **object** |  | [optional] 
+**id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**business_id** | **object** |  | [optional] 
-**business_profile_record_id** | **object** |  | [optional] 
-**asset_id** | **object** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
+**asset_id** | **str** |  | [optional] 
 **asset_name** | **str** |  | [optional] 
 **previous_value** | **float** |  | [optional] 
 **new_value** | **float** |  | [optional] 
 **amendment_amount** | **float** |  | [optional] 
 **reason** | **str** |  | [optional] 
 **amendment_date** | **datetime** |  | [optional] 
-**approved_by** | **str** |  | [optional] 
-**approval_date** | **datetime** |  | [optional] 
+**currency_id** | **str** |  | [optional] 
 
 ## Example
 

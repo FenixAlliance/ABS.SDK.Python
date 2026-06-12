@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_enrollments_async**](CourseEnrollmentsApi.md#get_enrollments_async) | **GET** /api/v2/LearningService/CourseEnrollments | Get all course enrollments
 [**get_enrollments_count_async**](CourseEnrollmentsApi.md#get_enrollments_count_async) | **GET** /api/v2/LearningService/CourseEnrollments/Count | Get course enrollments count
 [**get_student_course_enrollments_async**](CourseEnrollmentsApi.md#get_student_course_enrollments_async) | **GET** /api/v2/LearningService/CourseEnrollments/Student/{studentProfileId} | Get enrollments by student
+[**patch_course_enrollment_async**](CourseEnrollmentsApi.md#patch_course_enrollment_async) | **PATCH** /api/v2/LearningService/CourseEnrollments/{courseEnrollmentId} | Patch a course enrollment
 [**update_course_enrollment_async**](CourseEnrollmentsApi.md#update_course_enrollment_async) | **PUT** /api/v2/LearningService/CourseEnrollments/{courseEnrollmentId} | Update a course enrollment
 
 
@@ -442,6 +443,81 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_course_enrollment_async**
+> patch_course_enrollment_async(tenant_id, course_enrollment_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a course enrollment
+
+Partially updates an existing course enrollment for the specified tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CourseEnrollmentsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    course_enrollment_id = 'course_enrollment_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a course enrollment
+        api_instance.patch_course_enrollment_async(tenant_id, course_enrollment_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+    except Exception as e:
+        print("Exception when calling CourseEnrollmentsApi->patch_course_enrollment_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **course_enrollment_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

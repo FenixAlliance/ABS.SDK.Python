@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_roles_async**](RolesApi.md#get_roles_async) | **GET** /api/v2/SecurityService/Roles | Get all roles
 [**get_roles_by_enrollment_async**](RolesApi.md#get_roles_by_enrollment_async) | **GET** /api/v2/SecurityService/Roles/ByEnrollment/{enrollmentId} | Get roles by enrollment
 [**get_roles_count_async**](RolesApi.md#get_roles_count_async) | **GET** /api/v2/SecurityService/Roles/Count | Get roles count
+[**patch_role_async**](RolesApi.md#patch_role_async) | **PATCH** /api/v2/SecurityService/Roles/{securityRoleId} | Patch an existing role
 [**revoke_permission_from_role_async**](RolesApi.md#revoke_permission_from_role_async) | **DELETE** /api/v2/SecurityService/Roles/{securityRoleId}/Permissions/{securityPermissionId} | Revoke a permission from a role
 [**revoke_role_from_business_application_async**](RolesApi.md#revoke_role_from_business_application_async) | **DELETE** /api/v2/SecurityService/Roles/{securityRoleId}/Applications/{applicationId} | Revoke a role from a business application
 [**revoke_role_from_enrollment_async**](RolesApi.md#revoke_role_from_enrollment_async) | **DELETE** /api/v2/SecurityService/Roles/{securityRoleId}/Enrollments/{enrollmentId} | Revoke a role from an enrollment
@@ -938,6 +939,86 @@ No authorization required
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_role_async**
+> EmptyEnvelope patch_role_async(tenant_id, security_role_id, operation, api_version=api_version, x_api_version=x_api_version)
+
+Patch an existing role
+
+Partially updates an existing security role using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.RolesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    security_role_id = 'security_role_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Patch an existing role
+        api_response = api_instance.patch_role_async(tenant_id, security_role_id, operation, api_version=api_version, x_api_version=x_api_version)
+        print("The response of RolesApi->patch_role_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RolesApi->patch_role_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **security_role_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

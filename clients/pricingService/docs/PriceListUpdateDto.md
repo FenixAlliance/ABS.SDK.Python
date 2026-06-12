@@ -7,11 +7,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
+**context** | **str** |  | [optional] 
 **start_date** | **datetime** |  | [optional] 
 **end_date** | **datetime** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **unit_id** | **str** |  | [optional] 
 **unit_group_id** | **str** |  | [optional] 
+**partner_visible** | **bool** |  | [optional] 
+**unit_of_measure_dependant** | **bool** |  | [optional] 
 
 ## Example
 

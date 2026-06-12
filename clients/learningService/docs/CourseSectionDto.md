@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **release_date_time** | **datetime** |  | [optional] 
 **hide_from_students** | **bool** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

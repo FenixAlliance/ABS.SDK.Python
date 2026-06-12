@@ -40,6 +40,11 @@ Method | HTTP request | Description
 [**get_invoice_references_count**](InvoicesApi.md#get_invoice_references_count) | **GET** /api/v2/InvoicingService/Invoices/{invoiceId}/References/Count | Get the count of invoice references.
 [**get_invoices**](InvoicesApi.md#get_invoices) | **GET** /api/v2/InvoicingService/Invoices | Get a list of invoices.
 [**get_invoices_count**](InvoicesApi.md#get_invoices_count) | **GET** /api/v2/InvoicingService/Invoices/Count | Get the count of invoices.
+[**patch_invoice**](InvoicesApi.md#patch_invoice) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId} | Patch an invoice.
+[**patch_invoice_adjustment**](InvoicesApi.md#patch_invoice_adjustment) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Adjustments/{invoiceAdjustmentId} | Patch an invoice adjustment.
+[**patch_invoice_line**](InvoicesApi.md#patch_invoice_line) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Lines/{invoiceLineId} | Patch an invoice line.
+[**patch_invoice_line_tax**](InvoicesApi.md#patch_invoice_line_tax) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/Lines/{invoiceLineId}/Taxes/{invoiceLineTaxId} | Patch a tax for an invoice line.
+[**patch_invoice_reference**](InvoicesApi.md#patch_invoice_reference) | **PATCH** /api/v2/InvoicingService/Invoices/{invoiceId}/References/{invoiceReferenceId} | Patch an invoice reference.
 [**preview_invoice_email**](InvoicesApi.md#preview_invoice_email) | **POST** /api/v2/InvoicingService/Invoices/{invoiceId}/Emails/Preview | Preview the rendered email for an invoice.
 [**send_invoice_email**](InvoicesApi.md#send_invoice_email) | **POST** /api/v2/InvoicingService/Invoices/{invoiceId}/Emails/Send | Send an invoice transactional email to recipients.
 [**update_invoice**](InvoicesApi.md#update_invoice) | **PUT** /api/v2/InvoicingService/Invoices/{invoiceId} | Update an invoice.
@@ -2615,6 +2620,384 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_invoice**
+> EmptyEnvelope patch_invoice(tenant_id, invoice_id, operation=operation)
+
+Patch an invoice.
+
+Partially updates the specified invoice for the tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.InvoicesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    invoice_id = 'invoice_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an invoice.
+        api_response = api_instance.patch_invoice(tenant_id, invoice_id, operation=operation)
+        print("The response of InvoicesApi->patch_invoice:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InvoicesApi->patch_invoice: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **invoice_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_invoice_adjustment**
+> EmptyEnvelope patch_invoice_adjustment(tenant_id, invoice_id, invoice_adjustment_id, operation=operation)
+
+Patch an invoice adjustment.
+
+Partially updates the specified adjustment for the invoice.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.InvoicesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    invoice_id = 'invoice_id_example' # str | 
+    invoice_adjustment_id = 'invoice_adjustment_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an invoice adjustment.
+        api_response = api_instance.patch_invoice_adjustment(tenant_id, invoice_id, invoice_adjustment_id, operation=operation)
+        print("The response of InvoicesApi->patch_invoice_adjustment:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InvoicesApi->patch_invoice_adjustment: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **invoice_id** | **str**|  | 
+ **invoice_adjustment_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_invoice_line**
+> EmptyEnvelope patch_invoice_line(tenant_id, invoice_id, invoice_line_id, operation=operation)
+
+Patch an invoice line.
+
+Partially updates the specified invoice line.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.InvoicesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    invoice_id = 'invoice_id_example' # str | 
+    invoice_line_id = 'invoice_line_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an invoice line.
+        api_response = api_instance.patch_invoice_line(tenant_id, invoice_id, invoice_line_id, operation=operation)
+        print("The response of InvoicesApi->patch_invoice_line:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InvoicesApi->patch_invoice_line: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **invoice_id** | **str**|  | 
+ **invoice_line_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_invoice_line_tax**
+> EmptyEnvelope patch_invoice_line_tax(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, operation=operation)
+
+Patch a tax for an invoice line.
+
+Partially updates the specified tax entry for the invoice line.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.InvoicesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    invoice_id = 'invoice_id_example' # str | 
+    invoice_line_id = 'invoice_line_id_example' # str | 
+    invoice_line_tax_id = 'invoice_line_tax_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a tax for an invoice line.
+        api_response = api_instance.patch_invoice_line_tax(tenant_id, invoice_id, invoice_line_id, invoice_line_tax_id, operation=operation)
+        print("The response of InvoicesApi->patch_invoice_line_tax:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InvoicesApi->patch_invoice_line_tax: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **invoice_id** | **str**|  | 
+ **invoice_line_id** | **str**|  | 
+ **invoice_line_tax_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_invoice_reference**
+> EmptyEnvelope patch_invoice_reference(tenant_id, invoice_id, invoice_reference_id, operation=operation)
+
+Patch an invoice reference.
+
+Partially updates the specified reference for the invoice.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.InvoicesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    invoice_id = 'invoice_id_example' # str | 
+    invoice_reference_id = 'invoice_reference_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an invoice reference.
+        api_response = api_instance.patch_invoice_reference(tenant_id, invoice_id, invoice_reference_id, operation=operation)
+        print("The response of InvoicesApi->patch_invoice_reference:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling InvoicesApi->patch_invoice_reference: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **invoice_id** | **str**|  | 
+ **invoice_reference_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

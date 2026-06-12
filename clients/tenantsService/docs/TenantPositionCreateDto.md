@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

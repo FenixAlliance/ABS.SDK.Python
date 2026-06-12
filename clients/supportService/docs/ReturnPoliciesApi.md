@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_return_policies_async**](ReturnPoliciesApi.md#get_return_policies_async) | **GET** /api/v2/SupportService/ReturnPolicies | Retrieve a list of return policies
 [**get_return_policies_count_async**](ReturnPoliciesApi.md#get_return_policies_count_async) | **GET** /api/v2/SupportService/ReturnPolicies/Count | Get the count of return policies
 [**get_return_policy_async**](ReturnPoliciesApi.md#get_return_policy_async) | **GET** /api/v2/SupportService/ReturnPolicies/{returnPolicyId} | Retrieve a return policy by ID
+[**patch_return_policy_async**](ReturnPoliciesApi.md#patch_return_policy_async) | **PATCH** /api/v2/SupportService/ReturnPolicies/{returnPolicyId} | Patch a return policy
 [**update_return_policy_async**](ReturnPoliciesApi.md#update_return_policy_async) | **PUT** /api/v2/SupportService/ReturnPolicies/{returnPolicyId} | Update a return policy
 
 
@@ -367,6 +368,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_return_policy_async**
+> EmptyEnvelope patch_return_policy_async(tenant_id, return_policy_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a return policy
+
+Partially updates an existing return policy by its unique identifier.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ReturnPoliciesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    return_policy_id = 'return_policy_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a return policy
+        api_response = api_instance.patch_return_policy_async(tenant_id, return_policy_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ReturnPoliciesApi->patch_return_policy_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ReturnPoliciesApi->patch_return_policy_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **return_policy_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

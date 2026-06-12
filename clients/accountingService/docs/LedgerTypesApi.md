@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_ledger_type_details_async**](LedgerTypesApi.md#get_ledger_type_details_async) | **GET** /api/v2/AccountingService/LedgerTypes/{ledgerTypeId} | Gets a ledger type by ID
 [**get_ledger_types_async**](LedgerTypesApi.md#get_ledger_types_async) | **GET** /api/v2/AccountingService/LedgerTypes | Retrieves all ledger types
 [**get_ledger_types_count_async**](LedgerTypesApi.md#get_ledger_types_count_async) | **GET** /api/v2/AccountingService/LedgerTypes/Count | Counts ledger types
+[**patch_ledger_type_async**](LedgerTypesApi.md#patch_ledger_type_async) | **PATCH** /api/v2/AccountingService/LedgerTypes/{ledgerTypeId} | Patches a ledger type
 [**update_ledger_type_async**](LedgerTypesApi.md#update_ledger_type_async) | **PUT** /api/v2/AccountingService/LedgerTypes/{ledgerTypeId} | Updates a ledger type
 
 
@@ -377,6 +378,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_ledger_type_async**
+> EmptyEnvelope patch_ledger_type_async(tenant_id, ledger_type_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a ledger type
+
+Partially updates the specified ledger type using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LedgerTypesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    ledger_type_id = 'ledger_type_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a ledger type
+        api_response = api_instance.patch_ledger_type_async(tenant_id, ledger_type_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of LedgerTypesApi->patch_ledger_type_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LedgerTypesApi->patch_ledger_type_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **ledger_type_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

@@ -47,6 +47,7 @@ docs/InvoicesApi.md
 docs/LoginRequest.md
 docs/Money.md
 docs/MoneyEnvelope.md
+docs/Operation.md
 docs/PaymentDto.md
 docs/PaymentDtoIReadOnlyListEnvelope.md
 docs/RefreshRequest.md
@@ -111,6 +112,7 @@ openapi_client/models/invoice_update_dto.py
 openapi_client/models/login_request.py
 openapi_client/models/money.py
 openapi_client/models/money_envelope.py
+openapi_client/models/operation.py
 openapi_client/models/payment_dto.py
 openapi_client/models/payment_dto_i_read_only_list_envelope.py
 openapi_client/models/refresh_request.py
@@ -131,6 +133,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
 tox.ini

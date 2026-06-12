@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_fiscal_year_details_async**](FiscalYearsApi.md#get_fiscal_year_details_async) | **GET** /api/v2/AccountingService/FiscalYears/{fiscalYearId} | Get fiscal year by ID
 [**get_fiscal_years_async**](FiscalYearsApi.md#get_fiscal_years_async) | **GET** /api/v2/AccountingService/FiscalYears | Get all fiscal years
 [**get_fiscal_years_count_async**](FiscalYearsApi.md#get_fiscal_years_count_async) | **GET** /api/v2/AccountingService/FiscalYears/Count | Count fiscal years
+[**patch_fiscal_year_async**](FiscalYearsApi.md#patch_fiscal_year_async) | **PATCH** /api/v2/AccountingService/FiscalYears/{fiscalYearId} | Patch a fiscal year
 [**update_fiscal_year_async**](FiscalYearsApi.md#update_fiscal_year_async) | **PUT** /api/v2/AccountingService/FiscalYears/{fiscalYearId} | Update fiscal year
 
 
@@ -375,6 +376,85 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_fiscal_year_async**
+> EmptyEnvelope patch_fiscal_year_async(tenant_id, fiscal_year_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a fiscal year
+
+Partially updates a fiscal year.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.FiscalYearsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    fiscal_year_id = 'fiscal_year_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a fiscal year
+        api_response = api_instance.patch_fiscal_year_async(tenant_id, fiscal_year_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of FiscalYearsApi->patch_fiscal_year_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FiscalYearsApi->patch_fiscal_year_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **fiscal_year_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

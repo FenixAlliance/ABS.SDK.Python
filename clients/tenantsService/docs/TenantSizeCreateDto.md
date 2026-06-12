@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**name** | **str** |  | [optional] 
 **employee_low_range_value** | **int** |  | [optional] 
 **employee_high_range_value** | **int** |  | [optional] 
 

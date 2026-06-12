@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**get_price_list_prices_async**](PriceListsApi.md#get_price_list_prices_async) | **GET** /api/v2/PricingService/PriceLists/{priceListId}/Prices | Retrieves prices in a price list
 [**get_price_lists_async**](PriceListsApi.md#get_price_lists_async) | **GET** /api/v2/PricingService/PriceLists | Retrieves all price lists
 [**get_price_lists_count_async**](PriceListsApi.md#get_price_lists_count_async) | **GET** /api/v2/PricingService/PriceLists/Count | Counts price lists
+[**patch_price_list_async**](PriceListsApi.md#patch_price_list_async) | **PATCH** /api/v2/PricingService/PriceLists/{priceListId} | Patches a price list
+[**patch_price_list_price_async**](PriceListsApi.md#patch_price_list_price_async) | **PATCH** /api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId} | Patches a price list entry
 [**update_price_list_async**](PriceListsApi.md#update_price_list_async) | **PUT** /api/v2/PricingService/PriceLists/{priceListId} | Updates a price list
 [**update_price_list_price_async**](PriceListsApi.md#update_price_list_price_async) | **PUT** /api/v2/PricingService/PriceLists/{priceListId}/Prices/{priceId} | Updates a price list entry
 
@@ -651,6 +653,156 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_price_list_async**
+> EmptyEnvelope patch_price_list_async(tenant_id, price_list_id, operation=operation)
+
+Patches a price list
+
+Partially updates the specified price list using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PriceListsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    price_list_id = 'price_list_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a price list
+        api_response = api_instance.patch_price_list_async(tenant_id, price_list_id, operation=operation)
+        print("The response of PriceListsApi->patch_price_list_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PriceListsApi->patch_price_list_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **price_list_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_price_list_price_async**
+> EmptyEnvelope patch_price_list_price_async(tenant_id, price_list_id, price_id, operation=operation)
+
+Patches a price list entry
+
+Partially updates the specified price entry in a price list using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PriceListsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    price_list_id = 'price_list_id_example' # str | 
+    price_id = 'price_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a price list entry
+        api_response = api_instance.patch_price_list_price_async(tenant_id, price_list_id, price_id, operation=operation)
+        print("The response of PriceListsApi->patch_price_list_price_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PriceListsApi->patch_price_list_price_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **price_list_id** | **str**|  | 
+ **price_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

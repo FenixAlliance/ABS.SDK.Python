@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_shipping_method_by_id_async**](ShippingMethodsApi.md#get_shipping_method_by_id_async) | **GET** /api/v2/ShipmentsService/ShippingMethods/{methodId} | Get shipping method by ID
 [**get_shipping_methods_async**](ShippingMethodsApi.md#get_shipping_methods_async) | **GET** /api/v2/ShipmentsService/ShippingMethods | Get all shipping methods
 [**get_shipping_methods_count_async**](ShippingMethodsApi.md#get_shipping_methods_count_async) | **GET** /api/v2/ShipmentsService/ShippingMethods/Count | Get shipping methods count
+[**patch_shipping_method_async**](ShippingMethodsApi.md#patch_shipping_method_async) | **PATCH** /api/v2/ShipmentsService/ShippingMethods/{methodId} | Patch a shipping method
 [**update_shipping_method_async**](ShippingMethodsApi.md#update_shipping_method_async) | **PUT** /api/v2/ShipmentsService/ShippingMethods/{methodId} | Update a shipping method
 
 
@@ -374,6 +375,86 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_shipping_method_async**
+> EmptyEnvelope patch_shipping_method_async(tenant_id, method_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a shipping method
+
+Partially updates an existing shipping method using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ShippingMethodsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    method_id = 'method_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a shipping method
+        api_response = api_instance.patch_shipping_method_async(tenant_id, method_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ShippingMethodsApi->patch_shipping_method_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ShippingMethodsApi->patch_shipping_method_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **method_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

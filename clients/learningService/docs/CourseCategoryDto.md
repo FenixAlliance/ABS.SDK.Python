@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **image_url** | **str** |  | [optional] 
 **is_featured** | **bool** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

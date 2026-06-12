@@ -30,8 +30,8 @@ Name | Type | Description | Notes
 **custom_state** | **str** |  | [optional] 
 **custom_city** | **str** |  | [optional] 
 **city_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

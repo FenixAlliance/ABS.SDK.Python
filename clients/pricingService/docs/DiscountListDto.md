@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
+**discount_list_type** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **enrollment_id** | **str** |  | [optional] 

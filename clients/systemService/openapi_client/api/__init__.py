@@ -2,6 +2,7 @@
 
 # import apis into api package
 from openapi_client.api.antiforgery_api import AntiforgeryApi
+from openapi_client.api.business_domains_api import BusinessDomainsApi
 from openapi_client.api.carts_api import CartsApi
 from openapi_client.api.completions_api import CompletionsApi
 from openapi_client.api.contact_options_api import ContactOptionsApi

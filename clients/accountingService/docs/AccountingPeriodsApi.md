@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_accounting_period**](AccountingPeriodsApi.md#get_accounting_period) | **GET** /api/v2/AccountingService/AccountingPeriods/{accountingPeriodId} | Gets the current tenant accounting period
 [**get_accounting_periods**](AccountingPeriodsApi.md#get_accounting_periods) | **GET** /api/v2/AccountingService/AccountingPeriods | Get all accounting periods for a tenant
 [**get_accounting_periods_count_async**](AccountingPeriodsApi.md#get_accounting_periods_count_async) | **GET** /api/v2/AccountingService/AccountingPeriods/Count | Gets the current tenant accounting periods count
+[**patch_accounting_period_async**](AccountingPeriodsApi.md#patch_accounting_period_async) | **PATCH** /api/v2/AccountingService/AccountingPeriods/{accountingPeriodId} | Patch an accounting period
 [**update_accounting_period**](AccountingPeriodsApi.md#update_accounting_period) | **PUT** /api/v2/AccountingService/AccountingPeriods/{accountingPeriodId} | Updates an existing accounting period
 
 
@@ -379,6 +380,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_accounting_period_async**
+> EmptyEnvelope patch_accounting_period_async(tenant_id, accounting_period_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch an accounting period
+
+Partially updates an accounting period.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AccountingPeriodsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    accounting_period_id = 'accounting_period_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an accounting period
+        api_response = api_instance.patch_accounting_period_async(tenant_id, accounting_period_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of AccountingPeriodsApi->patch_accounting_period_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AccountingPeriodsApi->patch_accounting_period_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **accounting_period_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

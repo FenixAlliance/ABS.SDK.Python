@@ -51,7 +51,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_error_envelope.py
-test/test_fenix_alliance_portals_website_api.py
 tox.ini

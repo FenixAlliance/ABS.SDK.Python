@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **phone** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
-**account_holder_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **social_profile_id** | **str** |  | [optional] 
 
 ## Example

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_service_case_by_id_async**](ServiceCasesApi.md#get_service_case_by_id_async) | **GET** /api/v2/ServicesService/ServiceCases/{serviceCaseId} | Get a service case by ID
 [**get_service_cases_async**](ServiceCasesApi.md#get_service_cases_async) | **GET** /api/v2/ServicesService/ServiceCases | Get all service cases
 [**get_service_cases_count_async**](ServiceCasesApi.md#get_service_cases_count_async) | **GET** /api/v2/ServicesService/ServiceCases/Count | Get service cases count
+[**patch_service_case_async**](ServiceCasesApi.md#patch_service_case_async) | **PATCH** /api/v2/ServicesService/ServiceCases/{serviceCaseId} | Patch a service case
 [**update_service_case_async**](ServiceCasesApi.md#update_service_case_async) | **PUT** /api/v2/ServicesService/ServiceCases/{serviceCaseId} | Update a service case
 
 
@@ -377,6 +378,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_service_case_async**
+> Envelope patch_service_case_async(tenant_id, service_case_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a service case
+
+Partially updates an existing service case using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.envelope import Envelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ServiceCasesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    service_case_id = 'service_case_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a service case
+        api_response = api_instance.patch_service_case_async(tenant_id, service_case_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ServiceCasesApi->patch_service_case_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ServiceCasesApi->patch_service_case_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **service_case_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**Envelope**](Envelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

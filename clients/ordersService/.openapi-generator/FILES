@@ -18,6 +18,7 @@ docs/InfoRequest.md
 docs/InfoResponse.md
 docs/Int32Envelope.md
 docs/LoginRequest.md
+docs/Operation.md
 docs/OrderCreateDto.md
 docs/OrderDto.md
 docs/OrderDtoEnvelope.md
@@ -62,6 +63,7 @@ openapi_client/models/info_request.py
 openapi_client/models/info_response.py
 openapi_client/models/int32_envelope.py
 openapi_client/models/login_request.py
+openapi_client/models/operation.py
 openapi_client/models/order_create_dto.py
 openapi_client/models/order_dto.py
 openapi_client/models/order_dto_envelope.py
@@ -89,6 +91,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
 tox.ini

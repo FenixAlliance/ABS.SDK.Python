@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **markup** | **str** |  | [optional] 
 **featured_image_url** | **str** |  | [optional] 
 **code_type** | **str** |  | [optional] 
+**slug** | **str** |  | [optional] 
 **blog_post_category_id** | **str** |  | [optional] 
 **web_template_id** | **str** |  | [optional] 
 

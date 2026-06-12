@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_asset_transfer_async**](AssetTransfersApi.md#get_asset_transfer_async) | **GET** /api/v2/AssetsService/AssetTransfers/{transferId} | Gets a single asset transfer by ID
 [**get_asset_transfers_async**](AssetTransfersApi.md#get_asset_transfers_async) | **GET** /api/v2/AssetsService/AssetTransfers | Gets a list of asset transfers
 [**get_asset_transfers_count_async**](AssetTransfersApi.md#get_asset_transfers_count_async) | **GET** /api/v2/AssetsService/AssetTransfers/Count | Gets the count of asset transfers
+[**patch_asset_transfer_async**](AssetTransfersApi.md#patch_asset_transfer_async) | **PATCH** /api/v2/AssetsService/AssetTransfers/{transferId} | Partially updates an existing asset transfer
 [**update_asset_transfer_async**](AssetTransfersApi.md#update_asset_transfer_async) | **PUT** /api/v2/AssetsService/AssetTransfers/{transferId} | Updates an existing asset transfer
 
 
@@ -365,6 +366,83 @@ No authorization required
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset_transfer_async**
+> EmptyEnvelope patch_asset_transfer_async(tenant_id, transfer_id, operation=operation)
+
+Partially updates an existing asset transfer
+
+Applies a JSON Patch document to an existing asset transfer for the authenticated tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetTransfersApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    transfer_id = 'transfer_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates an existing asset transfer
+        api_response = api_instance.patch_asset_transfer_async(tenant_id, transfer_id, operation=operation)
+        print("The response of AssetTransfersApi->patch_asset_transfer_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetTransfersApi->patch_asset_transfer_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **transfer_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **enable_for_licenses** | **bool** |  | [optional] 
 **enable_for_services** | **bool** |  | [optional] 
 **enable_for_subscriptions** | **bool** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **parent_item_category_id** | **str** |  | [optional] 
 
 ## Example

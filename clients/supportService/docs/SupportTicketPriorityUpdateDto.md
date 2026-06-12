@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**support_entitlement_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -14,7 +14,9 @@ Name | Type | Description | Notes
 **markup** | **str** |  | [optional] 
 **featured_image_url** | **str** |  | [optional] 
 **code_type** | **str** |  | [optional] 
+**slug** | **str** |  | [optional] 
 **web_template_id** | **str** |  | [optional] 
+**parent_web_content_id** | **str** |  | [optional] 
 
 ## Example
 

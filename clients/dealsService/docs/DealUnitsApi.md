@@ -18,6 +18,8 @@ Method | HTTP request | Description
 [**get_deal_units_count_async**](DealUnitsApi.md#get_deal_units_count_async) | **GET** /api/v2/DealsService/DealUnits/Count | Get deal units count
 [**get_extended_deal_unit_async**](DealUnitsApi.md#get_extended_deal_unit_async) | **GET** /api/v2/DealsService/DealUnits/{dealUnitId}/Extended | Get extended deal unit by ID
 [**get_extended_deal_units_async**](DealUnitsApi.md#get_extended_deal_units_async) | **GET** /api/v2/DealsService/DealUnits/Extended | Get extended deal units
+[**patch_deal_unit_async**](DealUnitsApi.md#patch_deal_unit_async) | **PATCH** /api/v2/DealsService/DealUnits/{dealUnitId} | Patch a deal unit
+[**patch_deal_unit_line_async**](DealUnitsApi.md#patch_deal_unit_line_async) | **PATCH** /api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId} | Patch a deal unit line
 [**update_deal_unit_async**](DealUnitsApi.md#update_deal_unit_async) | **PUT** /api/v2/DealsService/DealUnits/{dealUnitId} | Update a deal unit
 [**update_deal_unit_price_async**](DealUnitsApi.md#update_deal_unit_price_async) | **PUT** /api/v2/DealsService/DealUnits/{dealUnitId}/Lines/{dealUnitLineId} | Update a deal unit line
 
@@ -1011,6 +1013,156 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_deal_unit_async**
+> EmptyEnvelope patch_deal_unit_async(tenant_id, deal_unit_id, operation=operation)
+
+Patch a deal unit
+
+Partially updates an existing deal unit by its unique identifier using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DealUnitsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    deal_unit_id = 'deal_unit_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a deal unit
+        api_response = api_instance.patch_deal_unit_async(tenant_id, deal_unit_id, operation=operation)
+        print("The response of DealUnitsApi->patch_deal_unit_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DealUnitsApi->patch_deal_unit_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **deal_unit_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_deal_unit_line_async**
+> EmptyEnvelope patch_deal_unit_line_async(tenant_id, deal_unit_id, deal_unit_line_id, operation=operation)
+
+Patch a deal unit line
+
+Partially updates an existing line within a specific deal unit using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DealUnitsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    deal_unit_id = 'deal_unit_id_example' # str | 
+    deal_unit_line_id = 'deal_unit_line_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a deal unit line
+        api_response = api_instance.patch_deal_unit_line_async(tenant_id, deal_unit_id, deal_unit_line_id, operation=operation)
+        print("The response of DealUnitsApi->patch_deal_unit_line_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DealUnitsApi->patch_deal_unit_line_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **deal_unit_id** | **str**|  | 
+ **deal_unit_line_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

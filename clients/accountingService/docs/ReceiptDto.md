@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **payment_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **closed** | **bool** |  | [optional] 
-**account_holder_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **contact_id** | **str** |  | [optional] 
 **enrollment_id** | **str** |  | [optional] 
 **receipt_type** | **str** |  | [optional] 

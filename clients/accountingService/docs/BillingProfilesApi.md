@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_billing_profile_by_id_async**](BillingProfilesApi.md#get_billing_profile_by_id_async) | **GET** /api/v2/AccountingService/BillingProfiles/{billingProfileId} | Gets a billing profile by id
 [**get_billing_profiles_async**](BillingProfilesApi.md#get_billing_profiles_async) | **GET** /api/v2/AccountingService/BillingProfiles | Gets all billing profiles
 [**get_billing_profiles_count_async**](BillingProfilesApi.md#get_billing_profiles_count_async) | **GET** /api/v2/AccountingService/BillingProfiles/Count | Gets the count of billing profiles
+[**patch_billing_profile_async**](BillingProfilesApi.md#patch_billing_profile_async) | **PATCH** /api/v2/AccountingService/BillingProfiles/{billingProfileId} | Patch a billing profile
 [**update_billing_profile_async**](BillingProfilesApi.md#update_billing_profile_async) | **PUT** /api/v2/AccountingService/BillingProfiles/{billingProfileId} | Updates an existing billing profile
 
 
@@ -375,6 +376,85 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_billing_profile_async**
+> EmptyEnvelope patch_billing_profile_async(tenant_id, billing_profile_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a billing profile
+
+Partially updates a billing profile.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BillingProfilesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    billing_profile_id = 'billing_profile_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a billing profile
+        api_response = api_instance.patch_billing_profile_async(tenant_id, billing_profile_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BillingProfilesApi->patch_billing_profile_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BillingProfilesApi->patch_billing_profile_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **billing_profile_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

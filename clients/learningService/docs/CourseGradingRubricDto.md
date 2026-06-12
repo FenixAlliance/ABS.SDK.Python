@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **enable_points** | **bool** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -31,7 +31,6 @@ Name | Type | Description | Notes
 **data8_label** | **str** |  | [optional] 
 **data9** | **str** |  | [optional] 
 **data9_label** | **str** |  | [optional] 
-**contact_id** | **str** |  | [optional] 
 
 ## Example
 

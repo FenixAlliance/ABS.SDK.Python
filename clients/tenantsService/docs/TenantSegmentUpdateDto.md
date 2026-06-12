@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**revenue** | **str** |  | [optional] 
 **min_employees** | **float** |  | [optional] 
 **max_employees** | **float** |  | [optional] 
 

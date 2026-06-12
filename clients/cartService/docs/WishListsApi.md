@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_cart_wish_list_items_async**](WishListsApi.md#get_cart_wish_list_items_async) | **GET** /api/v2/CartService/WishLists/{wishListId}/Records | Get wish list item records
 [**get_wish_list_async**](WishListsApi.md#get_wish_list_async) | **GET** /api/v2/CartService/WishLists/{cartId} | Get wish lists for a cart
 [**is_product_in_wish_lists**](WishListsApi.md#is_product_in_wish_lists) | **GET** /api/v2/CartService/WishLists/Contains | Check if a product is in any wish list
+[**patch_wish_list**](WishListsApi.md#patch_wish_list) | **PATCH** /api/v2/CartService/WishLists/{wishListId} | Patch a wish list
 [**update_product_to_wish_list**](WishListsApi.md#update_product_to_wish_list) | **PUT** /api/v2/CartService/WishLists/{wishListId} | Update a wish list
 [**wish_list_exists**](WishListsApi.md#wish_list_exists) | **GET** /api/v2/CartService/WishLists/Exists | Check if a wish list exists
 [**wish_list_exists_head_async**](WishListsApi.md#wish_list_exists_head_async) | **HEAD** /api/v2/CartService/WishLists/Exists | Check if a wish list exists (HEAD)
@@ -584,6 +585,81 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_wish_list**
+> EmptyEnvelope patch_wish_list(wish_list_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a wish list
+
+Partially updates the specified wish list using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.WishListsApi(api_client)
+    wish_list_id = 'wish_list_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a wish list
+        api_response = api_instance.patch_wish_list(wish_list_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of WishListsApi->patch_wish_list:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WishListsApi->patch_wish_list: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wish_list_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

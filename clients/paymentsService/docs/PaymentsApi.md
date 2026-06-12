@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_payment_async**](PaymentsApi.md#get_payment_async) | **GET** /api/v2/PaymentsService/Payments/{paymentId}/Details | Gets a payment by ID (deprecated)
 [**get_payment_async_v2**](PaymentsApi.md#get_payment_async_v2) | **GET** /api/v2/PaymentsService/Payments/{paymentId} | Gets a payment by ID
 [**get_payments_async**](PaymentsApi.md#get_payments_async) | **GET** /api/v2/PaymentsService/Payments | Retrieves all payments
+[**patch_payment_async**](PaymentsApi.md#patch_payment_async) | **PATCH** /api/v2/PaymentsService/Payments/{paymentId} | Patch a payment
 [**update_payment_async**](PaymentsApi.md#update_payment_async) | **PUT** /api/v2/PaymentsService/Payments/{paymentId} | Updates a payment
 
 
@@ -370,6 +371,81 @@ No authorization required
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **400** | Bad Request |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_payment_async**
+> EmptyEnvelope patch_payment_async(tenant_id, payment_id, operation=operation)
+
+Patch a payment
+
+Patch a payment
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PaymentsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    payment_id = 'payment_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a payment
+        api_response = api_instance.patch_payment_async(tenant_id, payment_id, operation=operation)
+        print("The response of PaymentsApi->patch_payment_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PaymentsApi->patch_payment_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **payment_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **expected_end_date_time** | **datetime** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

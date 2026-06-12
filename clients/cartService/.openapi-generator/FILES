@@ -35,6 +35,7 @@ docs/ItemToCompareCartRecordDtoEnvelope.md
 docs/ItemToCompareCartRecordDtoListEnvelope.md
 docs/LoginRequest.md
 docs/NewWishListRequest.md
+docs/Operation.md
 docs/ProductToWishListRequest.md
 docs/RecordsApi.md
 docs/RefreshRequest.md
@@ -90,6 +91,7 @@ openapi_client/models/item_to_compare_cart_record_dto_envelope.py
 openapi_client/models/item_to_compare_cart_record_dto_list_envelope.py
 openapi_client/models/login_request.py
 openapi_client/models/new_wish_list_request.py
+openapi_client/models/operation.py
 openapi_client/models/product_to_wish_list_request.py
 openapi_client/models/refresh_request.py
 openapi_client/models/register_request.py
@@ -109,6 +111,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
 tox.ini

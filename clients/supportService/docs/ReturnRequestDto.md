@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **approved** | **bool** |  | [optional] 
 **approved_timestamp** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **support_entitlement_id** | **str** |  | [optional] 
 **contact_id** | **str** |  | [optional] 
-**account_holder_id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **return_policy_id** | **str** |  | [optional] 
 
 ## Example

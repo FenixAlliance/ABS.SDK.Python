@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 
 ## Example
 

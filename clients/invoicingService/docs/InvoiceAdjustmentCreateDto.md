@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
+**priority** | **int** |  | [optional] 
+**code** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **surcharge_percent** | **float** |  | [optional] 
 **surcharge_amount** | **float** |  | [optional] 

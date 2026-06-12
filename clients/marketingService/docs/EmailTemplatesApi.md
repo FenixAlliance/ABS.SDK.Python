@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_email_template_details_async**](EmailTemplatesApi.md#get_email_template_details_async) | **GET** /api/v2/MarketingService/EmailTemplates/{emailTemplateId} | Get email template by ID
 [**get_email_templates_count_async**](EmailTemplatesApi.md#get_email_templates_count_async) | **GET** /api/v2/MarketingService/EmailTemplates/Count | Get email templates count
 [**get_email_templates_o_data_async**](EmailTemplatesApi.md#get_email_templates_o_data_async) | **GET** /api/v2/MarketingService/EmailTemplates | Get email templates
+[**patch_email_template_async**](EmailTemplatesApi.md#patch_email_template_async) | **PATCH** /api/v2/MarketingService/EmailTemplates/{emailTemplateId} | Patch an email template
 [**update_email_template_async**](EmailTemplatesApi.md#update_email_template_async) | **PUT** /api/v2/MarketingService/EmailTemplates/{emailTemplateId} | Update an email template
 
 
@@ -381,6 +382,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_email_template_async**
+> EmptyEnvelope patch_email_template_async(tenant_id, email_template_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch an email template
+
+Partially updates an email template by its ID using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.EmailTemplatesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    email_template_id = 'email_template_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an email template
+        api_response = api_instance.patch_email_template_async(tenant_id, email_template_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of EmailTemplatesApi->patch_email_template_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EmailTemplatesApi->patch_email_template_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **email_template_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

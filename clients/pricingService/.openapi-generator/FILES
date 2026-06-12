@@ -35,6 +35,7 @@ docs/ItemPriceUpdateDto.md
 docs/LoginRequest.md
 docs/Money.md
 docs/MoneyEnvelope.md
+docs/Operation.md
 docs/PriceListCreateDto.md
 docs/PriceListDto.md
 docs/PriceListDtoEnvelope.md
@@ -104,6 +105,7 @@ openapi_client/models/item_price_update_dto.py
 openapi_client/models/login_request.py
 openapi_client/models/money.py
 openapi_client/models/money_envelope.py
+openapi_client/models/operation.py
 openapi_client/models/price_list_create_dto.py
 openapi_client/models/price_list_dto.py
 openapi_client/models/price_list_dto_envelope.py
@@ -133,18 +135,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_pricing_rule_create_dto.py
-test/test_pricing_rule_dto.py
-test/test_pricing_rule_dto_envelope.py
-test/test_pricing_rule_dto_list_envelope.py
-test/test_pricing_rule_update_dto.py
-test/test_pricing_rules_api.py
-test/test_rounding_policies_api.py
-test/test_rounding_policy_create_dto.py
-test/test_rounding_policy_dto.py
-test/test_rounding_policy_dto_envelope.py
-test/test_rounding_policy_dto_list_envelope.py
-test/test_rounding_policy_update_dto.py
 tox.ini

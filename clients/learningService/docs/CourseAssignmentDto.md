@@ -15,7 +15,12 @@ Name | Type | Description | Notes
 **course_id** | **str** |  | [optional] 
 **course_unit_id** | **str** |  | [optional] 
 **course_section_id** | **str** |  | [optional] 
+**course_cohort_id** | **str** |  | [optional] 
+**course_assignment_type_id** | **str** |  | [optional] 
+**asign_to_all_cohorts** | **bool** |  | [optional] 
+**resources** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

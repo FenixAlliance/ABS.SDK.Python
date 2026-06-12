@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **needs_revision** | **bool** |  | [optional] 
 **question** | **str** |  | [optional] 
 **social_profile_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 **item_id** | **str** |  | [optional] 
 
 ## Example

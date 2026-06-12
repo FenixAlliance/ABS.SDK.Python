@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_course_grading_rubric_by_id_async**](CourseGradingRubricsApi.md#get_course_grading_rubric_by_id_async) | **GET** /api/v2/LearningService/CourseGradingRubrics/{rubricId} | Get course grading rubric by ID
 [**get_course_grading_rubrics_async**](CourseGradingRubricsApi.md#get_course_grading_rubrics_async) | **GET** /api/v2/LearningService/CourseGradingRubrics | Get all course grading rubrics
 [**get_course_grading_rubrics_count_async**](CourseGradingRubricsApi.md#get_course_grading_rubrics_count_async) | **GET** /api/v2/LearningService/CourseGradingRubrics/Count | Get course grading rubrics count
+[**patch_course_grading_rubric_async**](CourseGradingRubricsApi.md#patch_course_grading_rubric_async) | **PATCH** /api/v2/LearningService/CourseGradingRubrics/{rubricId} | Patch a course grading rubric
 [**update_course_grading_rubric_async**](CourseGradingRubricsApi.md#update_course_grading_rubric_async) | **PUT** /api/v2/LearningService/CourseGradingRubrics/{rubricId} | Update a course grading rubric
 
 
@@ -364,6 +365,81 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_course_grading_rubric_async**
+> patch_course_grading_rubric_async(tenant_id, rubric_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a course grading rubric
+
+Partially updates an existing course grading rubric.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CourseGradingRubricsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    rubric_id = 'rubric_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a course grading rubric
+        api_instance.patch_course_grading_rubric_async(tenant_id, rubric_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+    except Exception as e:
+        print("Exception when calling CourseGradingRubricsApi->patch_course_grading_rubric_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **rubric_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **everywhere** | **bool** |  | [optional] 
 **postal_codes** | **str** |  | [optional] 
 **country_codes** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

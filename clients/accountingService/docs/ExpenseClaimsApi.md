@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_expense_claim**](ExpenseClaimsApi.md#get_expense_claim) | **GET** /api/v2/AccountingService/ExpenseClaims/{expenseClaimId} | Get an expense claim by id
 [**get_expense_claims**](ExpenseClaimsApi.md#get_expense_claims) | **GET** /api/v2/AccountingService/ExpenseClaims | Get all expense claims for a tenant
 [**get_expense_claims_count**](ExpenseClaimsApi.md#get_expense_claims_count) | **GET** /api/v2/AccountingService/ExpenseClaims/Count | Get the count of expense claims for a tenant
+[**patch_expense_claim**](ExpenseClaimsApi.md#patch_expense_claim) | **PATCH** /api/v2/AccountingService/ExpenseClaims/{expenseClaimId} | Patch an expense claim
 [**update_expense_claim**](ExpenseClaimsApi.md#update_expense_claim) | **PUT** /api/v2/AccountingService/ExpenseClaims/{expenseClaimId} | Update an expense claim
 
 
@@ -377,6 +378,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_expense_claim**
+> EmptyEnvelope patch_expense_claim(tenant_id, expense_claim_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch an expense claim
+
+Partially updates an existing expense claim.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ExpenseClaimsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    expense_claim_id = 'expense_claim_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an expense claim
+        api_response = api_instance.patch_expense_claim(tenant_id, expense_claim_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ExpenseClaimsApi->patch_expense_claim:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ExpenseClaimsApi->patch_expense_claim: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **expense_claim_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

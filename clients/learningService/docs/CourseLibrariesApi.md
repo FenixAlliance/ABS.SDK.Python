@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_course_libraries_async**](CourseLibrariesApi.md#get_course_libraries_async) | **GET** /api/v2/LearningService/CourseLibraries | Get all course libraries
 [**get_course_libraries_count_async**](CourseLibrariesApi.md#get_course_libraries_count_async) | **GET** /api/v2/LearningService/CourseLibraries/Count | Get course libraries count
 [**get_course_library_by_id_async**](CourseLibrariesApi.md#get_course_library_by_id_async) | **GET** /api/v2/LearningService/CourseLibraries/{libraryId} | Get course library by ID
+[**patch_course_library_async**](CourseLibrariesApi.md#patch_course_library_async) | **PATCH** /api/v2/LearningService/CourseLibraries/{libraryId} | Patch a course library
 [**update_course_library_async**](CourseLibrariesApi.md#update_course_library_async) | **PUT** /api/v2/LearningService/CourseLibraries/{libraryId} | Update a course library
 
 
@@ -374,6 +375,81 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_course_library_async**
+> patch_course_library_async(tenant_id, library_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a course library
+
+Partially updates an existing course library.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CourseLibrariesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    library_id = 'library_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a course library
+        api_instance.patch_course_library_async(tenant_id, library_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+    except Exception as e:
+        print("Exception when calling CourseLibrariesApi->patch_course_library_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **library_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

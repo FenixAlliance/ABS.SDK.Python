@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**bind_web_portal_domain_async**](PortalsApi.md#bind_web_portal_domain_async) | **POST** /api/v2/ContentService/Portals/{portalId}/DomainBindings/{businessDomainId} | Bind a domain to a web portal
 [**count_portals_async**](PortalsApi.md#count_portals_async) | **GET** /api/v2/ContentService/Portals/Count | Count portals
 [**create_web_portal_async**](PortalsApi.md#create_web_portal_async) | **POST** /api/v2/ContentService/Portals | Create a new web portal
 [**delete_web_portal_async**](PortalsApi.md#delete_web_portal_async) | **DELETE** /api/v2/ContentService/Portals/{portalId} | Delete a web portal
@@ -12,13 +13,94 @@ Method | HTTP request | Description
 [**get_portals_async**](PortalsApi.md#get_portals_async) | **GET** /api/v2/ContentService/Portals | Get portals
 [**get_root_web_portal_async**](PortalsApi.md#get_root_web_portal_async) | **GET** /api/v2/ContentService/Portals/Root | Get the root portal
 [**get_web_portal_by_id_async**](PortalsApi.md#get_web_portal_by_id_async) | **GET** /api/v2/ContentService/Portals/{portalId} | Get a web portal by its ID
+[**get_web_portal_domain_bindings_async**](PortalsApi.md#get_web_portal_domain_bindings_async) | **GET** /api/v2/ContentService/Portals/{portalId}/DomainBindings | Get a web portal&#39;s bound domains
 [**get_web_portal_options_async**](PortalsApi.md#get_web_portal_options_async) | **GET** /api/v2/ContentService/Portals/{portalId}/Options | Get a web portal&#39;s options by its ID
 [**get_web_portal_settings_async**](PortalsApi.md#get_web_portal_settings_async) | **GET** /api/v2/ContentService/Portals/{portalId}/Settings | Get a web portal&#39;s settings by its ID
 [**initialize_current_web_portal_async**](PortalsApi.md#initialize_current_web_portal_async) | **POST** /api/v2/ContentService/Portals/Initialize | Initialize the current portal
 [**patch_web_portal_async**](PortalsApi.md#patch_web_portal_async) | **PATCH** /api/v2/ContentService/Portals/{portalId} | Partially update a web portal
 [**search_web_portal_async**](PortalsApi.md#search_web_portal_async) | **GET** /api/v2/ContentService/Portals/Search | Search for a portal by its domain
+[**unbind_web_portal_domain_async**](PortalsApi.md#unbind_web_portal_domain_async) | **DELETE** /api/v2/ContentService/Portals/{portalId}/DomainBindings/{businessDomainId} | Unbind a domain from a web portal
 [**update_web_portal_async**](PortalsApi.md#update_web_portal_async) | **PUT** /api/v2/ContentService/Portals/{portalId} | Update an existing web portal
+[**update_web_portal_settings_async**](PortalsApi.md#update_web_portal_settings_async) | **PUT** /api/v2/ContentService/Portals/{portalId}/Settings | Update a web portal&#39;s settings
 
+
+# **bind_web_portal_domain_async**
+> EmptyEnvelope bind_web_portal_domain_async(tenant_id, portal_id, business_domain_id, api_version=api_version, x_api_version=x_api_version)
+
+Bind a domain to a web portal
+
+Bind a verified BusinessDomain to a web portal
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PortalsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    portal_id = 'portal_id_example' # str | 
+    business_domain_id = 'business_domain_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Bind a domain to a web portal
+        api_response = api_instance.bind_web_portal_domain_async(tenant_id, portal_id, business_domain_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PortalsApi->bind_web_portal_domain_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PortalsApi->bind_web_portal_domain_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **portal_id** | **str**|  | 
+ **business_domain_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_portals_async**
 > Int32Envelope count_portals_async(tenant_id, api_version=api_version, x_api_version=x_api_version)
@@ -611,6 +693,82 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_web_portal_domain_bindings_async**
+> BusinessDomainDtoListEnvelope get_web_portal_domain_bindings_async(tenant_id, portal_id, api_version=api_version, x_api_version=x_api_version)
+
+Get a web portal's bound domains
+
+Get the BusinessDomains bound to a web portal
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.business_domain_dto_list_envelope import BusinessDomainDtoListEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PortalsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    portal_id = 'portal_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Get a web portal's bound domains
+        api_response = api_instance.get_web_portal_domain_bindings_async(tenant_id, portal_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PortalsApi->get_web_portal_domain_bindings_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PortalsApi->get_web_portal_domain_bindings_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **portal_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**BusinessDomainDtoListEnvelope**](BusinessDomainDtoListEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_web_portal_options_async**
 > PortalOptionsEnvelope get_web_portal_options_async(portal_id, api_version=api_version, x_api_version=x_api_version)
 
@@ -984,6 +1142,84 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **unbind_web_portal_domain_async**
+> EmptyEnvelope unbind_web_portal_domain_async(tenant_id, portal_id, business_domain_id, api_version=api_version, x_api_version=x_api_version)
+
+Unbind a domain from a web portal
+
+Unbind a BusinessDomain from a web portal
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PortalsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    portal_id = 'portal_id_example' # str | 
+    business_domain_id = 'business_domain_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Unbind a domain from a web portal
+        api_response = api_instance.unbind_web_portal_domain_async(tenant_id, portal_id, business_domain_id, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PortalsApi->unbind_web_portal_domain_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PortalsApi->unbind_web_portal_domain_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **portal_id** | **str**|  | 
+ **business_domain_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_web_portal_async**
 > EmptyEnvelope update_web_portal_async(tenant_id, portal_id, api_version=api_version, x_api_version=x_api_version, web_portal_update_dto=web_portal_update_dto)
 
@@ -1039,6 +1275,85 @@ Name | Type | Description  | Notes
  **api_version** | **str**|  | [optional] 
  **x_api_version** | **str**|  | [optional] 
  **web_portal_update_dto** | [**WebPortalUpdateDto**](WebPortalUpdateDto.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_web_portal_settings_async**
+> EmptyEnvelope update_web_portal_settings_async(tenant_id, portal_id, api_version=api_version, x_api_version=x_api_version, portal_settings=portal_settings)
+
+Update a web portal's settings
+
+Update a web portal's settings (Options) by its ID
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.portal_settings import PortalSettings
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PortalsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    portal_id = 'portal_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    portal_settings = openapi_client.PortalSettings() # PortalSettings |  (optional)
+
+    try:
+        # Update a web portal's settings
+        api_response = api_instance.update_web_portal_settings_async(tenant_id, portal_id, api_version=api_version, x_api_version=x_api_version, portal_settings=portal_settings)
+        print("The response of PortalsApi->update_web_portal_settings_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PortalsApi->update_web_portal_settings_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **portal_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **portal_settings** | [**PortalSettings**](PortalSettings.md)|  | [optional] 
 
 ### Return type
 

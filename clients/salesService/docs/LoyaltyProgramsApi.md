@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**delete_loyalty_program_async**](LoyaltyProgramsApi.md#delete_loyalty_program_async) | **DELETE** /api/v2/SalesService/LoyaltyPrograms/{loyaltyProgramId} | Delete a loyalty program
 [**get_loyalty_program_async**](LoyaltyProgramsApi.md#get_loyalty_program_async) | **GET** /api/v2/SalesService/LoyaltyPrograms/{loyaltyProgramId} | Get loyalty program by ID
 [**get_loyalty_programs_async**](LoyaltyProgramsApi.md#get_loyalty_programs_async) | **GET** /api/v2/SalesService/LoyaltyPrograms | Get loyalty programs
+[**patch_loyalty_program_async**](LoyaltyProgramsApi.md#patch_loyalty_program_async) | **PATCH** /api/v2/SalesService/LoyaltyPrograms/{loyaltyProgramId} | Patch a loyalty program
 [**update_loyalty_program_async**](LoyaltyProgramsApi.md#update_loyalty_program_async) | **PUT** /api/v2/SalesService/LoyaltyPrograms/{loyaltyProgramId} | Update a loyalty program
 
 
@@ -353,6 +354,80 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_loyalty_program_async**
+> EmptyEnvelope patch_loyalty_program_async(tenant_id, loyalty_program_id, operation=operation)
+
+Patch a loyalty program
+
+Partially updates an existing loyalty program using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LoyaltyProgramsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    loyalty_program_id = 'loyalty_program_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a loyalty program
+        api_response = api_instance.patch_loyalty_program_async(tenant_id, loyalty_program_id, operation=operation)
+        print("The response of LoyaltyProgramsApi->patch_loyalty_program_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LoyaltyProgramsApi->patch_loyalty_program_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **loyalty_program_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

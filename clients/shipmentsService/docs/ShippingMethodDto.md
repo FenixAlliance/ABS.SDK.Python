@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **taxable** | **bool** |  | [optional] 
 **tax_included** | **bool** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 **shipping_class_calculation_type** | **str** |  | [optional] 
 
 ## Example

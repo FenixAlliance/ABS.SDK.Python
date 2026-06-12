@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **code** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 

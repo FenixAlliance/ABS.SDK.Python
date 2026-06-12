@@ -23,6 +23,7 @@ docs/LoginRequest.md
 docs/NotificationDto.md
 docs/NotificationDtoEnvelope.md
 docs/NotificationDtoListEnvelope.md
+docs/Operation.md
 docs/PrivateMessageCreateDto.md
 docs/PrivateMessageDto.md
 docs/PrivateMessageDtoListEnvelope.md
@@ -105,6 +106,7 @@ openapi_client/models/login_request.py
 openapi_client/models/notification_dto.py
 openapi_client/models/notification_dto_envelope.py
 openapi_client/models/notification_dto_list_envelope.py
+openapi_client/models/operation.py
 openapi_client/models/private_message_create_dto.py
 openapi_client/models/private_message_dto.py
 openapi_client/models/private_message_dto_list_envelope.py
@@ -159,7 +161,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_notification_dto_envelope.py
 tox.ini

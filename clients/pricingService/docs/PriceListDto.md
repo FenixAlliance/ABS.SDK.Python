@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **start_date** | **datetime** |  | [optional] 
 **end_date** | **datetime** |  | [optional] 
 **description** | **str** |  | [optional] 
+**context** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
 **unit_id** | **str** |  | [optional] 

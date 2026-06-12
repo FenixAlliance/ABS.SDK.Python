@@ -1,0 +1,37 @@
+# HttpResponse
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**http_context** | [**HttpContext**](HttpContext.md) |  | [optional] 
+**status_code** | **int** |  | [optional] 
+**headers** | **Dict[str, List[str]]** |  | [optional] [readonly] 
+**body** | **bytearray** |  | [optional] 
+**body_writer** | [**PipeWriter**](PipeWriter.md) |  | [optional] 
+**content_length** | **int** |  | [optional] 
+**content_type** | **str** |  | [optional] 
+**cookies** | **object** |  | [optional] 
+**has_started** | **bool** |  | [optional] [readonly] 
+
+## Example
+
+```python
+from openapi_client.models.http_response import HttpResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of HttpResponse from a JSON string
+http_response_instance = HttpResponse.from_json(json)
+# print the JSON string representation of the object
+print(HttpResponse.to_json())
+
+# convert the object into a dict
+http_response_dict = http_response_instance.to_dict()
+# create an instance of HttpResponse from a dict
+http_response_from_dict = HttpResponse.from_dict(http_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

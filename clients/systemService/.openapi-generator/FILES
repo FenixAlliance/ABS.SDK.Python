@@ -7,6 +7,10 @@ docs/AccessTokenResponse.md
 docs/AdditionalAttribute.md
 docs/AntiforgeryApi.md
 docs/BooleanEnvelope.md
+docs/BusinessDomainDto.md
+docs/BusinessDomainDtoEnvelope.md
+docs/BusinessDomainDtoListEnvelope.md
+docs/BusinessDomainsApi.md
 docs/CartDto.md
 docs/CartDtoEnvelope.md
 docs/CartDtoListEnvelope.md
@@ -54,6 +58,7 @@ docs/Module.md
 docs/ModuleListEnvelope.md
 docs/ModulesApi.md
 docs/ObjectEmailDispatchRequest.md
+docs/Operation.md
 docs/OptionCreateDto.md
 docs/OptionDto.md
 docs/OptionDtoEnvelope.md
@@ -105,6 +110,7 @@ git_push.sh
 openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/antiforgery_api.py
+openapi_client/api/business_domains_api.py
 openapi_client/api/carts_api.py
 openapi_client/api/completions_api.py
 openapi_client/api/contact_options_api.py
@@ -130,6 +136,9 @@ openapi_client/models/__init__.py
 openapi_client/models/access_token_response.py
 openapi_client/models/additional_attribute.py
 openapi_client/models/boolean_envelope.py
+openapi_client/models/business_domain_dto.py
+openapi_client/models/business_domain_dto_envelope.py
+openapi_client/models/business_domain_dto_list_envelope.py
 openapi_client/models/cart_dto.py
 openapi_client/models/cart_dto_envelope.py
 openapi_client/models/cart_dto_list_envelope.py
@@ -167,6 +176,7 @@ openapi_client/models/login_request.py
 openapi_client/models/module.py
 openapi_client/models/module_list_envelope.py
 openapi_client/models/object_email_dispatch_request.py
+openapi_client/models/operation.py
 openapi_client/models/option_create_dto.py
 openapi_client/models/option_dto.py
 openapi_client/models/option_dto_envelope.py
@@ -215,16 +225,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_additional_attribute.py
-test/test_completions_api.py
-test/test_envelope.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_license_attributes_list_envelope.py
-test/test_license_feature.py
-test/test_license_key.py
-test/test_license_key_request.py
-test/test_license_validation_error.py
-test/test_license_validation_error_list_envelope.py
-test/test_licenses_api.py
-test/test_string_envelope.py
 tox.ini

@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_permissions_by_enrollment_async**](PermissionsApi.md#get_permissions_by_enrollment_async) | **GET** /api/v2/SecurityService/Permissions/ByEnrollment/{enrollmentId} | Get permissions by enrollment
 [**get_permissions_count_async**](PermissionsApi.md#get_permissions_count_async) | **GET** /api/v2/SecurityService/Permissions/Count | Get permissions count
 [**get_roles_by_permission_async**](PermissionsApi.md#get_roles_by_permission_async) | **GET** /api/v2/SecurityService/Permissions/{securityPermissionId}/Roles | Get roles by permission
+[**patch_permission_async**](PermissionsApi.md#patch_permission_async) | **PATCH** /api/v2/SecurityService/Permissions/{securityPermissionId} | Patch an existing permission
 [**revoke_permission_from_business_application_async**](PermissionsApi.md#revoke_permission_from_business_application_async) | **DELETE** /api/v2/SecurityService/Permissions/{securityPermissionId}/Applications/{applicationId} | Revoke a permission from a business application
 [**revoke_permission_from_enrollment_async**](PermissionsApi.md#revoke_permission_from_enrollment_async) | **DELETE** /api/v2/SecurityService/Permissions/{securityPermissionId}/Enrollments/{enrollmentId} | Revoke a permission from an enrollment
 [**revoke_role_from_permission_async**](PermissionsApi.md#revoke_role_from_permission_async) | **DELETE** /api/v2/SecurityService/Permissions/{securityPermissionId}/Roles/{securityRoleId} | Revoke a role from a permission
@@ -938,6 +939,86 @@ No authorization required
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_permission_async**
+> EmptyEnvelope patch_permission_async(tenant_id, security_permission_id, operation, api_version=api_version, x_api_version=x_api_version)
+
+Patch an existing permission
+
+Partially updates an existing security permission using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.PermissionsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    security_permission_id = 'security_permission_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Patch an existing permission
+        api_response = api_instance.patch_permission_async(tenant_id, security_permission_id, operation, api_version=api_version, x_api_version=x_api_version)
+        print("The response of PermissionsApi->patch_permission_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PermissionsApi->patch_permission_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **security_permission_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

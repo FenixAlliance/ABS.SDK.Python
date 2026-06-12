@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_tenant_team_contact_enrollment_by_id**](TeamContactEnrollmentsApi.md#get_tenant_team_contact_enrollment_by_id) | **GET** /api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId} | Retrieve a single tenant team contact enrollment by its ID
 [**get_tenant_team_contact_enrollments**](TeamContactEnrollmentsApi.md#get_tenant_team_contact_enrollments) | **GET** /api/v2/TenantsService/TeamContactEnrollments | Retrieve a list of tenant team contact enrollments
 [**get_tenant_team_contact_enrollments_count**](TeamContactEnrollmentsApi.md#get_tenant_team_contact_enrollments_count) | **GET** /api/v2/TenantsService/TeamContactEnrollments/Count | Get the count of tenant team contact enrollments
+[**patch_tenant_team_contact_enrollment**](TeamContactEnrollmentsApi.md#patch_tenant_team_contact_enrollment) | **PATCH** /api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId} | Patch a tenant team contact enrollment
 [**update_tenant_team_contact_enrollment**](TeamContactEnrollmentsApi.md#update_tenant_team_contact_enrollment) | **PUT** /api/v2/TenantsService/TeamContactEnrollments/{tenantTeamContactEnrollmentId} | Update a tenant team contact enrollment
 
 
@@ -377,6 +378,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_tenant_team_contact_enrollment**
+> EmptyEnvelope patch_tenant_team_contact_enrollment(tenant_id, tenant_team_contact_enrollment_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a tenant team contact enrollment
+
+Patch a tenant team contact enrollment
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.TeamContactEnrollmentsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    tenant_team_contact_enrollment_id = 'tenant_team_contact_enrollment_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a tenant team contact enrollment
+        api_response = api_instance.patch_tenant_team_contact_enrollment(tenant_id, tenant_team_contact_enrollment_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of TeamContactEnrollmentsApi->patch_tenant_team_contact_enrollment:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TeamContactEnrollmentsApi->patch_tenant_team_contact_enrollment: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **tenant_team_contact_enrollment_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

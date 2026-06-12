@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **razor_content** | **str** |  | [optional] 
 **highlight_image** | **str** |  | [optional] 
 **order** | **int** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

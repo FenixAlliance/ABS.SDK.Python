@@ -118,8 +118,6 @@ Name | Type | Description | Notes
 **business_profile_record_id** | **str** |  | [optional] 
 **parent_billing_item_record_id** | **str** |  | [optional] 
 **cart_id** | **str** |  | [optional] 
-**item_id** | **str** |  | [optional] 
-**shipping_address_id** | **str** |  | [optional] 
 
 ## Example
 

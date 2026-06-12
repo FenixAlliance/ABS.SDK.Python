@@ -7,9 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **parent_business_industry_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

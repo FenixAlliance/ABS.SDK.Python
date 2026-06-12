@@ -15,6 +15,8 @@ Method | HTTP request | Description
 [**get_voyage_port_calls_count_async**](VoyagesApi.md#get_voyage_port_calls_count_async) | **GET** /api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/Count | Get voyage port calls count
 [**get_voyages_async**](VoyagesApi.md#get_voyages_async) | **GET** /api/v2/LogisticsService/Voyages | Get all voyages
 [**get_voyages_count_async**](VoyagesApi.md#get_voyages_count_async) | **GET** /api/v2/LogisticsService/Voyages/Count | Get voyages count
+[**patch_voyage_async**](VoyagesApi.md#patch_voyage_async) | **PATCH** /api/v2/LogisticsService/Voyages/{voyageId} | Patch a voyage
+[**patch_voyage_port_call_async**](VoyagesApi.md#patch_voyage_port_call_async) | **PATCH** /api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId} | Patch a voyage port call
 [**start_voyage_async**](VoyagesApi.md#start_voyage_async) | **POST** /api/v2/LogisticsService/Voyages/{voyageId}/Start | Start a voyage
 [**update_voyage_async**](VoyagesApi.md#update_voyage_async) | **PUT** /api/v2/LogisticsService/Voyages/{voyageId} | Update a voyage
 [**update_voyage_port_call_async**](VoyagesApi.md#update_voyage_port_call_async) | **PUT** /api/v2/LogisticsService/Voyages/{voyageId}/PortCalls/{portCallId} | Update a port call
@@ -844,6 +846,168 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_voyage_async**
+> EmptyEnvelope patch_voyage_async(tenant_id, voyage_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a voyage
+
+Partially updates an existing voyage using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.VoyagesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    voyage_id = 'voyage_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a voyage
+        api_response = api_instance.patch_voyage_async(tenant_id, voyage_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of VoyagesApi->patch_voyage_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VoyagesApi->patch_voyage_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **voyage_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_voyage_port_call_async**
+> EmptyEnvelope patch_voyage_port_call_async(tenant_id, voyage_id, port_call_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a voyage port call
+
+Partially updates an existing voyage port call using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.VoyagesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    voyage_id = 'voyage_id_example' # str | 
+    port_call_id = 'port_call_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a voyage port call
+        api_response = api_instance.patch_voyage_port_call_async(tenant_id, voyage_id, port_call_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of VoyagesApi->patch_voyage_port_call_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VoyagesApi->patch_voyage_port_call_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **voyage_id** | **str**|  | 
+ **port_call_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

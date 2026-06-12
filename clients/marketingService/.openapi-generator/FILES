@@ -60,6 +60,7 @@ docs/NewsletterDto.md
 docs/NewsletterDtoEnvelope.md
 docs/NewsletterUpdateDto.md
 docs/NewslettersApi.md
+docs/Operation.md
 docs/OrderDto.md
 docs/OrderDtoEnvelope.md
 docs/RefreshRequest.md
@@ -149,6 +150,7 @@ openapi_client/models/newsletter_create_dto.py
 openapi_client/models/newsletter_dto.py
 openapi_client/models/newsletter_dto_envelope.py
 openapi_client/models/newsletter_update_dto.py
+openapi_client/models/operation.py
 openapi_client/models/order_dto.py
 openapi_client/models/order_dto_envelope.py
 openapi_client/models/refresh_request.py
@@ -175,12 +177,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_marketing_area_create_dto.py
-test/test_marketing_area_dto.py
-test/test_marketing_area_dto_envelope.py
-test/test_marketing_area_dto_list_envelope.py
-test/test_marketing_area_update_dto.py
-test/test_marketing_areas_api.py
 tox.ini

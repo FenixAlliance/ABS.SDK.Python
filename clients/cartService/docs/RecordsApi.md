@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_items_in_cart_async**](RecordsApi.md#get_items_in_cart_async) | **GET** /api/v2/CartService/Records/{cartId} | Get all items in a cart
 [**increase_item_cart_record**](RecordsApi.md#increase_item_cart_record) | **PUT** /api/v2/CartService/Records/{recordId}/Increase | Increase cart record quantity
 [**is_item_already_in_cart**](RecordsApi.md#is_item_already_in_cart) | **GET** /api/v2/CartService/Records/IsInCart | Check if an item is in a cart
+[**patch_item_cart_record**](RecordsApi.md#patch_item_cart_record) | **PATCH** /api/v2/CartService/Records/{recordId} | Patch a cart record
 [**remove_product_from_cart_by_params**](RecordsApi.md#remove_product_from_cart_by_params) | **DELETE** /api/v2/CartService/Records | Remove a product from a cart
 [**remove_product_from_cart_by_record_id**](RecordsApi.md#remove_product_from_cart_by_record_id) | **DELETE** /api/v2/CartService/Records/{recordId} | Remove a product from a cart by record ID
 [**update_item_cart_record**](RecordsApi.md#update_item_cart_record) | **PUT** /api/v2/CartService/Records/{recordId} | Update a cart record
@@ -617,6 +618,83 @@ No authorization required
 **404** | Not Found |  -  |
 **401** | Unauthorized |  -  |
 **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_item_cart_record**
+> EmptyEnvelope patch_item_cart_record(record_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a cart record
+
+Partially updates the specified item cart record using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.RecordsApi(api_client)
+    record_id = 'record_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a cart record
+        api_response = api_instance.patch_item_cart_record(record_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of RecordsApi->patch_item_cart_record:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RecordsApi->patch_item_cart_record: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **record_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**404** | Not Found |  -  |
+**401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

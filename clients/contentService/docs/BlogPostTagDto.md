@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
 **slug** | **str** |  | [optional] 
+**type** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **seo_title** | **str** |  | [optional] 
@@ -19,8 +20,8 @@ Name | Type | Description | Notes
 **image_url** | **str** |  | [optional] 
 **image** | **str** |  | [optional] 
 **web_portal_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

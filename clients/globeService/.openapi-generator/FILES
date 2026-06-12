@@ -109,10 +109,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_error.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_migrations_api.py
-test/test_payment_response.py
-test/test_response_status.py
 tox.ini

@@ -4,6 +4,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**batch_update_stock_items**](ItemsApi.md#batch_update_stock_items) | **POST** /api/v2/CatalogService/Items/Batch | Bulk-update stock items
+[**bulk_upsert_stock_items**](ItemsApi.md#bulk_upsert_stock_items) | **POST** /api/v2/CatalogService/Items/BulkUpsert | Bulk upsert stock items from rows
 [**count_stock_item_tags_by_item_id**](ItemsApi.md#count_stock_item_tags_by_item_id) | **GET** /api/v2/CatalogService/Items/{itemId}/Tags/Count | Count tags for a stock item
 [**count_stock_items_by_business**](ItemsApi.md#count_stock_items_by_business) | **GET** /api/v2/CatalogService/Items/Count | Count stock items by business
 [**create_stock_item**](ItemsApi.md#create_stock_item) | **POST** /api/v2/CatalogService/Items | Create a new stock item
@@ -46,6 +48,8 @@ Method | HTTP request | Description
 [**get_stock_items_odata_max_price**](ItemsApi.md#get_stock_items_odata_max_price) | **GET** /api/v2/CatalogService/Items/MaxPrice | Get max price of stock items
 [**get_stock_items_odata_min_price**](ItemsApi.md#get_stock_items_odata_min_price) | **GET** /api/v2/CatalogService/Items/MinPrice | Get min price of stock items
 [**get_stock_items_query**](ItemsApi.md#get_stock_items_query) | **GET** /api/v2/CatalogService/Items | Get all stock items
+[**patch_stock_item**](ItemsApi.md#patch_stock_item) | **PATCH** /api/v2/CatalogService/Items/{itemId} | Patch a stock item
+[**recalculate_stock_item_prices**](ItemsApi.md#recalculate_stock_item_prices) | **POST** /api/v2/CatalogService/Items/RecalculatePrices | Recalculate stock item prices
 [**relate_attachment_to_stock_item**](ItemsApi.md#relate_attachment_to_stock_item) | **POST** /api/v2/CatalogService/Items/{itemId}/Attachments/{itemAttachmentId} | Relate attachment to stock item
 [**relate_attribute_option_to_stock_item**](ItemsApi.md#relate_attribute_option_to_stock_item) | **POST** /api/v2/CatalogService/Items/{itemId}/AttributeOptions/{itemAttributeOptionId} | Relate attribute option to stock item
 [**relate_brand_to_stock_item**](ItemsApi.md#relate_brand_to_stock_item) | **POST** /api/v2/CatalogService/Items/{itemId}/Brands/{itemBrandId} | Relate brand to stock item
@@ -81,6 +85,154 @@ Method | HTTP request | Description
 [**update_product_primary_image_async**](ItemsApi.md#update_product_primary_image_async) | **POST** /api/v2/CatalogService/Items/{itemId}/Images/Primary | Update item primary image
 [**update_stock_item**](ItemsApi.md#update_stock_item) | **PUT** /api/v2/CatalogService/Items/{itemId} | Update a stock item
 
+
+# **batch_update_stock_items**
+> batch_update_stock_items(tenant_id, api_version=api_version, x_api_version=x_api_version, batch_stock_item_update_request=batch_stock_item_update_request)
+
+Bulk-update stock items
+
+Applies a targeted bulk operation (set flags, add/remove tax policies) to many items atomically.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.batch_stock_item_update_request import BatchStockItemUpdateRequest
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    batch_stock_item_update_request = openapi_client.BatchStockItemUpdateRequest() # BatchStockItemUpdateRequest |  (optional)
+
+    try:
+        # Bulk-update stock items
+        api_instance.batch_update_stock_items(tenant_id, api_version=api_version, x_api_version=x_api_version, batch_stock_item_update_request=batch_stock_item_update_request)
+    except Exception as e:
+        print("Exception when calling ItemsApi->batch_update_stock_items: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **batch_stock_item_update_request** | [**BatchStockItemUpdateRequest**](BatchStockItemUpdateRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bulk_upsert_stock_items**
+> bulk_upsert_stock_items(tenant_id, api_version=api_version, x_api_version=x_api_version, bulk_product=bulk_product)
+
+Bulk upsert stock items from rows
+
+Updates scalar fields of matching tenant-owned items or creates new ones, all in one transaction.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.bulk_product import BulkProduct
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    bulk_product = [openapi_client.BulkProduct()] # List[BulkProduct] |  (optional)
+
+    try:
+        # Bulk upsert stock items from rows
+        api_instance.bulk_upsert_stock_items(tenant_id, api_version=api_version, x_api_version=x_api_version, bulk_product=bulk_product)
+    except Exception as e:
+        print("Exception when calling ItemsApi->bulk_upsert_stock_items: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **bulk_product** | [**List[BulkProduct]**](BulkProduct.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_stock_item_tags_by_item_id**
 > Int32Envelope count_stock_item_tags_by_item_id(tenant_id, item_id, api_version=api_version, x_api_version=x_api_version)
@@ -3218,6 +3370,155 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_stock_item**
+> patch_stock_item(tenant_id, item_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a stock item
+
+Partially updates an existing stock item for the specified tenant and item ID.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    item_id = 'item_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a stock item
+        api_instance.patch_stock_item(tenant_id, item_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+    except Exception as e:
+        print("Exception when calling ItemsApi->patch_stock_item: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **item_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **recalculate_stock_item_prices**
+> recalculate_stock_item_prices(tenant_id, api_version=api_version, x_api_version=x_api_version, request_body=request_body)
+
+Recalculate stock item prices
+
+Recomputes derived prices for the given tenant-owned items via the pricing service, atomically.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    request_body = ['request_body_example'] # List[str] |  (optional)
+
+    try:
+        # Recalculate stock item prices
+        api_instance.recalculate_stock_item_prices(tenant_id, api_version=api_version, x_api_version=x_api_version, request_body=request_body)
+    except Exception as e:
+        print("Exception when calling ItemsApi->recalculate_stock_item_prices: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **request_body** | [**List[str]**](str.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

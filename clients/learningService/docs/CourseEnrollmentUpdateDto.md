@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**timestamp** | **datetime** |  | [optional] 
 **course_cohort_id** | **str** |  | [optional] 
 **course_completion_certificate_id** | **str** |  | [optional] 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **code** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

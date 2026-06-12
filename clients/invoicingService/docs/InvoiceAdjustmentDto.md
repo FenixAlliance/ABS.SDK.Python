@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **invoice_id** | **str** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
 **enrollment_id** | **str** |  | [optional] 
+**priority** | **int** |  | [optional] 
+**code** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **surcharge_percent** | **float** |  | [optional] 
 **surcharge_amount** | **float** |  | [optional] 

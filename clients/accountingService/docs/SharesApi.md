@@ -24,6 +24,10 @@ Method | HTTP request | Description
 [**get_share_transfer_reasons_count**](SharesApi.md#get_share_transfer_reasons_count) | **GET** /api/v2/AccountingService/Shares/TransferReasons/Count | Gets the current tenant share transfer reasons count
 [**get_share_transfers**](SharesApi.md#get_share_transfers) | **GET** /api/v2/AccountingService/Shares/Transfers | Gets the current tenant share transfers
 [**get_share_transfers_count**](SharesApi.md#get_share_transfers_count) | **GET** /api/v2/AccountingService/Shares/Transfers/Count | Gets the current tenant share transfers count
+[**patch_share_class**](SharesApi.md#patch_share_class) | **PATCH** /api/v2/AccountingService/Shares/Classes/{shareClassId} | Patches a share class
+[**patch_share_issuance**](SharesApi.md#patch_share_issuance) | **PATCH** /api/v2/AccountingService/Shares/Issuances/{issuanceId} | Patches a share issuance
+[**patch_share_transfer**](SharesApi.md#patch_share_transfer) | **PATCH** /api/v2/AccountingService/Shares/Transfers/{transferId} | Patches a share transfer
+[**patch_share_transfer_reason**](SharesApi.md#patch_share_transfer_reason) | **PATCH** /api/v2/AccountingService/Shares/TransferReasons/{reasonId} | Patches a share transfer reason
 [**update_share_class**](SharesApi.md#update_share_class) | **PUT** /api/v2/AccountingService/Shares/Classes/{shareClassId} | Updates an existing share class
 [**update_share_issuance**](SharesApi.md#update_share_issuance) | **PUT** /api/v2/AccountingService/Shares/Issuances/{issuanceId} | Updates an existing share issuance
 [**update_share_transfer**](SharesApi.md#update_share_transfer) | **PUT** /api/v2/AccountingService/Shares/Transfers/{transferId} | Updates an existing share transfer
@@ -1522,6 +1526,322 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_share_class**
+> EmptyEnvelope patch_share_class(tenant_id, share_class_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a share class
+
+Partially updates a share class using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SharesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    share_class_id = 'share_class_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a share class
+        api_response = api_instance.patch_share_class(tenant_id, share_class_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SharesApi->patch_share_class:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SharesApi->patch_share_class: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **share_class_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_share_issuance**
+> EmptyEnvelope patch_share_issuance(tenant_id, issuance_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a share issuance
+
+Partially updates a share issuance using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SharesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    issuance_id = 'issuance_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a share issuance
+        api_response = api_instance.patch_share_issuance(tenant_id, issuance_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SharesApi->patch_share_issuance:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SharesApi->patch_share_issuance: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **issuance_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_share_transfer**
+> EmptyEnvelope patch_share_transfer(tenant_id, transfer_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a share transfer
+
+Partially updates a share transfer using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SharesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    transfer_id = 'transfer_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a share transfer
+        api_response = api_instance.patch_share_transfer(tenant_id, transfer_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SharesApi->patch_share_transfer:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SharesApi->patch_share_transfer: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **transfer_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_share_transfer_reason**
+> EmptyEnvelope patch_share_transfer_reason(tenant_id, reason_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a share transfer reason
+
+Partially updates a share transfer reason using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SharesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    reason_id = 'reason_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a share transfer reason
+        api_response = api_instance.patch_share_transfer_reason(tenant_id, reason_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SharesApi->patch_share_transfer_reason:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SharesApi->patch_share_transfer_reason: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **reason_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

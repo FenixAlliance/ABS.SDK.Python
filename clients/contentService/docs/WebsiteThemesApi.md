@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_website_theme_by_id_async**](WebsiteThemesApi.md#get_website_theme_by_id_async) | **GET** /api/v2/ContentService/WebsiteThemes/{id} | Get website theme by ID
 [**get_website_themes_async**](WebsiteThemesApi.md#get_website_themes_async) | **GET** /api/v2/ContentService/WebsiteThemes | Get all website themes
 [**get_website_themes_count_async**](WebsiteThemesApi.md#get_website_themes_count_async) | **GET** /api/v2/ContentService/WebsiteThemes/Count | Get website themes count
+[**patch_website_theme_async**](WebsiteThemesApi.md#patch_website_theme_async) | **PATCH** /api/v2/ContentService/WebsiteThemes/{id} | Patch a website theme
 [**update_website_theme_async**](WebsiteThemesApi.md#update_website_theme_async) | **PUT** /api/v2/ContentService/WebsiteThemes/{id} | Update a website theme
 
 
@@ -383,6 +384,82 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_website_theme_async**
+> patch_website_theme_async(tenant_id, id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a website theme
+
+Partially updates an existing website theme for the specified tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.WebsiteThemesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    id = 'id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a website theme
+        api_instance.patch_website_theme_async(tenant_id, id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+    except Exception as e:
+        print("Exception when calling WebsiteThemesApi->patch_website_theme_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

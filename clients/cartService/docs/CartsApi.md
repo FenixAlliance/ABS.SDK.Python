@@ -35,6 +35,7 @@ Method | HTTP request | Description
 [**is_item_already_in_cart_async**](CartsApi.md#is_item_already_in_cart_async) | **GET** /api/v2/CartService/Carts/{cartId}/Contains/{itemId} | Assesses if an Item is already in a cart
 [**is_item_in_compare_table_async**](CartsApi.md#is_item_in_compare_table_async) | **GET** /api/v2/CartService/Carts/{cartId}/Compare/Contains/{itemId} | Assesses if an Item is already in the compare table
 [**is_item_in_wish_lists**](CartsApi.md#is_item_in_wish_lists) | **GET** /api/v2/CartService/Carts/{cartId}/WishLists/Contains/{itemId} | Assesses if an Item is already in any of the cart&#39;s wishlists
+[**patch_cart_async**](CartsApi.md#patch_cart_async) | **PATCH** /api/v2/CartService/Carts/{cartId} | Patch a cart
 [**remove_cart_line_async**](CartsApi.md#remove_cart_line_async) | **DELETE** /api/v2/CartService/Carts/{cartId}/Lines/{lineId} | Remove a cart line
 [**remove_item_from_cart_async**](CartsApi.md#remove_item_from_cart_async) | **DELETE** /api/v2/CartService/Carts/{cartId}/Items/{itemId} | Remove an Item from a cart
 [**remove_item_from_compare_table_async**](CartsApi.md#remove_item_from_compare_table_async) | **DELETE** /api/v2/CartService/Carts/{cartId}/Compare/{itemId} | Remove an item from the compare table
@@ -2390,6 +2391,83 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **404** | Not Found |  -  |
+**401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_cart_async**
+> EmptyEnvelope patch_cart_async(cart_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a cart
+
+Partially updates a cart using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CartsApi(api_client)
+    cart_id = 'cart_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a cart
+        api_response = api_instance.patch_cart_async(cart_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of CartsApi->patch_cart_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CartsApi->patch_cart_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cart_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

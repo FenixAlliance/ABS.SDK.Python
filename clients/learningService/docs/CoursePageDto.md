@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **slug** | **str** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

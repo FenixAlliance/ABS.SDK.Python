@@ -65,6 +65,8 @@ Name | Type | Description | Notes
 **parent_web_content_id** | **str** |  | [optional] 
 **parent_web_content_version_id** | **str** |  | [optional] 
 **web_template_id** | **str** |  | [optional] 
+**author_name** | **str** |  | [optional] 
+**author_id** | **str** |  | [optional] 
 **is_home_page** | **bool** |  | [optional] 
 **is_store_page** | **bool** |  | [optional] 
 **is_cart_page** | **bool** |  | [optional] 

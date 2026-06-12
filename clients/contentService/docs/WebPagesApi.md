@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_tags_by_web_page_async**](WebPagesApi.md#get_tags_by_web_page_async) | **GET** /api/v2/ContentService/WebPages/{webPageId}/Tags | Get tags by web page
 [**get_web_page_by_id_async**](WebPagesApi.md#get_web_page_by_id_async) | **GET** /api/v2/ContentService/WebPages/{webPageId} | Get web page by ID
 [**get_web_pages_async**](WebPagesApi.md#get_web_pages_async) | **GET** /api/v2/ContentService/WebPages | Get web pages
+[**patch_web_page_async**](WebPagesApi.md#patch_web_page_async) | **PATCH** /api/v2/ContentService/WebPages/{webPageId} | Patch a web page
 [**relate_web_page_to_category_async**](WebPagesApi.md#relate_web_page_to_category_async) | **POST** /api/v2/ContentService/WebPages/{webPageId}/Categories/{categoryId} | Relate web page to category
 [**relate_web_page_to_tag_async**](WebPagesApi.md#relate_web_page_to_tag_async) | **POST** /api/v2/ContentService/WebPages/{webPageId}/Tags/{tagId} | Relate web page to tag
 [**unrelate_web_page_category_async**](WebPagesApi.md#unrelate_web_page_category_async) | **DELETE** /api/v2/ContentService/WebPages/{webPageId}/Categories/{categoryId} | Unrelate web page from category
@@ -671,6 +672,81 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_web_page_async**
+> patch_web_page_async(tenant_id, web_page_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a web page
+
+Partially updates an existing web page for the specified tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.WebPagesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    web_page_id = 'web_page_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a web page
+        api_instance.patch_web_page_async(tenant_id, web_page_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+    except Exception as e:
+        print("Exception when calling WebPagesApi->patch_web_page_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **web_page_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

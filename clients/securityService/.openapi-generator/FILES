@@ -36,6 +36,7 @@ docs/OAuthApplicationsApi.md
 docs/OAuthAuthorizationDto.md
 docs/OAuthAuthorizationDtoEnvelope.md
 docs/OAuthAuthorizationDtoListEnvelope.md
+docs/Operation.md
 docs/PermissionsApi.md
 docs/RefreshRequest.md
 docs/RegisterRequest.md
@@ -109,6 +110,7 @@ openapi_client/models/o_auth_application_update_dto.py
 openapi_client/models/o_auth_authorization_dto.py
 openapi_client/models/o_auth_authorization_dto_envelope.py
 openapi_client/models/o_auth_authorization_dto_list_envelope.py
+openapi_client/models/operation.py
 openapi_client/models/refresh_request.py
 openapi_client/models/register_request.py
 openapi_client/models/resend_confirmation_email_request.py
@@ -139,6 +141,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
 tox.ini

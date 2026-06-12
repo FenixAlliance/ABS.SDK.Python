@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**get_unit_groups_count_async**](UnitGroupsApi.md#get_unit_groups_count_async) | **GET** /api/v2/TenantsService/UnitGroups/Count | Get the count of unit groups
 [**get_units_async**](UnitGroupsApi.md#get_units_async) | **GET** /api/v2/TenantsService/UnitGroups/{unitGroupId}/Units | Retrieve units for a unit group
 [**get_units_count_async**](UnitGroupsApi.md#get_units_count_async) | **GET** /api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/Count | Get the count of units in a unit group
+[**patch_unit_async**](UnitGroupsApi.md#patch_unit_async) | **PATCH** /api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId} | Patch a unit within a unit group
+[**patch_unit_group_async**](UnitGroupsApi.md#patch_unit_group_async) | **PATCH** /api/v2/TenantsService/UnitGroups/{unitGroupId} | Patch a unit group
 [**update_unit_async**](UnitGroupsApi.md#update_unit_async) | **PUT** /api/v2/TenantsService/UnitGroups/{unitGroupId}/Units/{unitId} | Update a unit within a unit group
 [**update_unit_group_async**](UnitGroupsApi.md#update_unit_group_async) | **PUT** /api/v2/TenantsService/UnitGroups/{unitGroupId} | Update a unit group
 
@@ -770,6 +772,166 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_unit_async**
+> EmptyEnvelope patch_unit_async(tenant_id, unit_group_id, unit_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a unit within a unit group
+
+Partially updates an existing unit within a specific unit group.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.UnitGroupsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    unit_group_id = 'unit_group_id_example' # str | 
+    unit_id = 'unit_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a unit within a unit group
+        api_response = api_instance.patch_unit_async(tenant_id, unit_group_id, unit_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of UnitGroupsApi->patch_unit_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UnitGroupsApi->patch_unit_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **unit_group_id** | **str**|  | 
+ **unit_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_unit_group_async**
+> EmptyEnvelope patch_unit_group_async(tenant_id, unit_group_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a unit group
+
+Partially updates an existing unit group by its unique identifier.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.UnitGroupsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    unit_group_id = 'unit_group_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a unit group
+        api_response = api_instance.patch_unit_group_async(tenant_id, unit_group_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of UnitGroupsApi->patch_unit_group_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UnitGroupsApi->patch_unit_group_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **unit_group_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

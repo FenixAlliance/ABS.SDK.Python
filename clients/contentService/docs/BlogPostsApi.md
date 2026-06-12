@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_comments_for_blog_post_async**](BlogPostsApi.md#get_comments_for_blog_post_async) | **GET** /api/v2/ContentService/BlogPosts/{blogPostId}/Comments | Get comments for a blog post
 [**get_replies_for_comment_async**](BlogPostsApi.md#get_replies_for_comment_async) | **GET** /api/v2/ContentService/BlogPosts/{blogPostId}/Comments/{commentId}/Replies | Get replies for a comment
 [**get_tags_for_blog_post_async**](BlogPostsApi.md#get_tags_for_blog_post_async) | **GET** /api/v2/ContentService/BlogPosts/{blogPostId}/Tags | Get tags for a blog post
+[**patch_blog_post_async**](BlogPostsApi.md#patch_blog_post_async) | **PATCH** /api/v2/ContentService/BlogPosts/{blogPostId} | Patch a blog post
 [**relate_category_to_blog_post_async**](BlogPostsApi.md#relate_category_to_blog_post_async) | **POST** /api/v2/ContentService/BlogPosts/{blogPostId}/Categories/{categoryId} | Relate an existing category to a blog post
 [**relate_tag_to_blog_post_async**](BlogPostsApi.md#relate_tag_to_blog_post_async) | **POST** /api/v2/ContentService/BlogPosts/{blogPostId}/Tags/{tagId} | Relate an existing tag to a blog post
 [**reply_to_comment_async**](BlogPostsApi.md#reply_to_comment_async) | **POST** /api/v2/ContentService/BlogPosts/{blogPostId}/Comments/{commentId}/Reply | Reply to a blog post comment
@@ -949,6 +950,81 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_blog_post_async**
+> EmptyEnvelope patch_blog_post_async(tenant_id, blog_post_id, operation=operation)
+
+Patch a blog post
+
+Partially updates an existing blog post for the specified tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BlogPostsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    blog_post_id = 'blog_post_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a blog post
+        api_response = api_instance.patch_blog_post_async(tenant_id, blog_post_id, operation=operation)
+        print("The response of BlogPostsApi->patch_blog_post_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BlogPostsApi->patch_blog_post_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **blog_post_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

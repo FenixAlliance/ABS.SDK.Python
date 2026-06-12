@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **tracking_code** | **str** |  | [optional] 
 **expected_delivery** | **datetime** |  | [optional] 
 **location_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 **shipment_id** | **str** |  | [optional] 
 **shipping_courier_id** | **str** |  | [optional] 
 

@@ -12,8 +12,10 @@ Name | Type | Description | Notes
 **overall_score** | **float** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 **course_unit_id** | **str** |  | [optional] 
+**course_grading_rubric_id** | **str** |  | [optional] 
 **release_date_time** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

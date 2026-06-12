@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_feed_posts_count_async**](SocialFeedsApi.md#get_feed_posts_count_async) | **GET** /api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/Count | Count social feed posts
 [**get_notification_async**](SocialFeedsApi.md#get_notification_async) | **GET** /api/v2/SocialService/SocialFeeds/{socialFeedId} | Get social feed by ID
 [**get_notifications_count_async**](SocialFeedsApi.md#get_notifications_count_async) | **GET** /api/v2/SocialService/SocialFeeds/Count | Count social feeds
+[**patch_feed_post_async**](SocialFeedsApi.md#patch_feed_post_async) | **PATCH** /api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/{feedPostId} | Patch a social feed post
 [**update_feed_post_async**](SocialFeedsApi.md#update_feed_post_async) | **PUT** /api/v2/SocialService/SocialFeeds/{socialFeedId}/Posts/{feedPostId} | Update a social feed post
 
 
@@ -614,6 +615,87 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_feed_post_async**
+> EmptyEnvelope patch_feed_post_async(social_profile_id, social_feed_id, feed_post_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a social feed post
+
+Partially updates an existing post in a specific social feed using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SocialFeedsApi(api_client)
+    social_profile_id = 'social_profile_id_example' # str | 
+    social_feed_id = 'social_feed_id_example' # str | 
+    feed_post_id = 'feed_post_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a social feed post
+        api_response = api_instance.patch_feed_post_async(social_profile_id, social_feed_id, feed_post_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SocialFeedsApi->patch_feed_post_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SocialFeedsApi->patch_feed_post_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **social_profile_id** | **str**|  | 
+ **social_feed_id** | **str**|  | 
+ **feed_post_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

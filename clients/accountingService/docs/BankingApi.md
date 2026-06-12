@@ -24,6 +24,10 @@ Method | HTTP request | Description
 [**get_bank_transactions_count**](BankingApi.md#get_bank_transactions_count) | **GET** /api/v2/AccountingService/Banking/{bankId}/Transactions/Count | Gets the current tenant bank transactions count
 [**get_banks**](BankingApi.md#get_banks) | **GET** /api/v2/AccountingService/Banking | Gets the current tenant banks
 [**get_banks_count**](BankingApi.md#get_banks_count) | **GET** /api/v2/AccountingService/Banking/Count | Gets the current tenant banks count
+[**patch_bank**](BankingApi.md#patch_bank) | **PATCH** /api/v2/AccountingService/Banking/{bankId} | Patches a bank
+[**patch_bank_account**](BankingApi.md#patch_bank_account) | **PATCH** /api/v2/AccountingService/Banking/{bankId}/Accounts/{accountId} | Patches a bank account
+[**patch_bank_guarantee**](BankingApi.md#patch_bank_guarantee) | **PATCH** /api/v2/AccountingService/Banking/{bankId}/Guarantees/{guaranteeId} | Patches a bank guarantee
+[**patch_bank_transaction**](BankingApi.md#patch_bank_transaction) | **PATCH** /api/v2/AccountingService/Banking/{bankId}/Transactions/{transactionId} | Patches a bank transaction
 [**update_bank**](BankingApi.md#update_bank) | **PUT** /api/v2/AccountingService/Banking/{bankId} | Updates a bank
 [**update_bank_account**](BankingApi.md#update_bank_account) | **PUT** /api/v2/AccountingService/Banking/{bankId}/Accounts/{accountId} | Updates a bank account
 [**update_bank_guarantee**](BankingApi.md#update_bank_guarantee) | **PUT** /api/v2/AccountingService/Banking/{bankId}/Guarantees/{guaranteeId} | Updates a bank guarantee
@@ -1560,6 +1564,336 @@ No authorization required
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_bank**
+> EmptyEnvelope patch_bank(tenant_id, bank_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a bank
+
+Partially update a bank using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BankingApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    bank_id = 'bank_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a bank
+        api_response = api_instance.patch_bank(tenant_id, bank_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BankingApi->patch_bank:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BankingApi->patch_bank: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **bank_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_bank_account**
+> EmptyEnvelope patch_bank_account(tenant_id, bank_id, account_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a bank account
+
+Partially update a bank account using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BankingApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    bank_id = 'bank_id_example' # str | 
+    account_id = 'account_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a bank account
+        api_response = api_instance.patch_bank_account(tenant_id, bank_id, account_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BankingApi->patch_bank_account:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BankingApi->patch_bank_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **bank_id** | **str**|  | 
+ **account_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_bank_guarantee**
+> EmptyEnvelope patch_bank_guarantee(tenant_id, bank_id, guarantee_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a bank guarantee
+
+Partially update a bank guarantee using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BankingApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    bank_id = 'bank_id_example' # str | 
+    guarantee_id = 'guarantee_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a bank guarantee
+        api_response = api_instance.patch_bank_guarantee(tenant_id, bank_id, guarantee_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BankingApi->patch_bank_guarantee:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BankingApi->patch_bank_guarantee: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **bank_id** | **str**|  | 
+ **guarantee_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_bank_transaction**
+> EmptyEnvelope patch_bank_transaction(tenant_id, bank_id, transaction_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a bank transaction
+
+Partially update a bank transaction using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BankingApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    bank_id = 'bank_id_example' # str | 
+    transaction_id = 'transaction_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a bank transaction
+        api_response = api_instance.patch_bank_transaction(tenant_id, bank_id, transaction_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BankingApi->patch_bank_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BankingApi->patch_bank_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **bank_id** | **str**|  | 
+ **transaction_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

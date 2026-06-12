@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **instructor_profile_id** | **str** |  | [optional] 
 **course_team_membership_type** | **str** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

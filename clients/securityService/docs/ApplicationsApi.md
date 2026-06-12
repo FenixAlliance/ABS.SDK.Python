@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_business_applications_count_async**](ApplicationsApi.md#get_business_applications_count_async) | **GET** /api/v2/SecurityService/Applications/Count | Get business applications count
 [**get_permissions_by_application_async**](ApplicationsApi.md#get_permissions_by_application_async) | **GET** /api/v2/SecurityService/Applications/{applicationId}/Permissions | Get permissions by application
 [**get_roles_by_application_async**](ApplicationsApi.md#get_roles_by_application_async) | **GET** /api/v2/SecurityService/Applications/{applicationId}/Roles | Get roles by application
+[**patch_business_application_async**](ApplicationsApi.md#patch_business_application_async) | **PATCH** /api/v2/SecurityService/Applications/{applicationId} | Patch an existing business application
 [**update_business_application_async**](ApplicationsApi.md#update_business_application_async) | **PUT** /api/v2/SecurityService/Applications/{applicationId} | Update an existing business application
 
 
@@ -541,6 +542,86 @@ No authorization required
 |-------------|-------------|------------------|
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_business_application_async**
+> EmptyEnvelope patch_business_application_async(tenant_id, application_id, operation, api_version=api_version, x_api_version=x_api_version)
+
+Patch an existing business application
+
+Partially updates an existing business application using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ApplicationsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    application_id = 'application_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+
+    try:
+        # Patch an existing business application
+        api_response = api_instance.patch_business_application_async(tenant_id, application_id, operation, api_version=api_version, x_api_version=x_api_version)
+        print("The response of ApplicationsApi->patch_business_application_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ApplicationsApi->patch_business_application_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **application_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

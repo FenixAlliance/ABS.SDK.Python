@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **timestamp** | **datetime** |  | [optional] 
 **title** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**shipment_id** | **str** |  | [optional] 
+**proof_of_delivery_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**issue_rail_waybill_async**](RailWaybillsApi.md#issue_rail_waybill_async) | **POST** /api/v2/LogisticsService/RailWaybills/{waybillId}/Issue | Issue a rail waybill
 [**mark_rail_waybill_delivered_async**](RailWaybillsApi.md#mark_rail_waybill_delivered_async) | **POST** /api/v2/LogisticsService/RailWaybills/{waybillId}/MarkDelivered | Mark rail waybill delivered
 [**mark_rail_waybill_in_transit_async**](RailWaybillsApi.md#mark_rail_waybill_in_transit_async) | **POST** /api/v2/LogisticsService/RailWaybills/{waybillId}/MarkInTransit | Mark rail waybill in transit
+[**patch_rail_waybill_async**](RailWaybillsApi.md#patch_rail_waybill_async) | **PATCH** /api/v2/LogisticsService/RailWaybills/{waybillId} | Patch a rail waybill
+[**patch_rail_waybill_line_async**](RailWaybillsApi.md#patch_rail_waybill_line_async) | **PATCH** /api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId} | Patch a rail waybill line
 [**remove_rail_waybill_line_async**](RailWaybillsApi.md#remove_rail_waybill_line_async) | **DELETE** /api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId} | Remove a rail waybill line
 [**update_rail_waybill_async**](RailWaybillsApi.md#update_rail_waybill_async) | **PUT** /api/v2/LogisticsService/RailWaybills/{waybillId} | Update a rail waybill
 [**update_rail_waybill_line_async**](RailWaybillsApi.md#update_rail_waybill_line_async) | **PUT** /api/v2/LogisticsService/RailWaybills/{waybillId}/Lines/{lineId} | Update a rail waybill line
@@ -911,6 +913,164 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_rail_waybill_async**
+> EmptyEnvelope patch_rail_waybill_async(tenant_id, waybill_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a rail waybill
+
+Partially updates an existing rail waybill using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.RailWaybillsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    waybill_id = 'waybill_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a rail waybill
+        api_response = api_instance.patch_rail_waybill_async(tenant_id, waybill_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of RailWaybillsApi->patch_rail_waybill_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RailWaybillsApi->patch_rail_waybill_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **waybill_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Bad Request |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_rail_waybill_line_async**
+> EmptyEnvelope patch_rail_waybill_line_async(tenant_id, waybill_id, line_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a rail waybill line
+
+Partially updates a line on a rail waybill using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.RailWaybillsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    waybill_id = 'waybill_id_example' # str | 
+    line_id = 'line_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a rail waybill line
+        api_response = api_instance.patch_rail_waybill_line_async(tenant_id, waybill_id, line_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of RailWaybillsApi->patch_rail_waybill_line_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RailWaybillsApi->patch_rail_waybill_line_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **waybill_id** | **str**|  | 
+ **line_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **course_unit_id** | **str** |  | [optional] 
 **release_date_time** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

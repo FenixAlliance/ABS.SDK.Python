@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_fiscal_regime**](FiscalRegimesApi.md#get_fiscal_regime) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/{regimeId} | Get fiscal regime by ID
 [**get_fiscal_regimes**](FiscalRegimesApi.md#get_fiscal_regimes) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{authorityId}/FiscalRegimes | Get fiscal regimes for an authority
 [**get_fiscal_regimes_count**](FiscalRegimesApi.md#get_fiscal_regimes_count) | **GET** /api/v2/AccountingService/Fiscals/Authorities/{fiscalAuthorityId}/FiscalRegimes/Count | Get fiscal regimes count
+[**patch_fiscal_regime_async**](FiscalRegimesApi.md#patch_fiscal_regime_async) | **PATCH** /api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId} | Patch a fiscal regime
 [**update_fiscal_regime**](FiscalRegimesApi.md#update_fiscal_regime) | **PUT** /api/v2/AccountingService/Fiscals/Authorities/FiscalRegimes/{regimeId} | Update a fiscal regime
 
 
@@ -385,6 +386,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_fiscal_regime_async**
+> EmptyEnvelope patch_fiscal_regime_async(tenant_id, regime_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a fiscal regime
+
+Partially updates a fiscal regime.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.FiscalRegimesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    regime_id = 'regime_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a fiscal regime
+        api_response = api_instance.patch_fiscal_regime_async(tenant_id, regime_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of FiscalRegimesApi->patch_fiscal_regime_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling FiscalRegimesApi->patch_fiscal_regime_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **regime_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

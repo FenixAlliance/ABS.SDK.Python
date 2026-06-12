@@ -19,6 +19,9 @@ Method | HTTP request | Description
 [**get_loan_types_count_async**](LoansApi.md#get_loan_types_count_async) | **GET** /api/v2/AccountingService/Loans/Types/Count | Counts loan types
 [**get_loans_async**](LoansApi.md#get_loans_async) | **GET** /api/v2/AccountingService/Loans | Gets all loans
 [**get_loans_count_async**](LoansApi.md#get_loans_count_async) | **GET** /api/v2/AccountingService/Loans/Count | Counts loans
+[**patch_loan_application_async**](LoansApi.md#patch_loan_application_async) | **PATCH** /api/v2/AccountingService/Loans/Applications/{applicationId} | Patches a loan application
+[**patch_loan_async**](LoansApi.md#patch_loan_async) | **PATCH** /api/v2/AccountingService/Loans/{loanId} | Patches a loan
+[**patch_loan_type_async**](LoansApi.md#patch_loan_type_async) | **PATCH** /api/v2/AccountingService/Loans/Types/{loanTypeId} | Patches a loan type
 [**update_loan_application_async**](LoansApi.md#update_loan_application_async) | **PUT** /api/v2/AccountingService/Loans/Applications/{applicationId} | Updates a loan application
 [**update_loan_async**](LoansApi.md#update_loan_async) | **PUT** /api/v2/AccountingService/Loans/{loanId} | Updates a loan
 [**update_loan_type_async**](LoansApi.md#update_loan_type_async) | **PUT** /api/v2/AccountingService/Loans/Types/{loanTypeId} | Updates a loan type
@@ -1143,6 +1146,243 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_loan_application_async**
+> EmptyEnvelope patch_loan_application_async(tenant_id, application_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a loan application
+
+Partially updates the specified loan application using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LoansApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    application_id = 'application_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a loan application
+        api_response = api_instance.patch_loan_application_async(tenant_id, application_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of LoansApi->patch_loan_application_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LoansApi->patch_loan_application_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **application_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_loan_async**
+> EmptyEnvelope patch_loan_async(tenant_id, loan_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a loan
+
+Partially updates the specified loan using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LoansApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    loan_id = 'loan_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a loan
+        api_response = api_instance.patch_loan_async(tenant_id, loan_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of LoansApi->patch_loan_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LoansApi->patch_loan_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **loan_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_loan_type_async**
+> EmptyEnvelope patch_loan_type_async(tenant_id, loan_type_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a loan type
+
+Partially updates the specified loan type using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LoansApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    loan_type_id = 'loan_type_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a loan type
+        api_response = api_instance.patch_loan_type_async(tenant_id, loan_type_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of LoansApi->patch_loan_type_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LoansApi->patch_loan_type_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **loan_type_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**get_wallet_location_async**](LocationsApi.md#get_wallet_location_async) | **GET** /api/v2/LocationsService/Locations/wallet/{walletId}/{locationId} | Get Wallet Location
 [**get_wallet_locations_async**](LocationsApi.md#get_wallet_locations_async) | **GET** /api/v2/LocationsService/Locations/wallet/{walletId} | Get Wallet Locations
 [**get_wallet_locations_count_async**](LocationsApi.md#get_wallet_locations_count_async) | **GET** /api/v2/LocationsService/Locations/wallet/{walletId}/count | Get Wallet Locations Count
+[**patch_location_async**](LocationsApi.md#patch_location_async) | **PATCH** /api/v2/LocationsService/Locations/{locationId} | Patch a location
+[**patch_wallet_location_async**](LocationsApi.md#patch_wallet_location_async) | **PATCH** /api/v2/LocationsService/Locations/wallet/{walletId}/{locationId} | Patch a wallet location
 [**update_location_async**](LocationsApi.md#update_location_async) | **PUT** /api/v2/LocationsService/Locations/{locationId} | Update Location
 [**update_wallet_location_async**](LocationsApi.md#update_wallet_location_async) | **PUT** /api/v2/LocationsService/Locations/wallet/{walletId}/{locationId} | Update Wallet Location
 
@@ -720,6 +722,156 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_location_async**
+> EmptyEnvelope patch_location_async(tenant_id, location_id, operation=operation)
+
+Patch a location
+
+Patch a location
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LocationsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    location_id = 'location_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a location
+        api_response = api_instance.patch_location_async(tenant_id, location_id, operation=operation)
+        print("The response of LocationsApi->patch_location_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LocationsApi->patch_location_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **location_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_wallet_location_async**
+> EmptyEnvelope patch_wallet_location_async(wallet_id, location_id, operation=operation)
+
+Patch a wallet location
+
+Patch a wallet location
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.LocationsApi(api_client)
+    wallet_id = 'wallet_id_example' # str | 
+    location_id = 'location_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a wallet location
+        api_response = api_instance.patch_wallet_location_async(wallet_id, location_id, operation=operation)
+        print("The response of LocationsApi->patch_wallet_location_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LocationsApi->patch_wallet_location_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **wallet_id** | **str**|  | 
+ **location_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

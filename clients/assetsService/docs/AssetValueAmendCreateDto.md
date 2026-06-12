@@ -12,8 +12,7 @@ Name | Type | Description | Notes
 **new_value** | **float** |  | [optional] 
 **reason** | **str** |  | [optional] 
 **amendment_date** | **datetime** |  | [optional] 
-**approved_by** | **str** |  | [optional] 
-**approval_date** | **datetime** |  | [optional] 
+**currency_id** | **str** |  | [optional] 
 
 ## Example
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **employee_low_range_value** | **int** |  | [optional] 
 **employee_high_range_value** | **int** |  | [optional] 

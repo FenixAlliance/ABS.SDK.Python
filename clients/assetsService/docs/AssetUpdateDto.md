@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**asset_type** | **str** |  | [optional] 
+**asset_class** | **str** |  | [optional] 
 **asset_owner** | **str** |  | [optional] 
 **calculate_depreciation** | **bool** |  | [optional] 
 **allow_monthly_depreciation** | **bool** |  | [optional] 
@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **purchase_date** | **datetime** |  | [optional] 
 **purchase_price** | **float** |  | [optional] 
 **currency_id** | **str** |  | [optional] 
-**currency_code** | **str** |  | [optional] 
 **item_id** | **str** |  | [optional] 
+**asset_type_id** | **str** |  | [optional] 
 **asset_category_id** | **str** |  | [optional] 
 **purchase_invoice_id** | **str** |  | [optional] 
 **purchase_receipt_id** | **str** |  | [optional] 

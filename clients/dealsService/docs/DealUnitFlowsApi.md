@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**get_deal_unit_flow_stages_count_async**](DealUnitFlowsApi.md#get_deal_unit_flow_stages_count_async) | **GET** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId}/Stages/Count | Get stages count for a deal unit flow
 [**get_deal_unit_flows_async**](DealUnitFlowsApi.md#get_deal_unit_flows_async) | **GET** /api/v2/DealsService/DealUnitFlows | Get deal unit flows
 [**get_deal_unit_flows_count_async**](DealUnitFlowsApi.md#get_deal_unit_flows_count_async) | **GET** /api/v2/DealsService/DealUnitFlows/Count | Get deal unit flows count
+[**patch_deal_unit_flow_async**](DealUnitFlowsApi.md#patch_deal_unit_flow_async) | **PATCH** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId} | Patch a deal unit flow
+[**patch_deal_unit_flow_stage_async**](DealUnitFlowsApi.md#patch_deal_unit_flow_stage_async) | **PATCH** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId}/Stages/{dealUnitFlowStageId} | Patch a deal unit flow stage
 [**update_deal_unit_flow_async**](DealUnitFlowsApi.md#update_deal_unit_flow_async) | **PUT** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId} | Update a deal unit flow
 [**update_deal_unit_flow_stage_async**](DealUnitFlowsApi.md#update_deal_unit_flow_stage_async) | **PUT** /api/v2/DealsService/DealUnitFlows/{dealUnitFlowId}/Stages/{dealUnitFlowStageId} | Update a deal unit flow stage
 
@@ -721,6 +723,156 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_deal_unit_flow_async**
+> EmptyEnvelope patch_deal_unit_flow_async(tenant_id, deal_unit_flow_id, operation=operation)
+
+Patch a deal unit flow
+
+Partially updates an existing deal unit flow by its unique identifier using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DealUnitFlowsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    deal_unit_flow_id = 'deal_unit_flow_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a deal unit flow
+        api_response = api_instance.patch_deal_unit_flow_async(tenant_id, deal_unit_flow_id, operation=operation)
+        print("The response of DealUnitFlowsApi->patch_deal_unit_flow_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DealUnitFlowsApi->patch_deal_unit_flow_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **deal_unit_flow_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_deal_unit_flow_stage_async**
+> EmptyEnvelope patch_deal_unit_flow_stage_async(tenant_id, deal_unit_flow_id, deal_unit_flow_stage_id, operation=operation)
+
+Patch a deal unit flow stage
+
+Partially updates an existing stage within a specific deal unit flow using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DealUnitFlowsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    deal_unit_flow_id = 'deal_unit_flow_id_example' # str | 
+    deal_unit_flow_stage_id = 'deal_unit_flow_stage_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a deal unit flow stage
+        api_response = api_instance.patch_deal_unit_flow_stage_async(tenant_id, deal_unit_flow_id, deal_unit_flow_stage_id, operation=operation)
+        print("The response of DealUnitFlowsApi->patch_deal_unit_flow_stage_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DealUnitFlowsApi->patch_deal_unit_flow_stage_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **deal_unit_flow_id** | **str**|  | 
+ **deal_unit_flow_stage_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

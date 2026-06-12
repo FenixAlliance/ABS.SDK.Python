@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **duns** | **str** |  | [optional] 
 **is_public_company** | **bool** |  | [optional] 
 **is_facta_customer** | **bool** |  | [optional] 
+**tax_payer_type** | **str** |  | [optional] 
 **country_id** | **str** |  | 
 **state_id** | **str** |  | 
 **city_id** | **str** |  | 

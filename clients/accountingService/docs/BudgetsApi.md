@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**get_budget_details_async**](BudgetsApi.md#get_budget_details_async) | **GET** /api/v2/AccountingService/Budgets/{budgetId} | Gets a budget by id
 [**get_budgets_async**](BudgetsApi.md#get_budgets_async) | **GET** /api/v2/AccountingService/Budgets | Gets all budgets
 [**get_budgets_count_async**](BudgetsApi.md#get_budgets_count_async) | **GET** /api/v2/AccountingService/Budgets/Count | Get the count of budgets
+[**patch_budget_account_entry_async**](BudgetsApi.md#patch_budget_account_entry_async) | **PATCH** /api/v2/AccountingService/Budgets/{budgetId}/AccountEntries/{entryId} | Patches a budget account entry
+[**patch_budget_async**](BudgetsApi.md#patch_budget_async) | **PATCH** /api/v2/AccountingService/Budgets/{budgetId} | Patches a budget
 [**update_budget_account_entry_async**](BudgetsApi.md#update_budget_account_entry_async) | **PUT** /api/v2/AccountingService/Budgets/{budgetId}/AccountEntries/{entryId} | Updates a budget account entry
 [**update_budget_async**](BudgetsApi.md#update_budget_async) | **PUT** /api/v2/AccountingService/Budgets/{budgetId} | Updates a budget
 
@@ -702,6 +704,168 @@ No authorization required
 **403** | Forbidden |  -  |
 **401** | Unauthorized |  -  |
 **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_budget_account_entry_async**
+> EmptyEnvelope patch_budget_account_entry_async(tenant_id, budget_id, entry_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a budget account entry
+
+Partially update a budget account entry using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BudgetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    budget_id = 'budget_id_example' # str | 
+    entry_id = 'entry_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a budget account entry
+        api_response = api_instance.patch_budget_account_entry_async(tenant_id, budget_id, entry_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BudgetsApi->patch_budget_account_entry_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BudgetsApi->patch_budget_account_entry_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **budget_id** | **str**|  | 
+ **entry_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_budget_async**
+> EmptyEnvelope patch_budget_async(tenant_id, budget_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patches a budget
+
+Partially update a budget using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.BudgetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    budget_id = 'budget_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patches a budget
+        api_response = api_instance.patch_budget_async(tenant_id, budget_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of BudgetsApi->patch_budget_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BudgetsApi->patch_budget_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **budget_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

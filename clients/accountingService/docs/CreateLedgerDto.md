@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **date_time** | **datetime** |  | [optional] 
-**tenant_id** | **str** |  | [optional] 
-**enrollment_id** | **str** |  | [optional] 
 **ledger_type_id** | **str** |  | [optional] 
 
 ## Example

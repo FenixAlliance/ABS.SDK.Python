@@ -4,6 +4,8 @@
 .travis.yml
 README.md
 docs/AccessTokenResponse.md
+docs/BatchStockItemUpdateRequest.md
+docs/BulkProduct.md
 docs/CatalogItemCreateDto.md
 docs/CatalogItemDto.md
 docs/CatalogItemDtoEnvelope.md
@@ -125,6 +127,7 @@ docs/MerchantDtoListEnvelope.md
 docs/MerchantsApi.md
 docs/Money.md
 docs/MoneyEnvelope.md
+docs/Operation.md
 docs/PricingRuleDto.md
 docs/PricingRuleDtoEnvelope.md
 docs/PricingRuleDtoListEnvelope.md
@@ -166,6 +169,8 @@ openapi_client/configuration.py
 openapi_client/exceptions.py
 openapi_client/models/__init__.py
 openapi_client/models/access_token_response.py
+openapi_client/models/batch_stock_item_update_request.py
+openapi_client/models/bulk_product.py
 openapi_client/models/catalog_item_create_dto.py
 openapi_client/models/catalog_item_dto.py
 openapi_client/models/catalog_item_dto_envelope.py
@@ -265,6 +270,7 @@ openapi_client/models/merchant_dto_envelope.py
 openapi_client/models/merchant_dto_list_envelope.py
 openapi_client/models/money.py
 openapi_client/models/money_envelope.py
+openapi_client/models/operation.py
 openapi_client/models/pricing_rule_dto.py
 openapi_client/models/pricing_rule_dto_envelope.py
 openapi_client/models/pricing_rule_dto_list_envelope.py
@@ -283,21 +289,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_item_attribute_option_create_dto.py
-test/test_item_attribute_option_update_dto.py
-test/test_item_attribute_options_api.py
-test/test_item_bundle_create_dto.py
-test/test_item_bundle_dto.py
-test/test_item_bundle_dto_envelope.py
-test/test_item_bundle_dto_list_envelope.py
-test/test_item_bundle_update_dto.py
-test/test_item_bundles_api.py
-test/test_item_families_api.py
-test/test_item_family_create_dto.py
-test/test_item_family_dto.py
-test/test_item_family_dto_envelope.py
-test/test_item_family_dto_list_envelope.py
-test/test_item_family_update_dto.py
 tox.ini

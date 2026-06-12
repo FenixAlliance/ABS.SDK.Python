@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **end_quantity** | **float** |  | [optional] 
 **percent** | **float** |  | [optional] 
 **value** | **float** |  | [optional] 
+**item_id** | **str** |  | [optional] 
 **discount_list_id** | **str** |  | [optional] 
 
 ## Example

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **duns** | **str** |  | [optional] 
 **is_public_company** | **bool** |  | [optional] 
 **is_facta_customer** | **bool** |  | [optional] 
+**tax_payer_type** | **str** |  | [optional] 
 **country_id** | **str** |  | [optional] 
 **state_id** | **str** |  | [optional] 
 **city_id** | **str** |  | [optional] 

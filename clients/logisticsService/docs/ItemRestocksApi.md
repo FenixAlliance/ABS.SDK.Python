@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**get_item_restock_entry_by_id_async**](ItemRestocksApi.md#get_item_restock_entry_by_id_async) | **GET** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/{entryId} | Get restock entry by ID
 [**get_item_restocks_async**](ItemRestocksApi.md#get_item_restocks_async) | **GET** /api/v2/LogisticsService/ItemRestocks | Get all item restocks
 [**get_item_restocks_count_async**](ItemRestocksApi.md#get_item_restocks_count_async) | **GET** /api/v2/LogisticsService/ItemRestocks/Count | Get item restocks count
+[**patch_item_restock_async**](ItemRestocksApi.md#patch_item_restock_async) | **PATCH** /api/v2/LogisticsService/ItemRestocks/{restockId} | Patch an item restock
+[**patch_item_restock_entry_async**](ItemRestocksApi.md#patch_item_restock_entry_async) | **PATCH** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/{entryId} | Patch a restock entry
 [**update_item_restock_async**](ItemRestocksApi.md#update_item_restock_async) | **PUT** /api/v2/LogisticsService/ItemRestocks/{restockId} | Update an item restock
 [**update_item_restock_entry_async**](ItemRestocksApi.md#update_item_restock_entry_async) | **PUT** /api/v2/LogisticsService/ItemRestocks/{restockId}/Entries/{entryId} | Update a restock entry
 
@@ -766,6 +768,164 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_item_restock_async**
+> EmptyEnvelope patch_item_restock_async(tenant_id, restock_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch an item restock
+
+Applies a JSON Patch document to an item restock.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemRestocksApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    restock_id = 'restock_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an item restock
+        api_response = api_instance.patch_item_restock_async(tenant_id, restock_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ItemRestocksApi->patch_item_restock_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ItemRestocksApi->patch_item_restock_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **restock_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_item_restock_entry_async**
+> EmptyEnvelope patch_item_restock_entry_async(tenant_id, restock_id, entry_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a restock entry
+
+Applies a JSON Patch document to a restock entry.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemRestocksApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    restock_id = 'restock_id_example' # str | 
+    entry_id = 'entry_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a restock entry
+        api_response = api_instance.patch_item_restock_entry_async(tenant_id, restock_id, entry_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ItemRestocksApi->patch_item_restock_entry_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ItemRestocksApi->patch_item_restock_entry_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **restock_id** | **str**|  | 
+ **entry_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

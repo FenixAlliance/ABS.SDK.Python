@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**delete_web_content_async**](WebContentsApi.md#delete_web_content_async) | **DELETE** /api/v2/ContentService/WebContents/{webContentId} | Delete a web content
 [**get_web_content_by_id_async**](WebContentsApi.md#get_web_content_by_id_async) | **GET** /api/v2/ContentService/WebContents/{webContentId} | Get web content by ID
 [**get_web_contents_async**](WebContentsApi.md#get_web_contents_async) | **GET** /api/v2/ContentService/WebContents | Get web contents
+[**patch_web_content_async**](WebContentsApi.md#patch_web_content_async) | **PATCH** /api/v2/ContentService/WebContents/{webContentId} | Patch a web content
 [**update_web_content_async**](WebContentsApi.md#update_web_content_async) | **PUT** /api/v2/ContentService/WebContents/{webContentId} | Update a web content
 
 
@@ -377,6 +378,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_web_content_async**
+> EmptyEnvelope patch_web_content_async(tenant_id, web_content_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a web content
+
+Partially updates an existing web content for the specified tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.WebContentsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    web_content_id = 'web_content_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a web content
+        api_response = api_instance.patch_web_content_async(tenant_id, web_content_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of WebContentsApi->patch_web_content_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling WebContentsApi->patch_web_content_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **web_content_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

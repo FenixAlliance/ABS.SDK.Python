@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **expected_delivery_date** | **datetime** |  | [optional] 
 **shipping_terms** | **str** |  | [optional] 
 **order_id** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
 
 ## Example
 

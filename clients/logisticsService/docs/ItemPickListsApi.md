@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**get_item_pick_list_entry_by_id_async**](ItemPickListsApi.md#get_item_pick_list_entry_by_id_async) | **GET** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Get pick list entry by ID
 [**get_item_pick_lists_async**](ItemPickListsApi.md#get_item_pick_lists_async) | **GET** /api/v2/LogisticsService/ItemPickLists | Get all item pick lists
 [**get_item_pick_lists_count_async**](ItemPickListsApi.md#get_item_pick_lists_count_async) | **GET** /api/v2/LogisticsService/ItemPickLists/Count | Get item pick lists count
+[**patch_item_pick_list_async**](ItemPickListsApi.md#patch_item_pick_list_async) | **PATCH** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Patch an item pick list
+[**patch_item_pick_list_entry_async**](ItemPickListsApi.md#patch_item_pick_list_entry_async) | **PATCH** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Patch a pick list entry
 [**update_item_pick_list_async**](ItemPickListsApi.md#update_item_pick_list_async) | **PUT** /api/v2/LogisticsService/ItemPickLists/{pickListId} | Update an item pick list
 [**update_item_pick_list_entry_async**](ItemPickListsApi.md#update_item_pick_list_entry_async) | **PUT** /api/v2/LogisticsService/ItemPickLists/{pickListId}/Entries/{entryId} | Update a pick list entry
 
@@ -766,6 +768,164 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_item_pick_list_async**
+> EmptyEnvelope patch_item_pick_list_async(tenant_id, pick_list_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch an item pick list
+
+Applies a JSON Patch document to an item pick list.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemPickListsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    pick_list_id = 'pick_list_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an item pick list
+        api_response = api_instance.patch_item_pick_list_async(tenant_id, pick_list_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ItemPickListsApi->patch_item_pick_list_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ItemPickListsApi->patch_item_pick_list_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **pick_list_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_item_pick_list_entry_async**
+> EmptyEnvelope patch_item_pick_list_entry_async(tenant_id, pick_list_id, entry_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a pick list entry
+
+Applies a JSON Patch document to a pick list entry.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemPickListsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    pick_list_id = 'pick_list_id_example' # str | 
+    entry_id = 'entry_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a pick list entry
+        api_response = api_instance.patch_item_pick_list_entry_async(tenant_id, pick_list_id, entry_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ItemPickListsApi->patch_item_pick_list_entry_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ItemPickListsApi->patch_item_pick_list_entry_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **pick_list_id** | **str**|  | 
+ **entry_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**404** | Not Found |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

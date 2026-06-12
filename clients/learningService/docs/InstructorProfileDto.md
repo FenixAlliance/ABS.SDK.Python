@@ -39,9 +39,6 @@ Name | Type | Description | Notes
 **data9** | **str** |  | [optional] 
 **data9_label** | **str** |  | [optional] 
 **authorized** | **bool** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**contact_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
 
 ## Example
 

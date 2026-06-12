@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **release_date_time** | **datetime** |  | [optional] 
 **last_modification** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

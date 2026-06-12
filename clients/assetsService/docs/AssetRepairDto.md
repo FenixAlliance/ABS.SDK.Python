@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **object** |  | [optional] 
+**id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
-**business_id** | **object** |  | [optional] 
-**business_profile_record_id** | **object** |  | [optional] 
-**asset_id** | **object** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
+**asset_id** | **str** |  | [optional] 
 **asset_name** | **str** |  | [optional] 
 **repair_status** | **str** |  | [optional] 
 **scheduled_date** | **datetime** |  | [optional] 

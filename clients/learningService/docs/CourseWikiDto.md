@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **release_date_time** | **datetime** |  | [optional] 
 **tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **course_id** | **str** |  | [optional] 
 **course_unit_id** | **str** |  | [optional] 
 

@@ -34,6 +34,12 @@ Method | HTTP request | Description
 [**get_asset_value_amends_count**](AssetsApi.md#get_asset_value_amends_count) | **GET** /api/v2/AssetsService/Assets/{assetId}/ValueAmends/Count | Gets count of value amendments for a specific asset
 [**get_assets**](AssetsApi.md#get_assets) | **GET** /api/v2/AssetsService/Assets | Gets all assets for the current tenant
 [**get_assets_count**](AssetsApi.md#get_assets_count) | **GET** /api/v2/AssetsService/Assets/count | Gets the count of assets
+[**patch_asset**](AssetsApi.md#patch_asset) | **PATCH** /api/v2/AssetsService/Assets/{assetId} | Partially updates an existing asset
+[**patch_asset_asset_category**](AssetsApi.md#patch_asset_asset_category) | **PATCH** /api/v2/AssetsService/Assets/Categories/{categoryId} | Partially updates an existing asset category
+[**patch_asset_depreciation_record**](AssetsApi.md#patch_asset_depreciation_record) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/DepreciationRecords/{recordId} | Partially updates a depreciation record for an asset
+[**patch_asset_repair**](AssetsApi.md#patch_asset_repair) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/Repairs/{repairId} | Partially updates a repair for an asset
+[**patch_asset_transfer**](AssetsApi.md#patch_asset_transfer) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/Transfers/{transferId} | Partially updates a transfer for an asset
+[**patch_asset_value_amend**](AssetsApi.md#patch_asset_value_amend) | **PATCH** /api/v2/AssetsService/Assets/{assetId}/ValueAmends/{amendId} | Partially updates a value amendment for an asset
 [**update_asset**](AssetsApi.md#update_asset) | **PUT** /api/v2/AssetsService/Assets/{assetId} | Updates an existing asset
 [**update_asset_asset_category**](AssetsApi.md#update_asset_asset_category) | **PUT** /api/v2/AssetsService/Assets/Categories/{categoryId} | Updates an existing asset category
 [**update_asset_depreciation_record**](AssetsApi.md#update_asset_depreciation_record) | **PUT** /api/v2/AssetsService/Assets/{assetId}/DepreciationRecords/{recordId} | Updates a depreciation record for an asset
@@ -2220,6 +2226,476 @@ No authorization required
 |-------------|-------------|------------------|
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset**
+> EmptyEnvelope patch_asset(tenant_id, asset_id, operation=operation)
+
+Partially updates an existing asset
+
+Applies a JSON Patch document to an existing asset for the authenticated tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    asset_id = 'asset_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates an existing asset
+        api_response = api_instance.patch_asset(tenant_id, asset_id, operation=operation)
+        print("The response of AssetsApi->patch_asset:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetsApi->patch_asset: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **asset_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset_asset_category**
+> EmptyEnvelope patch_asset_asset_category(tenant_id, category_id, operation=operation)
+
+Partially updates an existing asset category
+
+Applies a JSON Patch document to an existing asset category for the authenticated tenant.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    category_id = 'category_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates an existing asset category
+        api_response = api_instance.patch_asset_asset_category(tenant_id, category_id, operation=operation)
+        print("The response of AssetsApi->patch_asset_asset_category:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetsApi->patch_asset_asset_category: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **category_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset_depreciation_record**
+> EmptyEnvelope patch_asset_depreciation_record(tenant_id, asset_id, record_id, operation=operation)
+
+Partially updates a depreciation record for an asset
+
+Applies a JSON Patch document to an existing depreciation record for the specified asset.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    asset_id = 'asset_id_example' # str | 
+    record_id = 'record_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates a depreciation record for an asset
+        api_response = api_instance.patch_asset_depreciation_record(tenant_id, asset_id, record_id, operation=operation)
+        print("The response of AssetsApi->patch_asset_depreciation_record:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetsApi->patch_asset_depreciation_record: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **asset_id** | **str**|  | 
+ **record_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset_repair**
+> EmptyEnvelope patch_asset_repair(tenant_id, asset_id, repair_id, operation=operation)
+
+Partially updates a repair for an asset
+
+Applies a JSON Patch document to an existing repair record for the specified asset.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    asset_id = 'asset_id_example' # str | 
+    repair_id = 'repair_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates a repair for an asset
+        api_response = api_instance.patch_asset_repair(tenant_id, asset_id, repair_id, operation=operation)
+        print("The response of AssetsApi->patch_asset_repair:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetsApi->patch_asset_repair: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **asset_id** | **str**|  | 
+ **repair_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset_transfer**
+> EmptyEnvelope patch_asset_transfer(tenant_id, asset_id, transfer_id, operation=operation)
+
+Partially updates a transfer for an asset
+
+Applies a JSON Patch document to an existing transfer record for the specified asset.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    asset_id = 'asset_id_example' # str | 
+    transfer_id = 'transfer_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates a transfer for an asset
+        api_response = api_instance.patch_asset_transfer(tenant_id, asset_id, transfer_id, operation=operation)
+        print("The response of AssetsApi->patch_asset_transfer:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetsApi->patch_asset_transfer: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **asset_id** | **str**|  | 
+ **transfer_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_asset_value_amend**
+> EmptyEnvelope patch_asset_value_amend(tenant_id, asset_id, amend_id, operation=operation)
+
+Partially updates a value amendment for an asset
+
+Applies a JSON Patch document to an existing value amendment record for the specified asset.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.AssetsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    asset_id = 'asset_id_example' # str | 
+    amend_id = 'amend_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Partially updates a value amendment for an asset
+        api_response = api_instance.patch_asset_value_amend(tenant_id, asset_id, amend_id, operation=operation)
+        print("The response of AssetsApi->patch_asset_value_amend:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AssetsApi->patch_asset_value_amend: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **asset_id** | **str**|  | 
+ **amend_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

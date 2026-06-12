@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **is_default_sender_address** | **bool** |  | [optional] 
 **is_default_return_address** | **bool** |  | [optional] 
 **is_default_supping_location** | **bool** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 
 ## Example
 

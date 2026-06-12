@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_item_shipping_policies_async**](ItemShippingPoliciesApi.md#get_item_shipping_policies_async) | **GET** /api/v2/ShipmentsService/ItemShippingPolicies | Get all item shipping policies
 [**get_item_shipping_policies_count_async**](ItemShippingPoliciesApi.md#get_item_shipping_policies_count_async) | **GET** /api/v2/ShipmentsService/ItemShippingPolicies/Count | Get item shipping policies count
 [**get_item_shipping_policy_by_id_async**](ItemShippingPoliciesApi.md#get_item_shipping_policy_by_id_async) | **GET** /api/v2/ShipmentsService/ItemShippingPolicies/{policyId} | Get item shipping policy by ID
+[**patch_item_shipping_policy_async**](ItemShippingPoliciesApi.md#patch_item_shipping_policy_async) | **PATCH** /api/v2/ShipmentsService/ItemShippingPolicies/{policyId} | Patch an item shipping policy
 [**update_item_shipping_policy_async**](ItemShippingPoliciesApi.md#update_item_shipping_policy_async) | **PUT** /api/v2/ShipmentsService/ItemShippingPolicies/{policyId} | Update an item shipping policy
 
 
@@ -374,6 +375,86 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_item_shipping_policy_async**
+> EmptyEnvelope patch_item_shipping_policy_async(tenant_id, policy_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch an item shipping policy
+
+Partially updates an existing item shipping policy using JSON Patch.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.ItemShippingPoliciesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    policy_id = 'policy_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an item shipping policy
+        api_response = api_instance.patch_item_shipping_policy_async(tenant_id, policy_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of ItemShippingPoliciesApi->patch_item_shipping_policy_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ItemShippingPoliciesApi->patch_item_shipping_policy_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **policy_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

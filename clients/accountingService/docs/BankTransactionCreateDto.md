@@ -7,6 +7,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **timestamp** | **datetime** |  | [optional] 
+**description** | **str** |  | [optional] 
+**price** | **float** |  | [optional] 
+**quantity** | **float** |  | [optional] 
+**external_description** | **str** |  | [optional] 
+**basis_quantity** | **float** |  | [optional] 
+**basis_amount** | **float** |  | [optional] 
+**percent** | **float** |  | [optional] 
+**unit_group_id** | **str** |  | [optional] 
+**unit_id** | **str** |  | [optional] 
+**transaction_category_id** | **str** |  | [optional] 
+**currency_id** | **str** |  | [optional] 
 **bank_profile_id** | **str** |  | [optional] 
 **bank_account_id** | **str** |  | [optional] 
 

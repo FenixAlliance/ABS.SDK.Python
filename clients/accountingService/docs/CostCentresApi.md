@@ -18,6 +18,9 @@ Method | HTTP request | Description
 [**get_cost_centre_groups_count**](CostCentresApi.md#get_cost_centre_groups_count) | **GET** /api/v2/AccountingService/CostCentres/CostCentreGroups/Count | Get the count of cost centre groups for a tenant
 [**get_cost_centres**](CostCentresApi.md#get_cost_centres) | **GET** /api/v2/AccountingService/CostCentres | Get all cost centres for a tenant
 [**get_cost_centres_count**](CostCentresApi.md#get_cost_centres_count) | **GET** /api/v2/AccountingService/CostCentres/Count | Get the count of cost centres for a tenant
+[**patch_cost_centre**](CostCentresApi.md#patch_cost_centre) | **PATCH** /api/v2/AccountingService/CostCentres/{costCentreId} | Patch a cost centre
+[**patch_cost_centre_budget**](CostCentresApi.md#patch_cost_centre_budget) | **PATCH** /api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId} | Patch a cost centre budget
+[**patch_cost_centre_group**](CostCentresApi.md#patch_cost_centre_group) | **PATCH** /api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId} | Patch a cost centre group
 [**update_cost_centre**](CostCentresApi.md#update_cost_centre) | **PUT** /api/v2/AccountingService/CostCentres/{costCentreId} | Update a cost centre
 [**update_cost_centre_budget**](CostCentresApi.md#update_cost_centre_budget) | **PUT** /api/v2/AccountingService/CostCentres/CostCentreBudgets/{budgetId} | Update a cost centre budget
 [**update_cost_centre_group**](CostCentresApi.md#update_cost_centre_group) | **PUT** /api/v2/AccountingService/CostCentres/CostCentreGroups/{groupId} | Update a cost centre group
@@ -1068,6 +1071,243 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_cost_centre**
+> EmptyEnvelope patch_cost_centre(tenant_id, cost_centre_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a cost centre
+
+Partially updates an existing cost centre.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CostCentresApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    cost_centre_id = 'cost_centre_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a cost centre
+        api_response = api_instance.patch_cost_centre(tenant_id, cost_centre_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of CostCentresApi->patch_cost_centre:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CostCentresApi->patch_cost_centre: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **cost_centre_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_cost_centre_budget**
+> EmptyEnvelope patch_cost_centre_budget(tenant_id, budget_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a cost centre budget
+
+Partially updates an existing cost centre budget.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CostCentresApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    budget_id = 'budget_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a cost centre budget
+        api_response = api_instance.patch_cost_centre_budget(tenant_id, budget_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of CostCentresApi->patch_cost_centre_budget:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CostCentresApi->patch_cost_centre_budget: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **budget_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_cost_centre_group**
+> EmptyEnvelope patch_cost_centre_group(tenant_id, group_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a cost centre group
+
+Partially updates an existing cost centre group.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CostCentresApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    group_id = 'group_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a cost centre group
+        api_response = api_instance.patch_cost_centre_group(tenant_id, group_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of CostCentresApi->patch_cost_centre_group:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CostCentresApi->patch_cost_centre_group: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **group_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

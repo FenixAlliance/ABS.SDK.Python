@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
-**business_unit_qualified_name** | **str** |  | [optional] 
 **country_id** | **str** |  | [optional] 
 **organization_profile_id** | **str** |  | [optional] 
 **parent_business_unit_id** | **str** |  | [optional] 

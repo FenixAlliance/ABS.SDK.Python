@@ -5,8 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**timestamp** | **datetime** |  | [optional] 
 **tax_policy_id** | **str** |  | [optional] 
 **item_price_id** | **str** |  | [optional] 
 **item_id** | **str** |  | [optional] 

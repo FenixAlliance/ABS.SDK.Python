@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **path** | **str** |  | [optional] 
 **prefix** | **str** |  | [optional] 
 **currency_id** | **str** |  | 
+**contact_id** | **str** |  | [optional] 
 **account_type_id** | **str** |  | [optional] 
 **parent_account_id** | **str** |  | [optional] 
 **account_category** | **str** |  | [optional] 

@@ -64,6 +64,8 @@ Name | Type | Description | Notes
 **enrollment_id** | **str** |  | [optional] 
 **bank_id** | **str** |  | [optional] 
 **payment_token_id** | **str** |  | [optional] 
+**emisor_wallet_account_id** | **str** |  | [optional] 
+**receiver_wallet_account_id** | **str** |  | [optional] 
 
 ## Example
 

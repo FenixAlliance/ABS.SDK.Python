@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **swift** | **str** |  | [optional] 
 **branch_code** | **str** |  | [optional] 
 **bank_account_number** | **str** |  | [optional] 
-**qualified_name** | **str** |  | [optional] 
 **bank_id** | **str** |  | [optional] 
 **bank_profile_id** | **str** |  | [optional] 
+**wallet_id** | **str** |  | [optional] 
 
 ## Example
 

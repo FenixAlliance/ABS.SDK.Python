@@ -46,6 +46,7 @@ docs/MaintenanceVisitDto.md
 docs/MaintenanceVisitDtoEnvelope.md
 docs/MaintenanceVisitDtoListEnvelope.md
 docs/MaintenanceVisitsApi.md
+docs/Operation.md
 docs/PrivateMessageDto.md
 docs/PrivateMessageDtoListEnvelope.md
 docs/RefreshRequest.md
@@ -178,6 +179,7 @@ openapi_client/models/maintenance_visit_create_dto.py
 openapi_client/models/maintenance_visit_dto.py
 openapi_client/models/maintenance_visit_dto_envelope.py
 openapi_client/models/maintenance_visit_dto_list_envelope.py
+openapi_client/models/operation.py
 openapi_client/models/private_message_dto.py
 openapi_client/models/private_message_dto_list_envelope.py
 openapi_client/models/refresh_request.py
@@ -243,15 +245,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_completions_api.py
-test/test_fenix_alliance_portals_website_api.py
-test/test_inquiry_requests_api.py
-test/test_knowledge_articles_api.py
-test/test_maintenance_visits_api.py
-test/test_refund_policies_api.py
-test/test_refund_requests_api.py
-test/test_return_policies_api.py
-test/test_return_requests_api.py
-test/test_warranty_policies_api.py
-test/test_warranty_requests_api.py
 tox.ini

@@ -8,8 +8,11 @@ from openapi_client.api.blog_posts_api import BlogPostsApi
 from openapi_client.api.business_domains_api import BusinessDomainsApi
 from openapi_client.api.completions_api import CompletionsApi
 from openapi_client.api.fenix_alliance_portals_website_api import FenixAlliancePortalsWebsiteApi
+from openapi_client.api.localization_strings_api import LocalizationStringsApi
+from openapi_client.api.menu_contexts_api import MenuContextsApi
 from openapi_client.api.portals_api import PortalsApi
 from openapi_client.api.themes_api import ThemesApi
+from openapi_client.api.web_components_api import WebComponentsApi
 from openapi_client.api.web_contents_api import WebContentsApi
 from openapi_client.api.web_page_categories_api import WebPageCategoriesApi
 from openapi_client.api.web_page_tags_api import WebPageTagsApi

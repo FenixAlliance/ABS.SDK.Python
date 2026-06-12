@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_support_ticket_conversations_async**](SupportTicketsApi.md#get_support_ticket_conversations_async) | **GET** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations | Retrieve conversations for a support ticket
 [**get_support_tickets_async**](SupportTicketsApi.md#get_support_tickets_async) | **GET** /api/v2/SupportService/SupportTickets | Retrieve a list of support tickets
 [**get_support_tickets_count_async**](SupportTicketsApi.md#get_support_tickets_count_async) | **GET** /api/v2/SupportService/SupportTickets/Count | Get the count of support tickets
+[**patch_support_ticket_async**](SupportTicketsApi.md#patch_support_ticket_async) | **PATCH** /api/v2/SupportService/SupportTickets/{supportTicketId} | Patch a support ticket
 [**relate_support_ticket_to_conversation_async**](SupportTicketsApi.md#relate_support_ticket_to_conversation_async) | **POST** /api/v2/SupportService/SupportTickets/{supportTicketId}/Conversations | Create a conversation for a support ticket
 [**update_support_ticket_async**](SupportTicketsApi.md#update_support_ticket_async) | **PUT** /api/v2/SupportService/SupportTickets/{supportTicketId} | Update a support ticket
 
@@ -696,6 +697,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_support_ticket_async**
+> EmptyEnvelope patch_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a support ticket
+
+Partially updates an existing support ticket by its unique identifier.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportTicketsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_ticket_id = 'support_ticket_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a support ticket
+        api_response = api_instance.patch_support_ticket_async(tenant_id, support_ticket_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SupportTicketsApi->patch_support_ticket_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportTicketsApi->patch_support_ticket_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_ticket_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

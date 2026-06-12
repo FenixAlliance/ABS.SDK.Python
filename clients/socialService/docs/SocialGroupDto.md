@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **avatar_url** | **str** |  | [optional] 
-**business_id** | **str** |  | [optional] 
-**business_profile_record_id** | **str** |  | [optional] 
+**tenant_id** | **str** |  | [optional] 
+**enrollment_id** | **str** |  | [optional] 
 **social_profile_id** | **str** |  | [optional] 
 
 ## Example

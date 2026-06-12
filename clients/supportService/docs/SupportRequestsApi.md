@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_support_request_tickets_async**](SupportRequestsApi.md#get_support_request_tickets_async) | **GET** /api/v2/SupportService/SupportRequests/{supportRequestId}/Tickets | Retrieve tickets for a support request
 [**get_support_requests_async**](SupportRequestsApi.md#get_support_requests_async) | **GET** /api/v2/SupportService/SupportRequests | Retrieve a list of support requests
 [**get_support_requests_count_async**](SupportRequestsApi.md#get_support_requests_count_async) | **GET** /api/v2/SupportService/SupportRequests/Count | Get the count of support requests
+[**patch_support_request_async**](SupportRequestsApi.md#patch_support_request_async) | **PATCH** /api/v2/SupportService/SupportRequests/{supportRequestId} | Patch a support request
 [**relate_support_request_to_attachment_async**](SupportRequestsApi.md#relate_support_request_to_attachment_async) | **POST** /api/v2/SupportService/SupportRequests/{supportRequestId}/Attachments | Add an attachment to a support request
 [**update_support_request_async**](SupportRequestsApi.md#update_support_request_async) | **PUT** /api/v2/SupportService/SupportRequests/{supportRequestId} | Update a support request
 
@@ -688,6 +689,85 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_support_request_async**
+> EmptyEnvelope patch_support_request_async(tenant_id, support_request_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+
+Patch a support request
+
+Partially updates an existing support request by its unique identifier.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SupportRequestsApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    support_request_id = 'support_request_id_example' # str | 
+    api_version = 'api_version_example' # str |  (optional)
+    x_api_version = 'x_api_version_example' # str |  (optional)
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a support request
+        api_response = api_instance.patch_support_request_async(tenant_id, support_request_id, api_version=api_version, x_api_version=x_api_version, operation=operation)
+        print("The response of SupportRequestsApi->patch_support_request_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SupportRequestsApi->patch_support_request_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **support_request_id** | **str**|  | 
+ **api_version** | **str**|  | [optional] 
+ **x_api_version** | **str**|  | [optional] 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
  - **Accept**: application/json, application/xml
 
 ### HTTP response details

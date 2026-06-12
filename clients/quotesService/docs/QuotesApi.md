@@ -19,6 +19,8 @@ Method | HTTP request | Description
 [**get_quote_lines_count**](QuotesApi.md#get_quote_lines_count) | **GET** /api/v2/QuotesService/Quotes/{quoteId}/Lines/Count | Get the count of quote lines.
 [**get_quotes**](QuotesApi.md#get_quotes) | **GET** /api/v2/QuotesService/Quotes | Get a list of quotes.
 [**get_quotes_count**](QuotesApi.md#get_quotes_count) | **GET** /api/v2/QuotesService/Quotes/Count | Get the count of quotes.
+[**patch_quote_async**](QuotesApi.md#patch_quote_async) | **PATCH** /api/v2/QuotesService/Quotes/{quoteId} | Patch an existing quote.
+[**patch_quote_line_async**](QuotesApi.md#patch_quote_line_async) | **PATCH** /api/v2/QuotesService/Quotes/{quoteId}/Lines/{quoteLineId} | Patch a quote line.
 [**preview_quote_email_template**](QuotesApi.md#preview_quote_email_template) | **POST** /api/v2/QuotesService/Quotes/{quoteId}/Emails/Preview | Preview the rendered email for an invoice.
 [**quote_line_exists**](QuotesApi.md#quote_line_exists) | **GET** /api/v2/QuotesService/Quotes/{quoteId}/Lines/Exists | Check if a quote line exists.
 [**reopen_quote**](QuotesApi.md#reopen_quote) | **PUT** /api/v2/QuotesService/Quotes/{quoteId}/Reopen | Reopen a closed quote.
@@ -1094,6 +1096,160 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_quote_async**
+> EmptyEnvelope patch_quote_async(tenant_id, quote_id, operation=operation)
+
+Patch an existing quote.
+
+Partially updates an existing quote for the specified tenant and quote ID using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.QuotesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    quote_id = 'quote_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch an existing quote.
+        api_response = api_instance.patch_quote_async(tenant_id, quote_id, operation=operation)
+        print("The response of QuotesApi->patch_quote_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling QuotesApi->patch_quote_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **quote_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_quote_line_async**
+> EmptyEnvelope patch_quote_line_async(tenant_id, quote_id, quote_line_id, operation=operation)
+
+Patch a quote line.
+
+Partially updates an existing quote line for the specified quote and tenant using a JSON Patch document.
+
+### Example
+
+
+```python
+import openapi_client
+from openapi_client.models.empty_envelope import EmptyEnvelope
+from openapi_client.models.operation import Operation
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.QuotesApi(api_client)
+    tenant_id = 'tenant_id_example' # str | 
+    quote_id = 'quote_id_example' # str | 
+    quote_line_id = 'quote_line_id_example' # str | 
+    operation = [openapi_client.Operation()] # List[Operation] |  (optional)
+
+    try:
+        # Patch a quote line.
+        api_response = api_instance.patch_quote_line_async(tenant_id, quote_id, quote_line_id, operation=operation)
+        print("The response of QuotesApi->patch_quote_line_async:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling QuotesApi->patch_quote_line_async: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenant_id** | **str**|  | 
+ **quote_id** | **str**|  | 
+ **quote_line_id** | **str**|  | 
+ **operation** | [**List[Operation]**](Operation.md)|  | [optional] 
+
+### Return type
+
+[**EmptyEnvelope**](EmptyEnvelope.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
 **200** | OK |  -  |
 
